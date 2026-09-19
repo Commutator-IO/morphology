@@ -97,13 +97,31 @@ function motifsDe(terme) {
   };
   const strictes = terme.variantes.filter((v) => v.startsWith('!')).map((v) => v.slice(1));
   const ambigues = terme.variantes.filter((v) => v.startsWith('?')).map((v) => v.slice(1));
-  const souples = terme.variantes.filter((v) => !/^[!?]/.test(v));
+  const vetos = terme.variantes.filter((v) => v.startsWith('-')).map((v) => v.slice(1));
+  const souples = terme.variantes.filter((v) => !/^[!?-]/.test(v));
   return {
     souple: range(souples, false),
     strict: range(strictes, true),
     ambigu: range(ambigues, false),
+    veto: range(vetos, false),
     contexte: (terme.contexte ?? []).map((m) => motif(m)).filter(Boolean),
   };
+}
+
+/**
+ * Les mentions qu'une locution relevée à l'oreille désigne comme n'étant pas la
+ * notion — variantes préfixées « - ». « Master i dit » est une mastoïdite, pas
+ * le masséter : personne ne doit gagner cette position. Le veto vaut pour tous
+ * les termes, d'où qu'il vienne.
+ */
+function positionsInterdites(plie, lexique) {
+  const hors = new Set();
+  for (const terme of lexique) {
+    const { veto } = motifsDe(terme);
+    if (!veto) continue;
+    for (const m of plie.matchAll(veto)) hors.add(m.index);
+  }
+  return hors;
 }
 
 /**
@@ -188,7 +206,8 @@ function relever({ nom, lexique: fichier, sortie: fichierSortie }) {
       }
     }
 
-    // Second passage : le voisinage tranche.
+    // Second passage : le voisinage tranche, sauf là où une locution l'interdit.
+    for (const off of positionsInterdites(plie, lexique)) litiges.delete(off);
     const { gagnees, rendues, perdues } = arbitrer(plie, litiges, tenues, motsDe);
     arbitrees += rendues;
     abandonnees += perdues;

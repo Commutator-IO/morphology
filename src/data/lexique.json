@@ -1476,7 +1476,15 @@
    "sterno basto",
    "sterno cleido mastoidien",
    "?master",
-   "?masters"
+   "?masters",
+   "master id",
+   "master idees",
+   "master idia",
+   "master i dhien",
+   "masters dhien",
+   "master i do",
+   "sterno cleido master",
+   "credo master"
   ],
   "situation": {
    "vue": "face",
@@ -1560,7 +1568,9 @@
    "masseterine",
    "muscle masseter",
    "?master",
-   "?masters"
+   "?masters",
+   "-master i dit",
+   "-master i dhien"
   ],
   "situation": {
    "vue": "face",
