@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, type ReactNode } from 'react';
 import { lienYoutube } from '../lib/lexique';
 import { TAILLES, type TailleLecteur } from '../lib/lecteur';
 
@@ -23,12 +23,17 @@ export function Lecteur({
   onFermer,
   taille,
   onTaille,
+  dessous,
 }: {
   lecture: Lecture | null;
   onFermer: () => void;
   /** Largeur du panneau face au texte ; absente, aucun réglage n'est proposé. */
   taille?: TailleLecteur;
   onTaille?: (t: TailleLecteur) => void;
+  /** Ce qui suit le lecteur dans la colonne de droite, à l'intérieur du bloc
+   *  collant pour rester à l'écran avec lui. À charge de ce contenu de se
+   *  masquer sous lg : là, le lecteur est ancré en bas et n'a pas de dessous. */
+  dessous?: ReactNode;
 }) {
   useEffect(() => {
     if (!lecture) return;
@@ -52,6 +57,7 @@ export function Lecteur({
               l'index, et vous gardez votre liste sous les yeux.
             </p>
           </div>
+          {dessous}
         </div>
       </aside>
     );
@@ -132,13 +138,15 @@ export function Lecteur({
             </div>
           </div>
 
+          {/* Une ligne : trois en prenaient soixante pixels au plan du corps,
+              qui se retrouvait coupé en bas d'écran. */}
           <p className="hidden px-3.5 pb-3 text-xs leading-relaxed text-ink-400 lg:block">
-            Le lecteur démarre quelques secondes avant la mention — Debord annonce
-            souvent une forme avant d'y venir. <kbd className="rounded border border-ink-300 px-1">Échap</kbd>{' '}
-            arrête la lecture, sauf si le curseur est entré dans le lecteur : rendez-lui
-            d'abord le focus en cliquant la page.
+            La lecture démarre un peu avant la mention.{' '}
+            <kbd className="rounded border border-ink-300 px-1">Échap</kbd> l'arrête,
+            si le curseur n'est pas dans le lecteur.
           </p>
         </div>
+        {dessous}
       </div>
 
       {/* Le lecteur ancré masquerait les dernières entrées de la liste : on

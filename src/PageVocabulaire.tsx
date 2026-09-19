@@ -4,6 +4,7 @@ import { useAncre } from './lib/ancre';
 import { Lecteur, type Lecture } from './components/Lecteur';
 import { ecrireTaille, grilleDe, lireTaille, type TailleLecteur } from './lib/lecteur';
 import { CarteTerme } from './components/Terme';
+import { PanneauSituation } from './components/Situation';
 import {
   CATEGORIES,
   GROUPE_PAR_ID,
@@ -14,7 +15,14 @@ import {
   REGIONS,
   type Categorie,
 } from './lib/couleurs';
-import { correspond, LEXIQUE, parAlphabet, SEANCES, totalDe } from './lib/lexique';
+import {
+  correspond,
+  LEXIQUE,
+  parAlphabet,
+  SEANCES,
+  totalDe,
+  type Terme,
+} from './lib/lexique';
 
 /**
  * L'index du vocabulaire — la page qu'on ouvre en cours.
@@ -37,6 +45,10 @@ export function PageVocabulaire() {
   // Sur grand écran, la séance se joue à droite ; sur téléphone ce panneau
   // n'est pas rendu et l'état reste simplement nul.
   const [lecture, setLecture] = useState<Lecture | null>(null);
+  // La dernière fiche dépliée, dont le plan du corps montre la place à droite.
+  // On suit l'ouverture et non la lecture : on veut savoir où est un terme au
+  // moment où on le lit, pas au moment où l'on lance une séance.
+  const [situe, setSitue] = useState<Terme | null>(null);
   const cible = useAncre();
   // Le partage entre le texte et la vidéo se règle, et se retient : on ne veut
   // pas le refaire à chaque terme consulté.
@@ -125,17 +137,15 @@ export function PageVocabulaire() {
             Le vocabulaire de l'anatomie, séance par séance
           </span>
         </h1>
-        <p className="mt-3 hidden text-[15px] leading-relaxed text-ink-700 sm:block">
-          {LEXIQUE.length} termes d'ostéologie, de myologie et de morphologie, avec
-          pour chacun les moments du cours où Debord le prononce. Touchez un
-          horodatage : la séance démarre à cet instant, sans quitter la page.
-          Le bouton <i>Arrêter</i> — ou la touche Échap — coupe la lecture.
-        </p>
+        {/* Une seule ligne, et le mode d'emploi en moins : le cartouche du
+            lecteur, à droite, explique déjà ce que fait un horodatage, et
+            deux paragraphes repoussaient la liste d'une centaine de pixels
+            — soit deux fiches de moins à l'écran. */}
         <p className="mt-2 hidden text-[13px] leading-relaxed text-ink-500 sm:block">
-          {passagesTotal.toLocaleString('fr-FR')} passages repérés dans{' '}
-          {SEANCES.length} séances, soit environ{' '}
+          {LEXIQUE.length} termes, {passagesTotal.toLocaleString('fr-FR')} passages
+          dans {SEANCES.length} séances, environ{' '}
           {Math.round(SEANCES.reduce((s, x) => s + (x.dureeS ?? 0), 0) / 3600)} heures
-          de cours. Le repérage est automatique : lisez la{' '}
+          de cours. Repérage automatique : lisez la{' '}
           <a href="/methode/" className="text-brand-700 underline underline-offset-2">
             méthode
           </a>{' '}
@@ -150,7 +160,11 @@ export function PageVocabulaire() {
           <label className="sr-only" htmlFor="recherche">
             Chercher un terme
           </label>
-          <div className="relative">
+          {/* Dès lg, le compte et le bouton des filtres passent à droite du
+              champ au lieu de s'empiler dessous : la place horizontale est
+              libre, et la ligne gagnée rend une fiche de plus visible. */}
+          <div className="lg:flex lg:items-center lg:gap-3">
+          <div className="relative lg:flex-1">
             <input
               id="recherche"
               type="search"
@@ -180,7 +194,7 @@ export function PageVocabulaire() {
               l'écran. Ne restent visibles que la recherche et une ligne. Rien
               n'est masqué en silence — le bouton porte le nom des filtres
               actifs, et se colore tant qu'il en reste un. */}
-          <div className="mt-1.5 flex items-center justify-between gap-3">
+          <div className="mt-1.5 flex items-center justify-between gap-3 lg:mt-0 lg:shrink-0 lg:justify-end">
             <p className="tabular text-xs text-ink-500">
               {resultats.length} terme{resultats.length > 1 ? 's' : ''}
             </p>
@@ -199,6 +213,7 @@ export function PageVocabulaire() {
                 {filtresOuverts ? '▴' : '▾'}
               </span>
             </button>
+          </div>
           </div>
 
           <div className={filtresOuverts ? 'block' : 'hidden'}>
@@ -234,7 +249,8 @@ export function PageVocabulaire() {
               </button>
             ))}
           </div>
-          <div className="rangee-filtres mt-1.5">
+          <div className="lg:flex lg:items-center lg:gap-3">
+          <div className="rangee-filtres mt-1.5 lg:flex-1">
             <button
               type="button"
               onClick={() => setCategorie(null)}
@@ -264,7 +280,7 @@ export function PageVocabulaire() {
             ))}
           </div>
 
-            <div className="mt-1.5 flex justify-end">
+            <div className="mt-1.5 flex justify-end lg:mt-1.5 lg:shrink-0">
               <label className="flex items-center gap-1.5 text-xs text-ink-500">
                 Trier
                 <select
@@ -279,12 +295,12 @@ export function PageVocabulaire() {
               </label>
             </div>
           </div>
+          </div>
         </div>
 
         {groupe && (
           <p className="mt-3 text-[13px] leading-relaxed text-ink-600">
-            Vocabulaire propre à cette région. Les termes qui valent pour tout le
-            corps — aplomb, méplat, relief, orientations — restent sous{' '}
+            Les termes valables partout — aplomb, méplat, relief — sont sous{' '}
             <button
               type="button"
               onClick={() => setGroupe(null)}
@@ -322,6 +338,7 @@ export function PageVocabulaire() {
                       terme={t}
                       ouvertParDefaut={t.id === cible}
                       onLire={setLecture}
+                      onOuvrir={setSitue}
                     />
                   ))}
                 </div>
@@ -338,6 +355,7 @@ export function PageVocabulaire() {
                    fiche visée par une ancre se déplie aussi. */
                 ouvertParDefaut={t.id === cible || resultats.length === 1}
                 onLire={setLecture}
+                onOuvrir={setSitue}
               />
             ))}
           </div>
@@ -349,6 +367,7 @@ export function PageVocabulaire() {
             onFermer={() => setLecture(null)}
             taille={taille}
             onTaille={reglerTaille}
+            dessous={<PanneauSituation terme={situe} />}
           />
         </div>
       </main>

@@ -11,7 +11,18 @@
    "cranes",
    "cranien",
    "cranienne"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     74,
+     22,
+     17,
+     18
+    ]
+   ]
+  }
  },
  {
   "id": "mandibule",
@@ -31,7 +42,24 @@
    "machoire",
    "machoires",
    "maxillaire"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "traits": [
+    [
+     64,
+     32,
+     74,
+     42
+    ],
+    [
+     84,
+     32,
+     74,
+     42
+    ]
+   ]
+  }
  },
  {
   "id": "arcade-zygomatique",
@@ -49,7 +77,24 @@
    "zygomatiques",
    "pommette",
    "pommettes"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "traits": [
+    [
+     62,
+     27,
+     70,
+     29
+    ],
+    [
+     86,
+     27,
+     78,
+     29
+    ]
+   ]
+  }
  },
  {
   "id": "clavicule",
@@ -63,7 +108,24 @@
    "clavicules",
    "claviculaire",
    "claviculaires"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "traits": [
+    [
+     55,
+     53,
+     72,
+     55
+    ],
+    [
+     93,
+     53,
+     76,
+     55
+    ]
+   ]
+  }
  },
  {
   "id": "sternum",
@@ -78,7 +140,18 @@
    "sternal",
    "sternale",
    "fourchette sternale"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "traits": [
+    [
+     74,
+     58,
+     74,
+     86
+    ]
+   ]
+  }
  },
  {
   "id": "cage-thoracique",
@@ -97,7 +170,18 @@
    "thorax",
    "thoracique",
    "thoraciques"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     74,
+     80,
+     25,
+     27
+    ]
+   ]
+  }
  },
  {
   "id": "cotes",
@@ -113,7 +197,24 @@
    "costale",
    "rebord costal",
    "fausses côtes"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "traits": [
+    [
+     55,
+     96,
+     74,
+     110
+    ],
+    [
+     93,
+     96,
+     74,
+     110
+    ]
+   ]
+  }
  },
  {
   "id": "rachis",
@@ -137,7 +238,18 @@
    "apophyses epineuses",
    "epineuses",
    "sillon median du dos"
-  ]
+  ],
+  "situation": {
+   "vue": "dos",
+   "traits": [
+    [
+     74,
+     48,
+     74,
+     166
+    ]
+   ]
+  }
  },
  {
   "id": "sacrum",
@@ -152,7 +264,18 @@
    "sacree",
    "sacro iliaque",
    "triangle sacre"
-  ]
+  ],
+  "situation": {
+   "vue": "dos",
+   "taches": [
+    [
+     74,
+     150,
+     7,
+     13
+    ]
+   ]
+  }
  },
  {
   "id": "coccyx",
@@ -165,7 +288,18 @@
    "coccyx",
    "coccygien",
    "coccygienne"
-  ]
+  ],
+  "situation": {
+   "vue": "dos",
+   "taches": [
+    [
+     74,
+     165,
+     4,
+     6
+    ]
+   ]
+  }
  },
  {
   "id": "bassin",
@@ -185,7 +319,18 @@
    "pelvienne",
    "os iliaque",
    "iliaques"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     74,
+     150,
+     31,
+     19
+    ]
+   ]
+  }
  },
  {
   "id": "crete-iliaque",
@@ -199,7 +344,24 @@
    "cretes iliaques",
    "crete des iliaques",
    "crete de l iliaque"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "traits": [
+    [
+     42,
+     142,
+     60,
+     134
+    ],
+    [
+     106,
+     142,
+     88,
+     134
+    ]
+   ]
+  }
  },
  {
   "id": "epine-iliaque",
@@ -217,7 +379,24 @@
    "epine anterosuperieure",
    "eias",
    "epine anterieure"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     45,
+     146,
+     3.5,
+     3.5
+    ],
+    [
+     103,
+     146,
+     3.5,
+     3.5
+    ]
+   ]
+  }
  },
  {
   "id": "ischion",
@@ -231,7 +410,24 @@
    "ischions",
    "ischiatique",
    "tuberosite ischiatique"
-  ]
+  ],
+  "situation": {
+   "vue": "dos",
+   "taches": [
+    [
+     63,
+     165,
+     5,
+     5
+    ],
+    [
+     85,
+     165,
+     5,
+     5
+    ]
+   ]
+  }
  },
  {
   "id": "pubis",
@@ -246,7 +442,18 @@
    "pubienne",
    "symphyse",
    "symphyse pubienne"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     74,
+     163,
+     7,
+     5
+    ]
+   ]
+  }
  },
  {
   "id": "grand-trochanter",
@@ -260,7 +467,24 @@
    "trochanter",
    "trochanters",
    "trochanterien"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     40,
+     159,
+     4,
+     4
+    ],
+    [
+     108,
+     159,
+     4,
+     4
+    ]
+   ]
+  }
  },
  {
   "id": "femur",
@@ -274,7 +498,24 @@
    "femurs",
    "femoral",
    "femorale"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "traits": [
+    [
+     56,
+     172,
+     52,
+     230
+    ],
+    [
+     92,
+     172,
+     96,
+     230
+    ]
+   ]
+  }
  },
  {
   "id": "condyles-femoraux",
@@ -289,7 +530,36 @@
    "condylien",
    "condyle interne",
    "condyle externe"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     48,
+     229,
+     4,
+     5
+    ],
+    [
+     57,
+     229,
+     4,
+     5
+    ],
+    [
+     91,
+     229,
+     4,
+     5
+    ],
+    [
+     100,
+     229,
+     4,
+     5
+    ]
+   ]
+  }
  },
  {
   "id": "rotule",
@@ -308,7 +578,24 @@
    "rotulienne",
    "patella",
    "patellaire"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     52,
+     232,
+     5,
+     6
+    ],
+    [
+     96,
+     232,
+     5,
+     6
+    ]
+   ]
+  }
  },
  {
   "id": "tibia",
@@ -323,7 +610,24 @@
    "tibial",
    "tibiale",
    "crete tibiale"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "traits": [
+    [
+     56,
+     242,
+     54,
+     284
+    ],
+    [
+     92,
+     242,
+     94,
+     284
+    ]
+   ]
+  }
  },
  {
   "id": "perone",
@@ -343,7 +647,24 @@
    "peroniers",
    "fibula",
    "tete du perone"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "traits": [
+    [
+     45,
+     244,
+     50,
+     282
+    ],
+    [
+     103,
+     244,
+     98,
+     282
+    ]
+   ]
+  }
  },
  {
   "id": "malleole",
@@ -358,7 +679,36 @@
    "malleolaire",
    "malleole interne",
    "malleole externe"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     49,
+     284,
+     3,
+     3.5
+    ],
+    [
+     59,
+     284,
+     3,
+     3.5
+    ],
+    [
+     89,
+     284,
+     3,
+     3.5
+    ],
+    [
+     99,
+     284,
+     3,
+     3.5
+    ]
+   ]
+  }
  },
  {
   "id": "calcaneum",
@@ -376,7 +726,24 @@
    "calcaneenne",
    "talon",
    "talons"
-  ]
+  ],
+  "situation": {
+   "vue": "dos",
+   "taches": [
+    [
+     54,
+     301,
+     5,
+     7
+    ],
+    [
+     94,
+     301,
+     5,
+     7
+    ]
+   ]
+  }
  },
  {
   "id": "tarse",
@@ -392,7 +759,24 @@
    "metatarse",
    "metatarsien",
    "metatarsiens"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     54,
+     299,
+     6,
+     6
+    ],
+    [
+     94,
+     299,
+     6,
+     6
+    ]
+   ]
+  }
  },
  {
   "id": "omoplate",
@@ -413,7 +797,24 @@
    "ceinture scapulaire",
    "epine de lomoplate",
    "pointe de lomoplate"
-  ]
+  ],
+  "situation": {
+   "vue": "dos",
+   "taches": [
+    [
+     62,
+     74,
+     9,
+     11
+    ],
+    [
+     86,
+     74,
+     9,
+     11
+    ]
+   ]
+  }
  },
  {
   "id": "acromion",
@@ -429,7 +830,24 @@
    "acromio claviculaire",
    "acromio",
    "epine acromio"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     52,
+     52,
+     4,
+     3
+    ],
+    [
+     96,
+     52,
+     4,
+     3
+    ]
+   ]
+  }
  },
  {
   "id": "humerus",
@@ -447,7 +865,24 @@
    "epicondyles",
    "epicondylite",
    "epitrochlee"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "traits": [
+    [
+     45,
+     64,
+     32,
+     108
+    ],
+    [
+     103,
+     64,
+     116,
+     108
+    ]
+   ]
+  }
  },
  {
   "id": "olecrane",
@@ -461,7 +896,24 @@
    "olecranien",
    "pointe du coude",
    "bec du cubitus"
-  ]
+  ],
+  "situation": {
+   "vue": "dos",
+   "taches": [
+    [
+     27,
+     114,
+     4,
+     4
+    ],
+    [
+     121,
+     114,
+     4,
+     4
+    ]
+   ]
+  }
  },
  {
   "id": "cubitus",
@@ -480,7 +932,24 @@
    "ulna",
    "ulnaire",
    "tete du cubitus"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "traits": [
+    [
+     30,
+     118,
+     22,
+     146
+    ],
+    [
+     118,
+     118,
+     126,
+     146
+    ]
+   ]
+  }
  },
  {
   "id": "radius",
@@ -496,7 +965,24 @@
    "radiaux",
    "styloide radiale",
    "tete du radius"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "traits": [
+    [
+     19,
+     120,
+     13,
+     146
+    ],
+    [
+     129,
+     120,
+     135,
+     146
+    ]
+   ]
+  }
  },
  {
   "id": "carpe",
@@ -514,7 +1000,24 @@
    "pisiforme",
    "os crochu",
    "trapeze osseux"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     16,
+     152,
+     5,
+     4
+    ],
+    [
+     132,
+     152,
+     5,
+     4
+    ]
+   ]
+  }
  },
  {
   "id": "metacarpe",
@@ -529,7 +1032,24 @@
    "metacarpiens",
    "metacarpienne",
    "tetes des metacarpiens"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     14,
+     160,
+     6,
+     5
+    ],
+    [
+     134,
+     160,
+     6,
+     5
+    ]
+   ]
+  }
  },
  {
   "id": "phalanges",
@@ -544,7 +1064,24 @@
    "phalangien",
    "phalangette",
    "phalangine"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     12,
+     170,
+     7,
+     6
+    ],
+    [
+     136,
+     170,
+     7,
+     6
+    ]
+   ]
+  }
  },
  {
   "id": "deltoide",
@@ -566,7 +1103,24 @@
    "deltoide claviculaire",
    "coiffe",
    "coiffee"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     45,
+     65,
+     9,
+     13
+    ],
+    [
+     103,
+     65,
+     9,
+     13
+    ]
+   ]
+  }
  },
  {
   "id": "trapeze",
@@ -582,7 +1136,18 @@
    "trapezienne",
    "trapezoidaux",
    "trapezoidale"
-  ]
+  ],
+  "situation": {
+   "vue": "dos",
+   "taches": [
+    [
+     74,
+     66,
+     18,
+     17
+    ]
+   ]
+  }
  },
  {
   "id": "grand-dorsal",
@@ -597,7 +1162,24 @@
    "dorsal",
    "dorsaux",
    "latissimus"
-  ]
+  ],
+  "situation": {
+   "vue": "dos",
+   "taches": [
+    [
+     59,
+     112,
+     11,
+     17
+    ],
+    [
+     89,
+     112,
+     11,
+     17
+    ]
+   ]
+  }
  },
  {
   "id": "bandoulieres",
@@ -609,7 +1191,24 @@
    "bandouliere",
    "bandoulieres",
    "en bandouliere"
-  ]
+  ],
+  "situation": {
+   "vue": "dos",
+   "traits": [
+    [
+     57,
+     64,
+     88,
+     108
+    ],
+    [
+     91,
+     64,
+     60,
+     108
+    ]
+   ]
+  }
  },
  {
   "id": "grand-pectoral",
@@ -624,7 +1223,24 @@
    "pectoral",
    "pectoraux",
    "pectorale"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     63,
+     68,
+     10,
+     9
+    ],
+    [
+     85,
+     68,
+     10,
+     9
+    ]
+   ]
+  }
  },
  {
   "id": "grand-droit",
@@ -643,7 +1259,18 @@
    "ligne blanche",
    "abdomen",
    "abdominaux"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     74,
+     127,
+     9,
+     21
+    ]
+   ]
+  }
  },
  {
   "id": "oblique",
@@ -658,7 +1285,24 @@
    "grand oblique",
    "petit oblique",
    "obliquement"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     57,
+     128,
+     6,
+     15
+    ],
+    [
+     91,
+     128,
+     6,
+     15
+    ]
+   ]
+  }
  },
  {
   "id": "grand-dentele",
@@ -679,7 +1323,24 @@
    "dentele anterieur",
    "digitations",
    "dentelees"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     52,
+     92,
+     4,
+     11
+    ],
+    [
+     96,
+     92,
+     4,
+     11
+    ]
+   ]
+  }
  },
  {
   "id": "sterno-cleido",
@@ -703,7 +1364,24 @@
    "sterno clayton",
    "sterno basto",
    "sterno cleido mastoidien"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "traits": [
+    [
+     67,
+     39,
+     72,
+     50
+    ],
+    [
+     81,
+     39,
+     76,
+     50
+    ]
+   ]
+  }
  },
  {
   "id": "peauciers",
@@ -727,7 +1405,18 @@
    "plans poussier",
    "repli poussier",
    "graisseuse poussiere"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     74,
+     29,
+     14,
+     12
+    ]
+   ]
+  }
  },
  {
   "id": "masseter",
@@ -751,7 +1440,24 @@
    "sont les masters",
    "sont les master",
    "que les masters"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     65,
+     32,
+     4,
+     5
+    ],
+    [
+     83,
+     32,
+     4,
+     5
+    ]
+   ]
+  }
  },
  {
   "id": "temporal",
@@ -767,7 +1473,24 @@
    "fosse temporale",
    "tempe",
    "tempes"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     62,
+     21,
+     4,
+     6
+    ],
+    [
+     86,
+     21,
+     4,
+     6
+    ]
+   ]
+  }
  },
  {
   "id": "biceps-brachial",
@@ -785,7 +1508,24 @@
    "court biceps",
    "courte portion",
    "longue portion"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     34,
+     90,
+     6,
+     14
+    ],
+    [
+     114,
+     90,
+     6,
+     14
+    ]
+   ]
+  }
  },
  {
   "id": "triceps-brachial",
@@ -801,7 +1541,24 @@
    "vaste externe du bras",
    "vaste interne du bras",
    "longue portion du triceps"
-  ]
+  ],
+  "situation": {
+   "vue": "dos",
+   "taches": [
+    [
+     31,
+     88,
+     6,
+     15
+    ],
+    [
+     117,
+     88,
+     6,
+     15
+    ]
+   ]
+  }
  },
  {
   "id": "brachial-anterieur",
@@ -815,7 +1572,24 @@
    "brachial",
    "brachiale",
    "brachialis"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     30,
+     105,
+     5,
+     9
+    ],
+    [
+     118,
+     105,
+     5,
+     9
+    ]
+   ]
+  }
  },
  {
   "id": "long-supinateur",
@@ -837,7 +1611,24 @@
    "court supinateur",
    "humero stylo radial",
    "stylo radial"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "traits": [
+    [
+     26,
+     116,
+     18,
+     140
+    ],
+    [
+     122,
+     116,
+     130,
+     140
+    ]
+   ]
+  }
  },
  {
   "id": "extenseurs",
@@ -855,7 +1646,24 @@
    "cubital posterieur",
    "radiaux",
    "ligament annulaire"
-  ]
+  ],
+  "situation": {
+   "vue": "dos",
+   "taches": [
+    [
+     20,
+     132,
+     5,
+     14
+    ],
+    [
+     128,
+     132,
+     5,
+     14
+    ]
+   ]
+  }
  },
  {
   "id": "flechisseurs",
@@ -874,7 +1682,24 @@
    "aponevrose palmer",
    "cubital anterieur",
    "rond pronateur"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     25,
+     132,
+     5,
+     14
+    ],
+    [
+     123,
+     132,
+     5,
+     14
+    ]
+   ]
+  }
  },
  {
   "id": "eminence-thenar",
@@ -891,7 +1716,24 @@
    "eminence",
    "thenard",
    "eminence thenard"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     19,
+     160,
+     3.5,
+     4
+    ],
+    [
+     129,
+     160,
+     3.5,
+     4
+    ]
+   ]
+  }
  },
  {
   "id": "eminence-hypothenar",
@@ -912,7 +1754,24 @@
   ],
   "aussi": [
    "éminence du petit doigt"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     10,
+     160,
+     3.5,
+     4
+    ],
+    [
+     138,
+     160,
+     3.5,
+     4
+    ]
+   ]
+  }
  },
  {
   "id": "grand-fessier",
@@ -929,7 +1788,24 @@
    "pli fessier",
    "fesse",
    "fesses"
-  ]
+  ],
+  "situation": {
+   "vue": "dos",
+   "taches": [
+    [
+     57,
+     152,
+     13,
+     14
+    ],
+    [
+     91,
+     152,
+     13,
+     14
+    ]
+   ]
+  }
  },
  {
   "id": "moyen-fessier",
@@ -943,7 +1819,24 @@
    "moyens fessiers",
    "fessier moyen",
    "fessier profond"
-  ]
+  ],
+  "situation": {
+   "vue": "dos",
+   "taches": [
+    [
+     46,
+     139,
+     7,
+     8
+    ],
+    [
+     102,
+     139,
+     7,
+     8
+    ]
+   ]
+  }
  },
  {
   "id": "couturier",
@@ -960,7 +1853,24 @@
    "couturiers",
    "sartorius",
    "muscle couturier"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "traits": [
+    [
+     47,
+     150,
+     63,
+     230
+    ],
+    [
+     101,
+     150,
+     85,
+     230
+    ]
+   ]
+  }
  },
  {
   "id": "quadriceps",
@@ -977,7 +1887,24 @@
    "vaste externe",
    "crural",
    "vastes"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     56,
+     198,
+     10,
+     24
+    ],
+    [
+     92,
+     198,
+     10,
+     24
+    ]
+   ]
+  }
  },
  {
   "id": "ischio-jambiers",
@@ -995,7 +1922,24 @@
    "demi membraneux",
    "creux poplite",
    "poplite"
-  ]
+  ],
+  "situation": {
+   "vue": "dos",
+   "taches": [
+    [
+     56,
+     198,
+     10,
+     23
+    ],
+    [
+     92,
+     198,
+     10,
+     23
+    ]
+   ]
+  }
  },
  {
   "id": "adducteurs",
@@ -1010,7 +1954,24 @@
    "adduction",
    "droit interne",
    "pectine"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     68,
+     196,
+     5,
+     22
+    ],
+    [
+     80,
+     196,
+     5,
+     22
+    ]
+   ]
+  }
  },
  {
   "id": "tenseur-fascia-lata",
@@ -1026,7 +1987,24 @@
    "fascia",
    "aponevrose femorale",
    "bandelette"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     43,
+     157,
+     5,
+     11
+    ],
+    [
+     105,
+     157,
+     5,
+     11
+    ]
+   ]
+  }
  },
  {
   "id": "triceps-sural",
@@ -1044,7 +2022,24 @@
    "surale",
    "mollet",
    "mollets"
-  ]
+  ],
+  "situation": {
+   "vue": "dos",
+   "taches": [
+    [
+     52,
+     256,
+     9,
+     20
+    ],
+    [
+     96,
+     256,
+     9,
+     20
+    ]
+   ]
+  }
  },
  {
   "id": "jumeaux",
@@ -1063,7 +2058,24 @@
    "gastrocnemiens",
    "jumeau interne",
    "jumeau externe"
-  ]
+  ],
+  "situation": {
+   "vue": "dos",
+   "taches": [
+    [
+     52,
+     248,
+     9,
+     13
+    ],
+    [
+     96,
+     248,
+     9,
+     13
+    ]
+   ]
+  }
  },
  {
   "id": "soleaire",
@@ -1078,7 +2090,24 @@
    "solaire",
    "soleus",
    "jumeaux solaire"
-  ]
+  ],
+  "situation": {
+   "vue": "dos",
+   "taches": [
+    [
+     52,
+     268,
+     7,
+     11
+    ],
+    [
+     96,
+     268,
+     7,
+     11
+    ]
+   ]
+  }
  },
  {
   "id": "tendon-achille",
@@ -1092,7 +2121,24 @@
    "achille",
    "achilleen",
    "tendon calcaneen"
-  ]
+  ],
+  "situation": {
+   "vue": "dos",
+   "taches": [
+    [
+     54,
+     281,
+     3,
+     10
+    ],
+    [
+     94,
+     281,
+     3,
+     10
+    ]
+   ]
+  }
  },
  {
   "id": "jambier-anterieur",
@@ -1110,7 +2156,24 @@
    "jambier",
    "jambiers",
    "tibial"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     57,
+     258,
+     4,
+     18
+    ],
+    [
+     91,
+     258,
+     4,
+     18
+    ]
+   ]
+  }
  },
  {
   "id": "peroniers",
@@ -1130,7 +2193,24 @@
    "court peronier",
    "fibulaire",
    "fibulaires"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     47,
+     258,
+     4,
+     16
+    ],
+    [
+     101,
+     258,
+     4,
+     16
+    ]
+   ]
+  }
  },
  {
   "id": "aponevrose",
@@ -1523,7 +2603,24 @@
    "voute",
    "appui",
    "appuis"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     54,
+     306,
+     6,
+     6
+    ],
+    [
+     94,
+     306,
+     6,
+     6
+    ]
+   ]
+  }
  },
  {
   "id": "proportions",
@@ -1594,6 +2691,23 @@
    "coxo femoral",
    "coxo femorale",
    "articulation de la hanche"
-  ]
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     43,
+     152,
+     9,
+     13
+    ],
+    [
+     105,
+     152,
+     9,
+     13
+    ]
+   ]
+  }
  }
 ]

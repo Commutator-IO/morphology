@@ -23,6 +23,26 @@ export type Terme = {
   aussi?: string[];
   definition: string;
   variantes: string[];
+  /** Où le terme se trouve sur la silhouette du plan du corps, dans le repère
+   *  de celle-ci. Absent pour les notions qui ne sont situées nulle part —
+   *  aplomb, méplat, raccourci — et pour ce qui reste à placer. */
+  situation?: Situation;
+};
+
+/**
+ * Un repère sur le plan du corps.
+ *
+ * Deux formes suffisent : la tache pour une masse — un muscle, un os court —,
+ * le trait pour ce qui est long et oblique, fémur ou couturier. Les coordonnées
+ * sont celles de la `boite` de la silhouette, et les deux vues sont
+ * superposables : un repère mesuré de face vaut de dos.
+ */
+export type Situation = {
+  vue: 'face' | 'dos';
+  /** [cx, cy, rx, ry] */
+  taches?: [number, number, number, number][];
+  /** [x1, y1, x2, y2] */
+  traits?: [number, number, number, number][];
 };
 
 export type Seance = {

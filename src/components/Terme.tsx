@@ -21,9 +21,13 @@ export function CarteTerme({
   terme,
   ouvertParDefaut,
   onLire,
+  onOuvrir,
 }: {
   terme: TermeT;
   ouvertParDefaut?: boolean;
+  /** Prévient la page qu'on vient de déplier cette fiche : le plan du corps,
+   *  à droite, suit la dernière ouverte. */
+  onOuvrir?: (t: TermeT) => void;
   /** Fourni par une page qui affiche un lecteur : sur grand écran, le clic y
    *  place la séance au lieu d'ouvrir un onglet. */
   onLire?: (l: Lecture) => void;
@@ -42,7 +46,13 @@ export function CarteTerme({
       <h3>
         <button
           type="button"
-          onClick={() => setOuvert((v) => !v)}
+          onClick={() => {
+            // Prévenir avant de basculer, et hors de la fonction de mise à
+            // jour : celle-ci est appelée pendant le rendu, où l'on n'a pas le
+            // droit de toucher à l'état d'un autre composant.
+            if (!ouvert) onOuvrir?.(terme);
+            setOuvert((v) => !v);
+          }}
           aria-expanded={ouvert}
           className="flex w-full items-start gap-3 px-4 py-3.5 text-left active:bg-ink-50"
         >
