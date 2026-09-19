@@ -521,7 +521,10 @@
    "femur",
    "femurs",
    "femoral",
-   "femorale"
+   "femorale",
+   "col du femur",
+   "col femoral",
+   "tete et col du femur"
   ],
   "situation": {
    "vue": "face",
@@ -796,7 +799,10 @@
    "?les qu une",
    "?le qu une",
    "?premier qu une",
-   "?trois qu une"
+   "?trois qu une",
+   "col astragalien",
+   "col astra gallien",
+   "col de l astragale"
   ],
   "situation": {
    "vue": "face",
@@ -947,7 +953,10 @@
    "gouttiere dissipe talent",
    "gouttiere dissipe stade",
    "bissy pital",
-   "bissy bitale"
+   "bissy bitale",
+   "col de l humerus",
+   "col chirurgical",
+   "col anatomique"
   ],
   "situation": {
    "vue": "face",
@@ -1043,7 +1052,9 @@
    "ole cranien",
    "ole cranienne",
    "ole cramer",
-   "cavite olecranienne"
+   "cavite olecranienne",
+   "?les cram",
+   "?le cram"
   ],
   "situation": {
    "vue": "dos",
@@ -1061,7 +1072,20 @@
      4
     ]
    ]
-  }
+  },
+  "contexte": [
+   "coude",
+   "humerus",
+   "cubitus",
+   "epicondylite",
+   "pete rock",
+   "epitrochlee",
+   "triceps",
+   "olecrane",
+   "bras",
+   "avant bras",
+   "flexion"
+  ]
  },
  {
   "id": "cubitus",
@@ -2593,7 +2617,10 @@
    "soleaires",
    "solaire",
    "soleus",
-   "jumeaux solaire"
+   "jumeaux solaire",
+   "sol air",
+   "sol aire",
+   "sole air"
   ],
   "situation": {
    "vue": "dos",
@@ -2674,6 +2701,45 @@
      91,
      258,
      4,
+     18
+    ]
+   ]
+  }
+ },
+ {
+  "id": "jambier-posterieur",
+  "terme": "Jambier postérieur",
+  "categorie": "muscle",
+  "region": "jambe",
+  "moderne": "Musculus tibialis posterior",
+  "definition": "Le plus profond des muscles de la jambe, logé entre les deux fléchisseurs, contre le tibia et le péroné. Rien n'en paraît au mollet. Son tendon contourne la malléole interne et va au tubercule du scaphoïde, où il soutient l'arche interne du pied : c'est par lui qu'on tient l'arche, et par son tendon qu'on le voit, quand on le voit. Debord le nomme avec les fléchisseurs, et la transcription en fait un « janvier postérieur ».",
+  "variantes": [
+   "jambier posterieur",
+   "jambiers posterieur",
+   "jambier posterieure",
+   "jambiers posterieure",
+   "janvier posterieur",
+   "janviers posterieur",
+   "jambiers poste",
+   "janvier poste",
+   "jambier poste",
+   "jambiers poster",
+   "jambiers posterai",
+   "tibial posterieur"
+  ],
+  "situation": {
+   "vue": "dos",
+   "taches": [
+    [
+     53,
+     262,
+     3,
+     18
+    ],
+    [
+     92,
+     262,
+     3,
      18
     ]
    ]
