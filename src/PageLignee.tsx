@@ -271,7 +271,7 @@ function BandeHistorique() {
   return (
     <figure className="mt-5 rounded-[var(--radius-card)] border border-ink-200/70 bg-white px-4 py-3.5">
       <figcaption className="text-[11px] font-bold tracking-[0.1em] text-ink-400 uppercase">
-        En arrière-plan : les {CLASSIQUES.length} artistes cités en cours
+        En arrière-plan : les {CLASSIQUES.length} figures datées que Debord cite
       </figcaption>
 
       {/* La bulle occupe une ligne réservée au-dessus de la bande, plutôt que de
@@ -284,6 +284,9 @@ function BandeHistorique() {
             <span className="tabular text-ink-400">
               {survole.ne}-{survole.mort}
             </span>
+            {survole.type === 'anatomiste' && (
+              <span className="ml-1.5 text-os-700">· anatomiste</span>
+            )}
           </span>
         ) : (
           <span className="text-ink-400">Survolez une barre pour lire le nom.</span>
@@ -320,8 +323,16 @@ function BandeHistorique() {
                     onFocus={() => setSurvole(c)}
                     onBlur={() => setSurvole(null)}
                     aria-label={`${c.nom}, ${c.ne}-${c.mort}`}
+                    /* Les anatomistes en couleur d'os, le reste en gris. Ils ne
+                       sont que sept sur cinquante-huit, et ce sont eux qui font
+                       le socle de la discipline enseignée : noyés dans la même
+                       teinte que les peintres, on ne les voyait pas. */
                     className={`absolute inset-y-0 rounded-[2px] transition-colors ${
-                      actif ? 'bg-brand-600' : 'bg-ink-300'
+                      actif
+                        ? 'bg-brand-600'
+                        : c.type === 'anatomiste'
+                          ? 'bg-os-500'
+                          : 'bg-ink-300'
                     }`}
                     style={{
                       left: `${place(c.ne)}%`,
@@ -347,9 +358,14 @@ function BandeHistorique() {
         ))}
       </div>
       <p className="mt-2 text-[12px] leading-relaxed text-ink-500">
-        Sept siècles de peinture et de sculpture, contre deux générations
-        d'enseignement — la zone claire. Debord cite surtout la Renaissance et le
-        XIX<sup>e</sup> siècle ; cliquez une barre pour les passages où il en parle.
+        Sept siècles de peintres, de sculpteurs et d'
+        <span className="font-medium text-os-700">anatomistes</span> — ces
+        derniers en couleur d'os — contre deux générations d'enseignement, la
+        zone claire. Ils sont ici et non dans la frise du haut parce qu'ils sont
+        les sources du cours et non la lignée : Vésale ou Bourgery n'ont rien
+        transmis à Debord qu'un livre. Les deux qui figurent aussi plus haut,
+        Duval et Richer, y sont à un autre titre — ils ont occupé sa chaire.
+        Cliquez une barre pour les passages où il en parle.
       </p>
     </figure>
   );

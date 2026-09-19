@@ -702,8 +702,8 @@
   "id": "bourgery",
   "nom": "Bourgery et Jacob",
   "type": "anatomiste",
-  "dates": "1831-1854",
-  "note": "Le grand atlas d'anatomie lithographié au XIXe siècle, dont Debord discute la fidélité planche en main.",
+  "dates": "1797-1849",
+  "note": "Le Traité complet de l'anatomie de l'homme, paru de 1831 à 1854, que Bourgery écrit et que Nicolas Henri Jacob (1782-1871) dessine. Debord le feuillette en cours et relève ce que les deux hommes n'avaient pas vu — deux muscles de la face qui leur ont échappé.",
   "variantes": [
    "bourgery",
    "bourgery et jacob"
@@ -1093,10 +1093,10 @@
  },
  {
   "id": "strauss-durckheim",
-  "nom": "Strauss-Durckheim",
+  "nom": "Straus-Durckheim",
   "type": "anatomiste",
-  "dates": "1798-1865",
-  "note": "Anatomiste comparatiste, cité une fois pour le retournement du trapèze — la torsion que subit le muscle en passant de l'animal à l'homme debout.",
+  "dates": "1790-1865",
+  "note": "Naturaliste et anatomiste comparatiste, cité une fois pour le retournement du trapèze — la torsion que subit le muscle en passant de l'animal à l'homme debout. Le cours prononce « Strauss » ; l'auteur signe Straus.",
   "variantes": [
    "strauss durckheim",
    "straus durckheim"
