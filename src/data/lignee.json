@@ -52,15 +52,23 @@
   "mort": 1933
  },
  {
+  "id": "pol-le-coeur",
+  "nom": "Pol Le Cœur",
+  "role": "avant",
+  "notice": "Professeur aux Beaux-Arts de Paris dont Debord fut l'assistant à partir de 1969, avant de lui succéder à la tête du département de morphologie en 1978. C'est par lui, et non par les livres, que la transmission s'est faite : le chaînon vivant entre le traité de Richer et le cours filmé.",
+  "ouvrages": [],
+  "source": "D'après l'annonce de la disparition de Jean-François Debord publiée par les Beaux-Arts de Paris, beauxartsparis.fr. Aucune autre source consultée ne le documente : ni dates, ni bibliographie n'ont pu être établies."
+ },
+ {
   "id": "debord",
   "nom": "Jean-François Debord",
   "dates": "1938-2025",
   "ne": 1938,
   "mort": 2025,
   "role": "lui",
-  "notice": "Peintre, il a tenu l'enseignement de morphologie aux Beaux-Arts de Paris et à l'école de kinésithérapie de l'ADERF. Le cours indexé par ce site est la captation de sa dernière année d'enseignement, en 2002-2003.",
+  "notice": "Peintre. Il enseigne aux Beaux-Arts de Paris à partir de 1969 comme assistant de Pol Le Cœur, prend la tête du département de morphologie en 1978 et l'occupe vingt-cinq ans, jusqu'en 2003. Le cours indexé par ce site est la captation de cette dernière année.",
   "ouvrages": [],
-  "source": "Notice Wikipédia ; années de naissance et de mort d'après Wikidata."
+  "source": "Carrière d'après l'annonce de sa disparition par les Beaux-Arts de Paris ; années de naissance et de mort d'après Wikidata."
  },
  {
   "id": "comar",
@@ -199,5 +207,13 @@
   "source": "Cité parmi les élèves dans la notice Wikipédia de Debord. Cette filiation n'a pu être corroborée par aucune autre source ici : à prendre comme une affirmation de Wikipédia, non comme un fait établi. Années de naissance et de mort d'après Wikidata.",
   "ne": 1908,
   "mort": 2004
+ },
+ {
+  "id": "turckheim",
+  "nom": "Cyril de Turckheim",
+  "role": "autour",
+  "notice": "Cinéaste, il a filmé la dernière année d'enseignement de Debord, en 2002-2003. Ce site n'existerait pas sans ces captations : elles sont la seule trace suivie d'un cours que son auteur refusait d'écrire.",
+  "ouvrages": [],
+  "source": "D'après l'annonce de la disparition de Jean-François Debord publiée par les Beaux-Arts de Paris, beauxartsparis.fr."
  }
 ]
