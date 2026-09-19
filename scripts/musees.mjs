@@ -46,6 +46,8 @@ const CIBLES = {
   titien: ['Titian', 'titian'],
   picasso: ['Pablo Picasso', 'picasso'],
   raphael: ['Raphael', 'raphael'],
+  gericault: ['Théodore Géricault', 'gericault'],
+  watteau: ['Antoine Watteau', 'watteau'],
   // Retirés du lexique : « carpeaux » est la transcription de carpo- (articulation
   // carpo-métacarpienne), « courbet » celle du verbe courber, « poussin » celle
   // d'un fléchisseur du pouce. Un patronyme qui entre en collision avec le

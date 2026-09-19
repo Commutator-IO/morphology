@@ -851,5 +851,40 @@
    "lecon d anatomie",
    "lecon danatomie"
   ]
+ },
+ {
+  "id": "gericault",
+  "nom": "Géricault",
+  "type": "peintre",
+  "dates": "1791-1824",
+  "note": "Debord lui a consacré l'un de ses trois articles, dans un catalogue de l'École. Il y réfute la légende de l'atelier aux cadavres : Géricault dessinait d'après des moulages en plâtre de dissection, et non d'après la chair. « Le folklore chic », dit-il, est ce qu'il déteste le plus.",
+  "variantes": [
+   "gericault",
+   "jericho",
+   "jerry cause"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/119264",
+   "oeuvre": "Head of a Guillotined Man",
+   "date": "1818–19"
+  }
+ },
+ {
+  "id": "watteau",
+  "nom": "Watteau",
+  "type": "peintre",
+  "dates": "1684-1721",
+  "note": "Cité avec Géricault et Delacroix parmi ceux qui ont copié le cycle de Marie de Médicis de Rubens — la filiation par la copie, qui est la façon dont les peintres ont longtemps appris le corps.",
+  "variantes": [
+   "watteau",
+   "vato"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/7103",
+   "oeuvre": "Three Studies of Seated Women",
+   "date": "c. 1715"
+  }
  }
 ]

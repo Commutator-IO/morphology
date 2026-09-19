@@ -1,5 +1,29 @@
 [
  {
+  "id": "gerdy",
+  "nom": "Pierre-Nicolas Gerdy",
+  "dates": "1797-1856",
+  "ne": 1797,
+  "mort": 1856,
+  "role": "avant",
+  "notice": "Chirurgien et anatomiste. Son traité de 1829 porte déjà en sous-titre ce qui définira la discipline — « appliquée à la peinture, à la sculpture » — soixante ans avant celui de Richer, dont il annonce jusqu'au titre. Debord lui rend hommage en séance et l'appelle « vraiment mon ancêtre », estimant qu'il donnait au XIXe siècle un cours assez proche du sien.",
+  "ouvrages": [
+   {
+    "titre": "Anatomie des formes extérieures du corps humain, appliquée à la peinture, à la sculpture et à la chirurgie",
+    "annee": "1829",
+    "url": "https://archive.org/details/b29292037_0001"
+   }
+  ],
+  "portrait": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Pierre_Nicolas_Gerdy.jpg/500px-Pierre_Nicolas_Gerdy.jpg",
+  "ecoute": {
+   "video": "lPiLzxL9qk4",
+   "t": 244,
+   "seance": 26,
+   "horodate": "4:04"
+  },
+  "source": "Filiation revendiquée par Debord en séance 26 — la transcription écorche le nom en « gerdi ». Dates d'après Wikidata ; traité vérifié sur archive.org, où il est librement consultable ; portrait : Wikimedia Commons, domaine public. En revanche, rien de ce qui a été consulté n'établit qu'il ait enseigné aux Beaux-Arts : son cours est attesté par les seuls mots de Debord."
+ },
+ {
   "id": "duval",
   "nom": "Mathias Duval",
   "dates": "1844-1907",
@@ -68,7 +92,7 @@
   "ne": 1901,
   "mort": 1968,
   "role": "avant",
-  "notice": "Affichiste et graphiste, de son vrai nom Adolphe Mouron. Debord fut son assistant et le dit en séance — il s'en déclare très fier, et c'est l'une des rares fois où il annonce lui-même une anecdote en jurant qu'elle est vraie. Maître d'un tout autre ordre que la chaire d'anatomie : celui de la mise en page et du trait qui porte de loin.",
+  "notice": "Affichiste et graphiste, de son vrai nom Adolphe Mouron. Il repère une toile de Debord exposée en galerie pendant que celui-ci fait son service militaire, et lui écrit à la caserne : il cherchait un assistant. Debord le dit en séance et y revient dans le documentaire, où il précise lui avoir rendu un hommage discret dans un coin de tableau. Maître d'un tout autre ordre que la chaire d'anatomie.",
   "ouvrages": [],
   "portrait": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Portret_van_A._M._Cassandre_in_Rijksacademie_in_Amsterdam%2C_1967.jpg/500px-Portret_van_A._M._Cassandre_in_Rijksacademie_in_Amsterdam%2C_1967.jpg",
   "ecoute": {
@@ -77,7 +101,7 @@
    "seance": 42,
    "horodate": "29:24"
   },
-  "source": "Filiation dite par Debord lui-même dans la séance 42, et rapportée par sa notice Wikipédia, qui situe leur rencontre au service militaire en 1960. Dates d'après Wikipédia. Portrait : Wikimedia Commons, CC0."
+  "source": "Filiation dite par Debord lui-même dans la séance 42, et rapportée par sa notice Wikipédia, qui situe leur rencontre au service militaire en 1960. Dates d'après Wikipédia. Portrait : Wikimedia Commons, CC0. Les circonstances de leur rencontre sont racontées par Debord dans le documentaire de 2022."
  },
  {
   "id": "debord",
@@ -103,7 +127,7 @@
     "annee": "1999"
    }
   ],
-  "source": "Carrière d'après l'annonce de sa disparition par les Beaux-Arts de Paris ; dates d'après Wikidata. Les trois articles sont énumérés par Debord lui-même en séance 26 : c'est de là que viennent le titre du premier et le propos des deux autres. Vérifiés par ailleurs : l'exposition L'Âme au corps et son catalogue, et le catalogue Duchenne de Boulogne, où les notices de bibliothèque le nomment parmi les auteurs aux côtés d'Alfred Pacquement et Catherine Mathon. Le catalogue Géricault n'a pas été retrouvé dans les catalogues consultés : il est cité d'après les seuls mots de Debord.",
+  "source": "Carrière d'après l'annonce de sa disparition par les Beaux-Arts de Paris ; dates d'après Wikidata. Les trois articles sont énumérés par Debord lui-même en séance 26 : c'est de là que viennent le titre du premier et le propos des deux autres. Vérifiés par ailleurs : l'exposition L'Âme au corps et son catalogue, et le catalogue Duchenne de Boulogne, où les notices de bibliothèque le nomment parmi les auteurs aux côtés d'Alfred Pacquement et Catherine Mathon. Le catalogue Géricault n'a pas été retrouvé dans les catalogues consultés : il est cité d'après les seuls mots de Debord. Le changement de nom de la discipline est rapporté par Frédéric Delavier dans sa vidéo de 2020.",
   "ecoute": {
    "video": "lPiLzxL9qk4",
    "t": 99,
@@ -125,7 +149,7 @@
    },
    {
     "annee": 1978,
-    "fait": "Prend la tête du département de morphologie"
+    "fait": "Prend la tête du département et rebaptise l'enseignement : l'anatomie artistique devient la morphologie"
    },
    {
     "annee": 1993,
@@ -146,6 +170,13 @@
    {
     "annee": 2025,
     "fait": "Mort à Brametot, le 29 juin"
+   }
+  ],
+  "liens": [
+   {
+    "url": "https://www.youtube.com/watch?v=U6HXml6LiUo",
+    "libelle": "Documentaire, 2022 ↗",
+    "propos": "Quarante-six minutes où il revient sur sa peinture, ses maîtres et son métier."
    }
   ]
  },
@@ -180,7 +211,7 @@
   "id": "delavier",
   "nom": "Frédéric Delavier",
   "role": "apres",
-  "notice": "Cité parmi les élèves de Debord. Il a porté la morphologie hors du champ de l'art, vers le geste sportif : ses planches montrent le muscle en action plutôt qu'au repos. Ses guides de musculation font référence dans ce milieu et sont traduits dans de nombreuses langues — c'est, en volume de lecteurs, la descendance la plus diffusée de cet enseignement.",
+  "notice": "Élève de Debord pendant neuf ans — trois fois le cycle de trois ans, dit-il, tant l'enseignement lui parut bon. Il a ensuite porté la morphologie hors du champ de l'art, vers le geste sportif : ses planches montrent le muscle en action plutôt qu'au repos. Ses guides de musculation sont traduits dans de nombreuses langues — c'est, en nombre de lecteurs, la descendance la plus diffusée de cet enseignement.",
   "ouvrages": [
    {
     "titre": "Guide des mouvements de musculation : approche anatomique",
@@ -197,9 +228,16 @@
     "editeur": "Human Kinetics"
    }
   ],
-  "source": "Élève cité dans la notice Wikipédia de Debord ; année de naissance d'après Wikidata. Titres, éditeurs et années relevés dans le catalogue Open Library, qui recense aussi les traductions.",
+  "source": "Élève cité dans la notice Wikipédia de Debord ; année de naissance d'après Wikidata. Titres, éditeurs et années relevés dans le catalogue Open Library, qui recense aussi les traductions. Les neuf années et le rôle de Debord dans le passage de l'anatomie artistique à la morphologie viennent de sa propre vidéo de 2020.",
   "ne": 1967,
-  "dates": "né en 1967"
+  "dates": "né en 1967",
+  "liens": [
+   {
+    "url": "https://www.youtube.com/watch?v=FZvXwNDMlxI",
+    "libelle": "Son témoignage, 2020 ↗",
+    "propos": "Il y raconte comment il a connu Debord, et pourquoi il a refait le cycle trois fois."
+   }
+  ]
  },
  {
   "id": "maupre",

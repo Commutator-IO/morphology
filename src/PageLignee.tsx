@@ -42,7 +42,7 @@ function Plaque({ figure }: { figure: Figure }) {
     .slice(0, 2)
     .join('');
   return (
-    <div className="relative aspect-[4/5] w-14 shrink-0 overflow-hidden rounded-md border border-ink-200 bg-ink-100 sm:w-16">
+    <div className="relative aspect-[4/5] w-14 shrink-0 self-start overflow-hidden rounded-md border border-ink-200 bg-ink-100 sm:w-16">
       {figure.portrait ? (
         <img
           src={figure.portrait}
@@ -414,6 +414,20 @@ export function PageLignee() {
                         </h3>
 
                         <p className="mt-2 text-[15px] leading-relaxed text-ink-800">{f.notice}</p>
+
+                        {f.liens?.map((l) => (
+                          <p key={l.url} className="mt-2 text-[13px]">
+                            <a
+                              href={l.url}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="text-brand-700 underline underline-offset-2"
+                            >
+                              {l.libelle}
+                            </a>
+                            {l.propos && <span className="text-ink-400"> — {l.propos}</span>}
+                          </p>
+                        ))}
 
                         {f.jalons && <FriseCarriere jalons={f.jalons} />}
 

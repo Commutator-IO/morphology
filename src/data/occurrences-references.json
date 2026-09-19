@@ -1376,6 +1376,33 @@
      5207
     ]
    }
+  },
+  "gericault": {
+   "total": 6,
+   "videos": {
+    "LxhM7KErZas": [
+     577,
+     2892
+    ],
+    "N32pB-1QXS0": [
+     6097
+    ],
+    "UUJWGz3BuY4": [
+     2632
+    ],
+    "lPiLzxL9qk4": [
+     200,
+     249
+    ]
+   }
+  },
+  "watteau": {
+   "total": 1,
+   "videos": {
+    "N32pB-1QXS0": [
+     6097
+    ]
+   }
   }
  }
 }

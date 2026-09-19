@@ -49,6 +49,8 @@ export type Figure = {
   ecoute?: { video: string; t: number; seance: number; horodate: string };
   /** Étapes datées d'une carrière, pour la frise embarquée dans la fiche. */
   jalons?: { annee: number; fait: string }[];
+  /** Vidéos ou pages où la personne parle elle-même. */
+  liens?: { url: string; libelle: string; propos?: string }[];
   source: string;
 };
 

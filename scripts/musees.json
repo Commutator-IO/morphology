@@ -236,5 +236,19 @@
   "oeuvre": "A Saint Clothing the Poor Among the Ruins of an Earthquake",
   "date": null,
   "artiste": "Edme Bouchardon"
+ },
+ "gericault": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/119264",
+  "oeuvre": "Head of a Guillotined Man",
+  "date": "1818–19",
+  "artiste": "Jean Louis André Théodore Géricault"
+ },
+ "watteau": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/7103",
+  "oeuvre": "Three Studies of Seated Women",
+  "date": "c. 1715",
+  "artiste": "Jean Antoine Watteau"
  }
 }
