@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { lienYoutube } from '../lib/lexique';
+import { TAILLES, type TailleLecteur } from '../lib/lecteur';
 
 /** Ce que le panneau joue : une séance, à un instant. */
 export type Lecture = { videoId: string; instant: number; titre: string };
@@ -17,7 +18,18 @@ export type Lecture = { videoId: string; instant: number; titre: string };
  * revenir à l'index. Le lien vers YouTube reste offert pour qui préfère
  * l'application.
  */
-export function Lecteur({ lecture, onFermer }: { lecture: Lecture | null; onFermer: () => void }) {
+export function Lecteur({
+  lecture,
+  onFermer,
+  taille,
+  onTaille,
+}: {
+  lecture: Lecture | null;
+  onFermer: () => void;
+  /** Largeur du panneau face au texte ; absente, aucun réglage n'est proposé. */
+  taille?: TailleLecteur;
+  onTaille?: (t: TailleLecteur) => void;
+}) {
   useEffect(() => {
     if (!lecture) return;
     const auClavier = (e: KeyboardEvent) => {
@@ -85,14 +97,43 @@ export function Lecteur({ lecture, onFermer }: { lecture: Lecture | null; onFerm
             {/* Bouton d'arrêt plutôt que simple croix : c'est le geste qu'on
                 cherche en cours, souvent dans l'urgence, et il doit se toucher
                 sans viser. 44 px de haut comme toutes les cibles du site. */}
-            <button
-              type="button"
-              onClick={onFermer}
-              aria-label="Arrêter la vidéo"
-              className="flex min-h-11 shrink-0 items-center gap-1.5 rounded-lg border border-ink-300 px-3 text-sm font-medium text-ink-700 transition active:scale-95 active:bg-ink-100"
-            >
-              <span aria-hidden="true">✕</span> Arrêter
-            </button>
+            <div className="flex shrink-0 items-center gap-2">
+              {/* Réglage de largeur : sur grand écran seulement, puisque c'est
+                  le partage avec la colonne de texte qu'il déplace. */}
+              {taille && onTaille && (
+                <div
+                  role="group"
+                  aria-label="Largeur du lecteur"
+                  className="hidden items-center rounded-lg border border-ink-300 lg:flex"
+                >
+                  {TAILLES.map((t) => (
+                    <button
+                      key={t.id}
+                      type="button"
+                      onClick={() => onTaille(t.id)}
+                      aria-pressed={taille === t.id}
+                      title={`Largeur ${t.libelle.toLowerCase()}`}
+                      className={`min-h-9 px-2 text-xs font-medium transition first:rounded-l-lg last:rounded-r-lg ${
+                        taille === t.id
+                          ? 'bg-ink-800 text-white'
+                          : 'text-ink-600 hover:bg-ink-100'
+                      }`}
+                    >
+                      {t.libelle}
+                    </button>
+                  ))}
+                </div>
+              )}
+
+              <button
+                type="button"
+                onClick={onFermer}
+                aria-label="Arrêter la vidéo"
+                className="flex min-h-11 shrink-0 items-center gap-1.5 rounded-lg border border-ink-300 px-3 text-sm font-medium text-ink-700 transition active:scale-95 active:bg-ink-100"
+              >
+                <span aria-hidden="true">✕</span> Arrêter
+              </button>
+            </div>
           </div>
 
           <p className="hidden px-3.5 pb-3 text-xs leading-relaxed text-ink-400 lg:block">

@@ -161,6 +161,17 @@ class Limite extends Error {}
 const PAUSE_MS = 300;
 const MAX_NOTICES = 20;
 
+/**
+ * Nombre d'artistes traités par exécution.
+ *
+ * Le Met coupe après quelques dizaines de requêtes quand on l'a fâché. Plutôt
+ * que d'insister au sein d'une même exécution, on avance par petites salves
+ * espacées : chaque passage reprend là où le précédent s'est arrêté, puisque
+ * les appariements déjà au Met sont sautés et que le fichier est réécrit à
+ * chaque fois.
+ */
+const MAX_PAR_SALVE = Number(process.env.SALVE ?? 3);
+
 async function lire(url) {
   const r = await fetch(url);
   if (r.status === 403 || r.status === 429) throw new Limite(`le Met répond ${r.status}`);
@@ -227,12 +238,15 @@ try {
 const AVANT = Object.fromEntries(Object.entries(trouves).map(([k, v]) => [k, v.musee]));
 let promus = 0;
 let coupe = false;
+let tentes = 0;
 
 for (const ref of references) {
   const cible = CIBLES[ref.id];
   if (!cible) continue;
   const dejaAuMet = trouves[ref.id]?.musee?.includes('Metropolitan');
   if (dejaAuMet) continue;
+  if (tentes >= MAX_PAR_SALVE) break;
+  tentes++;
 
   const [recherche, attendu] = cible;
   try {
@@ -264,7 +278,12 @@ writeFileSync(fichier, JSON.stringify(trouves, null, 1) + '\n');
 
 const compte = {};
 for (const v of Object.values(trouves)) compte[v.musee] = (compte[v.musee] ?? 0) + 1;
-console.log(`\n${promus} appariements passés au Met${coupe ? ' avant interruption' : ''}`);
+const restants = references.filter(
+  (r) => CIBLES[r.id] && !trouves[r.id]?.musee?.includes('Metropolitan'),
+).length;
+console.log(
+  `\n${promus}/${tentes} passés au Met${coupe ? ' (coupé)' : ''} · ${restants} restent à tenter`,
+);
 for (const [m, n] of Object.entries(compte)) console.log(`  ${String(n).padStart(3)}  ${m}`);
 const perdus = Object.keys(AVANT).filter((k) => !trouves[k]);
 console.log(perdus.length ? `PERTE : ${perdus.join(', ')}` : 'aucun appariement perdu');

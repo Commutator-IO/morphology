@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import { Entete, Pied } from './components/Cadre';
 import { Lecteur, type Lecture } from './components/Lecteur';
+import { ecrireTaille, grilleDe, lireTaille, type TailleLecteur } from './lib/lecteur';
 import { CarteReference } from './components/Reference';
 import {
   correspondReference,
@@ -25,6 +26,14 @@ export function PageReferences() {
   const [type, setType] = useState<TypeReference | null>(null);
   const [parMentions, setParMentions] = useState(true);
   const [lecture, setLecture] = useState<Lecture | null>(null);
+  // Le partage entre le texte et la vidéo se règle, et se retient : on ne veut
+  // pas le refaire à chaque terme consulté.
+  const [taille, setTaille] = useState<TailleLecteur>(lireTaille);
+
+  function reglerTaille(t: TailleLecteur) {
+    setTaille(t);
+    ecrireTaille(t);
+  }
 
   const resultats = useMemo(() => {
     const filtrees = REFERENCES.filter(
@@ -68,7 +77,7 @@ export function PageReferences() {
           .
         </p>
 
-        <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_25rem] lg:gap-8">
+        <div className={`lg:grid lg:gap-8 ${grilleDe(taille)}`}>
           <div>
         <div className="sticky top-[5.75rem] z-20 -mx-4 mt-3 border-b sm:mt-5 border-ink-200/70 bg-ink-50/95 px-4 pt-3 pb-2.5 backdrop-blur lg:mx-0 lg:px-0">
           <label className="sr-only" htmlFor="recherche-ref">
@@ -162,7 +171,12 @@ export function PageReferences() {
             )}
           </div>
 
-          <Lecteur lecture={lecture} onFermer={() => setLecture(null)} />
+          <Lecteur
+            lecture={lecture}
+            onFermer={() => setLecture(null)}
+            taille={taille}
+            onTaille={reglerTaille}
+          />
         </div>
       </main>
 

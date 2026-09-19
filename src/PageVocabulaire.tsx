@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Entete, Pied } from './components/Cadre';
 import { Lecteur, type Lecture } from './components/Lecteur';
+import { ecrireTaille, grilleDe, lireTaille, type TailleLecteur } from './lib/lecteur';
 import { CarteTerme } from './components/Terme';
 import {
   CATEGORIES,
@@ -35,6 +36,14 @@ export function PageVocabulaire() {
   // Sur grand écran, la séance se joue à droite ; sur téléphone ce panneau
   // n'est pas rendu et l'état reste simplement nul.
   const [lecture, setLecture] = useState<Lecture | null>(null);
+  // Le partage entre le texte et la vidéo se règle, et se retient : on ne veut
+  // pas le refaire à chaque terme consulté.
+  const [taille, setTaille] = useState<TailleLecteur>(lireTaille);
+
+  function reglerTaille(t: TailleLecteur) {
+    setTaille(t);
+    ecrireTaille(t);
+  }
   // Replié par défaut sur téléphone : on ouvre ce site pour retrouver un mot en
   // quelques secondes, pas pour régler des filtres.
   const [filtresOuverts, setFiltresOuverts] = useState(() => {
@@ -133,7 +142,7 @@ export function PageVocabulaire() {
 
         {/* Barre d'outils collante. `top-[5.75rem]` la pose juste sous l'en-tête,
             lui-même collant : les deux ne doivent pas se chevaucher. */}
-        <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_25rem] lg:gap-8">
+        <div className={`lg:grid lg:gap-8 ${grilleDe(taille)}`}>
           <div>
         <div className="sticky top-[5.75rem] z-20 -mx-4 mt-3 border-b sm:mt-5 border-ink-200/70 bg-ink-50/95 px-4 pt-3 pb-2.5 backdrop-blur lg:mx-0 lg:px-0">
           <label className="sr-only" htmlFor="recherche">
@@ -327,7 +336,12 @@ export function PageVocabulaire() {
         )}
           </div>
 
-          <Lecteur lecture={lecture} onFermer={() => setLecture(null)} />
+          <Lecteur
+            lecture={lecture}
+            onFermer={() => setLecture(null)}
+            taille={taille}
+            onTaille={reglerTaille}
+          />
         </div>
       </main>
 

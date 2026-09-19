@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Entete, Pied } from './components/Cadre';
 import { Lecteur, type Lecture } from './components/Lecteur';
+import { ecrireTaille, grilleDe, lireTaille, type TailleLecteur } from './lib/lecteur';
 import { GROUPES, GROUPE_PAR_ID } from './lib/couleurs';
 import { duree, lienYoutube, PARTIES, SEANCES, termesDe } from './lib/lexique';
 
@@ -21,6 +22,14 @@ const APERCU = 4;
 export function PageSeances() {
   const total = SEANCES.reduce((s, x) => s + (x.dureeS ?? 0), 0);
   const [lecture, setLecture] = useState<Lecture | null>(null);
+  // Le partage entre le texte et la vidéo se règle, et se retient : on ne veut
+  // pas le refaire à chaque terme consulté.
+  const [taille, setTaille] = useState<TailleLecteur>(lireTaille);
+
+  function reglerTaille(t: TailleLecteur) {
+    setTaille(t);
+    ecrireTaille(t);
+  }
   // Même filtre que sur le vocabulaire, pour qu'on puisse passer de l'un à
   // l'autre sans changer de façon de penser : « les mains », des deux côtés.
   const [groupe, setGroupe] = useState<string | null>(null);
@@ -89,7 +98,7 @@ export function PageSeances() {
           </nav>
         )}
 
-        <div className="mt-8 lg:grid lg:grid-cols-[minmax(0,1fr)_25rem] lg:gap-8">
+        <div className={`mt-8 lg:grid lg:gap-8 ${grilleDe(taille)}`}>
           <div className="space-y-10">
             {groupe && (
               <p className="text-[13px] leading-relaxed text-ink-600">
@@ -172,7 +181,12 @@ export function PageSeances() {
           })}
           </div>
 
-          <Lecteur lecture={lecture} onFermer={() => setLecture(null)} />
+          <Lecteur
+            lecture={lecture}
+            onFermer={() => setLecture(null)}
+            taille={taille}
+            onTaille={reglerTaille}
+          />
         </div>
       </main>
 
