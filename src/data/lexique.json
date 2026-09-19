@@ -473,13 +473,13 @@
    "taches": [
     [
      40,
-     159,
+     163,
      4,
      4
     ],
     [
      108,
-     159,
+     163,
      4,
      4
     ]
@@ -1167,16 +1167,16 @@
    "vue": "dos",
    "taches": [
     [
-     59,
-     112,
-     11,
-     17
+     60,
+     114,
+     13,
+     24
     ],
     [
-     89,
-     112,
-     11,
-     17
+     88,
+     114,
+     13,
+     24
     ]
    ]
   }
@@ -1228,16 +1228,16 @@
    "vue": "face",
    "taches": [
     [
-     63,
+     62,
      68,
-     10,
-     9
+     12,
+     11
     ],
     [
-     85,
+     86,
      68,
-     10,
-     9
+     12,
+     11
     ]
    ]
   }
@@ -1265,9 +1265,9 @@
    "taches": [
     [
      74,
-     127,
-     9,
-     21
+     131,
+     10,
+     27
     ]
    ]
   }
@@ -1328,16 +1328,16 @@
    "vue": "face",
    "taches": [
     [
-     52,
-     92,
-     4,
-     11
+     56,
+     93,
+     6,
+     13
     ],
     [
-     96,
      92,
-     4,
-     11
+     93,
+     6,
+     13
     ]
    ]
   }
@@ -1794,15 +1794,15 @@
    "taches": [
     [
      57,
-     152,
-     13,
-     14
+     157,
+     16,
+     18
     ],
     [
      91,
-     152,
-     13,
-     14
+     157,
+     16,
+     18
     ]
    ]
   }
@@ -1912,6 +1912,11 @@
   "categorie": "muscle",
   "region": "cuisse",
   "moderne": "Musculi ischiocrurales",
+  "aussi": [
+   "biceps fémoral",
+   "demi-tendineux",
+   "demi-membraneux"
+  ],
   "definition": "Groupe postérieur de la cuisse, de l'ischion au genou. Leurs tendons s'écartent en arrière du genou pour border le creux poplité de part et d'autre.",
   "variantes": [
    "ischio jambier",
