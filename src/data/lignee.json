@@ -93,9 +93,9 @@
   "id": "pol-le-coeur",
   "nom": "Pol Le Cœur",
   "role": "avant",
-  "notice": "Chirurgien et sculpteur, spécialiste de la poliomyélite, il enseignait la morphologie aux Beaux-Arts, et c'est de lui que Debord tient la discipline : assistant à partir de 1969, il lui succède en 1978. Debord le cite à travers tout le cours — ses images d'enseignement, ses inventions chirurgicales, et surtout cette phrase qu'il lui avait dite, jeune homme : qu'il était fait pour enseigner cela. C'est le chaînon vivant entre le traité de Richer et le cours filmé.",
+  "notice": "Chirurgien orthopédique et sculpteur, spécialiste de la poliomyélite, professeur d'anatomie aux Beaux-Arts. C'est de lui que Debord tient la discipline : assistant à partir de 1969, il lui succède en 1978. Debord le cite à travers tout le cours — ses images d'enseignement, ses inventions chirurgicales, et surtout cette phrase qu'il lui avait dite, jeune homme : qu'il était fait pour enseigner cela. C'est le chaînon vivant entre le traité de Richer et le cours filmé.",
   "ouvrages": [],
-  "source": "Fonctions et filiation d'après l'annonce des Beaux-Arts de Paris et les mentions de Debord dans le cours, qui le nomme « Paul Le Cœur » ou simplement « Le Cœur ». Aucune autre source consultée ne le documente : ni dates ni bibliographie n'ont pu être établies.",
+  "source": "Dates, fonctions et titre d'après la notice du fonds « Travaux de Pol Le Cœur » sur FranceArchives, qui le donne chirurgien orthopédique et professeur d'anatomie à l'École des beaux-arts, et auditeur d'Étienne Oehmichen au Collège de France. Sa place dans la chaire est confirmée par l'annonce des Beaux-Arts de Paris et par les mentions de Debord, qui le nomme « Paul Le Cœur » ou simplement « Le Cœur ».",
   "ecoutes": [
    {
     "video": "FuwzDJ5NU5M",
@@ -139,7 +139,10 @@
     "horodate": "27:22",
     "propos": "Une de ses inventions chirurgicales, expérimentée trente ans plus tôt"
    }
-  ]
+  ],
+  "dates": "1903-1996",
+  "ne": 1903,
+  "mort": 1996
  },
  {
   "id": "cassandre",
