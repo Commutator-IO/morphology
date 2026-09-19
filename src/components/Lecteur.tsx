@@ -1,5 +1,4 @@
 import { useEffect, type ReactNode } from 'react';
-import { lienYoutube } from '../lib/lexique';
 import { TAILLES, type TailleLecteur } from '../lib/lecteur';
 
 /** Ce que le panneau joue : une séance, à un instant. */
@@ -15,8 +14,9 @@ export type Lecture = { videoId: string; instant: number; titre: string };
  *
  * Jouer dans la page plutôt que de partir sur YouTube a une raison précise : une
  * fois sur YouTube, on ne peut plus rien proposer, ni arrêter la lecture, ni
- * revenir à l'index. Le lien vers YouTube reste offert pour qui préfère
- * l'application.
+ * revenir à l'index. Qui préfère l'application y va par le logo du lecteur, en
+ * bas à droite de l'image : le doubler d'un lien à nous ne faisait que prendre
+ * la place du titre.
  */
 export function Lecteur({
   lecture,
@@ -53,8 +53,8 @@ export function Lecteur({
           <div className="rounded-[var(--radius-card)] border border-dashed border-ink-300 px-4 py-6 text-sm leading-relaxed text-ink-500">
             <p className="titre text-[15px] text-ink-700">Le lecteur s'ouvrira ici</p>
             <p className="mt-1.5">
-              Cliquez un horodatage : la séance se place à cet endroit sans quitter
-              l'index, et vous gardez votre liste sous les yeux.
+              Cliquez un horodatage : la séance se place à cet endroit sans quitter l'index,
+              et vous gardez votre liste sous les yeux.
             </p>
           </div>
           {dessous}
@@ -83,58 +83,69 @@ export function Lecteur({
             />
           </div>
 
-          {/* Le titre sur sa propre ligne, les commandes dessous.
-              Au cran « petite » le panneau ne fait que 352 px : titre et boutons
-              sur la même ligne s'y écrasaient mutuellement. Empiler vaut mieux
-              qu'un compromis qui ne tient à aucune des trois largeurs. */}
-          <div className="px-3.5 py-2.5">
-            <p className="titre text-[15px] leading-snug text-ink-900">{lecture.titre}</p>
+          {/* Une seule ligne, à tout format : le titre de la séance, et de quoi
+              l'arrêter. Le titre est rogné plutôt que replié — sur téléphone une
+              deuxième ligne se prend sur la liste, et au cran « petite » le
+              panneau ne fait que 352 px. Il reste en entier sur l'image.
+              Quarante pixels en tout : ce bandeau est pris sur la vidéo et sur
+              les définitions, et tout blanc de plus y est du blanc en moins.
+              Noir comme l'image qu'il prolonge : en blanc il ouvrait sous le
+              lecteur une seconde zone, alors qu'il en fait partie. */}
+          <div className="flex items-center gap-2 bg-ink-900 px-3 py-1 lg:px-3.5 lg:py-1.5">
+            <p className="titre min-w-0 flex-1 truncate text-[15px] leading-snug text-ink-100">
+              {lecture.titre}
+            </p>
 
-            <div className="mt-2 flex items-center justify-between gap-2">
-              <a
-                href={lienYoutube(lecture.videoId, lecture.instant)}
-                target="_blank"
-                rel="noreferrer"
-                className="shrink-0 text-xs text-ink-500 underline underline-offset-2 transition hover:text-ink-900"
-              >
-                Ouvrir sur YouTube ↗
-              </a>
-
-              <div className="flex shrink-0 items-center gap-2">
-                {taille && onTaille && (
-                  <div
-                    role="group"
-                    aria-label="Largeur du lecteur"
-                    className="hidden items-center rounded-lg border border-ink-300 lg:flex"
-                  >
-                    {TAILLES.map((t) => (
-                      <button
-                        key={t.id}
-                        type="button"
-                        onClick={() => onTaille(t.id)}
-                        aria-pressed={taille === t.id}
-                        title={`Largeur ${t.libelle.toLowerCase()}`}
-                        className={`min-h-9 px-2 text-xs font-medium transition first:rounded-l-lg last:rounded-r-lg ${
-                          taille === t.id
-                            ? 'bg-ink-800 text-white'
-                            : 'text-ink-600 hover:bg-ink-100'
-                        }`}
-                      >
-                        {t.libelle}
-                      </button>
-                    ))}
-                  </div>
-                )}
-
-                <button
-                  type="button"
-                  onClick={onFermer}
-                  aria-label="Arrêter la vidéo"
-                  className="flex min-h-11 shrink-0 items-center gap-1.5 rounded-lg border border-ink-300 px-3 text-sm font-medium text-ink-700 transition active:scale-95 active:bg-ink-100"
+            <div className="flex shrink-0 items-center gap-2">
+              {taille && onTaille && (
+                <div
+                  role="group"
+                  aria-label="Largeur du lecteur"
+                  className="hidden items-center rounded-lg border border-white/30 lg:flex"
                 >
-                  <span aria-hidden="true">✕</span> Arrêter
-                </button>
-              </div>
+                  {TAILLES.map((t) => (
+                    <button
+                      key={t.id}
+                      type="button"
+                      onClick={() => onTaille(t.id)}
+                      aria-pressed={taille === t.id}
+                      title={`Largeur ${t.libelle.toLowerCase()}`}
+                      className={`min-h-9 px-2 text-xs font-medium transition first:rounded-l-lg last:rounded-r-lg ${
+                        taille === t.id
+                          ? 'bg-white text-ink-900'
+                          : 'text-white/75 hover:bg-white/15'
+                      }`}
+                    >
+                      {t.libelle}
+                    </button>
+                  ))}
+                </div>
+              )}
+
+              {/* Cerné et légendé « Arrêter », le bouton pesait plus que le titre
+                de la séance à côté duquel il se tient, alors qu'on l'actionne
+                une fois pour dix qu'on lit ce titre. Nue, en revanche, la croix
+                ne se donnait plus pour une commande. Reste un liseré : un cercle
+                de 32 px, assez pour dire « on appuie ici », dans une zone
+                touchable de 44 px qui, elle, ne se voit pas. Le mot demeure en
+                infobulle et pour qui n'y voit pas. */}
+              <button
+                type="button"
+                onClick={onFermer}
+                aria-label="Arrêter la vidéo"
+                title="Arrêter la vidéo"
+                /* La zone touchable garde ses 44 px, mais n'en impose que 32 au
+                   bandeau : les six pixels rognés en haut et en bas mordent sur
+                   l'image, où ils ne coûtent rien. */
+                className="group -my-1.5 flex min-h-11 min-w-11 shrink-0 items-center justify-center transition active:scale-95"
+              >
+                <span
+                  aria-hidden="true"
+                  className="flex h-8 w-8 items-center justify-center rounded-full border border-white/30 text-[13px] text-white/75 transition group-hover:bg-white/15 group-hover:text-white group-active:bg-white/15"
+                >
+                  ✕
+                </span>
+              </button>
             </div>
           </div>
 
@@ -142,16 +153,23 @@ export function Lecteur({
               qui se retrouvait coupé en bas d'écran. */}
           <p className="hidden px-3.5 pb-3 text-xs leading-relaxed text-ink-400 lg:block">
             La lecture démarre un peu avant la mention.{' '}
-            <kbd className="rounded border border-ink-300 px-1">Échap</kbd> l'arrête,
-            si le curseur n'est pas dans le lecteur.
+            <kbd className="rounded border border-ink-300 px-1">Échap</kbd> l'arrête, si le
+            curseur n'est pas dans le lecteur.
           </p>
         </div>
         {dessous}
       </div>
 
       {/* Le lecteur ancré masquerait les dernières entrées de la liste : on
-          rend la hauteur qu'il occupe, sur téléphone seulement. */}
-      <div aria-hidden="true" className="h-64 lg:hidden" />
+          rend la hauteur qu'il occupe, sur téléphone seulement. La vidéo fait
+          toute la largeur en 16/9, soit 56,25 vw ; la barre du dessous, 2,5 rem.
+          Calculé et non deviné : une hauteur fixe laissait une entrée sous le
+          lecteur, ou un trou après lui. */}
+      <div
+        aria-hidden="true"
+        className="lg:hidden"
+        style={{ height: 'calc(56.25vw + 2.5rem)' }}
+      />
     </aside>
   );
 }
