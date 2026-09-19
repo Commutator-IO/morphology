@@ -12,6 +12,7 @@ const ORIGINE = process.env.SITE_URL ?? 'https://morphologie.commutator.io'
 const PAGES = {
   main: 'index.html',
   references: 'references/index.html',
+  anecdotes: 'anecdotes/index.html',
   seances: 'seances/index.html',
   methode: 'methode/index.html',
 } as const

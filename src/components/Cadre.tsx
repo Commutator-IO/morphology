@@ -1,17 +1,25 @@
+import { useEffect, useRef } from 'react';
+
 /**
  * En-tête et pied partagés.
  *
  * Le site est statique : chaque vue est une vraie page servie depuis son propre
  * index.html, sans routeur côté client, et un lien partagé survit.
  *
- * Trois onglets seulement, donc pas de menu replié : à 375 px les trois tiennent
- * sur une ligne, et un menu à ouvrir coûterait un geste de plus à quelqu'un qui
- * cherche un mot pendant une séance de dessin.
+ * Cinq onglets ne tiennent plus sur 375 px : le dernier était coupé net. La
+ * barre défile donc latéralement sous sm, avec un dégradé d'estompe qui dit
+ * qu'il en reste hors champ, et l'onglet courant est amené en vue au
+ * chargement — sinon on arrive sur une page dont l'onglet est invisible.
+ *
+ * Plutôt qu'un menu replié : ouvrir un menu coûte un geste de plus à quelqu'un
+ * qui cherche un mot pendant une séance de dessin, et abréger les libellés les
+ * rendrait illisibles.
  */
 
 const VUES: { chemin: string; libelle: string }[] = [
   { chemin: '/', libelle: 'Vocabulaire' },
   { chemin: '/references/', libelle: 'Références' },
+  { chemin: '/anecdotes/', libelle: 'Anecdotes' },
   { chemin: '/seances/', libelle: 'Séances' },
   { chemin: '/methode/', libelle: 'Méthode' },
 ];
@@ -22,6 +30,14 @@ function estActif(chemin: string, courant: string): boolean {
 }
 
 export function Entete({ chemin }: { chemin: string }) {
+  const actif = useRef<HTMLAnchorElement>(null);
+
+  useEffect(() => {
+    // `nearest` plutôt que `center` : sur grand écran rien ne défile, et l'on
+    // ne veut surtout pas déplacer la page sous les yeux du lecteur.
+    actif.current?.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+  }, []);
+
   return (
     <header className="sticky top-0 z-30 border-b border-ink-200/70 bg-ink-50/90 backdrop-blur">
       <div className="mx-auto max-w-4xl lg:max-w-6xl px-4 pt-2.5 pb-2">
@@ -29,19 +45,26 @@ export function Entete({ chemin }: { chemin: string }) {
           <span className="titre text-[17px] text-ink-900">Morphologie</span>
           <span className="text-[13px] text-ink-500">Jean-François&nbsp;Debord</span>
         </a>
-        <nav className="-mx-1 mt-2 flex gap-1" aria-label="Vues">
+        <nav
+          className="-mx-4 mt-2 flex gap-1 overflow-x-auto px-4 pb-0.5 sm:mx-0 sm:px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          aria-label="Vues"
+          style={{
+            maskImage: 'linear-gradient(to right, #000 calc(100% - 1.5rem), transparent)',
+          }}
+        >
           {VUES.map((v) => {
-            const actif = estActif(v.chemin, chemin);
+            const estCourant = estActif(v.chemin, chemin);
             return (
               <a
                 key={v.chemin}
+                ref={estCourant ? actif : undefined}
                 href={v.chemin}
-                aria-current={actif ? 'page' : undefined}
+                aria-current={estCourant ? 'page' : undefined}
                 /* min-h-11 : cible tactile de 44 px. Les onglets sont touchés
                    en marchant dans un atelier, pas cliqués à la souris. */
                 className={[
-                  'flex min-h-11 flex-1 items-center justify-center rounded-lg px-1.5 text-[13px] transition sm:px-2 sm:text-sm',
-                  actif
+                  'flex min-h-11 shrink-0 items-center justify-center rounded-lg px-3 text-[13px] whitespace-nowrap transition sm:flex-1 sm:px-2 sm:text-sm',
+                  estCourant
                     ? 'bg-brand-600 font-semibold text-white'
                     : 'font-medium text-ink-600 active:bg-ink-200',
                 ].join(' ')}
