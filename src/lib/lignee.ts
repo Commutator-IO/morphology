@@ -47,6 +47,8 @@ export type Figure = {
   portrait?: string;
   /** Renvoi vers le moment où Debord en parle, quand il le fait lui-même. */
   ecoute?: { video: string; t: number; seance: number; horodate: string };
+  /** Étapes datées d'une carrière, pour la frise embarquée dans la fiche. */
+  jalons?: { annee: number; fait: string }[];
   source: string;
 };
 

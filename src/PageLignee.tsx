@@ -64,6 +64,44 @@ function Plaque({ figure }: { figure: Figure }) {
   );
 }
 
+/**
+ * La frise embarquée dans une fiche.
+ *
+ * Deux lectures du même contenu : un axe avec un point par étape, qui donne
+ * d'un coup d'œil la forme d'une carrière — ici trente-quatre ans d'un côté et
+ * vingt-deux de l'autre — puis la liste datée, qui seule se lit vraiment. L'axe
+ * sans la liste serait décoratif ; la liste sans l'axe perdrait les intervalles.
+ */
+function FriseCarriere({ jalons }: { jalons: NonNullable<Figure['jalons']> }) {
+  const debut = jalons[0].annee;
+  const fin = jalons[jalons.length - 1].annee;
+  const place = (a: number) => ((a - debut) / (fin - debut)) * 100;
+
+  return (
+    <div className="mt-3 rounded-lg border border-ink-100 bg-ink-50/60 px-3 pt-3 pb-2.5">
+      <div className="relative h-4">
+        <span aria-hidden="true" className="absolute top-[7px] right-0 left-0 h-px bg-ink-300" />
+        {jalons.map((j) => (
+          <span
+            key={j.annee}
+            title={`${j.annee} — ${j.fait}`}
+            className="absolute top-[4px] h-[7px] w-[7px] -translate-x-1/2 rounded-full bg-brand-500"
+            style={{ left: `${place(j.annee)}%` }}
+          />
+        ))}
+      </div>
+      <ol className="mt-1.5 space-y-1">
+        {jalons.map((j) => (
+          <li key={j.annee} className="flex gap-2.5 text-[13px] leading-snug">
+            <span className="tabular w-9 shrink-0 font-semibold text-brand-700">{j.annee}</span>
+            <span className="text-ink-700">{j.fait}</span>
+          </li>
+        ))}
+      </ol>
+    </div>
+  );
+}
+
 /** Une figure dont l'année de naissance est établie. */
 function barre(f: Figure) {
   return { gauche: ECHELLE.place(f.ne!), largeur: ECHELLE.place(finDe(f)) - ECHELLE.place(f.ne!) };
@@ -376,6 +414,8 @@ export function PageLignee() {
                         </h3>
 
                         <p className="mt-2 text-[15px] leading-relaxed text-ink-800">{f.notice}</p>
+
+                        {f.jalons && <FriseCarriere jalons={f.jalons} />}
 
                         {f.instagram && (
                           <p className="mt-2 text-[13px]">

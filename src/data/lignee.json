@@ -109,7 +109,45 @@
    "t": 99,
    "seance": 26,
    "horodate": "1:39"
-  }
+  },
+  "jalons": [
+   {
+    "annee": 1938,
+    "fait": "Naissance à Évreux"
+   },
+   {
+    "annee": 1960,
+    "fait": "Rencontre Cassandre au service militaire, dont il devient l'assistant"
+   },
+   {
+    "annee": 1969,
+    "fait": "Entre aux Beaux-Arts de Paris comme assistant de Pol Le Cœur"
+   },
+   {
+    "annee": 1978,
+    "fait": "Prend la tête du département de morphologie"
+   },
+   {
+    "annee": 1993,
+    "fait": "« De l'anatomie à la morphologie », dans le catalogue L'Âme au corps"
+   },
+   {
+    "annee": 1999,
+    "fait": "Contribue au catalogue Duchenne de Boulogne"
+   },
+   {
+    "annee": 2002,
+    "fait": "Cyril de Turckheim filme sa dernière année d'enseignement"
+   },
+   {
+    "annee": 2003,
+    "fait": "Quitte la chaire après vingt-cinq ans"
+   },
+   {
+    "annee": 2025,
+    "fait": "Mort à Brametot, le 29 juin"
+   }
+  ]
  },
  {
   "id": "comar",
