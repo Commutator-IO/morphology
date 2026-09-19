@@ -114,6 +114,13 @@ describe('liens de musée', () => {
     'www.musee-orsay.fr',
     'www.petitpalais.paris.fr',
     'www.museivaticani.va',
+    // Notices d'œuvre, ajoutées après avoir ouvert chaque URL dans un vrai
+    // navigateur et relevé le titre de la page — le Louvre et le Mauritshuis
+    // opposent une vérification anti-robot à toute requête automatique, si
+    // bien qu'un contrôle par code HTTP ne prouverait rien.
+    'collections.louvre.fr',
+    'www.mauritshuis.nl',
+    'www.parismuseescollections.paris.fr',
   ]);
 
   const avecLien = REFERENCES.filter((r) => r.musee);
@@ -132,7 +139,9 @@ describe('liens de musée', () => {
 
   it('nomme l’œuvre dès qu’il s’agit d’une collection', () => {
     for (const r of avecLien) {
-      const collection = new URL(r.musee!.url).hostname.match(/artic|metmuseum/);
+      const collection = new URL(r.musee!.url).hostname.match(
+        /artic|metmuseum|collections\.louvre|mauritshuis|parismuseescollections/,
+      );
       if (collection) expect(r.musee!.oeuvre, r.id).toBeTruthy();
     }
   });

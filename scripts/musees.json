@@ -250,5 +250,38 @@
   "oeuvre": "Three Studies of Seated Women",
   "date": "c. 1715",
   "artiste": "Jean Antoine Watteau"
+ },
+ "venus-de-milo": {
+  "musee": "Musée du Louvre",
+  "url": "https://collections.louvre.fr/ark:/53355/cl010277627",
+  "oeuvre": "Vénus de Milo",
+  "artiste": "anonyme, Grèce hellénistique"
+ },
+ "gladiateur": {
+  "musee": "Musée du Louvre",
+  "url": "https://collections.louvre.fr/ark:/53355/cl010278706",
+  "oeuvre": "Gladiateur Borghèse",
+  "artiste": "Agasias d'Éphèse"
+ },
+ "lecon-anatomie": {
+  "musee": "Mauritshuis",
+  "url": "https://www.mauritshuis.nl/nl-nl/verdiep/de-collectie/kunstwerken/de-anatomische-les-van-dr-nicolaes-tulp-146/",
+  "oeuvre": "De anatomische les van Dr Nicolaes Tulp",
+  "date": "1632",
+  "artiste": "Rembrandt van Rijn"
+ },
+ "marietta": {
+  "musee": "Petit Palais, musée des Beaux-Arts de la Ville de Paris",
+  "url": "https://www.parismuseescollections.paris.fr/fr/petit-palais/oeuvres/marietta-dite-l-odalisque-romaine",
+  "oeuvre": "Marietta, dite l'Odalisque romaine",
+  "date": "1843",
+  "artiste": "Camille Corot"
+ },
+ "cezanne": {
+  "musee": "The Metropolitan Museum of Art",
+  "url": "https://www.metmuseum.org/art/collection/search/435877",
+  "oeuvre": "Mont Sainte-Victoire and the Viaduct of the Arc River Valley",
+  "date": "1882–85",
+  "artiste": "Paul Cézanne"
  }
 }

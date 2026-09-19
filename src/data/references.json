@@ -811,7 +811,13 @@
   "note": "L'académie romaine peinte par Corot d'après un modèle nommé, que Debord commente comme un cas de dessin d'après nature assumé.",
   "variantes": [
    "marietta"
-  ]
+  ],
+  "musee": {
+   "nom": "Petit Palais, musée des Beaux-Arts de la Ville de Paris",
+   "url": "https://www.parismuseescollections.paris.fr/fr/petit-palais/oeuvres/marietta-dite-l-odalisque-romaine",
+   "oeuvre": "Marietta, dite l'Odalisque romaine",
+   "date": "1843"
+  }
  },
  {
   "id": "pieta",
@@ -830,7 +836,12 @@
   "note": "Le canon féminin antique, et la station hanchée dans sa version la plus diffusée.",
   "variantes": [
    "venus de milo"
-  ]
+  ],
+  "musee": {
+   "nom": "Musée du Louvre",
+   "url": "https://collections.louvre.fr/ark:/53355/cl010277627",
+   "oeuvre": "Vénus de Milo"
+  }
  },
  {
   "id": "gladiateur",
@@ -840,7 +851,12 @@
   "variantes": [
    "gladiateur",
    "gladiateur borghese"
-  ]
+  ],
+  "musee": {
+   "nom": "Musée du Louvre",
+   "url": "https://collections.louvre.fr/ark:/53355/cl010278706",
+   "oeuvre": "Gladiateur Borghèse"
+  }
  },
  {
   "id": "lecon-anatomie",
@@ -850,7 +866,13 @@
   "variantes": [
    "lecon d anatomie",
    "lecon danatomie"
-  ]
+  ],
+  "musee": {
+   "nom": "Mauritshuis",
+   "url": "https://www.mauritshuis.nl/nl-nl/verdiep/de-collectie/kunstwerken/de-anatomische-les-van-dr-nicolaes-tulp-146/",
+   "oeuvre": "De anatomische les van Dr Nicolaes Tulp",
+   "date": "1632"
+  }
  },
  {
   "id": "gericault",
@@ -885,6 +907,23 @@
    "url": "https://www.artic.edu/artworks/7103",
    "oeuvre": "Three Studies of Seated Women",
    "date": "c. 1715"
+  }
+ },
+ {
+  "id": "cezanne",
+  "nom": "Cézanne",
+  "type": "peintre",
+  "dates": "1839-1906",
+  "note": "Convoqué pour la tenue des convexités : devant un modelé calme, Debord fait remarquer que tout s'y tient comme dans une Sainte-Victoire, le corps construit à la manière d'un paysage. Un de ses autoportraits passe aussi en projection.",
+  "variantes": [
+   "cezanne",
+   "sezanne"
+  ],
+  "musee": {
+   "nom": "The Metropolitan Museum of Art",
+   "url": "https://www.metmuseum.org/art/collection/search/435877",
+   "oeuvre": "Mont Sainte-Victoire and the Viaduct of the Arc River Valley",
+   "date": "1882–85"
   }
  },
  {
