@@ -2,11 +2,13 @@
  * Moments où le registre du cours change : mot familier, souvenir personnel,
  * adresse directe à la salle.
  *
- * Ce relevé est **non vérifié**, et la page le dit. Les sous-titres ne notent
- * aucun rire, donc aucun signal objectif de plaisanterie n'existe ; le repérage
- * est lexical, et la reconnaissance vocale fabrique régulièrement des mots crus
- * là où Debord dit tout autre chose. Ce sont donc des points d'écoute, jamais
- * une qualification de ce qui s'y dit.
+ * Le registre familier est bien celui du cours : un auditeur l'a confirmé à
+ * l'écoute, là où la lecture des sous-titres seule ne permettait pas de
+ * trancher. Ce que le relevé ne sait toujours pas faire, c'est dire ce qui se
+ * dit : les sous-titres ne notent aucun rire, le repérage est purement lexical,
+ * et la transcription déforme parfois le mot déclencheur — « graticule » y
+ * devient « gratte-cul ». D'où des points d'écoute horodatés, et jamais une
+ * qualification de ce qui s'y joue.
  */
 import brut from '../data/anecdotes.json';
 import { SEANCE_PAR_ID, type Seance } from './lexique';
@@ -18,7 +20,8 @@ export type Moment = {
   t: number;
   mot: string;
   categorie: Categorie;
-  /** Mot que la relecture a montré trompeur presque à chaque fois. */
+  /** Mot que la transcription déforme souvent : l'instant vaut, le mot est à
+   *  confirmer à l'oreille. */
   douteux?: boolean;
 };
 
@@ -36,7 +39,7 @@ export const CATEGORIES: Record<Categorie, { libelle: string; propos: string }> 
   familier: {
     libelle: 'Registre familier',
     propos:
-      "Un mot cru a été repéré. Souvent c'est la transcription qui l'invente — « graticule » devient « gratte-cul » — d'où les repères signalés comme douteux.",
+      "Debord parle crûment, et c'est bien son ton. Le mot exact, lui, est parfois inventé par la transcription — « graticule » y devient « gratte-cul » — d'où les repères marqués d'un point d'interrogation.",
   },
   salle: {
     libelle: 'À la salle',

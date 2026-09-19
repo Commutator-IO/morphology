@@ -59,14 +59,15 @@ export function PageAnecdotes() {
             façon de lire toute la liste, et une mise en garde qu'on découvre
             après coup ne sert à rien. */}
         <div className="mt-4 rounded-[var(--radius-card)] border border-os-200 bg-os-50 px-4 py-3 text-[13px] leading-relaxed text-ink-700">
-          <b className="font-semibold text-ink-900">Relevé non vérifié.</b> Les
-          sous-titres ne notent aucun rire : il n'existe aucun signal automatique
-          d'une plaisanterie. Ce repérage est lexical, et la reconnaissance vocale
-          se trompe souvent — elle écrit « gratte-cul » là où Debord dit{' '}
+          <b className="font-semibold text-ink-900">Des points d'écoute, pas un
+          florilège.</b>{' '}
+          Le ton familier est bien celui du cours — un auditeur l'a confirmé à
+          l'oreille. Mais le repérage, lui, est lexical : il ne dit pas ce qui se
+          dit, seulement qu'un mot est passé là. Et la transcription se trompe
+          parfois sur le mot lui-même : elle écrit « gratte-cul » là où Debord dit{' '}
           <i>graticule</i>, le carroyage du dessinateur. Les {douteux} repères
-          signalés <span className="text-os-700">douteux</span> sont ceux dont la
-          relecture a montré qu'ils viennent presque toujours d'une déformation.
-          Rien ici ne dit ce qui se dit : il faut écouter.
+          marqués <span className="text-os-700">?</span> portent un mot souvent
+          déformé : l'instant vaut, le mot est à confirmer.
         </div>
 
         <div className="rangee-filtres mt-4">
