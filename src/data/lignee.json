@@ -13,9 +13,10 @@
     "url": "https://archive.org/details/b20418085"
    }
   ],
-  "source": "Filiation citée par Debord dans le cours ; notice de l'ouvrage vérifiée sur archive.org. Années de naissance et de mort d'après Wikidata.",
+  "source": "Filiation citée par Debord dans le cours ; notice de l'ouvrage vérifiée sur archive.org. Années de naissance et de mort d'après Wikidata. Portrait : Wikimedia Commons, domaine public.",
   "ne": 1844,
-  "mort": 1907
+  "mort": 1907,
+  "portrait": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Mathias-Marie_Duval.jpg/500px-Mathias-Marie_Duval.jpg"
  },
  {
   "id": "richer",
@@ -47,9 +48,10 @@
     "annee": "1910"
    }
   ],
-  "source": "Chaire et bibliographie d'après sa notice Wikipédia ; les deux premiers titres vérifiés sur archive.org, où ils sont librement consultables. Années de naissance et de mort d'après Wikidata.",
+  "source": "Chaire et bibliographie d'après sa notice Wikipédia ; les deux premiers titres vérifiés sur archive.org, où ils sont librement consultables. Années de naissance et de mort d'après Wikidata. Portrait : Wikimedia Commons, domaine public.",
   "ne": 1849,
-  "mort": 1933
+  "mort": 1933,
+  "portrait": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Paul_Richer.jpg/500px-Paul_Richer.jpg"
  },
  {
   "id": "pol-le-coeur",
@@ -58,6 +60,24 @@
   "notice": "Professeur aux Beaux-Arts de Paris dont Debord fut l'assistant à partir de 1969, avant de lui succéder à la tête du département de morphologie en 1978. C'est par lui, et non par les livres, que la transmission s'est faite : le chaînon vivant entre le traité de Richer et le cours filmé.",
   "ouvrages": [],
   "source": "D'après l'annonce de la disparition de Jean-François Debord publiée par les Beaux-Arts de Paris, beauxartsparis.fr. Aucune autre source consultée ne le documente : ni dates, ni bibliographie n'ont pu être établies."
+ },
+ {
+  "id": "cassandre",
+  "nom": "Cassandre",
+  "dates": "1901-1968",
+  "ne": 1901,
+  "mort": 1968,
+  "role": "avant",
+  "notice": "Affichiste et graphiste, de son vrai nom Adolphe Mouron. Debord fut son assistant et le dit en séance — il s'en déclare très fier, et c'est l'une des rares fois où il annonce lui-même une anecdote en jurant qu'elle est vraie. Maître d'un tout autre ordre que la chaire d'anatomie : celui de la mise en page et du trait qui porte de loin.",
+  "ouvrages": [],
+  "portrait": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Portret_van_A._M._Cassandre_in_Rijksacademie_in_Amsterdam%2C_1967.jpg/500px-Portret_van_A._M._Cassandre_in_Rijksacademie_in_Amsterdam%2C_1967.jpg",
+  "ecoute": {
+   "video": "kc2e56cun8U",
+   "t": 1764,
+   "seance": 42,
+   "horodate": "29:24"
+  },
+  "source": "Filiation dite par Debord lui-même dans la séance 42, et rapportée par sa notice Wikipédia, qui situe leur rencontre au service militaire en 1960. Dates d'après Wikipédia. Portrait : Wikimedia Commons, CC0."
  },
  {
   "id": "debord",

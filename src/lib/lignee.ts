@@ -40,6 +40,13 @@ export type Figure = {
    *  Absent plutôt que deviné : renvoyer vers un homonyme serait pire que
    *  ne rien mettre. */
   instagram?: string;
+  /** Portrait lié depuis Wikimedia Commons, jamais réhébergé, et seulement
+   *  quand le fichier est dans le domaine public ou sous licence libre. Pour
+   *  les vivants il n'en existe pas : leur plaque montre leurs initiales
+   *  plutôt qu'un visage que personne n'a le droit de montrer. */
+  portrait?: string;
+  /** Renvoi vers le moment où Debord en parle, quand il le fait lui-même. */
+  ecoute?: { video: string; t: number; seance: number; horodate: string };
   source: string;
 };
 
@@ -48,9 +55,9 @@ export const FIGURES = brut as Figure[];
 export const SECTIONS: { role: Role; titre: string; propos: string }[] = [
   {
     role: 'avant',
-    titre: 'La chaire avant lui',
+    titre: 'Ses maîtres',
     propos:
-      "Les traités sur lesquels l'enseignement français de la morphologie s'est bâti. Debord s'y appuie et les corrige d'après le vivant, souvent dans la même phrase.",
+      "Les traités sur lesquels l'enseignement français de la morphologie s'est bâti, et les hommes dont Debord fut l'assistant. Il s'appuie sur les premiers et les corrige d'après le vivant, souvent dans la même phrase.",
   },
   {
     role: 'lui',

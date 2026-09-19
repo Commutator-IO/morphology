@@ -26,6 +26,44 @@ import {
  * ses élèves naissent tous pendant qu'il enseigne déjà.
  */
 
+/**
+ * La plaque de portrait.
+ *
+ * Liée depuis Wikimedia Commons, jamais réhébergée, et seulement quand le
+ * fichier est dans le domaine public ou sous licence libre. Pour les vivants il
+ * n'en existe pas : la plaque montre alors leurs initiales plutôt qu'un visage
+ * que personne n'a le droit de reproduire.
+ */
+function Plaque({ figure }: { figure: Figure }) {
+  const initiales = figure.nom
+    .split(/[\s-]+/)
+    .filter((m) => /^[A-ZÉÀÇ]/.test(m) && !['Le', 'De', 'La'].includes(m))
+    .map((m) => m[0])
+    .slice(0, 2)
+    .join('');
+  return (
+    <div className="relative aspect-[4/5] w-14 shrink-0 overflow-hidden rounded-md border border-ink-200 bg-ink-100 sm:w-16">
+      {figure.portrait ? (
+        <img
+          src={figure.portrait}
+          alt={`Portrait de ${figure.nom}`}
+          loading="lazy"
+          referrerPolicy="no-referrer"
+          className="h-full w-full object-cover"
+          style={{ objectPosition: '50% 20%' }}
+        />
+      ) : (
+        <div
+          aria-hidden="true"
+          className="titre flex h-full w-full items-center justify-center text-[17px] text-ink-400"
+        >
+          {initiales}
+        </div>
+      )}
+    </div>
+  );
+}
+
 /** Une figure dont l'année de naissance est établie. */
 function barre(f: Figure) {
   return { gauche: ECHELLE.place(f.ne!), largeur: ECHELLE.place(finDe(f)) - ECHELLE.place(f.ne!) };
@@ -323,8 +361,11 @@ export function PageLignee() {
                         ref={(n) => {
                           fiches.current[i] = n;
                         }}
-                        className="card scroll-mt-44 px-4 py-3.5"
+                        className="card scroll-mt-44 flex gap-3.5 px-4 py-3.5"
                       >
+                        <Plaque figure={f} />
+
+                        <div className="min-w-0 flex-1">
                         <h3 className="titre text-[17px] leading-tight text-ink-900">
                           {f.nom}
                           {f.dates && (
@@ -384,9 +425,24 @@ export function PageLignee() {
                         {/* La source est affichée et non reléguée : une
                             bibliographie sans provenance est une liste
                             d'affirmations. */}
+                        {f.ecoute && (
+                          <p className="mt-2 text-[13px]">
+                            <a
+                              href={`https://www.youtube.com/watch?v=${f.ecoute.video}&t=${f.ecoute.t}s`}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="text-brand-700 underline underline-offset-2"
+                            >
+                              Séance {f.ecoute.seance}, {f.ecoute.horodate} ↗
+                            </a>
+                            <span className="text-ink-400"> — Debord le raconte lui-même</span>
+                          </p>
+                        )}
+
                         <p className="mt-3 border-t border-ink-100 pt-2.5 text-xs leading-relaxed text-ink-400">
                           {f.source}
                         </p>
+                        </div>
                       </article>
                     );
                   })}
