@@ -451,17 +451,8 @@
   "id": "bastien",
   "nom": "Dominique Bastien",
   "role": "autour",
-  "notice": "Professeur de dissection et directeur du musée Orfila-Rouvière, le musée d'anatomie de la faculté des Saints-Pères. C'est dans la salle du cours de Debord que Frédéric Delavier l'a rencontré ; il l'a ensuite formé pendant de longues années à l'anatomie par la dissection. Les dissections que les étudiants de Debord vont voir — le cours y renvoie soixante-dix fois — sont de son ressort.",
+  "notice": "Professeur de dissection et directeur du musée Orfila-Rouvière, le musée d'anatomie de la faculté des Saints-Pères. C'est dans la salle du cours de Debord que Frédéric Delavier l'a rencontré ; il l'a ensuite formé pendant de longues années à l'anatomie par la dissection. Le cours renvoie soixante-dix fois aux dissections que les étudiants vont voir, sans jamais nommer qui les mène.",
   "ouvrages": [],
-  "ecoutes": [
-   {
-    "video": "oXJs2-3OAlA",
-    "t": 4865,
-    "seance": 32,
-    "horodate": "1:21:05",
-    "propos": "Debord le prend en exemple pour le volume du biceps, main au repos"
-   }
-  ],
   "liens": [
    {
     "url": "https://www.youtube.com/watch?v=FZvXwNDMlxI&t=358s",
@@ -469,6 +460,6 @@
     "propos": "Où il raconte l'avoir rencontré au cours de Debord et s'être formé auprès de lui."
    }
   ],
-  "source": "Témoignage de Frédéric Delavier (vidéo, 5:58). Orthographe du patronyme à confirmer : le sous-titre automatique écrit « Bastion », et aucune source écrite n'a été trouvée. Le renvoi au cours vient de la séance 32, où la transcription déforme le nom."
+  "source": "Témoignage de Frédéric Delavier (vidéo, 5:58). Orthographe du patronyme à confirmer : le sous-titre automatique écrit « Bastion », et aucune source écrite n'a été trouvée. Debord ne le nomme pas dans les 45 séances."
  }
 ]
