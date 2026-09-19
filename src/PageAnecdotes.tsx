@@ -14,10 +14,12 @@ import { duree, horodate, lienYoutube } from './lib/lexique';
 /**
  * Les moments où le cours sort de son sujet.
  *
- * Debord digresse beaucoup, et c'est une part de l'enseignement : un souvenir
- * d'atelier, un échange avec la salle, et surtout des comparaisons prises hors
- * de l'art — un sport, un animal, un geste ordinaire — qui expliquent une forme
- * mieux qu'une planche.
+ * La page se lit comme une étude de son oralité, pas comme un florilège. Debord
+ * enseigne de vive voix, deux heures durant et sans notes ; ces écarts sont ses
+ * outils. Un souvenir d'atelier situe une pratique dans une histoire, un échange
+ * avec la salle rattrape l'attention, un mot cru nomme une forme sans détour, et
+ * les comparaisons prises hors de l'art — un sport, un animal, un geste
+ * ordinaire — expliquent souvent une forme mieux qu'une planche.
  *
  * Chaque moment assez intelligible porte une notice de deux ou trois phrases,
  * écrite pour ce site. Les autres restent de simples points d'écoute : les
@@ -57,10 +59,20 @@ export function PageAnecdotes() {
         <h1 className="titre mt-4 text-xl leading-tight text-ink-900 sm:mt-6 sm:text-3xl">
           Quand le cours sort de son sujet
         </h1>
-        <p className="mt-3 hidden text-[15px] leading-relaxed text-ink-700 sm:block">
-          Un souvenir d'atelier, un échange avec la salle, une comparaison prise
-          hors de l'art. {decrits} de ces moments sont décrits ici en deux ou
-          trois phrases ; touchez l'horodatage pour aller les entendre.
+{/* Le cadrage tient en une ligne sur téléphone : c'est la phrase qui dit
+            ce qu'on lit, et la masquer laissait croire à un recueil de blagues.
+            Le développement attend l'écran large, où la place ne manque pas. */}
+        <p className="mt-3 text-[15px] leading-relaxed text-ink-700">
+          Debord enseigne de vive voix, sans notes : ces écarts sont ses outils,
+          pas des parenthèses.
+          <span className="hidden sm:inline">
+            {' '}
+            Un souvenir d'atelier situe une pratique, un échange avec la salle
+            rattrape l'attention, une comparaison prise hors de l'art explique
+            une forme mieux qu'une planche. {decrits} de ces moments sont décrits
+            ici en deux ou trois phrases ; touchez l'horodatage pour aller les
+            entendre.
+          </span>
         </p>
 
         <div className="rangee-filtres mt-4">

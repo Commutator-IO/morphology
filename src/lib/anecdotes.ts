@@ -2,6 +2,13 @@
  * Moments où le registre du cours change : mot familier, souvenir personnel,
  * adresse directe à la salle.
  *
+ * Ce ne sont pas des parenthèses dans l'enseignement, c'est l'enseignement même.
+ * Debord fait cours d'une voix, pendant deux heures, sans notes : le souvenir
+ * d'atelier situe une pratique, l'adresse à la salle vérifie qu'on suit, et le
+ * mot cru nomme une forme sans périphrase, donc sans flou. Les regrouper ici
+ * donne à lire sa manière de tenir un amphithéâtre, pas un florilège de bons
+ * mots.
+ *
  * Le repérage est lexical — les sous-titres ne notent aucun rire, donc aucun
  * signal automatique n'existe. Les 133 moments ont été relus un par un, et ceux
  * dont le passage est assez intelligible ont reçu une notice de deux ou trois
@@ -38,11 +45,12 @@ export const CATEGORIES: Record<Categorie, { libelle: string; propos: string }> 
   familier: {
     libelle: 'Registre familier',
     propos:
-      "Debord parle crûment, et c'est bien son ton — l'anatomie s'y prête, et il ne s'embarrasse pas de périphrases.",
+      "Debord nomme crûment ce qu'il montre. Devant un corps nu, la périphrase mettrait une gêne là où il faut un mot précis : le terme familier désigne sans détour, et le dessin suit.",
   },
   salle: {
     libelle: 'À la salle',
-    propos: "Debord s'adresse directement à l'auditoire et annonce qu'il plaisante.",
+    propos:
+      "Debord interpelle l'auditoire, le prend à témoin, annonce qu'il plaisante. C'est ainsi qu'il tient deux heures d'attention et vérifie qu'on le suit.",
   },
 };
 

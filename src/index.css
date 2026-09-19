@@ -79,6 +79,13 @@
 }
 
 @layer components {
+  /* Lien dans un paragraphe. Les pages de texte suivi — Méthode, Mentions —
+     en portent beaucoup ; répéter la même paire de classes à chaque occurrence
+     invitait à ce qu'une d'elles finisse par diverger. */
+  .lien {
+    @apply text-brand-700 underline underline-offset-4;
+  }
+
   .card {
     @apply rounded-[var(--radius-card)] border border-ink-200/70 bg-white;
     box-shadow:

@@ -19,7 +19,7 @@ import { useEffect, useRef } from 'react';
 const VUES: { chemin: string; libelle: string }[] = [
   { chemin: '/', libelle: 'Vocabulaire' },
   { chemin: '/references/', libelle: 'Références' },
-  { chemin: '/anecdotes/', libelle: 'Anecdotes' },
+  { chemin: '/anecdotes/', libelle: 'Digressions' },
   { chemin: '/seances/', libelle: 'Séances' },
   { chemin: '/lignee/', libelle: 'Lignée' },
   { chemin: '/methode/', libelle: 'Méthode' },
@@ -123,6 +123,10 @@ export function Pied() {
             className="underline underline-offset-4 transition hover:text-ink-900"
           >
             code source
+          </a>{' '}
+          ·{' '}
+          <a href="/mentions/" className="underline underline-offset-4 transition hover:text-ink-900">
+            mentions légales
           </a>
         </p>
       </div>

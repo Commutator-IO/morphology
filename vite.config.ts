@@ -16,6 +16,7 @@ const PAGES = {
   seances: 'seances/index.html',
   lignee: 'lignee/index.html',
   methode: 'methode/index.html',
+  mentions: 'mentions/index.html',
 } as const
 
 /** Date du dernier commit, en ISO — l'en-tête et l'index sont partagés, donc
