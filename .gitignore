@@ -1,0 +1,11 @@
+# Transcriptions issues de YouTube : matière de travail, non publiée.
+# Elles servent à construire l'index du vocabulaire (scripts/indexer.mjs) ;
+# seul l'index dérivé — termes, comptes et horodatages — est versionné.
+transcripts/
+
+node_modules
+dist
+dist-ssr
+*.local
+.DS_Store
+.vite

@@ -1,0 +1,1584 @@
+[
+ {
+  "id": "crane",
+  "terme": "Crâne",
+  "categorie": "os",
+  "region": "tete",
+  "moderne": "Cranium",
+  "definition": "Boîte osseuse de la tête, dont l'ovoïde général commande l'implantation du cou et l'orientation du visage. Debord le traite comme le premier des trois volumes majeurs du corps, avec la cage et le bassin.",
+  "variantes": [
+   "crane",
+   "cranes",
+   "cranien",
+   "cranienne"
+  ]
+ },
+ {
+  "id": "mandibule",
+  "terme": "Mandibule",
+  "categorie": "os",
+  "region": "tete",
+  "moderne": "Mandibula",
+  "aussi": [
+   "maxillaire inférieur",
+   "mâchoire"
+  ],
+  "definition": "Seul os mobile de la face. Son bord inférieur dessine la ligne du maxillaire, et l'angle qui la relie à la branche montante marque la limite postérieure de la joue.",
+  "variantes": [
+   "mandibule",
+   "mandibules",
+   "maxillaire inferieur",
+   "machoire",
+   "machoires",
+   "maxillaire"
+  ]
+ },
+ {
+  "id": "arcade-zygomatique",
+  "terme": "Arcade zygomatique",
+  "categorie": "repere",
+  "region": "tete",
+  "moderne": "Arcus zygomaticus",
+  "aussi": [
+   "pommette"
+  ],
+  "definition": "Pont osseux tendu de la pommette à l'oreille. C'est la plus haute saillie latérale du crâne et le plancher de la tempe.",
+  "variantes": [
+   "arcade zygomatique",
+   "zygomatique",
+   "zygomatiques",
+   "pommette",
+   "pommettes"
+  ]
+ },
+ {
+  "id": "clavicule",
+  "terme": "Clavicule",
+  "categorie": "os",
+  "region": "epaule",
+  "moderne": "Clavicula",
+  "definition": "Os en S couché, seule attache osseuse du membre supérieur au tronc. Sous-cutanée sur toute sa longueur, elle donne la clé de la largeur d'épaule et se lit toujours à la surface.",
+  "variantes": [
+   "clavicule",
+   "clavicules",
+   "claviculaire",
+   "claviculaires"
+  ]
+ },
+ {
+  "id": "sternum",
+  "terme": "Sternum",
+  "categorie": "os",
+  "region": "tronc",
+  "moderne": "Sternum",
+  "definition": "Plastron médian du thorax. La fourchette sternale en haut et l'angle de Louis forment deux repères fixes que rien ne déplace, quelle que soit l'attitude.",
+  "variantes": [
+   "sternum",
+   "sternums",
+   "sternal",
+   "sternale",
+   "fourchette sternale"
+  ]
+ },
+ {
+  "id": "cage-thoracique",
+  "terme": "Cage thoracique",
+  "categorie": "os",
+  "region": "tronc",
+  "moderne": "Cavea thoracis",
+  "aussi": [
+   "cage",
+   "thorax"
+  ],
+  "definition": "Ovoïde aplati d'avant en arrière, deuxième grand volume du corps. Son orientation par rapport au bassin est la première chose que Debord fait établir dans toute vue d'ensemble.",
+  "variantes": [
+   "cage thoracique",
+   "cage thoracique",
+   "thorax",
+   "thoracique",
+   "thoraciques"
+  ]
+ },
+ {
+  "id": "cotes",
+  "terme": "Côtes",
+  "categorie": "os",
+  "region": "tronc",
+  "moderne": "Costae",
+  "definition": "Douze arcs par côté. Les dernières, libres, dessinent le rebord costal, limite haute du flanc et repère constant du modelé abdominal.",
+  "variantes": [
+   "!côte",
+   "!côtes",
+   "costal",
+   "costale",
+   "rebord costal",
+   "fausses côtes"
+  ]
+ },
+ {
+  "id": "rachis",
+  "terme": "Rachis",
+  "categorie": "os",
+  "region": "dos",
+  "moderne": "Columna vertebralis",
+  "aussi": [
+   "colonne vertébrale",
+   "vertèbres"
+  ],
+  "definition": "Colonne de vertèbres dont les courbures alternées — lordose, cyphose — se lisent en surface par le sillon médian du dos et la saillie des apophyses épineuses.",
+  "variantes": [
+   "rachis",
+   "colonne vertebrale",
+   "vertebre",
+   "vertebres",
+   "vertebral",
+   "vertebrale",
+   "apophyse epineuse",
+   "apophyses epineuses",
+   "epineuses",
+   "sillon median du dos"
+  ]
+ },
+ {
+  "id": "sacrum",
+  "terme": "Sacrum",
+  "categorie": "os",
+  "region": "bassin",
+  "moderne": "Os sacrum",
+  "definition": "Coin osseux enfoncé entre les deux iliaques, qui ferme le rachis en bas. Sa face postérieure, sous-cutanée, creuse le triangle plat au-dessus du pli fessier.",
+  "variantes": [
+   "sacrum",
+   "sacre",
+   "sacree",
+   "sacro iliaque",
+   "triangle sacre"
+  ]
+ },
+ {
+  "id": "coccyx",
+  "terme": "Coccyx",
+  "categorie": "os",
+  "region": "bassin",
+  "moderne": "Os coccygis",
+  "definition": "Reliquat caudal articulé sous le sacrum, terme inférieur de la colonne.",
+  "variantes": [
+   "coccyx",
+   "coccygien",
+   "coccygienne"
+  ]
+ },
+ {
+  "id": "bassin",
+  "terme": "Bassin",
+  "categorie": "os",
+  "region": "bassin",
+  "moderne": "Pelvis",
+  "aussi": [
+   "pelvis"
+  ],
+  "definition": "Troisième grand volume, ceinture qui transmet le poids du rachis aux fémurs. Son inclinaison et sa rotation gouvernent toute la station debout, et la station hanchée en particulier.",
+  "variantes": [
+   "bassin",
+   "bassins",
+   "pelvis",
+   "pelvien",
+   "pelvienne",
+   "os iliaque",
+   "iliaques"
+  ]
+ },
+ {
+  "id": "crete-iliaque",
+  "terme": "Crête iliaque",
+  "categorie": "repere",
+  "region": "bassin",
+  "moderne": "Crista iliaca",
+  "definition": "Bord supérieur de l'os iliaque, palpable d'un bout à l'autre. C'est le repère qui donne l'assiette du bassin : son inclinaison se lit directement sous la peau du flanc.",
+  "variantes": [
+   "crete iliaque",
+   "cretes iliaques",
+   "crete des iliaques",
+   "crete de l iliaque"
+  ]
+ },
+ {
+  "id": "epine-iliaque",
+  "terme": "Épine iliaque antéro-supérieure",
+  "categorie": "repere",
+  "region": "bassin",
+  "moderne": "Spina iliaca anterior superior",
+  "aussi": [
+   "EIAS"
+  ],
+  "definition": "Pointe antérieure de la crête iliaque, saillie ponctuelle toujours visible. La ligne qui joint les deux épines mesure la bascule du bassin.",
+  "variantes": [
+   "epine iliaque",
+   "epines iliaques",
+   "epine anterosuperieure",
+   "eias",
+   "epine anterieure"
+  ]
+ },
+ {
+  "id": "ischion",
+  "terme": "Ischion",
+  "categorie": "os",
+  "region": "bassin",
+  "moderne": "Os ischii",
+  "definition": "Branche inférieure de l'iliaque, sur laquelle repose le poids du corps assis. Son tubérosité est masquée debout, découverte en flexion de hanche.",
+  "variantes": [
+   "ischion",
+   "ischions",
+   "ischiatique",
+   "tuberosite ischiatique"
+  ]
+ },
+ {
+  "id": "pubis",
+  "terme": "Pubis",
+  "categorie": "os",
+  "region": "bassin",
+  "moderne": "Os pubis",
+  "definition": "Partie antérieure et médiane du bassin. La symphyse et son bord supérieur ferment en bas la paroi abdominale.",
+  "variantes": [
+   "pubis",
+   "pubien",
+   "pubienne",
+   "symphyse",
+   "symphyse pubienne"
+  ]
+ },
+ {
+  "id": "grand-trochanter",
+  "terme": "Grand trochanter",
+  "categorie": "repere",
+  "region": "bassin",
+  "moderne": "Trochanter major",
+  "definition": "Éminence latérale du haut du fémur, point le plus large de la hanche. Repère pivot de la station hanchée : c'est lui qui vient buter sous la peau du côté porteur.",
+  "variantes": [
+   "grand trochanter",
+   "trochanter",
+   "trochanters",
+   "trochanterien"
+  ]
+ },
+ {
+  "id": "femur",
+  "terme": "Fémur",
+  "categorie": "os",
+  "region": "cuisse",
+  "moderne": "Os femoris",
+  "definition": "Os de la cuisse, oblique de la hanche au genou. Cette obliquité, plus marquée chez la femme dont le bassin est plus large, commande tout l'axe du membre inférieur.",
+  "variantes": [
+   "femur",
+   "femurs",
+   "femoral",
+   "femorale"
+  ]
+ },
+ {
+  "id": "condyles-femoraux",
+  "terme": "Condyles fémoraux",
+  "categorie": "repere",
+  "region": "genou",
+  "moderne": "Condyli femoris",
+  "definition": "Les deux poulies qui terminent le fémur. Leurs bords internes et externes, sous-cutanés, forment la largeur osseuse du genou de part et d'autre de la rotule.",
+  "variantes": [
+   "condyle",
+   "condyles",
+   "condylien",
+   "condyle interne",
+   "condyle externe"
+  ]
+ },
+ {
+  "id": "rotule",
+  "terme": "Rotule",
+  "categorie": "os",
+  "region": "genou",
+  "moderne": "Patella",
+  "aussi": [
+   "patella"
+  ],
+  "definition": "Os sésamoïde pris dans le tendon du quadriceps, mobile sur le genou tendu et fixé en flexion. Debord en fait le centre de lecture du genou : tout le reste s'y rapporte.",
+  "variantes": [
+   "rotule",
+   "rotules",
+   "rotulien",
+   "rotulienne",
+   "patella",
+   "patellaire"
+  ]
+ },
+ {
+  "id": "tibia",
+  "terme": "Tibia",
+  "categorie": "os",
+  "region": "jambe",
+  "moderne": "Tibia",
+  "definition": "Os porteur de la jambe. Sa crête antérieure et toute sa face interne sont sous-cutanées : c'est la plus longue surface osseuse directement lisible du corps.",
+  "variantes": [
+   "tibia",
+   "tibias",
+   "tibial",
+   "tibiale",
+   "crete tibiale"
+  ]
+ },
+ {
+  "id": "perone",
+  "terme": "Péroné",
+  "categorie": "os",
+  "region": "jambe",
+  "moderne": "Fibula",
+  "aussi": [
+   "fibula"
+  ],
+  "definition": "Os latéral et grêle de la jambe, non porteur. On ne le voit qu'à ses deux extrémités : la tête en haut, la malléole externe en bas.",
+  "variantes": [
+   "perone",
+   "perones",
+   "peroneal",
+   "peroniere",
+   "peroniers",
+   "fibula",
+   "tete du perone"
+  ]
+ },
+ {
+  "id": "malleole",
+  "terme": "Malléole",
+  "categorie": "repere",
+  "region": "pied",
+  "moderne": "Malleolus",
+  "definition": "Les deux joues osseuses de la cheville. L'interne, tibiale, est plus haute et plus antérieure ; l'externe, péronière, plus basse et plus postérieure. Ce décalage constant oriente la cheville dans l'espace.",
+  "variantes": [
+   "malleole",
+   "malleoles",
+   "malleolaire",
+   "malleole interne",
+   "malleole externe"
+  ]
+ },
+ {
+  "id": "calcaneum",
+  "terme": "Calcanéum",
+  "categorie": "os",
+  "region": "pied",
+  "moderne": "Calcaneus",
+  "aussi": [
+   "talon"
+  ],
+  "definition": "Os du talon, appui postérieur de la voûte. Sa grosse tubérosité reçoit le tendon d'Achille et porte tout le poids à l'arrière du pied.",
+  "variantes": [
+   "calcaneum",
+   "calcaneen",
+   "calcaneenne",
+   "talon",
+   "talons"
+  ]
+ },
+ {
+  "id": "tarse",
+  "terme": "Tarse",
+  "categorie": "os",
+  "region": "pied",
+  "moderne": "Tarsus",
+  "definition": "Massif des sept os courts de l'arrière et du milieu du pied. C'est lui qui donne au dos du pied son volume bombé.",
+  "variantes": [
+   "tarse",
+   "tarsien",
+   "tarsienne",
+   "metatarse",
+   "metatarsien",
+   "metatarsiens"
+  ]
+ },
+ {
+  "id": "omoplate",
+  "terme": "Omoplate",
+  "categorie": "os",
+  "region": "dos",
+  "moderne": "Scapula",
+  "aussi": [
+   "scapula"
+  ],
+  "definition": "Palette triangulaire posée à plat sur la cage, sans autre attache osseuse que la clavicule. Elle glisse, bascule et sonne le relief du dos à chaque mouvement du bras — d'où le nombre de séances que Debord lui consacre.",
+  "variantes": [
+   "omoplate",
+   "omoplates",
+   "scapula",
+   "scapulaire",
+   "scapulaires",
+   "ceinture scapulaire",
+   "epine de lomoplate",
+   "pointe de lomoplate"
+  ]
+ },
+ {
+  "id": "acromion",
+  "terme": "Acromion",
+  "categorie": "repere",
+  "region": "epaule",
+  "moderne": "Acromion",
+  "definition": "Terminaison externe de l'épine de l'omoplate, qui coiffe l'articulation de l'épaule et s'articule avec la clavicule. Point le plus haut et le plus latéral de l'épaule.",
+  "variantes": [
+   "acromion",
+   "acromial",
+   "acromiale",
+   "acromio claviculaire",
+   "acromio",
+   "epine acromio"
+  ]
+ },
+ {
+  "id": "humerus",
+  "terme": "Humérus",
+  "categorie": "os",
+  "region": "bras",
+  "moderne": "Humerus",
+  "definition": "Os du bras. Sa tête sphérique permet au membre supérieur toute son amplitude ; ses épicondyles, en bas, fixent la largeur du coude et se palpent toujours.",
+  "variantes": [
+   "humerus",
+   "humeral",
+   "humerale",
+   "tete de l humerus",
+   "epicondyle",
+   "epicondyles",
+   "epicondylite",
+   "epitrochlee"
+  ]
+ },
+ {
+  "id": "olecrane",
+  "terme": "Olécrane",
+  "categorie": "repere",
+  "region": "coude",
+  "moderne": "Olecranon",
+  "definition": "Bec du cubitus qui forme la pointe du coude. Avec les deux épicondyles, il compose le triangle osseux qui se retourne selon que le coude est tendu ou plié.",
+  "variantes": [
+   "olecrane",
+   "olecranien",
+   "pointe du coude",
+   "bec du cubitus"
+  ]
+ },
+ {
+  "id": "cubitus",
+  "terme": "Cubitus",
+  "categorie": "os",
+  "region": "avant-bras",
+  "moderne": "Ulna",
+  "aussi": [
+   "ulna"
+  ],
+  "definition": "Os interne de l'avant-bras, fixe dans la pronation. Son bord postérieur est sous-cutané du coude au poignet : c'est le fil directeur de l'avant-bras vu de dos.",
+  "variantes": [
+   "cubitus",
+   "cubital",
+   "cubitale",
+   "ulna",
+   "ulnaire",
+   "tete du cubitus"
+  ]
+ },
+ {
+  "id": "radius",
+  "terme": "Radius",
+  "categorie": "os",
+  "region": "avant-bras",
+  "moderne": "Radius",
+  "definition": "Os externe de l'avant-bras, qui tourne autour du cubitus. C'est lui qui porte la main : sa rotation est la pronation-supination, et son extrémité inférieure fait la largeur du poignet.",
+  "variantes": [
+   "radius",
+   "radial",
+   "radiale",
+   "radiaux",
+   "styloide radiale",
+   "tete du radius"
+  ]
+ },
+ {
+  "id": "carpe",
+  "terme": "Carpe",
+  "categorie": "os",
+  "region": "main",
+  "moderne": "Carpus",
+  "definition": "Massif des huit osselets du poignet, tassés en deux rangées. Il ne se lit pas os par os mais comme un bloc court, dont l'épaisseur fait toute la transition avant-bras-main.",
+  "variantes": [
+   "carpe",
+   "carpien",
+   "carpienne",
+   "carpiens",
+   "scaphoide",
+   "pisiforme",
+   "os crochu",
+   "trapeze osseux"
+  ]
+ },
+ {
+  "id": "metacarpe",
+  "terme": "Métacarpe",
+  "categorie": "os",
+  "region": "main",
+  "moderne": "Metacarpus",
+  "definition": "Les cinq os longs de la paume. Leurs têtes forment la ligne des articulations des doigts, arc dont la courbure change avec l'ouverture de la main.",
+  "variantes": [
+   "metacarpe",
+   "metacarpien",
+   "metacarpiens",
+   "metacarpienne",
+   "tetes des metacarpiens"
+  ]
+ },
+ {
+  "id": "phalanges",
+  "terme": "Phalanges",
+  "categorie": "os",
+  "region": "main",
+  "moderne": "Phalanges",
+  "definition": "Trois par doigt, deux au pouce. Leur décroissance régulière et le décalage des plis commandent le dessin de la main ouverte comme fermée.",
+  "variantes": [
+   "phalange",
+   "phalanges",
+   "phalangien",
+   "phalangette",
+   "phalangine"
+  ]
+ },
+ {
+  "id": "deltoide",
+  "terme": "Deltoïde",
+  "categorie": "muscle",
+  "region": "epaule",
+  "moderne": "Musculus deltoideus",
+  "aussi": [
+   "coiffe deltoïdienne"
+  ],
+  "definition": "Muscle en chape triangulaire qui coiffe l'épaule en trois faisceaux — claviculaire, acromial, scapulaire. Debord l'appelle la coiffe : c'est lui qui arrondit le moignon de l'épaule et masque l'articulation qu'il recouvre.",
+  "variantes": [
+   "deltoide",
+   "deltoides",
+   "deltoidien",
+   "deltoidienne",
+   "coiffe deltoidienne",
+   "faisceau claviculaire",
+   "deltoide claviculaire",
+   "coiffe",
+   "coiffee"
+  ]
+ },
+ {
+  "id": "trapeze",
+  "terme": "Trapèze",
+  "categorie": "muscle",
+  "region": "dos",
+  "moderne": "Musculus trapezius",
+  "definition": "Grand losange qui va de la nuque aux épines dorsales et se fixe sur la clavicule et l'omoplate. Son bord supérieur fait la pente du cou à l'épaule, ligne qui décide à elle seule de l'allure d'un dos.",
+  "variantes": [
+   "trapeze",
+   "trapezes",
+   "trapezien",
+   "trapezienne",
+   "trapezoidaux",
+   "trapezoidale"
+  ]
+ },
+ {
+  "id": "grand-dorsal",
+  "terme": "Grand dorsal",
+  "categorie": "muscle",
+  "region": "dos",
+  "moderne": "Musculus latissimus dorsi",
+  "definition": "Le plus vaste muscle du corps : il monte du bassin et du sacrum jusqu'à l'humérus, en passant par-dessus l'omoplate. Son bord latéral fait la paroi postérieure du creux de l'aisselle et dessine la taille vue de dos.",
+  "variantes": [
+   "grand dorsal",
+   "grands dorsaux",
+   "dorsal",
+   "dorsaux",
+   "latissimus"
+  ]
+ },
+ {
+  "id": "bandoulieres",
+  "terme": "Bandoulières du dos",
+  "categorie": "morphologie",
+  "region": "dos",
+  "definition": "Expression de Debord pour les deux nappes croisées — trapèze et grand dorsal — qui se recouvrent en écharpe sur le dos. Le mot vaut mieux qu'un schéma : il dit à la fois la forme en bande et le passage en oblique par-dessus les côtes.",
+  "variantes": [
+   "bandouliere",
+   "bandoulieres",
+   "en bandouliere"
+  ]
+ },
+ {
+  "id": "grand-pectoral",
+  "terme": "Grand pectoral",
+  "categorie": "muscle",
+  "region": "tronc",
+  "moderne": "Musculus pectoralis major",
+  "definition": "Éventail qui va de la clavicule, du sternum et des côtes à l'humérus. Ses faisceaux se tordent à l'insertion : le bord inférieur, tendu, ferme le creux de l'aisselle en avant.",
+  "variantes": [
+   "grand pectoral",
+   "grands pectoraux",
+   "pectoral",
+   "pectoraux",
+   "pectorale"
+  ]
+ },
+ {
+  "id": "grand-droit",
+  "terme": "Grand droit de l'abdomen",
+  "categorie": "muscle",
+  "region": "tronc",
+  "moderne": "Musculus rectus abdominis",
+  "definition": "Sangle verticale double, cloisonnée par des insertions transversales qui produisent les tablettes. La ligne blanche la partage au milieu, creusant le sillon médian du ventre.",
+  "variantes": [
+   "grand droit",
+   "grands droits",
+   "droit de labdomen",
+   "droits de labdomen",
+   "rectus",
+   "tablettes",
+   "ligne blanche",
+   "abdomen",
+   "abdominaux"
+  ]
+ },
+ {
+  "id": "oblique",
+  "terme": "Oblique",
+  "categorie": "muscle",
+  "region": "tronc",
+  "moderne": "Musculus obliquus",
+  "definition": "Nappes latérales de l'abdomen, en deux plans croisés. Leur épaisseur fait le flanc, et leur bord supérieur passe sous le rebord costal en une courbe qui marque la taille.",
+  "variantes": [
+   "oblique",
+   "obliques",
+   "grand oblique",
+   "petit oblique",
+   "obliquement"
+  ]
+ },
+ {
+  "id": "grand-dentele",
+  "terme": "Grand dentelé",
+  "categorie": "muscle",
+  "region": "tronc",
+  "moderne": "Musculus serratus anterior",
+  "aussi": [
+   "dentelé antérieur"
+  ],
+  "definition": "Muscle en digitations qui s'accroche aux côtes en dents de scie, sous le bord de l'omoplate. Ses dents apparaissent au flanc lorsque le bras s'élève, entre le grand dorsal et le grand pectoral.",
+  "variantes": [
+   "grand dentele",
+   "grand dentelee",
+   "dentele",
+   "dentelee",
+   "denteles",
+   "dentele anterieur",
+   "digitations",
+   "dentelees"
+  ]
+ },
+ {
+  "id": "sterno-cleido",
+  "terme": "Sterno-cléido-mastoïdien",
+  "categorie": "muscle",
+  "region": "cou",
+  "moderne": "Musculus sternocleidomastoideus",
+  "aussi": [
+   "SCM"
+  ],
+  "definition": "Câble oblique du sternum et de la clavicule à l'apophyse mastoïde. Il divise le cou en deux régions et se tend en corde dès que la tête tourne : c'est le repère majeur du cou.",
+  "variantes": [
+   "sterno cleido mastoidien",
+   "sternocleidomastoidien",
+   "sterno cleido",
+   "mastoidien",
+   "mastoide",
+   "sterno mastoidien",
+   "scm",
+   "sterno",
+   "sterno clayton",
+   "sterno basto",
+   "sterno cleido mastoidien"
+  ]
+ },
+ {
+  "id": "peauciers",
+  "terme": "Muscles peauciers",
+  "categorie": "muscle",
+  "region": "tete",
+  "moderne": "Musculi faciales",
+  "aussi": [
+   "muscles de la mimique"
+  ],
+  "definition": "Muscles minces insérés dans la peau même du visage et du cou, sans action sur le squelette. Ils ne font pas de volume mais plissent la surface : c'est par eux que passe toute l'expression.",
+  "variantes": [
+   "peaucier",
+   "peauciers",
+   "peauciere",
+   "muscle peaucier",
+   "platysma",
+   "mimique"
+  ]
+ },
+ {
+  "id": "masseter",
+  "terme": "Masséter",
+  "categorie": "muscle",
+  "region": "tete",
+  "moderne": "Musculus masseter",
+  "definition": "Muscle épais tendu de l'arcade zygomatique à l'angle de la mandibule. Il remplit le creux de la joue en arrière et se durcit visiblement à la mâchoire serrée.",
+  "variantes": [
+   "masseter",
+   "masseters",
+   "masseterine",
+   "muscle masseter"
+  ]
+ },
+ {
+  "id": "temporal",
+  "terme": "Temporal",
+  "categorie": "muscle",
+  "region": "tete",
+  "moderne": "Musculus temporalis",
+  "definition": "Éventail qui garnit la fosse temporale et passe sous l'arcade zygomatique pour gagner la mandibule. Son remplissage décide du creux ou du plein de la tempe.",
+  "variantes": [
+   "temporal",
+   "temporale",
+   "temporaux",
+   "fosse temporale",
+   "tempe",
+   "tempes"
+  ]
+ },
+ {
+  "id": "biceps-brachial",
+  "terme": "Biceps brachial",
+  "categorie": "muscle",
+  "region": "bras",
+  "moderne": "Musculus biceps brachii",
+  "definition": "Fuseau antérieur du bras, à deux chefs venus de l'omoplate, qui se rend au radius par un tendon unique. Il fléchit le coude et tourne la main en supination : d'où son gonflement quand la paume se retourne vers le haut.",
+  "variantes": [
+   "biceps",
+   "biceps brachial",
+   "bicipital",
+   "bicipitale",
+   "tendon du biceps",
+   "court biceps",
+   "courte portion",
+   "longue portion"
+  ]
+ },
+ {
+  "id": "triceps-brachial",
+  "terme": "Triceps brachial",
+  "categorie": "muscle",
+  "region": "bras",
+  "moderne": "Musculus triceps brachii",
+  "definition": "Masse postérieure du bras, à trois chefs, qui se termine sur l'olécrane par une large lame tendineuse. C'est lui qui tend le coude, et son relief dessine tout l'arrière du bras.",
+  "variantes": [
+   "triceps",
+   "triceps brachial",
+   "tricipital",
+   "vaste externe du bras",
+   "vaste interne du bras",
+   "longue portion du triceps"
+  ]
+ },
+ {
+  "id": "brachial-anterieur",
+  "terme": "Brachial antérieur",
+  "categorie": "muscle",
+  "region": "bras",
+  "moderne": "Musculus brachialis",
+  "definition": "Muscle plus profond que le biceps, qu'il déborde de part et d'autre. Il apparaît en deux languettes latérales, et c'est lui, non le biceps, qui fait la largeur du bras juste au-dessus du coude.",
+  "variantes": [
+   "brachial anterieur",
+   "brachial",
+   "brachiale",
+   "brachialis"
+  ]
+ },
+ {
+  "id": "long-supinateur",
+  "terme": "Long supinateur",
+  "categorie": "muscle",
+  "region": "avant-bras",
+  "moderne": "Musculus brachioradialis",
+  "aussi": [
+   "brachio-radial"
+  ],
+  "definition": "Muscle qui monte du bord externe de l'humérus au poignet en formant la crête latérale de l'avant-bras. Sa saillie sépare la loge des fléchisseurs de celle des extenseurs, et sert d'arête directrice à toute la région.",
+  "variantes": [
+   "long supinateur",
+   "supinateur",
+   "supinateurs",
+   "brachio radial",
+   "brachioradial",
+   "court supinateur"
+  ]
+ },
+ {
+  "id": "extenseurs",
+  "terme": "Extenseurs",
+  "categorie": "muscle",
+  "region": "avant-bras",
+  "moderne": "Musculi extensores",
+  "definition": "Loge postérieure et externe de l'avant-bras, qui redresse poignet et doigts. Ses tendons, tous rassemblés sous le ligament annulaire, s'écartent en éventail sur le dos de la main.",
+  "variantes": [
+   "extenseur",
+   "extenseurs",
+   "extension des doigts",
+   "extenseur commun",
+   "extenseur commun des doigts",
+   "cubital posterieur",
+   "radiaux",
+   "ligament annulaire"
+  ]
+ },
+ {
+  "id": "flechisseurs",
+  "terme": "Fléchisseurs",
+  "categorie": "muscle",
+  "region": "avant-bras",
+  "moderne": "Musculi flexores",
+  "definition": "Loge antérieure et interne de l'avant-bras, toute partie de l'épitrochlée. Charnue en haut, tendineuse en bas : le relief musculaire cède la place aux cordes visibles au poignet.",
+  "variantes": [
+   "flechisseur",
+   "flechisseurs",
+   "grand palmaire",
+   "petit palmaire",
+   "grand palmer",
+   "aponevrose palmaire",
+   "aponevrose palmer",
+   "cubital anterieur",
+   "rond pronateur"
+  ]
+ },
+ {
+  "id": "eminence-thenar",
+  "terme": "Éminence thénar",
+  "categorie": "muscle",
+  "region": "main",
+  "moderne": "Eminentia thenaris",
+  "definition": "Coussin musculaire du pouce, qui fait tout le volume du bord externe de la paume. Son opposition au reste de la main est ce qui distingue la main humaine.",
+  "variantes": [
+   "eminence thenar",
+   "thenar",
+   "thenarienne",
+   "eminence du pouce",
+   "eminence",
+   "thenard",
+   "eminence thenard"
+  ]
+ },
+ {
+  "id": "eminence-hypothenar",
+  "terme": "Éminence hypothénar",
+  "categorie": "muscle",
+  "region": "main",
+  "moderne": "Eminentia hypothenaris",
+  "definition": "Coussin du bord interne de la paume, du côté de l'auriculaire. Plus plat que le thénar, il ferme la gouttière palmaire de l'autre côté.",
+  "variantes": [
+   "hypothenar",
+   "eminence hypothenar",
+   "hypothenarienne"
+  ]
+ },
+ {
+  "id": "grand-fessier",
+  "terme": "Grand fessier",
+  "categorie": "muscle",
+  "region": "bassin",
+  "moderne": "Musculus gluteus maximus",
+  "definition": "Masse quadrangulaire et épaisse du sacrum et de l'iliaque au fémur. Il fait le volume de la fesse, et son bord inférieur croise le pli fessier au lieu de le suivre — une confusion que Debord corrige à chaque fois.",
+  "variantes": [
+   "grand fessier",
+   "grands fessiers",
+   "gluteal",
+   "gluteaux",
+   "pli fessier",
+   "fesse",
+   "fesses"
+  ]
+ },
+ {
+  "id": "moyen-fessier",
+  "terme": "Moyen fessier",
+  "categorie": "muscle",
+  "region": "bassin",
+  "moderne": "Musculus gluteus medius",
+  "definition": "Éventail tendu de la crête iliaque au grand trochanter. C'est le muscle de la station hanchée : il retient le bassin du côté de la jambe libre et se durcit du côté porteur.",
+  "variantes": [
+   "moyen fessier",
+   "moyens fessiers",
+   "fessier moyen",
+   "fessier profond"
+  ]
+ },
+ {
+  "id": "couturier",
+  "terme": "Couturier",
+  "categorie": "muscle",
+  "region": "cuisse",
+  "moderne": "Musculus sartorius",
+  "aussi": [
+   "sartorius"
+  ],
+  "definition": "Ruban le plus long du corps, de l'épine iliaque antéro-supérieure à la face interne du tibia. Il barre la cuisse en diagonale et sépare les extenseurs des adducteurs : c'est le fil qu'on suit pour découper la cuisse.",
+  "variantes": [
+   "couturier",
+   "couturiers",
+   "sartorius",
+   "muscle couturier"
+  ]
+ },
+ {
+  "id": "quadriceps",
+  "terme": "Quadriceps",
+  "categorie": "muscle",
+  "region": "cuisse",
+  "moderne": "Musculus quadriceps femoris",
+  "definition": "Les quatre extenseurs du genou réunis sur la rotule. Le vaste interne descend plus bas que le vaste externe : ce décalage constant fait que le genou n'est jamais symétrique.",
+  "variantes": [
+   "quadriceps",
+   "quadricipital",
+   "droit anterieur",
+   "vaste interne",
+   "vaste externe",
+   "crural",
+   "vastes"
+  ]
+ },
+ {
+  "id": "ischio-jambiers",
+  "terme": "Ischio-jambiers",
+  "categorie": "muscle",
+  "region": "cuisse",
+  "moderne": "Musculi ischiocrurales",
+  "definition": "Groupe postérieur de la cuisse, de l'ischion au genou. Leurs tendons s'écartent en arrière du genou pour border le creux poplité de part et d'autre.",
+  "variantes": [
+   "ischio jambier",
+   "ischio jambiers",
+   "ischiojambiers",
+   "biceps femoral",
+   "demi tendineux",
+   "demi membraneux",
+   "creux poplite",
+   "poplite"
+  ]
+ },
+ {
+  "id": "adducteurs",
+  "terme": "Adducteurs",
+  "categorie": "muscle",
+  "region": "cuisse",
+  "moderne": "Musculi adductores",
+  "definition": "Masse interne de la cuisse, du pubis au fémur. Elle remplit le triangle entre couturier et ischio-jambiers et ferme l'entrejambe.",
+  "variantes": [
+   "adducteur",
+   "adducteurs",
+   "adduction",
+   "droit interne",
+   "pectine"
+  ]
+ },
+ {
+  "id": "tenseur-fascia-lata",
+  "terme": "Tenseur du fascia lata",
+  "categorie": "muscle",
+  "region": "cuisse",
+  "moderne": "Musculus tensor fasciae latae",
+  "definition": "Court muscle de l'épine iliaque qui se prolonge en une longue bande fibreuse jusqu'au tibia. Cette bande aplatit le côté de la cuisse en un méplat net, d'autant plus visible que la jambe porte.",
+  "variantes": [
+   "tenseur du fascia lata",
+   "fascia lata",
+   "fascia latin",
+   "fascia",
+   "aponevrose femorale",
+   "bandelette"
+  ]
+ },
+ {
+  "id": "triceps-sural",
+  "terme": "Triceps sural",
+  "categorie": "muscle",
+  "region": "jambe",
+  "moderne": "Musculus triceps surae",
+  "aussi": [
+   "mollet"
+  ],
+  "definition": "Réunion des deux jumeaux et du soléaire sur le tendon d'Achille. Il fait tout le volume du mollet, dont la masse remonte plus haut en dedans qu'en dehors.",
+  "variantes": [
+   "triceps sural",
+   "sural",
+   "surale",
+   "mollet",
+   "mollets"
+  ]
+ },
+ {
+  "id": "jumeaux",
+  "terme": "Jumeaux",
+  "categorie": "muscle",
+  "region": "jambe",
+  "moderne": "Musculus gastrocnemius",
+  "aussi": [
+   "gastrocnémiens"
+  ],
+  "definition": "Les deux chefs superficiels du mollet, nés des condyles fémoraux. L'interne descend nettement plus bas que l'externe : le mollet est toujours dissymétrique, et c'est ce décalage qui le fait vivre.",
+  "variantes": [
+   "jumeau",
+   "jumeaux",
+   "gastrocnemien",
+   "gastrocnemiens",
+   "jumeau interne",
+   "jumeau externe"
+  ]
+ },
+ {
+  "id": "soleaire",
+  "terme": "Soléaire",
+  "categorie": "muscle",
+  "region": "jambe",
+  "moderne": "Musculus soleus",
+  "definition": "Muscle plat et profond sous les jumeaux, qu'il déborde de chaque côté en bas. Ses deux languettes latérales font la transition entre la masse du mollet et la finesse de la cheville.",
+  "variantes": [
+   "soleaire",
+   "soleaires",
+   "solaire",
+   "soleus",
+   "jumeaux solaire"
+  ]
+ },
+ {
+  "id": "tendon-achille",
+  "terme": "Tendon d'Achille",
+  "categorie": "repere",
+  "region": "pied",
+  "moderne": "Tendo calcaneus",
+  "definition": "Le plus fort tendon du corps, du triceps sural au calcanéum. Il s'aplatit et se resserre en descendant, faisant de la cheville vue de dos la partie la plus étroite du membre.",
+  "variantes": [
+   "tendon dachille",
+   "achille",
+   "achilleen",
+   "tendon calcaneen"
+  ]
+ },
+ {
+  "id": "jambier-anterieur",
+  "terme": "Jambier antérieur",
+  "categorie": "muscle",
+  "region": "jambe",
+  "moderne": "Musculus tibialis anterior",
+  "aussi": [
+   "tibial antérieur"
+  ],
+  "definition": "Muscle qui longe la crête du tibia en dehors et se rend au bord interne du pied. Son tendon se tend en corde oblique sur le devant de la cheville lorsque le pied se relève.",
+  "variantes": [
+   "jambier anterieur",
+   "tibial anterieur",
+   "jambier",
+   "jambiers",
+   "tibial"
+  ]
+ },
+ {
+  "id": "peroniers",
+  "terme": "Péroniers",
+  "categorie": "muscle",
+  "region": "jambe",
+  "moderne": "Musculi peronei",
+  "aussi": [
+   "fibulaires"
+  ],
+  "definition": "Loge externe de la jambe, plaquée contre le péroné. Leurs tendons contournent la malléole externe par l'arrière, ce qui fait l'épaisseur du côté de la cheville.",
+  "variantes": [
+   "peronier",
+   "peroniers",
+   "peroniere",
+   "long peronier",
+   "court peronier",
+   "fibulaire",
+   "fibulaires"
+  ]
+ },
+ {
+  "id": "aponevrose",
+  "terme": "Aponévrose",
+  "categorie": "morphologie",
+  "region": "general",
+  "moderne": "Aponeurosis",
+  "definition": "Lame fibreuse blanche qui enveloppe un muscle ou lui sert d'attache. Elle ne gonfle pas comme la chair : là où elle affleure, le relief s'aplatit et le modelé devient plat et tendu.",
+  "variantes": [
+   "aponevrose",
+   "aponevroses",
+   "aponevrotique",
+   "fibreux",
+   "fibreuse",
+   "lame fibreuse"
+  ]
+ },
+ {
+  "id": "tendon",
+  "terme": "Tendon",
+  "categorie": "morphologie",
+  "region": "general",
+  "moderne": "Tendo",
+  "definition": "Cordon inextensible par lequel un muscle s'attache à l'os. À la surface, les tendons donnent les lignes dures et fixes autour desquelles la chair se déforme.",
+  "variantes": [
+   "tendon",
+   "tendons",
+   "tendineux",
+   "tendineuse",
+   "tendineuses"
+  ]
+ },
+ {
+  "id": "anterieur",
+  "terme": "Antérieur / postérieur",
+  "categorie": "orientation",
+  "region": "general",
+  "definition": "Vers l'avant du corps, vers l'arrière. Le couple de base pour nommer une vue : les formes antérieures du torse ne sont pas les postérieures retournées, ce sont d'autres formes.",
+  "variantes": [
+   "anterieur",
+   "anterieure",
+   "anterieurs",
+   "anterieures",
+   "posterieur",
+   "posterieure",
+   "posterieurs",
+   "posterieures",
+   "vue anterieure",
+   "vue posterieure"
+  ]
+ },
+ {
+  "id": "interne-externe",
+  "terme": "Interne / externe",
+  "categorie": "orientation",
+  "region": "general",
+  "moderne": "Médial / latéral",
+  "definition": "Vers le plan médian du corps, ou vers l'extérieur. Debord garde ces termes plutôt que médial et latéral ; ils suffisent tant qu'on précise la position de référence.",
+  "variantes": [
+   "interne",
+   "internes",
+   "externe",
+   "externes",
+   "medial",
+   "mediale",
+   "lateral",
+   "laterale",
+   "laterales"
+  ]
+ },
+ {
+  "id": "proximal",
+  "terme": "Proximal / distal",
+  "categorie": "orientation",
+  "region": "general",
+  "definition": "Près de la racine du membre, ou loin d'elle. L'épaule est proximale, la main distale, et tout le membre se lit dans cet ordre.",
+  "variantes": [
+   "proximal",
+   "proximale",
+   "distal",
+   "distale",
+   "distaux"
+  ]
+ },
+ {
+  "id": "superficiel",
+  "terme": "Superficiel / profond",
+  "categorie": "orientation",
+  "region": "general",
+  "definition": "Sous la peau, ou recouvert par d'autres plans. Un muscle profond peut se voir, s'il écarte ce qui le couvre : c'est le cas du brachial antérieur sous le biceps.",
+  "variantes": [
+   "superficiel",
+   "superficielle",
+   "superficiels",
+   "profond",
+   "profonde",
+   "profonds",
+   "plan profond",
+   "plan superficiel"
+  ]
+ },
+ {
+  "id": "plans",
+  "terme": "Plans sagittal, frontal, transversal",
+  "categorie": "orientation",
+  "region": "general",
+  "definition": "Les trois coupes de référence : sagittal partage droite et gauche, frontal avant et arrière, transversal haut et bas. Elles servent à situer une vue ou à décrire une torsion.",
+  "variantes": [
+   "sagittal",
+   "sagittale",
+   "frontal",
+   "frontale",
+   "transversal",
+   "transversale",
+   "plan median",
+   "plan de symetrie",
+   "coupe"
+  ]
+ },
+ {
+  "id": "flexion",
+  "terme": "Flexion / extension",
+  "categorie": "orientation",
+  "region": "general",
+  "definition": "Fermeture ou ouverture d'une articulation. Le relief d'un membre n'est jamais le même dans les deux positions : la chair passe d'un côté à l'autre du pli.",
+  "variantes": [
+   "flexion",
+   "flechi",
+   "flechie",
+   "flechir",
+   "extension",
+   "tendu",
+   "tendue",
+   "etendu",
+   "etendue",
+   "etendus"
+  ]
+ },
+ {
+  "id": "pronation",
+  "terme": "Pronation / supination",
+  "categorie": "orientation",
+  "region": "avant-bras",
+  "definition": "Rotation de l'avant-bras qui tourne la paume vers le bas, ou vers le haut. Le radius croise le cubitus en pronation : les deux os se superposent, et tout le modelé de l'avant-bras se tord avec eux.",
+  "variantes": [
+   "pronation",
+   "pronateur",
+   "prone",
+   "supination",
+   "supine",
+   "supinateur",
+   "paume en dessus",
+   "paume en dessous"
+  ]
+ },
+ {
+  "id": "abduction",
+  "terme": "Abduction / adduction",
+  "categorie": "orientation",
+  "region": "general",
+  "definition": "Écartement d'un membre par rapport à l'axe du corps, ou rapprochement. Élever le bras en abduction fait basculer l'omoplate, ce qui change tout le dos.",
+  "variantes": [
+   "abduction",
+   "abducteur",
+   "abduit",
+   "adduction",
+   "rapprochement",
+   "ecartement"
+  ]
+ },
+ {
+  "id": "rotation",
+  "terme": "Rotation",
+  "categorie": "orientation",
+  "region": "general",
+  "definition": "Tour d'un segment sur son axe. C'est le mouvement le plus difficile à dessiner, parce qu'il ne se voit que par le déplacement des repères de surface les uns par rapport aux autres.",
+  "variantes": [
+   "rotation",
+   "rotations",
+   "rotateur",
+   "rotateurs",
+   "tourne",
+   "torsion",
+   "torse en torsion"
+  ]
+ },
+ {
+  "id": "station-hanchee",
+  "terme": "Station hanchée",
+  "categorie": "morphologie",
+  "region": "general",
+  "aussi": [
+   "contrapposto"
+  ],
+  "definition": "Debout sur une jambe, le poids d'un seul côté : le bassin monte du côté porteur, les épaules compensent en sens inverse, et le rachis prend une double courbure. C'est l'attitude fondatrice de la figure occidentale, et la séance que Debord bâtit dessus est la clé de toutes les autres.",
+  "variantes": [
+   "station hanchee",
+   "hanchee",
+   "hanchement",
+   "dehanche",
+   "dehanchement",
+   "contrapposto",
+   "jambe porteuse",
+   "jambe libre",
+   "appui unipodal"
+  ]
+ },
+ {
+  "id": "aplomb",
+  "terme": "Aplomb",
+  "categorie": "morphologie",
+  "region": "general",
+  "definition": "Verticale du centre de gravité au sol. Une figure debout n'est juste que si ses appuis passent sous cette ligne : c'est la première vérification d'une vue d'ensemble, avant tout détail.",
+  "variantes": [
+   "aplomb",
+   "aplombs",
+   "verticale",
+   "fil a plomb",
+   "centre de gravite",
+   "ligne de gravite",
+   "equilibre"
+  ]
+ },
+ {
+  "id": "embranchement",
+  "terme": "Embranchement",
+  "categorie": "morphologie",
+  "region": "general",
+  "definition": "Terme de Debord pour la façon dont un membre se greffe sur le tronc : ni bout à bout, ni collé, mais emboîté par un jeu de nappes qui passent l'une sur l'autre. L'embranchement du bras dans l'épaule est le cas d'école, parce que trois plans y viennent se recouvrir.",
+  "variantes": [
+   "embranchement",
+   "embranchements",
+   "embranche",
+   "embranchee",
+   "greffe",
+   "emboitement"
+  ]
+ },
+ {
+  "id": "meplat",
+  "terme": "Méplat",
+  "categorie": "morphologie",
+  "region": "general",
+  "definition": "Surface plane ou à peine bombée qui interrompt un volume. Un méplat n'est pas un défaut de modelé mais un fait de forme : il signale en général qu'une aponévrose ou un os affleure sous la peau.",
+  "variantes": [
+   "meplat",
+   "meplats",
+   "plat",
+   "plate",
+   "aplati",
+   "aplatie",
+   "facette"
+  ]
+ },
+ {
+  "id": "relief",
+  "terme": "Relief / saillie / dépression",
+  "categorie": "morphologie",
+  "region": "general",
+  "definition": "Le vocabulaire du modelé : ce qui sort, ce qui rentre. Debord demande toujours de nommer la cause d'un relief — os, muscle contracté, tendon, pli de peau — avant de le dessiner ; « creux » est de loin le mot qui revient le plus, parce qu'une dépression se lit mieux qu'une bosse.",
+  "variantes": [
+   "relief",
+   "reliefs",
+   "saillie",
+   "saillies",
+   "saillant",
+   "saillante",
+   "depression",
+   "depressions",
+   "creux",
+   "bosse",
+   "eminence"
+  ]
+ },
+ {
+  "id": "sillon",
+  "terme": "Sillon",
+  "categorie": "morphologie",
+  "region": "general",
+  "definition": "Rainure allongée entre deux volumes voisins. Le sillon médian du dos, celui qui sépare biceps et triceps : ce sont des lignes de séparation, pas des traits à appuyer.",
+  "variantes": [
+   "sillon",
+   "sillons",
+   "rainure",
+   "gouttiere",
+   "gouttieres",
+   "rigole",
+   "separation"
+  ]
+ },
+ {
+  "id": "galbe",
+  "terme": "Courbure / galbe",
+  "categorie": "morphologie",
+  "region": "general",
+  "definition": "Courbe d'ensemble d'un volume, prise d'un bout à l'autre. Le galbe du mollet ou de la cuisse se juge sur toute sa longueur : c'est ce qui distingue une forme vivante d'une suite de bosses. Debord dit le plus souvent « courbure », et oppose les courbures franches aux inflexions à peine sensibles.",
+  "variantes": [
+   "galbe",
+   "galbes",
+   "galbee",
+   "courbe",
+   "courbure",
+   "courbures",
+   "inflexion"
+  ]
+ },
+ {
+  "id": "masse",
+  "terme": "Masse / volume",
+  "categorie": "morphologie",
+  "region": "general",
+  "definition": "L'unité de construction avant le détail. La méthode part des trois masses — crâne, cage, bassin — pose leurs axes, et n'ajoute muscles et reliefs qu'ensuite.",
+  "variantes": [
+   "masse",
+   "masses",
+   "volume",
+   "volumes",
+   "volumetrie",
+   "bloc",
+   "blocs",
+   "ovoide"
+  ]
+ },
+ {
+  "id": "axe",
+  "terme": "Axe",
+  "categorie": "morphologie",
+  "region": "general",
+  "definition": "Direction d'un segment, réduite à une ligne. Poser les axes avant les contours évite de dessiner un membre juste dans le détail et faux dans sa direction.",
+  "variantes": [
+   "axe",
+   "axes",
+   "axial",
+   "axiale",
+   "direction",
+   "directions",
+   "ligne directrice"
+  ]
+ },
+ {
+  "id": "raccourci",
+  "terme": "Raccourci",
+  "categorie": "morphologie",
+  "region": "general",
+  "definition": "Effet de perspective qui écrase un segment dirigé vers l'observateur. Un raccourci se construit par la largeur relative des sections, jamais en raccourcissant simplement le trait.",
+  "variantes": [
+   "raccourci",
+   "raccourcis",
+   "raccourcie",
+   "perspective",
+   "perspectives",
+   "fuite",
+   "foreshortening"
+  ]
+ },
+ {
+  "id": "vue-densemble",
+  "terme": "Vue d'ensemble",
+  "categorie": "morphologie",
+  "region": "general",
+  "definition": "Exercice qui ouvre la plupart des séances : établir la figure entière — proportions, axes, aplomb, rapport des trois masses — avant d'entrer dans une région. L'ordre n'est pas pédagogique mais logique : un détail juste dans un ensemble faux reste faux.",
+  "variantes": [
+   "vue densemble",
+   "vues densemble",
+   "ensemble",
+   "densemble",
+   "attitude",
+   "attitude naturelle"
+  ]
+ },
+ {
+  "id": "trois-quarts",
+  "terme": "Vue de trois quarts",
+  "categorie": "morphologie",
+  "region": "general",
+  "definition": "Vue intermédiaire entre face et profil, la plus fréquente et la plus exigeante : aucun repère n'y est à sa place canonique, et c'est la cohérence des largeurs qui tient le dessin.",
+  "variantes": [
+   "trois quarts",
+   "trois quart",
+   "de trois quart",
+   "deux tiers",
+   "de 3 4",
+   "de 2 3"
+  ]
+ },
+ {
+  "id": "empreinte-plantaire",
+  "terme": "Empreinte plantaire",
+  "categorie": "morphologie",
+  "region": "pied",
+  "definition": "Trace au sol des appuis du pied, qui révèle la voûte et la répartition du poids. Debord s'en sert comme d'une preuve : la forme du pied se déduit de ce qu'il laisse comme empreinte.",
+  "variantes": [
+   "empreinte plantaire",
+   "empreinte",
+   "empreintes",
+   "plantaire",
+   "plante du pied",
+   "voute plantaire",
+   "voute",
+   "appui",
+   "appuis"
+  ]
+ },
+ {
+  "id": "proportions",
+  "terme": "Proportions",
+  "categorie": "morphologie",
+  "region": "general",
+  "definition": "Rapports de longueur entre segments, pris en unités du corps lui-même — tête, main, pied — plutôt qu'en mesures absolues. Un canon n'est pas une règle à appliquer mais un repère pour voir l'écart propre à un modèle.",
+  "variantes": [
+   "proportion",
+   "proportions",
+   "canon",
+   "canons",
+   "proportionne"
+  ]
+ },
+ {
+  "id": "modele",
+  "terme": "Modèle vivant",
+  "categorie": "morphologie",
+  "region": "general",
+  "definition": "La source contre laquelle tout se vérifie. L'anatomie n'est pas là pour être récitée : elle sert à comprendre ce qu'on voit sur le modèle, et cède devant lui quand les deux divergent.",
+  "variantes": [
+   "modele",
+   "modeles",
+   "modele vivant",
+   "academie"
+  ]
+ },
+ {
+  "id": "dissection",
+  "terme": "Dissection / écorché",
+  "categorie": "morphologie",
+  "region": "general",
+  "definition": "Étude par plans successifs, dont l'écorché est la restitution figurée. Elle donne la cause des formes, mais reste un moyen : c'est la surface habillée qui est le but.",
+  "variantes": [
+   "dissection",
+   "dissections",
+   "disseque",
+   "ecorche",
+   "ecorches"
+  ]
+ },
+ {
+  "id": "tuberosite",
+  "terme": "Tubérosité / tubercule",
+  "categorie": "repere",
+  "region": "general",
+  "moderne": "Tuberositas",
+  "definition": "Saillie rugueuse d'un os, là où un muscle ou un tendon puissant s'attache. Debord y revient sans cesse parce qu'une tubérosité explique un relief que le muscle seul ne suffit pas à justifier : la grosse tubérosité de l'humérus sous le deltoïde, celle du calcanéum sous le tendon d'Achille.",
+  "variantes": [
+   "tuberosite",
+   "tuberosites",
+   "grande tuberosite",
+   "grosse tuberosite",
+   "petite tuberosite",
+   "tubercule",
+   "tubercules"
+  ]
+ },
+ {
+  "id": "hanche",
+  "terme": "Hanche",
+  "categorie": "repere",
+  "region": "bassin",
+  "moderne": "Coxa",
+  "definition": "Région de l'articulation entre fémur et bassin, dont le relief extérieur est fait par le grand trochanter et le moyen fessier, jamais par l'articulation elle-même — trop profonde pour se voir. À distinguer de la station hanchée, qui est une attitude.",
+  "variantes": [
+   "hanche",
+   "hanches",
+   "coxo femoral",
+   "coxo femorale",
+   "articulation de la hanche"
+  ]
+ }
+]

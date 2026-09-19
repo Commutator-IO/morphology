@@ -1,0 +1,400 @@
+{
+ "parties": [
+  {
+   "id": "introduction",
+   "titre": "Introduction",
+   "propos": "Ce qu'est ce cours, et qui le donne."
+  },
+  {
+   "id": "ensemble",
+   "titre": "Vues d'ensemble et attitudes",
+   "propos": "La figure entière d'abord : proportions, axes, aplomb, rapport des trois masses. C'est l'ordre logique du cours, et non un préambule — un détail juste dans un ensemble faux reste faux."
+  },
+  {
+   "id": "tronc",
+   "titre": "Le tronc",
+   "propos": "Cage thoracique et bassin, les deux grands volumes dont l'orientation relative commande toute attitude."
+  },
+  {
+   "id": "dos",
+   "titre": "Le dos et l'omoplate",
+   "propos": "Six séances, parce que l'omoplate glisse sur la cage sans autre attache osseuse que la clavicule : le relief du dos change à chaque mouvement du bras."
+  },
+  {
+   "id": "epaule",
+   "titre": "L'épaule et l'embranchement du bras",
+   "propos": "Comment le membre supérieur se greffe sur le tronc : trois nappes musculaires qui se recouvrent, et non un raccord bout à bout."
+  },
+  {
+   "id": "bras",
+   "titre": "Le bras",
+   "propos": "Biceps, triceps, brachial antérieur — et ce que la flexion change au modelé."
+  },
+  {
+   "id": "avantbras-main",
+   "titre": "L'avant-bras et la main",
+   "propos": "La région la plus travaillée du cours : deux os qui tournent l'un sur l'autre, et la main au bout."
+  },
+  {
+   "id": "membre-inferieur",
+   "titre": "Le membre inférieur",
+   "propos": "De la hanche au genou et du genou à la cheville, sous les quatre vues."
+  },
+  {
+   "id": "pied",
+   "titre": "Le pied",
+   "propos": "La voûte déduite de son empreinte au sol, puis la jambe et le pied vus de dos."
+  },
+  {
+   "id": "tete",
+   "titre": "La tête et le cou",
+   "propos": "Le crâne, les muscles peauciers, et le passage de la main au visage."
+  }
+ ],
+ "seances": [
+  {
+   "rang": 1,
+   "id": "S8fgBEKLUiM",
+   "partie": "introduction",
+   "titre": "Introduction au cours de morphologie",
+   "titreYoutube": "Introduction aux cours de Morphologie de Jean-François Debord aux Beaux-Arts",
+   "dureeS": 41
+  },
+  {
+   "rang": 2,
+   "id": "qHKK0vp86-Q",
+   "partie": "introduction",
+   "titre": "En savoir plus",
+   "titreYoutube": "Jean-François Debord : En savoir plus",
+   "dureeS": 618
+  },
+  {
+   "rang": 3,
+   "id": "Qh-CpCTQCJ4",
+   "partie": "ensemble",
+   "titre": "De la mâchoire aux mains",
+   "titreYoutube": "J.F. Debord : De la mâchoire aux mains",
+   "dureeS": 6195
+  },
+  {
+   "rang": 4,
+   "id": "vI5qC_JpkHs",
+   "partie": "tronc",
+   "titre": "Formes antérieures du torse",
+   "titreYoutube": "J.F. Debord 2 : Formes antérieures du torse",
+   "dureeS": 5682
+  },
+  {
+   "rang": 5,
+   "id": "Um8OTTlH5XQ",
+   "partie": "tronc",
+   "titre": "Torse d'un homme vu de  profil",
+   "titreYoutube": "J.F. Debord : Torse d'un homme vu de  profil",
+   "dureeS": 6529
+  },
+  {
+   "rang": 6,
+   "id": "H2HqbPEaxk8",
+   "partie": "epaule",
+   "titre": "L'embranchement du bras",
+   "titreYoutube": "J.F. Debord : L'embranchement du bras",
+   "dureeS": 7201
+  },
+  {
+   "rang": 7,
+   "id": "bLQCuSOB8tA",
+   "partie": "ensemble",
+   "titre": "Vue d'ensemble d'un homme assis",
+   "titreYoutube": "J.F. Debord : Vue d'ensemble d'un homme assis",
+   "dureeS": 6987
+  },
+  {
+   "rang": 8,
+   "id": "IIjBn3C3d5g",
+   "partie": "ensemble",
+   "titre": "Vue d'ensemble d'une femme projetée en avant, vue de profil",
+   "titreYoutube": "J.F. Debord : Vue d'ensemble d'une femme projetée en avant, vue de profil",
+   "dureeS": 6793
+  },
+  {
+   "rang": 9,
+   "id": "FeAucP4aKS8",
+   "partie": "ensemble",
+   "titre": "Vue d'ensemble d'une femme debout, bras étendus",
+   "titreYoutube": "J.F. Debord : Vue d'ensemble d'une femme debout, bras étendus",
+   "dureeS": 6599
+  },
+  {
+   "rang": 10,
+   "id": "BySad1olbq4",
+   "partie": "ensemble",
+   "titre": "Approche du corps humain dans une attitude naturelle",
+   "titreYoutube": "J.F. Debord : Approche du corps humain dans une attitude naturelle",
+   "dureeS": 6309
+  },
+  {
+   "rang": 11,
+   "id": "Nha5ZI8PVo0",
+   "partie": "ensemble",
+   "titre": "Station hanchée",
+   "titreYoutube": "J.F. Debord : Station hanchée",
+   "dureeS": 6451
+  },
+  {
+   "rang": 12,
+   "id": "-cDGU22RFqU",
+   "partie": "membre-inferieur",
+   "titre": "Étude détaillée de la jambe",
+   "titreYoutube": "J.F. Debord : Étude détaillée de la jambe",
+   "dureeS": 6402
+  },
+  {
+   "rang": 13,
+   "id": "ycr4a1eAkn0",
+   "partie": "membre-inferieur",
+   "titre": "Membres inférieurs vus d'ensemble de 2/3 et de profil",
+   "titreYoutube": "J.F. Debord : Membres inférieurs vus d'ensemble de 2/3 et de profil",
+   "dureeS": 7079
+  },
+  {
+   "rang": 14,
+   "id": "LxhM7KErZas",
+   "partie": "membre-inferieur",
+   "titre": "Membres inférieurs vus d'ensemble et de dos",
+   "titreYoutube": "J.F. Debord : Membres inférieurs vus d'ensemble et de dos",
+   "dureeS": 6856
+  },
+  {
+   "rang": 15,
+   "id": "LHaB3iu4zIw",
+   "partie": "ensemble",
+   "titre": "Dame accroupie en train d'accoucher",
+   "titreYoutube": "J.F. Debord : Dame accroupie en train d'accoucher",
+   "dureeS": 7130
+  },
+  {
+   "rang": 16,
+   "id": "68R-oaodzTg",
+   "partie": "avantbras-main",
+   "titre": "L'avant bras en vue antérieure, le poignet et la paume de la main",
+   "titreYoutube": "J.F. Debord : L'avant bras en vue antérieure, le poignet et la paume de la main",
+   "dureeS": 6900
+  },
+  {
+   "rang": 17,
+   "id": "T3rO2WO_y7s",
+   "partie": "pied",
+   "titre": "formes du pied et de la jambe depuis empreintes plantaires",
+   "titreYoutube": "Cours de Jean-François Debord : formes du pied et de la jambe depuis empreintes plantaires",
+   "dureeS": 6288
+  },
+  {
+   "rang": 18,
+   "id": "7wpyHczLt9Q",
+   "partie": "pied",
+   "titre": "La jambe et le pied en vue postérieure",
+   "titreYoutube": "Jean-François Debord : La jambe et le pied en vue postérieure",
+   "dureeS": 6370
+  },
+  {
+   "rang": 19,
+   "id": "ndTYL4boSgE",
+   "partie": "membre-inferieur",
+   "titre": "Les deux membres inférieurs en vue de 3/4",
+   "titreYoutube": "J.F. Debord : Les deux membres inférieurs en vue de 3/4",
+   "dureeS": 6767
+  },
+  {
+   "rang": 20,
+   "id": "0IO_ymdbLPU",
+   "partie": "membre-inferieur",
+   "titre": "Les deux membres inférieurs vus de 2/3 dos",
+   "titreYoutube": "J.F. Debord : Les deux membres inférieurs vus de 2/3 dos",
+   "dureeS": 6667
+  },
+  {
+   "rang": 21,
+   "id": "2nGLn4TKsp0",
+   "partie": "tronc",
+   "titre": "crâne, cage et bassin de 2/3 dos chez un homme debout",
+   "titreYoutube": "J.F. Debord : crâne, cage et bassin de 2/3 dos chez un homme debout",
+   "dureeS": 6321
+  },
+  {
+   "rang": 22,
+   "id": "SQyL88Fq76o",
+   "partie": "tronc",
+   "titre": "La cage et les spinaux d'un homme penché en avant",
+   "titreYoutube": "J.F. Debord : La cage et les spinaux d'un homme penché en avant",
+   "dureeS": 6417
+  },
+  {
+   "rang": 23,
+   "id": "FuwzDJ5NU5M",
+   "partie": "dos",
+   "titre": "L'omoplate et les muscles qui l'habillent",
+   "titreYoutube": "J.F. Debord : L'omoplate et les muscles qui l'habillent",
+   "dureeS": 6267
+  },
+  {
+   "rang": 24,
+   "id": "E7VxdQNu9jo",
+   "partie": "dos",
+   "titre": "Cadeau de Noël : un dos tout habillé !",
+   "titreYoutube": "J.F. Debord : Cadeau de Noël : un dos tout habillé !",
+   "dureeS": 6144
+  },
+  {
+   "rang": 25,
+   "id": "IDr53Cr4fsU",
+   "partie": "dos",
+   "titre": "Les bandoulières du dos",
+   "titreYoutube": "J.F. Debord : Les bandoulières du dos",
+   "dureeS": 6250
+  },
+  {
+   "rang": 26,
+   "id": "lPiLzxL9qk4",
+   "partie": "dos",
+   "titre": "Le trapèze",
+   "titreYoutube": "J.F. Debord : Le trapèze",
+   "dureeS": 6411
+  },
+  {
+   "rang": 27,
+   "id": "N32pB-1QXS0",
+   "partie": "dos",
+   "titre": "La mise en place du grand dorsal",
+   "titreYoutube": "J.F. Debord : La mise en place du grand dorsal",
+   "dureeS": 6368
+  },
+  {
+   "rang": 28,
+   "id": "XbY3hwY4Rbk",
+   "partie": "dos",
+   "titre": "Le dos dans son ensemble",
+   "titreYoutube": "J.F. Debord : Le dos dans son ensemble",
+   "dureeS": 4874
+  },
+  {
+   "rang": 29,
+   "id": "WMJZHTZ3LZY",
+   "partie": "epaule",
+   "titre": "L'embranchement du bras dans l'épaule en vue postérieure",
+   "titreYoutube": "J.F. Debord : L'embranchement du bras dans l'épaule en vue postérieure",
+   "dureeS": 6414
+  },
+  {
+   "rang": 30,
+   "id": "xPRzam0rqDw",
+   "partie": "epaule",
+   "titre": "Du dos vers les bras",
+   "titreYoutube": "J.F. Debord : Du dos vers les bras",
+   "dureeS": 6490
+  },
+  {
+   "rang": 31,
+   "id": "pA9J6JWr0CQ",
+   "partie": "epaule",
+   "titre": "La coiffe deltoïdienne",
+   "titreYoutube": "J.F. Debord : La coiffe deltoïdienne",
+   "dureeS": 6334
+  },
+  {
+   "rang": 32,
+   "id": "oXJs2-3OAlA",
+   "partie": "bras",
+   "titre": "Les formes antérieures du bras",
+   "titreYoutube": "J.F. Debord : Les formes antérieures du bras",
+   "dureeS": 5953
+  },
+  {
+   "rang": 33,
+   "id": "uagciNFijmY",
+   "partie": "bras",
+   "titre": "Le bras en flexion, position naturelle 1",
+   "titreYoutube": "J.F. Debord : Le bras en flexion, position naturelle 1",
+   "dureeS": 6472
+  },
+  {
+   "rang": 34,
+   "id": "17Doi4NAYY0",
+   "partie": "bras",
+   "titre": "Le bras en flexion, position naturelle 2",
+   "titreYoutube": "J.F. Debord : Le bras en flexion, position naturelle 2",
+   "dureeS": 5806
+  },
+  {
+   "rang": 35,
+   "id": "qGdHRpt1qns",
+   "partie": "avantbras-main",
+   "titre": "Les extenseurs des doigts",
+   "titreYoutube": "J.F. Debord : Les extenseurs des doigts",
+   "dureeS": 6439
+  },
+  {
+   "rang": 36,
+   "id": "UUJWGz3BuY4",
+   "partie": "avantbras-main",
+   "titre": "L'avant bras en vue postérieure",
+   "titreYoutube": "J.F. Debord : L'avant bras en vue postérieure",
+   "dureeS": 6848
+  },
+  {
+   "rang": 37,
+   "id": "RYcT89bug4U",
+   "partie": "avantbras-main",
+   "titre": "Le poignet et le dos de la main",
+   "titreYoutube": "J.F. Debord : Le poignet et le dos de la main",
+   "dureeS": 6570
+  },
+  {
+   "rang": 38,
+   "id": "FHeKCC3ZiOU",
+   "partie": "avantbras-main",
+   "titre": "La paume de la main",
+   "titreYoutube": "J.F. Debord : La paume de la main",
+   "dureeS": 6204
+  },
+  {
+   "rang": 39,
+   "id": "65d7NtvHAk0",
+   "partie": "avantbras-main",
+   "titre": "La paume de la main vue de biais",
+   "titreYoutube": "J.F. Debord : La paume de la main vue de biais",
+   "dureeS": 6179
+  },
+  {
+   "rang": 40,
+   "id": "-Tss3qgdhW4",
+   "partie": "avantbras-main",
+   "titre": "Le poignet et la main de profil, du côté pouce",
+   "titreYoutube": "J.F. Debord : Le poignet et la main de profil, du côté pouce",
+   "dureeS": 6649
+  },
+  {
+   "rang": 41,
+   "id": "ZdgpRuXGY40",
+   "partie": "tete",
+   "titre": "De la main au visage",
+   "titreYoutube": "J.F. Debord : De la main au visage",
+   "dureeS": 6557
+  },
+  {
+   "rang": 42,
+   "id": "kc2e56cun8U",
+   "partie": "tete",
+   "titre": "Le torse, la tête et le cou vus de 2/3",
+   "titreYoutube": "J.F. Debord : Le torse, la tête et le cou vus de 2/3",
+   "dureeS": 6800
+  },
+  {
+   "rang": 43,
+   "id": "4IIUE6NVqDU",
+   "partie": "tete",
+   "titre": "Le crâne, le cou et leurs muscles peauciers",
+   "titreYoutube": "J.F. Debord : Le crâne, le cou et leurs muscles peauciers",
+   "dureeS": 6711
+  }
+ ]
+}

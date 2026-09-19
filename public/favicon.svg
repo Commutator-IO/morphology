@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Morphologie">
+  <!-- Un M tracé à la sanguine sur papier teinté : la marque du cours sans
+       représenter de figure, qui à 16 px ne serait qu'une tache. -->
+  <rect width="32" height="32" rx="7" fill="#faf9f7"/>
+  <path d="M7 24V9l9 9 9-9v15" fill="none" stroke="#a2462a" stroke-width="3.4"
+        stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

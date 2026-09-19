@@ -1,0 +1,82 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  # Les contrôles tournent aussi sur les pull requests ; seul le déploiement est
+  # réservé à la branche principale.
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Un déploiement à la fois, sans annuler celui qui est en cours.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build and test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # `--deny-warnings` est indispensable : sans ce drapeau, oxlint affiche
+      # ses avertissements et sort avec 0, donc l'étape ne pourrait jamais
+      # échouer.
+      - name: Lint
+        run: npm run lint
+
+      # L'index publié est un fichier généré : les tests sont ce qui garantit
+      # qu'il est cohérent avec le lexique et les séances. Les transcriptions
+      # n'étant pas versionnées, la CI ne peut pas le recalculer — elle ne peut
+      # que le vérifier, et c'est pourquoi ces tests ne sont pas facultatifs.
+      - name: Unit tests
+        run: npm test
+
+      # `npm run build` enchaîne `tsc -b` puis `vite build` : une erreur de type
+      # fait échouer cette étape.
+      #
+      # Le site est servi depuis le domaine morphologie.commutator.io, donc
+      # depuis la racine : les assets ne doivent pas être préfixés et BASE_PATH
+      # reste vide (vite.config.ts retombe alors sur "/").
+      # Sans domaine personnalisé, un site de projet vit sous /<dépôt>/ et il
+      # faudrait BASE_PATH: /${{ github.event.repository.name }}/
+      - name: Build
+        run: npm run build
+
+      # `enablement: true` provisionne Pages si le dépôt ne l'a pas encore.
+      - uses: actions/configure-pages@v6
+        if: github.event_name != 'pull_request'
+        with:
+          enablement: true
+
+      - uses: actions/upload-pages-artifact@v5
+        if: github.event_name != 'pull_request'
+        with:
+          path: dist
+
+  deploy:
+    name: Deploy
+    needs: build
+    # Une pull request ne déploie pas : elle ne passe que les contrôles.
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5
