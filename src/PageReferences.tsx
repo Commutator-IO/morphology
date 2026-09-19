@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import { Entete, Pied } from './components/Cadre';
+import { useAncre } from './lib/ancre';
 import { Lecteur, type Lecture } from './components/Lecteur';
 import { ecrireTaille, grilleDe, lireTaille, type TailleLecteur } from './lib/lecteur';
 import { CarteReference } from './components/Reference';
@@ -26,6 +27,7 @@ export function PageReferences() {
   const [type, setType] = useState<TypeReference | null>(null);
   const [parMentions, setParMentions] = useState(true);
   const [lecture, setLecture] = useState<Lecture | null>(null);
+  const cible = useAncre();
   // Le partage entre le texte et la vidéo se règle, et se retient : on ne veut
   // pas le refaire à chaque terme consulté.
   const [taille, setTaille] = useState<TailleLecteur>(lireTaille);
@@ -163,7 +165,7 @@ export function PageReferences() {
                   <CarteReference
                     key={r.id}
                     reference={r}
-                    ouvertParDefaut={resultats.length === 1}
+                    ouvertParDefaut={r.id === cible || resultats.length === 1}
                     onLire={setLecture}
                   />
                 ))}

@@ -273,7 +273,7 @@
   "id": "delavier",
   "nom": "Frédéric Delavier",
   "role": "apres",
-  "notice": "Élève de Debord pendant neuf ans — trois fois le cycle de trois ans, dit-il, tant l'enseignement lui parut bon. C'est à ce cours, ouvert à tous, qu'il rencontra celui qui le formerait des années durant à la dissection, professeur et directeur du musée d'anatomie de la rue des Saints-Pères. Il a ensuite porté la morphologie hors du champ de l'art, vers le geste sportif : ses guides de musculation, traduits dans de nombreuses langues, sont en nombre de lecteurs la descendance la plus diffusée de cet enseignement.",
+  "notice": "Élève de Debord pendant neuf ans — trois fois le cycle de trois ans, dit-il, tant l'enseignement lui parut bon. Debord, de son côté, raconte sa venue au cours : un ancien culturiste qui avait compris les dangers de la discipline, et qui lui apporta des livres dont il tira des diapositives. C'est à ce cours, ouvert à tous, que Delavier rencontra celui qui le formerait des années durant à la dissection. Il a ensuite porté la morphologie vers le geste sportif : ses guides de musculation, traduits dans de nombreuses langues, sont en nombre de lecteurs la descendance la plus diffusée de cet enseignement.",
   "ouvrages": [
    {
     "titre": "Guide des mouvements de musculation : approche anatomique",
@@ -290,7 +290,7 @@
     "editeur": "Human Kinetics"
    }
   ],
-  "source": "Élève cité dans la notice Wikipédia de Debord ; année de naissance d'après Wikidata. Titres, éditeurs et années relevés dans le catalogue Open Library, qui recense aussi les traductions. Les neuf années et le rôle de Debord dans le passage de l'anatomie artistique à la morphologie viennent de sa propre vidéo de 2020. Sa rencontre avec le professeur de dissection est racontée dans sa vidéo de 2020 ; Debord confirme de son côté, en séance 26, avoir eu longtemps parmi ses élèves — venu par plaisir — l'un des professeurs de la rue des Saints-Pères. Le patronyme, que la transcription rend par « bastion », n'a pas pu être établi. Debord ne le nomme jamais dans le cours : leur lien n'est attesté que par Delavier.",
+  "source": "Élève cité dans la notice Wikipédia de Debord ; année de naissance d'après Wikidata. Titres, éditeurs et années relevés dans le catalogue Open Library, qui recense aussi les traductions. Les neuf années et le rôle de Debord dans le passage de l'anatomie artistique à la morphologie viennent de sa propre vidéo de 2020. Sa rencontre avec le professeur de dissection est racontée dans sa vidéo de 2020 ; Debord confirme de son côté, en séance 26, avoir eu longtemps parmi ses élèves — venu par plaisir — l'un des professeurs de la rue des Saints-Pères. Le patronyme, que la transcription rend par « bastion », n'a pas pu être établi. Debord le nomme en séance 34 — la transcription écorche le nom en « les frédéric de la vieille » —, ce qui atteste la filiation des deux côtés.",
   "ne": 1967,
   "dates": "né en 1967",
   "liens": [
@@ -298,6 +298,15 @@
     "url": "https://www.youtube.com/watch?v=FZvXwNDMlxI",
     "libelle": "Son témoignage, 2020 ↗",
     "propos": "Il y raconte comment il a connu Debord, et pourquoi il a refait le cycle trois fois."
+   }
+  ],
+  "ecoutes": [
+   {
+    "video": "17Doi4NAYY0",
+    "t": 4981,
+    "seance": 34,
+    "horodate": "1:23:01",
+    "propos": "Debord raconte sa venue au cours, son passé de culturiste, et les livres sur la sculpture du IIIe Reich qu'il lui apporta — dont il tira des diapositives"
    }
   ]
  },

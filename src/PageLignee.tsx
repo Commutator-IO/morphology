@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Entete, Pied } from './components/Cadre';
+import { useAncre } from './lib/ancre';
 import {
   CLASSIQUES,
   DATEES,
@@ -355,6 +356,7 @@ function BandeHistorique() {
 export function PageLignee() {
   const [actif, setActif] = useState<Figure>(DATEES[0]);
   const fiches = useRef<(HTMLElement | null)[]>([]);
+  useAncre();
 
   /**
    * La fiche la plus proche du tiers supérieur de l'écran est celle qu'on lit.

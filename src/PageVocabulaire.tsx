@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Entete, Pied } from './components/Cadre';
+import { useAncre } from './lib/ancre';
 import { Lecteur, type Lecture } from './components/Lecteur';
 import { ecrireTaille, grilleDe, lireTaille, type TailleLecteur } from './lib/lecteur';
 import { CarteTerme } from './components/Terme';
@@ -36,6 +37,7 @@ export function PageVocabulaire() {
   // Sur grand écran, la séance se joue à droite ; sur téléphone ce panneau
   // n'est pas rendu et l'état reste simplement nul.
   const [lecture, setLecture] = useState<Lecture | null>(null);
+  const cible = useAncre();
   // Le partage entre le texte et la vidéo se règle, et se retient : on ne veut
   // pas le refaire à chaque terme consulté.
   const [taille, setTaille] = useState<TailleLecteur>(lireTaille);
@@ -315,7 +317,12 @@ export function PageVocabulaire() {
                 </h2>
                 <div className="mt-1.5 space-y-2">
                   {termes.map((t) => (
-                    <CarteTerme key={t.id} terme={t} onLire={setLecture} />
+                    <CarteTerme
+                      key={t.id}
+                      terme={t}
+                      ouvertParDefaut={t.id === cible}
+                      onLire={setLecture}
+                    />
                   ))}
                 </div>
               </section>
@@ -327,8 +334,9 @@ export function PageVocabulaire() {
               <CarteTerme
                 key={t.id}
                 terme={t}
-                /* Un seul résultat : il n'y a rien à choisir, on déplie. */
-                ouvertParDefaut={resultats.length === 1}
+                /* Un seul résultat : il n'y a rien à choisir, on déplie. Une
+                   fiche visée par une ancre se déplie aussi. */
+                ouvertParDefaut={t.id === cible || resultats.length === 1}
                 onLire={setLecture}
               />
             ))}
