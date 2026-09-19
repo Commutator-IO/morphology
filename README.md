@@ -22,7 +22,7 @@ reformule pas et ne l'héberge pas.
 | `/methode/`    | Comment l'index est construit, et ce qu'il vaut                                 |
 | `/mentions/`   | Éditeur, droits sur le cours, procédure de retrait                              |
 
-11 539 horodatages en tout. Sur téléphone, un horodatage ouvre la séance dans
+10 810 horodatages en tout. Sur téléphone, un horodatage ouvre la séance dans
 YouTube. Sur grand écran, il la place dans un lecteur à droite de la liste, sans
 quitter l'index.
 

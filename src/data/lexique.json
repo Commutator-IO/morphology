@@ -1246,8 +1246,7 @@
    "transversal",
    "transversale",
    "plan median",
-   "plan de symetrie",
-   "coupe"
+   "plan de symetrie"
   ]
  },
  {
@@ -1312,7 +1311,6 @@
    "rotations",
    "rotateur",
    "rotateurs",
-   "tourne",
    "torsion",
    "torse en torsion"
   ]
@@ -1350,8 +1348,7 @@
    "verticale",
    "fil a plomb",
    "centre de gravite",
-   "ligne de gravite",
-   "equilibre"
+   "ligne de gravite"
   ]
  },
  {
@@ -1378,8 +1375,6 @@
   "variantes": [
    "meplat",
    "meplats",
-   "plat",
-   "plate",
    "aplati",
    "aplatie",
    "facette"
@@ -1417,8 +1412,7 @@
    "rainure",
    "gouttiere",
    "gouttieres",
-   "rigole",
-   "separation"
+   "rigole"
   ]
  },
  {
@@ -1465,8 +1459,6 @@
    "axes",
    "axial",
    "axiale",
-   "direction",
-   "directions",
    "ligne directrice"
   ]
  },
@@ -1480,8 +1472,6 @@
    "raccourci",
    "raccourcis",
    "raccourcie",
-   "perspective",
-   "perspectives",
    "fuite",
    "foreshortening"
   ]
@@ -1495,10 +1485,7 @@
   "variantes": [
    "vue densemble",
    "vues densemble",
-   "ensemble",
-   "densemble",
-   "attitude",
-   "attitude naturelle"
+   "densemble"
   ]
  },
  {
@@ -1508,10 +1495,14 @@
   "region": "general",
   "definition": "Vue intermédiaire entre face et profil, la plus fréquente et la plus exigeante : aucun repère n'y est à sa place canonique, et c'est la cohérence des largeurs qui tient le dessin.",
   "variantes": [
-   "trois quarts",
-   "trois quart",
-   "de trois quart",
-   "deux tiers",
+   "vue de trois quarts",
+   "de trois quarts",
+   "en trois quarts",
+   "a trois quarts",
+   "trois quarts dos",
+   "vue de deux tiers",
+   "de deux tiers",
+   "en deux tiers",
    "de 3 4",
    "de 2 3"
   ]
@@ -1555,10 +1546,8 @@
   "region": "general",
   "definition": "La source contre laquelle tout se vérifie. L'anatomie n'est pas là pour être récitée : elle sert à comprendre ce qu'on voit sur le modèle, et cède devant lui quand les deux divergent.",
   "variantes": [
-   "modele",
-   "modeles",
    "modele vivant",
-   "academie"
+   "modeles vivants"
   ]
  },
  {
