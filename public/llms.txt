@@ -34,8 +34,20 @@ d'origine, sur la chaîne de l'Université PSL.
 - Un horodatage mène au moment où le mot est prononcé, qui n'est pas toujours celui où la chose est expliquée.
 - Le découpage des séances par région du corps est un choix éditorial, non celui de Debord.
 
+## Le catalogue de référence
+
+Ce site n'est pas le premier index de ce cours, et ne remplace pas celui qui fait
+autorité. L'Université PSL a catalogué l'enseignement dans sa bibliothèque
+numérique — notices établies, identifiants pérennes, indexation par sujet :
+[La morphologie aux Beaux-Arts de Paris](https://bibnum.explore.psl.eu/s/psl/ark:/18469/290s8)
+
+La différence tient à la granularité. PSL indexe la séance ; ce site indexe la
+seconde. Pour citer une séance ou la retrouver dans dix ans, c'est le catalogue
+de PSL qu'il faut utiliser.
+
 ## Source
 
 - [La playlist d'origine](https://www.youtube.com/playlist?list=PLYnh6UuzuHLtlgap6QPtov3MhLmWeIrEp), sur la chaîne de l'Université PSL
+- [Le catalogue de l'Université PSL](https://bibnum.explore.psl.eu/s/psl/ark:/18469/290s8)
 - [Code source](https://github.com/Commutator-IO/morphology)
 - Un projet [Commutator](https://www.commutator.io)

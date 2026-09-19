@@ -44,6 +44,38 @@ export function PageMethode() {
           </p>
         </Section>
 
+        <Section titre="L'indexation de PSL, et ce que celle-ci ajoute">
+          <p>
+            Ce site n'est pas le premier index de ce cours. L'Université PSL a
+            catalogué l'enseignement dans sa bibliothèque numérique, sous le titre{' '}
+            <a
+              href="https://bibnum.explore.psl.eu/s/psl/ark:/18469/290s8"
+              target="_blank"
+              rel="noreferrer"
+              className="text-brand-700 underline underline-offset-2"
+            >
+              La morphologie aux Beaux-Arts de Paris
+            </a>{' '}
+            : 45 documents décrits un à un, avec un identifiant pérenne, et une
+            indexation par sujet — dessin et morphologie sur l'ensemble, puis le
+            bassin, l'épaule, la cage thoracique, le bras, le crâne, la colonne
+            vertébrale, et ainsi de suite.
+          </p>
+          <p>
+            C'est le catalogue de référence, et il fait autorité là où ce site ne
+            le peut pas : notices établies, identifiants stables, description
+            bibliographique. Allez-y pour citer une séance ou la retrouver dans
+            dix ans.
+          </p>
+          <p>
+            Ce que celui-ci ajoute est d'un autre ordre : la granularité. PSL
+            indexe la séance — celle-ci porte sur l'épaule. Ce site indexe la
+            seconde — le mot « acromion » est prononcé à telle minute de telle
+            séance. Les deux se complètent plutôt qu'ils ne se doublent, et
+            l'index fin ne vaudrait rien sans le catalogue qui l'ancre.
+          </p>
+        </Section>
+
         <Section titre="Lire une séance depuis l'index">
           <p>
             Un horodatage lance la séance dans la page : à droite de la liste sur

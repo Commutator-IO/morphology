@@ -54,6 +54,19 @@ export function PageSeances() {
           d'origine.
         </p>
 
+        <p className="mt-2 hidden text-[13px] leading-relaxed text-ink-500 sm:block">
+          Ces séances sont aussi cataloguées par l'Université PSL, avec une notice
+          et un identifiant pérenne pour chacune :{' '}
+          <a
+            href="https://bibnum.explore.psl.eu/s/psl/ark:/18469/290s8"
+            target="_blank"
+            rel="noreferrer"
+            className="text-brand-700 underline underline-offset-2"
+          >
+            La morphologie aux Beaux-Arts de Paris ↗
+          </a>
+        </p>
+
         <div className="rangee-filtres mt-3 sm:mt-5">
           <button
             type="button"

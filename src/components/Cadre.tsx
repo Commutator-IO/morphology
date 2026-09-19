@@ -94,9 +94,18 @@ export function Pied() {
           >
             cours de morphologie de Jean-François Debord
           </a>
-          , filmé aux Beaux-Arts de Paris et publié par l'Université PSL. Les
-          séances appartiennent à leurs auteurs ; ce site n'en héberge aucune et
-          se contente d'y renvoyer.
+          , filmé aux Beaux-Arts de Paris et publié par l'Université PSL, qui en
+          tient aussi le{' '}
+          <a
+            href="https://bibnum.explore.psl.eu/s/psl/ark:/18469/290s8"
+            target="_blank"
+            rel="noreferrer"
+            className="text-brand-700 underline underline-offset-4"
+          >
+            catalogue de référence
+          </a>
+          . Les séances appartiennent à leurs auteurs ; ce site n'en héberge
+          aucune et se contente d'y renvoyer.
         </p>
         <p className="mt-4">
           Un projet{' '}
