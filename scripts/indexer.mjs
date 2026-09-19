@@ -110,9 +110,10 @@ function motifsDe(terme) {
 
 /**
  * Les mentions qu'une locution relevée à l'oreille désigne comme n'étant pas la
- * notion — variantes préfixées « - ». « Master i dit » est une mastoïdite, pas
- * le masséter : personne ne doit gagner cette position. Le veto vaut pour tous
- * les termes, d'où qu'il vienne.
+ * notion — variantes préfixées « - ». « Master i dit » est une mastoïdite et non
+ * le masséter, « modèle des États-Unis » un motel et non le modèle : personne ne
+ * doit gagner ces positions, pas même par une variante entière. Le veto vaut
+ * pour tous les termes, d'où qu'il vienne.
  */
 function positionsInterdites(plie, lexique) {
   const hors = new Set();
@@ -207,7 +208,15 @@ function relever({ nom, lexique: fichier, sortie: fichierSortie }) {
     }
 
     // Second passage : le voisinage tranche, sauf là où une locution l'interdit.
-    for (const off of positionsInterdites(plie, lexique)) litiges.delete(off);
+    const interdites = positionsInterdites(plie, lexique);
+    for (const off of interdites) {
+      litiges.delete(off);
+      tenues.delete(off);
+      for (const [id, offsets] of fermes) {
+        const reste = offsets.filter((o) => o !== off);
+        if (reste.length !== offsets.length) fermes.set(id, reste);
+      }
+    }
     const { gagnees, rendues, perdues } = arbitrer(plie, litiges, tenues, motsDe);
     arbitrees += rendues;
     abandonnees += perdues;

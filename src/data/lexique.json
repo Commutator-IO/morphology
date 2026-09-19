@@ -1569,8 +1569,7 @@
    "muscle masseter",
    "?master",
    "?masters",
-   "-master i dit",
-   "-master i dhien"
+   "-master i dit"
   ],
   "situation": {
    "vue": "face",
@@ -2843,8 +2842,7 @@
   "definition": "Exercice qui ouvre la plupart des séances : établir la figure entière — proportions, axes, aplomb, rapport des trois masses — avant d'entrer dans une région. L'ordre n'est pas pédagogique mais logique : un détail juste dans un ensemble faux reste faux.",
   "variantes": [
    "vue d ensemble",
-   "vues d ensemble",
-   "d ensemble"
+   "vues d ensemble"
   ]
  },
  {
@@ -2925,7 +2923,8 @@
    "modele vivant",
    "modeles vivants",
    "!modèle",
-   "!modèles"
+   "!modèles",
+   "-modele des etats unis"
   ]
  },
  {

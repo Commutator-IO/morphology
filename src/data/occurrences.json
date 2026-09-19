@@ -14137,25 +14137,8 @@
    }
   },
   "vue-densemble": {
-   "total": 6,
-   "videos": {
-    "-Tss3qgdhW4": [
-     3620
-    ],
-    "4IIUE6NVqDU": [
-     6441
-    ],
-    "BZMmmc3HVto": [
-     1247
-    ],
-    "Nha5ZI8PVo0": [
-     4586,
-     5656
-    ],
-    "SQyL88Fq76o": [
-     1275
-    ]
-   }
+   "total": 0,
+   "videos": {}
   },
   "trois-quarts": {
    "total": 45,
@@ -14548,7 +14531,7 @@
    }
   },
   "modele": {
-   "total": 52,
+   "total": 51,
    "videos": {
     "-Tss3qgdhW4": [
      2198
@@ -14565,7 +14548,6 @@
      5527
     ],
     "E7VxdQNu9jo": [
-     397,
      5876
     ],
     "FeAucP4aKS8": [
