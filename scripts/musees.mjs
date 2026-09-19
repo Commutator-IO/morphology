@@ -30,7 +30,11 @@ const references = JSON.parse(readFileSync(new URL('../src/data/references.json'
  */
 const CIBLES = {
   rembrandt: ['Rembrandt', 'rembrandt'],
-  'michel-ange': ['Michelangelo', 'michelangelo'],
+  // Michelangelo Buonarroti, et non Michelangelo Merisi — qui est le Caravage.
+  // Chercher « michelangelo » a bel et bien rendu « The Musicians » du Caravage
+  // sous le nom de Michel-Ange : le prénom ne suffit pas à distinguer deux
+  // peintres majeurs, il faut le patronyme.
+  'michel-ange': ['Michelangelo Buonarroti', 'buonarroti'],
   leonard: ['Leonardo da Vinci', 'leonardo'],
   goya: ['Goya', 'goya'],
   veronese: ['Paolo Veronese', 'veronese'],
@@ -148,56 +152,119 @@ async function chezAic(recherche, attendu) {
   };
 }
 
-/** Metropolitan Museum : la recherche rend des identifiants, à ouvrir un à un. */
-async function chezMet(recherche, attendu) {
-  const url =
-    'https://collectionapi.metmuseum.org/public/collection/v1/search?' +
-    new URLSearchParams({ q: recherche, hasImages: 'true', artistOrCulture: 'true' });
+/** Levée quand le Met nous limite : on arrête tout plutôt que d'insister. */
+class Limite extends Error {}
+
+/** Rythme délibérément lent. La dernière tentative a tiré près de 1 900
+ *  requêtes en quelques minutes et s'est fait couper ; la lenteur est ici une
+ *  condition de réussite, pas une précaution de principe. */
+const PAUSE_MS = 300;
+const MAX_NOTICES = 20;
+
+async function lire(url) {
   const r = await fetch(url);
-  if (!r.ok) return null;
-  const { objectIDs } = await r.json();
-  for (const id of (objectIDs ?? []).slice(0, 12)) {
-    await dors(120);
-    const o = await fetch(
-      `https://collectionapi.metmuseum.org/public/collection/v1/objects/${id}`,
+  if (r.status === 403 || r.status === 429) throw new Limite(`le Met répond ${r.status}`);
+  return r.ok ? r.json() : null;
+}
+
+/**
+ * Metropolitan Museum : la recherche rend des identifiants, à ouvrir un à un.
+ *
+ * On le préfère à l'Art Institute pour une raison de vérifiabilité : son API
+ * rend l'adresse de sa propre page dans `objectURL`, donc le lien est attesté
+ * par l'institution. L'API de l'Art Institute n'expose aucune URL par objet, et
+ * tout son domaine refuse les requêtes automatiques : ses liens ne peuvent être
+ * ni tenus de la source, ni constatés.
+ */
+async function chezMet(recherche, attendu) {
+  for (const parArtiste of [true, false]) {
+    const params = { q: recherche, hasImages: 'true' };
+    if (parArtiste) params.artistOrCulture = 'true';
+    const res = await lire(
+      'https://collectionapi.metmuseum.org/public/collection/v1/search?' +
+        new URLSearchParams(params),
     );
-    if (!o.ok) continue;
-    const d = await o.json();
-    if (!d.isPublicDomain || !d.primaryImageSmall) continue;
-    if (!acceptable(d.artistDisplayName, attendu)) continue;
-    return {
-      musee: 'The Metropolitan Museum of Art',
-      url: d.objectURL,
-      oeuvre: d.title,
-      date: d.objectDate ?? null,
-      artiste: d.artistDisplayName,
-    };
+    const ids = res?.objectIDs ?? [];
+    const candidats = [];
+    for (const id of ids.slice(0, MAX_NOTICES)) {
+      await dors(PAUSE_MS);
+      const d = await lire(
+        `https://collectionapi.metmuseum.org/public/collection/v1/objects/${id}`,
+      );
+      if (!d?.isPublicDomain || !d.primaryImageSmall) continue;
+      if (!acceptable(d.artistDisplayName, attendu)) continue;
+      candidats.push({
+        musee: 'The Metropolitan Museum of Art',
+        url: d.objectURL,
+        oeuvre: d.title,
+        date: d.objectDate ?? null,
+        artiste: d.artistDisplayName,
+      });
+      if (candidats.length >= 6) break;
+    }
+    candidats.sort((x, y) => rang(x.oeuvre) - rang(y.oeuvre));
+    if (candidats[0]) return candidats[0];
   }
   return null;
 }
 
-const trouves = {};
-const manques = [];
+/**
+ * On repart du relevé précédent plutôt que d'une page blanche.
+ *
+ * La version d'avant réécrivait tout à chaque passage : une coupure de l'API en
+ * cours de route remplaçait donc des liens vérifiés par des liens moins bons,
+ * en silence. Ici un appariement n'est remplacé que par un meilleur, et une
+ * interruption laisse le fichier tel qu'il était.
+ */
+const fichier = new URL('./musees.json', import.meta.url);
+let trouves = {};
+try {
+  trouves = JSON.parse(readFileSync(fichier, 'utf8'));
+} catch {
+  console.log('(aucun relevé précédent)');
+}
+
+const AVANT = Object.fromEntries(Object.entries(trouves).map(([k, v]) => [k, v.musee]));
+let promus = 0;
+let coupe = false;
+
 for (const ref of references) {
   const cible = CIBLES[ref.id];
   if (!cible) continue;
+  const dejaAuMet = trouves[ref.id]?.musee?.includes('Metropolitan');
+  if (dejaAuMet) continue;
+
   const [recherche, attendu] = cible;
-  let r = null;
   try {
-    r = (await chezAic(recherche, attendu)) ?? (await chezMet(recherche, attendu));
+    const r = await chezMet(recherche, attendu);
+    if (r) {
+      trouves[ref.id] = r;
+      promus++;
+      console.log(`↑ ${ref.nom.padEnd(24)} ${r.artiste} — « ${r.oeuvre.slice(0, 52)} »`);
+    } else if (!trouves[ref.id]) {
+      // Rien au Met et rien en réserve : on tente l'Art Institute.
+      const a = await chezAic(recherche, attendu);
+      if (a) {
+        trouves[ref.id] = a;
+        console.log(`· ${ref.nom.padEnd(24)} (Art Institute) « ${a.oeuvre.slice(0, 44)} »`);
+      }
+    }
   } catch (e) {
+    if (e instanceof Limite) {
+      console.error(`\nINTERROMPU : ${e.message}. Le relevé précédent est conservé.`);
+      coupe = true;
+      break;
+    }
     console.error(`  ${ref.id} : ${e.message}`);
   }
-  if (r) {
-    trouves[ref.id] = r;
-    console.log(`✓ ${ref.nom.padEnd(26)} ${r.artiste} — « ${r.oeuvre} » (${r.musee})`);
-  } else {
-    manques.push(ref.nom);
-    console.log(`· ${ref.nom.padEnd(26)} aucune correspondance sûre`);
-  }
-  await dors(150);
+  await dors(PAUSE_MS);
 }
 
-writeFileSync(new URL('./musees.json', import.meta.url), JSON.stringify(trouves, null, 1) + '\n');
-console.log(`\n${Object.keys(trouves).length} appariements, ${manques.length} sans correspondance`);
-if (manques.length) console.log('sans : ' + manques.join(', '));
+writeFileSync(fichier, JSON.stringify(trouves, null, 1) + '\n');
+
+const compte = {};
+for (const v of Object.values(trouves)) compte[v.musee] = (compte[v.musee] ?? 0) + 1;
+console.log(`\n${promus} appariements passés au Met${coupe ? ' avant interruption' : ''}`);
+for (const [m, n] of Object.entries(compte)) console.log(`  ${String(n).padStart(3)}  ${m}`);
+const perdus = Object.keys(AVANT).filter((k) => !trouves[k]);
+console.log(perdus.length ? `PERTE : ${perdus.join(', ')}` : 'aucun appariement perdu');

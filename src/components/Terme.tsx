@@ -29,6 +29,10 @@ export function CarteTerme({
   onLire?: (l: Lecture) => void;
 }) {
   const [ouvert, setOuvert] = useState(ouvertParDefaut ?? false);
+  // Les passages sont repliés dans la fiche ouverte : ce qu'on vient chercher,
+  // c'est la définition, et cinquante horodatages posés dessous la repoussent
+  // hors de l'écran avant qu'on l'ait lue.
+  const [passagesOuverts, setPassagesOuverts] = useState(false);
   const cat = CATEGORIES[terme.categorie];
   const total = totalDe(terme.id);
   const passages = ouvert ? passagesDe(terme.id) : [];
@@ -86,11 +90,23 @@ export function CarteTerme({
           <p className="text-[15px] leading-relaxed text-ink-800">{terme.definition}</p>
 
           {passages.length > 0 ? (
-            <div className="mt-4">
-              <p className="text-xs font-medium tracking-wide text-ink-500 uppercase">
+            <div className="mt-3">
+              <button
+                type="button"
+                onClick={() => setPassagesOuverts((v) => !v)}
+                aria-expanded={passagesOuverts}
+                className="flex min-h-9 items-center gap-1.5 text-xs text-ink-500 active:text-ink-800"
+              >
                 Où l'entendre
-              </p>
-              <ul className="mt-2 space-y-3">
+                <span className="tabular text-ink-400">
+                  {total} passage{total > 1 ? 's' : ''} · {passages.length} séance
+                  {passages.length > 1 ? 's' : ''}
+                </span>
+                <span aria-hidden="true" className="text-ink-400">
+                  {passagesOuverts ? '▴' : '▾'}
+                </span>
+              </button>
+              <ul className={`mt-2 space-y-3 ${passagesOuverts ? '' : 'hidden'}`}>
                 {passages.map(({ seance, instants }) => (
                   <li key={seance.id}>
                     <p className="text-[13px] leading-snug text-ink-700">

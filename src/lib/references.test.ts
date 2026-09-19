@@ -143,6 +143,23 @@ describe('liens de musée', () => {
     }
   });
 
+  it('ne fait pas pointer deux références sur la même œuvre', () => {
+    // L'invariant qui aurait attrapé la confusion tout seul : une recherche sur
+    // « michelangelo » a rendu « The Musicians » de Michelangelo Merisi — le
+    // Caravage — et l'a rangé sous Michel-Ange. Deux entrées renvoyant au même
+    // tableau signalent presque toujours une homonymie mal tranchée.
+    const urls = avecLien
+      .filter((r) => r.musee!.oeuvre)
+      .map((r) => r.musee!.url);
+    expect(new Set(urls).size, 'deux références partagent une œuvre').toBe(urls.length);
+  });
+
+  it('ne confond pas Michel-Ange avec le Caravage', () => {
+    // Buonarroti et Merisi portent le même prénom ; seul le patronyme distingue.
+    const m = REFERENCES.find((r) => r.id === 'michel-ange');
+    expect(m?.musee?.oeuvre ?? '').not.toContain('Musicians');
+  });
+
   it('n’attribue pas une œuvre d’atelier au maître', () => {
     // « Follower of Leonardo », « Cecco del Caravaggio », « Antoine Masson » :
     // tous passaient le premier filtre par simple inclusion du patronyme.

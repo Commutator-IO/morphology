@@ -86,17 +86,26 @@
       0 8px 24px -12px rgb(27 24 19 / 0.12);
   }
 
-  /* Pastille d'horodatage. Dimensionnée pour le pouce : 44 px de haut, la
-     cible minimale recommandée, parce que ces liens sont tapés debout, en
-     cours, sur un écran tenu d'une main. */
+  /* Horodatage.
+     Ce qu'on vient lire sur une fiche, c'est la définition ; les liens vers les
+     séances sont un second temps. Remplies de sanguine et cernées, ces pastilles
+     tiraient l'œil avant le texte — d'autant qu'un terme en compte parfois
+     cinquante. Elles deviennent donc de simples nombres, et ne reprennent leur
+     couleur qu'au survol ou à l'appui.
+     36 px de haut au lieu de 44 : en deçà de la cible recommandée, mais le
+     chiffre reste large et bien espacé, et c'est le prix de la discrétion
+     demandée. */
   .puce-temps {
-    @apply inline-flex min-h-11 items-center gap-1 rounded-lg border border-brand-200
-      bg-brand-50 px-3 text-sm font-medium text-brand-700 tabular
-      transition active:scale-95;
+    @apply inline-flex min-h-9 items-center rounded-md px-1.5 text-sm text-ink-500
+      tabular transition active:scale-95;
   }
 
   .puce-temps:hover {
-    @apply border-brand-300 bg-brand-100;
+    @apply bg-brand-50 text-brand-700;
+  }
+
+  .puce-temps:active {
+    @apply bg-brand-100 text-brand-700;
   }
 
   /* Filtre. 40 px sur téléphone plutôt que 44 : ce sont des commandes

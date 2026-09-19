@@ -1,9 +1,10 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Entete, Pied } from './components/Cadre';
 import { Lecteur, type Lecture } from './components/Lecteur';
 import { CarteTerme } from './components/Terme';
 import {
   CATEGORIES,
+  GROUPE_PAR_ID,
   GROUPES,
   groupeDeRegion,
   ORDRE_CATEGORIES,
@@ -36,7 +37,24 @@ export function PageVocabulaire() {
   const [lecture, setLecture] = useState<Lecture | null>(null);
   // Replié par défaut sur téléphone : on ouvre ce site pour retrouver un mot en
   // quelques secondes, pas pour régler des filtres.
-  const [filtresOuverts, setFiltresOuverts] = useState(false);
+  const [filtresOuverts, setFiltresOuverts] = useState(() => {
+    // Le choix se retient d'une visite à l'autre : quelqu'un qui aime voir ses
+    // filtres ne doit pas les redéployer à chaque fois. Lecture protégée — en
+    // navigation privée l'accès au stockage peut lever.
+    try {
+      return localStorage.getItem('morpho.filtres') === 'ouverts';
+    } catch {
+      return false;
+    }
+  });
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('morpho.filtres', filtresOuverts ? 'ouverts' : 'replies');
+    } catch {
+      /* stockage indisponible : le repli marche quand même, il ne survit pas. */
+    }
+  }, [filtresOuverts]);
 
   const resultats = useMemo(() => {
     const filtres = LEXIQUE.filter(
@@ -69,6 +87,12 @@ export function PageVocabulaire() {
     }
     return [...m];
   }, [resultats, tri]);
+
+  /** Ce que le bouton annonce quand tout est replié. */
+  const filtresActifs = [
+    groupe ? GROUPE_PAR_ID.get(groupe)?.libelle : null,
+    categorie ? CATEGORIES[categorie].libelle : null,
+  ].filter((x): x is string => Boolean(x));
 
   const passagesTotal = useMemo(
     () => LEXIQUE.reduce((s, t) => s + totalDe(t.id), 0),
@@ -139,6 +163,34 @@ export function PageVocabulaire() {
             )}
           </div>
 
+          {/* Tous les filtres sont repliés, à tout format.
+              Ce qu'on vient lire, c'est une définition : trois rangées de puces
+              au-dessus de la liste repoussaient les premiers termes hors de
+              l'écran. Ne restent visibles que la recherche et une ligne. Rien
+              n'est masqué en silence — le bouton porte le nom des filtres
+              actifs, et se colore tant qu'il en reste un. */}
+          <div className="mt-1.5 flex items-center justify-between gap-3">
+            <p className="tabular text-xs text-ink-500">
+              {resultats.length} terme{resultats.length > 1 ? 's' : ''}
+            </p>
+            <button
+              type="button"
+              onClick={() => setFiltresOuverts((v) => !v)}
+              aria-expanded={filtresOuverts}
+              className={`flex min-h-9 items-center gap-1 rounded-lg border px-2.5 text-xs font-medium transition ${
+                filtresActifs.length
+                  ? 'border-brand-600 bg-brand-50 text-brand-700'
+                  : 'border-ink-300 bg-white text-ink-600'
+              }`}
+            >
+              {filtresActifs.length ? filtresActifs.join(' · ') : 'Filtres'}
+              <span aria-hidden="true" className="text-ink-400">
+                {filtresOuverts ? '▴' : '▾'}
+              </span>
+            </button>
+          </div>
+
+          <div className={filtresOuverts ? 'block' : 'hidden'}>
           {/* Région d'abord : c'est par là qu'on arrive quand on révise ce
               qu'on vient d'étudier. Défilement horizontal assumé — six groupes
               ne tiennent pas sur 375 px, et les replier coûterait un geste. */}
@@ -171,31 +223,6 @@ export function PageVocabulaire() {
               </button>
             ))}
           </div>
-
-          {/* Sur téléphone, la barre collante occupait un tiers de l'écran.
-              Catégories et tri passent derrière « Filtres » : ne reste visible
-              que ce dont on se sert en premier, la recherche et la région. Sur
-              grand écran la place existe, et tout reste déplié. */}
-          <div className="mt-1.5 flex items-center justify-between gap-3">
-            <p className="tabular text-xs text-ink-500">
-              {resultats.length} terme{resultats.length > 1 ? 's' : ''}
-            </p>
-            <button
-              type="button"
-              onClick={() => setFiltresOuverts((v) => !v)}
-              aria-expanded={filtresOuverts}
-              className="flex min-h-9 items-center gap-1 rounded-lg border border-ink-300 bg-white px-2.5 text-xs font-medium text-ink-700 active:bg-ink-100 lg:hidden"
-            >
-              {/* Une fois replié, rien d'autre ne dirait qu'un filtre est actif :
-                  le bouton porte donc son nom. */}
-              {categorie ? CATEGORIES[categorie].libelle : 'Filtres'}
-              <span aria-hidden="true" className="text-ink-400">
-                {filtresOuverts ? '▴' : '▾'}
-              </span>
-            </button>
-          </div>
-
-          <div className={`${filtresOuverts ? 'block' : 'hidden'} lg:block`}>
           <div className="rangee-filtres mt-1.5">
             <button
               type="button"

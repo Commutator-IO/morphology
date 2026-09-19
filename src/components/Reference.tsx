@@ -25,6 +25,7 @@ export function CarteReference({
   onLire?: (l: Lecture) => void;
 }) {
   const [ouvert, setOuvert] = useState(ouvertParDefaut ?? false);
+  const [passagesOuverts, setPassagesOuverts] = useState(false);
   const t = TYPES[reference.type];
   const total = totalDeReference(reference.id);
   const passages = ouvert ? passagesDeReference(reference.id) : [];
@@ -91,11 +92,23 @@ export function CarteReference({
             </p>
           )}
 
-          <div className="mt-4">
-            <p className="text-xs font-medium tracking-wide text-ink-500 uppercase">
+          <div className="mt-3">
+            <button
+              type="button"
+              onClick={() => setPassagesOuverts((v) => !v)}
+              aria-expanded={passagesOuverts}
+              className="flex min-h-9 items-center gap-1.5 text-xs text-ink-500 active:text-ink-800"
+            >
               Où Debord en parle
-            </p>
-            <ul className="mt-2 space-y-3">
+              <span className="tabular text-ink-400">
+                {total} mention{total > 1 ? 's' : ''} · {passages.length} séance
+                {passages.length > 1 ? 's' : ''}
+              </span>
+              <span aria-hidden="true" className="text-ink-400">
+                {passagesOuverts ? '▴' : '▾'}
+              </span>
+            </button>
+            <ul className={`mt-2 space-y-3 ${passagesOuverts ? '' : 'hidden'}`}>
               {passages.map(({ seance, instants }) => (
                 <li key={seance.id}>
                   <p className="text-[13px] leading-snug text-ink-700">
