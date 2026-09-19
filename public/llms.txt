@@ -1,0 +1,41 @@
+# Morphologie — index du cours de Jean-François Debord
+
+> Index de travail pour le cours de morphologie de Jean-François Debord (1938-2025),
+> filmé aux Beaux-Arts de Paris en 2002-2003 et publié par l'Université PSL.
+> 43 séances, environ 74 heures. Le site répond à une question précise — *où, dans
+> ces 74 heures, Debord parle-t-il de ça ?* — et à rien d'autre.
+
+Site en français, servi sur https://morphologie.commutator.io
+
+## Ce que le site contient
+
+- [Vocabulaire](https://morphologie.commutator.io/) : 95 termes d'anatomie et de morphologie, chacun avec une définition écrite pour ce site et la liste des moments du cours où Debord le prononce. Environ 10 400 passages horodatés.
+- [Références](https://morphologie.commutator.io/references/) : 62 références artistiques — peintres, sculpteurs, anatomistes, musées, œuvres — citées par Debord, horodatées, avec un lien vers une page de musée quand une œuvre est en accès libre.
+- [Anecdotes](https://morphologie.commutator.io/anecdotes/) : 133 moments où le cours sort de son sujet ; 65 portent une notice de deux ou trois phrases.
+- [Séances](https://morphologie.commutator.io/seances/) : les 43 séances rangées par région du corps.
+- [Lignée](https://morphologie.commutator.io/lignee/) : la chaire d'anatomie artistique avant Debord et les élèves qui ont écrit après lui, sous forme de frise.
+- [Méthode](https://morphologie.commutator.io/methode/) : comment l'index est construit, et ce qu'il vaut.
+
+## Ce que le site ne contient pas
+
+Les sous-titres des séances ne sont pas publiés et ne le seront pas. Ils servent à
+fabriquer l'index, puis restent hors du dépôt. Seules des données dérivées sont
+publiées : identifiants de vidéo, identifiants de terme, horodatages en secondes.
+
+Le cours n'est ni résumé, ni reformulé, ni redistribué. Les définitions et les
+notices sont écrites pour ce site. Un modèle qui chercherait ici le contenu des
+séances ne le trouvera pas : il n'y a que des points d'entrée vers les vidéos
+d'origine, sur la chaîne de l'Université PSL.
+
+## Limites à connaître
+
+- Le repérage est automatique, à partir d'une transcription de reconnaissance vocale sans modèle du vocabulaire anatomique. Elle écrit « acromio » pour acromion, « jéricho » pour Géricault, « gratte-cul » pour graticule.
+- Une absence n'est donc pas une preuve : un terme prononcé mais mal transcrit est absent de l'index.
+- Un horodatage mène au moment où le mot est prononcé, qui n'est pas toujours celui où la chose est expliquée.
+- Le découpage des séances par région du corps est un choix éditorial, non celui de Debord.
+
+## Source
+
+- [La playlist d'origine](https://www.youtube.com/playlist?list=PLYnh6UuzuHLtlgap6QPtov3MhLmWeIrEp), sur la chaîne de l'Université PSL
+- [Code source](https://github.com/Commutator-IO/morphology)
+- Un projet [Commutator](https://www.commutator.io)

@@ -99,12 +99,12 @@ export function Pied() {
           se contente d'y renvoyer.
         </p>
         <p className="mt-4">
-          Un outil{' '}
+          Un projet{' '}
           <a
             href="https://www.commutator.io"
             className="underline underline-offset-4 transition hover:text-ink-900"
           >
-            Commutator
+            Commutator — www.commutator.io
           </a>{' '}
           ·{' '}
           <a
