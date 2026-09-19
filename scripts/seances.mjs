@@ -1,5 +1,5 @@
 /**
- * Construit `src/data/seances.json` : les 43 séances, leur durée, et la partie
+ * Construit `src/data/seances.json` : les 45 séances, leur durée, et la partie
  * du cours à laquelle elles appartiennent.
  *
  * Les titres et durées viennent de YouTube, relevés une fois puis versionnés —
@@ -8,6 +8,14 @@
  *
  *   yt-dlp --flat-playlist --print "%(id)s" "<url de la playlist>" > ids.txt
  *   yt-dlp --skip-download --print "%(id)s|%(duration)s|%(title)s" -a ids.txt
+ *
+ * Les deux dernières lignes ne sortent pas de cette commande. La playlist n'en
+ * compte que 43, alors que le catalogue Bibnum de PSL en décrit 45 : c'est en
+ * comparant les deux listes qu'on a vu manquer « Les deux membres inférieurs en
+ * vue latérale » et « Le bras en vue postérieure ». Les deux sont bien publiées
+ * sur la chaîne de l'Université PSL, simplement hors playlist. Elles sont donc
+ * rangées en fin de liste, où leur rang ne prétend pas à un ordre de cours, et
+ * marquées `horsPlaylist` pour que le site puisse le dire.
  *
  * Le découpage en parties, lui, est un choix : il suit l'ordre du raisonnement
  * de Debord — l'ensemble avant la région, la région avant le muscle — et non
@@ -39,19 +47,23 @@ export const PARTIES = [
     propos: "Le crâne, les muscles peauciers, et le passage de la main au visage." },
 ];
 
-/** Séance -> partie. Clé = rang dans la playlist. */
+/** Séance -> partie. Clé = rang dans la liste ci-dessous (44 et 45 hors playlist). */
 const APPARTENANCE = {
   introduction: [1, 2],
   ensemble: [3, 7, 8, 9, 10, 11, 15],
   tronc: [4, 5, 21, 22],
   dos: [23, 24, 25, 26, 27, 28],
   epaule: [6, 29, 30, 31],
-  bras: [32, 33, 34],
+  bras: [32, 33, 34, 45],
   'avantbras-main': [16, 35, 36, 37, 38, 39, 40],
-  'membre-inferieur': [12, 13, 14, 19, 20],
+  'membre-inferieur': [12, 13, 14, 19, 20, 44],
   pied: [17, 18],
   tete: [41, 42, 43],
 };
+
+/** Publiées sur la chaîne PSL mais absentes de la playlist : leur rang est un
+ *  numéro de rangement, pas une place dans l'ordre du cours. */
+const HORS_PLAYLIST = new Set(['BZMmmc3HVto', 'qWn9BntEhyU']);
 
 // id|durée|titre, un par ligne, dans l'ordre de la playlist.
 const BRUT = readFileSync(new URL('./seances.txt', import.meta.url), 'utf8');
@@ -61,7 +73,7 @@ for (const [partie, rangs] of Object.entries(APPARTENANCE)) {
   for (const r of rangs) partieDe.set(r, partie);
 }
 
-/** Le préfixe « J.F. Debord : » est sur 40 titres sur 43 : le répéter dans une
+/** Le préfixe « J.F. Debord : » est sur presque tous les titres : le répéter dans une
  *  liste n'apporte rien et mange la largeur, précieuse sur un téléphone. */
 function titreCourt(t) {
   return t
@@ -84,11 +96,15 @@ const seances = BRUT.trim().split('\n').map((ligne, i) => {
     titre: titreCourt(titre),
     titreYoutube: titre,
     dureeS: Number(duree) || null,
+    ...(HORS_PLAYLIST.has(id) ? { horsPlaylist: true } : {}),
   };
 });
 
 const manquants = Object.values(APPARTENANCE).flat().filter((r) => r < 1 || r > seances.length);
-if (manquants.length) throw new Error(`rangs hors playlist : ${manquants}`);
+if (manquants.length) throw new Error(`rangs inexistants : ${manquants}`);
+
+const inconnues = [...HORS_PLAYLIST].filter((id) => !seances.some((s) => s.id === id));
+if (inconnues.length) throw new Error(`hors playlist mais absentes de la liste : ${inconnues}`);
 
 writeFileSync(
   new URL('../src/data/seances.json', import.meta.url),

@@ -395,6 +395,24 @@
    "titre": "Le crâne, le cou et leurs muscles peauciers",
    "titreYoutube": "J.F. Debord : Le crâne, le cou et leurs muscles peauciers",
    "dureeS": 6711
+  },
+  {
+   "rang": 44,
+   "id": "BZMmmc3HVto",
+   "partie": "membre-inferieur",
+   "titre": "Les deux membres inférieurs en vue latérale",
+   "titreYoutube": "Jean-François Debord : Les deux membres inférieurs en vue latérale",
+   "dureeS": 6426,
+   "horsPlaylist": true
+  },
+  {
+   "rang": 45,
+   "id": "qWn9BntEhyU",
+   "partie": "bras",
+   "titre": "Le bras en vue postérieure",
+   "titreYoutube": "J. F. Debord : Le bras en vue postérieure",
+   "dureeS": 5744,
+   "horsPlaylist": true
   }
  ]
 }

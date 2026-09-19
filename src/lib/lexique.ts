@@ -32,6 +32,9 @@ export type Seance = {
   titre: string;
   titreYoutube: string;
   dureeS: number | null;
+  /** Publiée sur la chaîne PSL mais absente de la playlist. Son rang est alors
+   *  un numéro de rangement et non une place dans l'ordre de publication. */
+  horsPlaylist?: boolean;
 };
 
 export type Partie = { id: string; titre: string; propos: string };

@@ -1,10 +1,10 @@
 # Morphologie — index du cours de Jean-François Debord
 
 Index de travail pour le [cours de morphologie de Jean-François Debord][playlist],
-filmé aux Beaux-Arts de Paris et publié par l'Université PSL : 43 séances,
-environ 74 heures.
+filmé aux Beaux-Arts de Paris et publié par l'Université PSL : 45 séances,
+environ 77 heures.
 
-Le site répond à une question précise — *où, dans ces 74 heures, Debord
+Le site répond à une question précise — *où, dans ces 77 heures, Debord
 parle-t-il de ça ?* — et à rien d'autre. Il ne résume pas le cours, ne le
 reformule pas et ne l'héberge pas.
 

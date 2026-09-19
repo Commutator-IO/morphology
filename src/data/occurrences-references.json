@@ -1,10 +1,10 @@
 {
  "genere": "2026-09-19",
  "fenetreS": 45,
- "videos": 43,
+ "videos": 45,
  "termes": {
   "rembrandt": {
-   "total": 63,
+   "total": 65,
    "videos": {
     "-Tss3qgdhW4": [
      6466
@@ -28,6 +28,10 @@
      1593,
      6369,
      6553
+    ],
+    "BZMmmc3HVto": [
+     700,
+     2776
     ],
     "E7VxdQNu9jo": [
      33,
@@ -114,7 +118,7 @@
    }
   },
   "michel-ange": {
-   "total": 50,
+   "total": 52,
    "videos": {
     "-Tss3qgdhW4": [
      265,
@@ -207,6 +211,10 @@
      2154,
      2266
     ],
+    "qWn9BntEhyU": [
+     550,
+     4005
+    ],
     "vI5qC_JpkHs": [
      4609
     ],
@@ -219,7 +227,7 @@
    }
   },
   "leonard": {
-   "total": 37,
+   "total": 38,
    "videos": {
     "-Tss3qgdhW4": [
      4089
@@ -243,6 +251,9 @@
      6060,
      6123,
      6348
+    ],
+    "BZMmmc3HVto": [
+     2484
     ],
     "FeAucP4aKS8": [
      5079
@@ -519,7 +530,7 @@
    }
   },
   "rubens": {
-   "total": 8,
+   "total": 9,
    "videos": {
     "-cDGU22RFqU": [
      2883
@@ -530,6 +541,9 @@
     "7wpyHczLt9Q": [
      4766,
      4853
+    ],
+    "BZMmmc3HVto": [
+     2273
     ],
     "E7VxdQNu9jo": [
      610
@@ -695,10 +709,13 @@
    }
   },
   "ingres": {
-   "total": 2,
+   "total": 3,
    "videos": {
     "4IIUE6NVqDU": [
      1101
+    ],
+    "BZMmmc3HVto": [
+     2790
     ],
     "FeAucP4aKS8": [
      5040
@@ -706,8 +723,11 @@
    }
   },
   "lautrec": {
-   "total": 2,
+   "total": 3,
    "videos": {
+    "BZMmmc3HVto": [
+     2811
+    ],
     "FHeKCC3ZiOU": [
      5806
     ],
@@ -766,10 +786,13 @@
    }
   },
   "cranach": {
-   "total": 1,
+   "total": 2,
    "videos": {
     "2nGLn4TKsp0": [
      6201
+    ],
+    "BZMmmc3HVto": [
+     1192
     ]
    }
   },
@@ -895,8 +918,13 @@
    }
   },
   "giacometti": {
-   "total": 6,
+   "total": 10,
    "videos": {
+    "BZMmmc3HVto": [
+     1607,
+     2313,
+     6284
+    ],
     "LHaB3iu4zIw": [
      6292
     ],
@@ -908,6 +936,9 @@
     ],
     "pA9J6JWr0CQ": [
      5373
+    ],
+    "qWn9BntEhyU": [
+     5228
     ],
     "xPRzam0rqDw": [
      1213,
@@ -946,7 +977,7 @@
    }
   },
   "duchenne": {
-   "total": 48,
+   "total": 49,
    "videos": {
     "4IIUE6NVqDU": [
      120,
@@ -1008,6 +1039,9 @@
     "lPiLzxL9qk4": [
      255,
      5488
+    ],
+    "qWn9BntEhyU": [
+     3036
     ],
     "uagciNFijmY": [
      5305,
@@ -1074,7 +1108,7 @@
    }
   },
   "louvre": {
-   "total": 62,
+   "total": 66,
    "videos": {
     "-cDGU22RFqU": [
      2887,
@@ -1102,6 +1136,11 @@
     "7wpyHczLt9Q": [
      99,
      4800
+    ],
+    "BZMmmc3HVto": [
+     2286,
+     5943,
+     6141
     ],
     "E7VxdQNu9jo": [
      2719,
@@ -1171,6 +1210,9 @@
     ],
     "qHKK0vp86-Q": [
      256
+    ],
+    "qWn9BntEhyU": [
+     5215
     ],
     "uagciNFijmY": [
      2515
@@ -1262,7 +1304,7 @@
    }
   },
   "ecorche": {
-   "total": 31,
+   "total": 32,
    "videos": {
     "0IO_ymdbLPU": [
      5100
@@ -1277,6 +1319,9 @@
     ],
     "7wpyHczLt9Q": [
      5454
+    ],
+    "BZMmmc3HVto": [
+     571
     ],
     "FeAucP4aKS8": [
      3021
@@ -1342,7 +1387,7 @@
    }
   },
   "pieta": {
-   "total": 3,
+   "total": 4,
    "videos": {
     "LxhM7KErZas": [
      6487,
@@ -1350,6 +1395,9 @@
     ],
     "oXJs2-3OAlA": [
      578
+    ],
+    "qWn9BntEhyU": [
+     5647
     ]
    }
   },

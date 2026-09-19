@@ -6,7 +6,7 @@ import { GROUPES, GROUPE_PAR_ID } from './lib/couleurs';
 import { duree, lienYoutube, PARTIES, SEANCES, termesDe } from './lib/lexique';
 
 /**
- * Les 43 séances, regroupées par partie.
+ * Les 45 séances, regroupées par partie.
  *
  * L'ordre est celui du raisonnement de Debord — l'ensemble avant la région, la
  * région avant le muscle — et non celui de la playlist, qui mêle les sujets au
@@ -51,7 +51,8 @@ export function PageSeances() {
           de Paris. Les séances sont rangées ici dans l'ordre du raisonnement —
           l'ensemble d'abord, la région ensuite, le muscle en dernier — et non dans
           celui de la playlist, qui mêle les sujets. Le numéro rappelle le rang
-          d'origine.
+          d'origine. Deux séances sont publiées par PSL hors de la playlist et
+          portent les deux derniers numéros : elles sont signalées comme telles.
         </p>
 
         <p className="mt-2 hidden text-[13px] leading-relaxed text-ink-500 sm:block">
@@ -167,6 +168,7 @@ export function PageSeances() {
                             </span>
                             <span className="tabular mt-1 block text-xs text-ink-400">
                               {duree(s.dureeS)} · voir sur YouTube ↗
+                              {s.horsPlaylist && ' · hors playlist'}
                             </span>
                           </span>
                         </a>

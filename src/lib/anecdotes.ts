@@ -10,9 +10,15 @@
  * mots.
  *
  * Le repérage est lexical — les sous-titres ne notent aucun rire, donc aucun
- * signal automatique n'existe. Les 133 moments ont été relus un par un, et ceux
- * dont le passage est assez intelligible ont reçu une notice de deux ou trois
- * phrases, écrite pour ce site. Les autres restent de simples points d'écoute.
+ * signal automatique n'existe. Sur les 139 moments, 133 ont été relus un par un,
+ * et ceux dont le passage était assez intelligible ont reçu une notice de deux
+ * ou trois phrases, écrite pour ce site. Les autres restent de simples points
+ * d'écoute.
+ *
+ * Les 6 derniers viennent des deux séances hors playlist, ajoutées après cette
+ * relecture : ils sont donnés tels que le repérage les a trouvés, sans notice,
+ * et ne seront décrits qu'une fois écoutés. Écrire une notice sans avoir écouté
+ * reviendrait à deviner ce qu'a dit quelqu'un de réel.
  */
 import brut from '../data/anecdotes.json';
 import { SEANCE_PAR_ID, type Seance } from './lexique';

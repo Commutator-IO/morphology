@@ -44,10 +44,10 @@ describe('lexique', () => {
 });
 
 describe('séances', () => {
-  it('couvre les 43 séances de la playlist, sans doublon', () => {
-    expect(SEANCES).toHaveLength(43);
-    expect(new Set(SEANCES.map((s) => s.id)).size).toBe(43);
-    expect(SEANCES.map((s) => s.rang)).toEqual([...Array(43)].map((_, i) => i + 1));
+  it('couvre les 45 séances du corpus, sans doublon', () => {
+    expect(SEANCES).toHaveLength(45);
+    expect(new Set(SEANCES.map((s) => s.id)).size).toBe(45);
+    expect(SEANCES.map((s) => s.rang)).toEqual([...Array(45)].map((_, i) => i + 1));
   });
 
   it('range chaque séance dans une partie déclarée', () => {
