@@ -1064,7 +1064,11 @@
    "carpiens",
    "scaphoide",
    "os crochu",
-   "trapeze osseux"
+   "trapeze osseux",
+   "?trapeze",
+   "?trapezes",
+   "trapezoide",
+   "trapezoides"
   ],
   "situation": {
    "vue": "face",
@@ -1082,7 +1086,41 @@
      4
     ]
    ]
-  }
+  },
+  "contexte": [
+   "scaphoide",
+   "carpe",
+   "carpien",
+   "carpienne",
+   "carpiens",
+   "pouce",
+   "metacarpe",
+   "metacarpien",
+   "metacarpiens",
+   "os crochu",
+   "crochu",
+   "poignet",
+   "doigt",
+   "doigts",
+   "main",
+   "mains",
+   "pisiforme",
+   "pizy forme",
+   "pays forme",
+   "lepidi forme",
+   "semi lunaire",
+   "pyramidal",
+   "pyramidale",
+   "phalange",
+   "phalanges",
+   "paume",
+   "grand os",
+   "naviculaire",
+   "radius",
+   "styloide",
+   "annulaire",
+   "auriculaire"
+  ]
  },
  {
   "id": "pisiforme",
@@ -1241,8 +1279,8 @@
   "moderne": "Musculus trapezius",
   "definition": "Grand losange qui va de la nuque aux épines dorsales et se fixe sur la clavicule et l'omoplate. Son bord supérieur fait la pente du cou à l'épaule, ligne qui décide à elle seule de l'allure d'un dos.",
   "variantes": [
-   "trapeze",
-   "trapezes",
+   "?trapeze",
+   "?trapezes",
    "trapezien",
    "trapezienne",
    "trapezoidaux",
@@ -1258,7 +1296,34 @@
      17
     ]
    ]
-  }
+  },
+  "contexte": [
+   "nuque",
+   "epaule",
+   "epaules",
+   "omoplate",
+   "omoplates",
+   "clavicule",
+   "clavicules",
+   "claviculaire",
+   "dos",
+   "cou",
+   "acromion",
+   "deltoide",
+   "grand dorsal",
+   "occipital",
+   "occiput",
+   "vertebre",
+   "vertebres",
+   "apophyse",
+   "apophyses",
+   "epineuse",
+   "epineuses",
+   "capuchon",
+   "rhomboide",
+   "muscle plat",
+   "muscles plat"
+  ]
  },
  {
   "id": "grand-dorsal",
