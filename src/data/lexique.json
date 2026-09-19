@@ -41,7 +41,11 @@
    "maxillaire inferieur",
    "machoire",
    "machoires",
-   "maxillaire"
+   "maxillaire",
+   "angle du maxillaire",
+   "angle de la machoire",
+   "angle mandibulaire",
+   "angles du maxillaire"
   ],
   "situation": {
    "vue": "face",
@@ -782,7 +786,13 @@
    "?meta",
    "?metas",
    "cinquieme meta",
-   "5e meta"
+   "5e meta",
+   "cuboid",
+   "cuboide",
+   "cuboides",
+   "cuneiforme",
+   "cuneiformes",
+   "trois cuneiformes"
   ],
   "situation": {
    "vue": "face",
@@ -837,7 +847,14 @@
    "scapulaires",
    "ceinture scapulaire",
    "epine de l omoplate",
-   "pointe de l omoplate"
+   "pointe de l omoplate",
+   "?angle superieur",
+   "?angle inferieur",
+   "?angles superieurs",
+   "?angles inferieurs",
+   "angle de l omoplate",
+   "angle inferieur de l omoplate",
+   "angle superieur de l omoplate"
   ],
   "situation": {
    "vue": "dos",
@@ -855,7 +872,23 @@
      11
     ]
    ]
-  }
+  },
+  "contexte": [
+   "omoplate",
+   "omoplates",
+   "scapulaire",
+   "epaule",
+   "epaules",
+   "dos",
+   "acromion",
+   "clavicule",
+   "trapeze",
+   "deltoide",
+   "grand dorsal",
+   "rhomboide",
+   "angulaire",
+   "bascule"
+  ]
  },
  {
   "id": "acromion",
@@ -1125,7 +1158,11 @@
    "eminence du trapeze",
    "rainure du trapeze",
    "?trapezoidale",
-   "?trapezoidales"
+   "?trapezoidales",
+   "ainsi forme",
+   "franchi forme",
+   "apophyse ainsi forme",
+   "crochet de l os crochu"
   ],
   "situation": {
    "vue": "face",
@@ -2881,6 +2918,66 @@
    "station hanches",
    "dehanche"
   ]
+ },
+ {
+  "id": "angle-rentrant",
+  "terme": "Angle rentrant",
+  "categorie": "morphologie",
+  "region": "general",
+  "aussi": [
+   "angle sortant"
+  ],
+  "definition": "Le pli que font deux formes en se rencontrant, l'une passant sous l'autre. Rentrant quand il creuse — l'aine, le pli du coude, le dessous du sein —, sortant quand il fait saillie. Sa netteté dit l'âge et l'état de la personne : doux chez la femme et l'enfant, franc chez le maigre, effacé sous le gras. C'est un des premiers repères que Debord demande de chercher sur le modèle, avant tout nom de muscle.",
+  "variantes": [
+   "angle rentrant",
+   "angles rentrants",
+   "angle sortant",
+   "angles sortants",
+   "angle saillant",
+   "rentrant tres doux"
+  ]
+ },
+ {
+  "id": "arcade-crurale",
+  "terme": "Arcade crurale",
+  "categorie": "repere",
+  "region": "bassin",
+  "moderne": "Ligamentum inguinale",
+  "aussi": [
+   "ligament inguinal",
+   "pli de l'aine"
+  ],
+  "definition": "Le ligament tendu de l'épine iliaque antéro-supérieure au pubis, où s'arrête la paroi de l'abdomen et où commence la cuisse. On ne le voit pas, mais on voit son effet : c'est lui qui creuse le pli de l'aine, et qui donne au ventre sa limite basse en accent circonflexe. La transcription en fait une « arcade rurale » ou une « arcade chorale ».",
+  "variantes": [
+   "arcade crurale",
+   "arcades crurales",
+   "arcade crural",
+   "arcades crural",
+   "arcade rural",
+   "arcade chorale",
+   "arcades chorale",
+   "arcade creera",
+   "ligament inguinal",
+   "arcade ligamentaire",
+   "pli de l aine"
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     60,
+     186,
+     12,
+     4
+    ],
+    [
+     76,
+     186,
+     12,
+     4
+    ]
+   ]
+  }
  },
  {
   "id": "aplomb",
