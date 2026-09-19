@@ -69,6 +69,7 @@ export function PageAnecdotes() {
             onClick={() => {
               setCategorie(null);
               setComparaisons(false);
+              setDecritsSeuls(true);
             }}
             aria-pressed={categorie === null && !comparaisons}
             className={`puce-filtre ${
@@ -114,19 +115,21 @@ export function PageAnecdotes() {
           >
             Comparaisons hors art
           </button>
-          <button
-            type="button"
-            onClick={() => setDecritsSeuls((v) => !v)}
-            aria-pressed={decritsSeuls}
-            className={`puce-filtre ${
-              decritsSeuls
-                ? 'border-ink-800 bg-ink-800 text-white'
-                : 'border-ink-300 bg-white text-ink-600'
-            }`}
-          >
-            Décrits seulement
-          </button>
         </div>
+
+        {/* Hors de la rangée de puces, et formulé comme un ajout.
+            Posé parmi elles, cet interrupteur passait pour un cinquième filtre
+            exclusif : on cliquait « Tout » et la liste restait tronquée, sans
+            qu'on voie pourquoi. Une case à cocher dit ce qu'il est. */}
+        <label className="mt-2.5 flex min-h-11 w-fit cursor-pointer items-center gap-2 text-[13px] text-ink-600">
+          <input
+            type="checkbox"
+            checked={!decritsSeuls}
+            onChange={(e) => setDecritsSeuls(!e.target.checked)}
+            className="h-4 w-4 accent-brand-600"
+          />
+          Afficher aussi les {MOMENTS.length - decrits} moments non décrits
+        </label>
 
         {comparaisons ? (
           <p className="mt-3 text-[13px] leading-relaxed text-ink-600">
