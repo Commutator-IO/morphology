@@ -134,9 +134,11 @@
   "id": "cavallo",
   "nom": "Ricardo Cavallo",
   "role": "artistes",
-  "notice": "Peintre. Cité parmi les élèves de Debord.",
+  "notice": "Peintre français d'origine argentine, né à Buenos Aires, en France depuis 1976 et installé dans le Finistère depuis 2003. Il peint le paysage breton sur le motif, en grands assemblages de petits panneaux.",
   "ouvrages": [],
-  "source": "Élève cité dans la notice Wikipédia de Jean-François Debord, qui nomme la discipline de chacun."
+  "source": "Élève cité dans la notice Wikipédia de Debord, qui orthographie son nom « Cavalo » ; sa propre notice Wikipédia donne « Cavallo », avec sa date et son lieu de naissance.",
+  "dates": "né en 1954",
+  "ne": 1954
  },
  {
   "id": "paquignon",
@@ -162,9 +164,11 @@
   "id": "garcia",
   "nom": "Delphine D. Garcia",
   "role": "artistes",
-  "notice": "Peintre. Citée parmi les élèves de Debord.",
+  "notice": "Peintre et graveuse, passée par les Beaux-Arts de Paris de 1996 à 2003 — donc élève pendant les années captées par ce site. Sa biographie précise qu'elle travaille auprès de Debord en Normandie depuis 2006 : la filiation s'est prolongée bien après le cours.",
   "ouvrages": [],
-  "source": "Élève cité dans la notice Wikipédia de Jean-François Debord, qui nomme la discipline de chacun."
+  "source": "Formation, dates et travail auprès de Debord d'après sa biographie sur son site personnel, delphinedgarcia.com — source de première main, plus précise que la notice Wikipédia qui la cite seulement parmi les élèves.",
+  "dates": "née en 1973",
+  "ne": 1973
  },
  {
   "id": "lallemand",
