@@ -28,24 +28,24 @@
   "artiste": "Goya (Francisco de Goya y Lucientes)"
  },
  "veronese": {
-  "musee": "Art Institute of Chicago",
-  "url": "https://www.artic.edu/artworks/15251",
-  "oeuvre": "Head of a Woman",
-  "date": "c. 1575",
-  "artiste": "Veronese (Paolo Caliari)"
+  "musee": "The Metropolitan Museum of Art",
+  "url": "https://www.metmuseum.org/art/collection/search/437891",
+  "oeuvre": "Mars and Venus United by Love",
+  "date": "1570s",
+  "artiste": "Paolo Veronese (Paolo Caliari)"
  },
  "velasquez": {
-  "musee": "Art Institute of Chicago",
-  "url": "https://www.artic.edu/artworks/21934",
-  "oeuvre": "Kitchen Scene",
-  "date": "1618–20",
-  "artiste": "Diego Velázquez"
+  "musee": "The Metropolitan Museum of Art",
+  "url": "https://www.metmuseum.org/art/collection/search/437875",
+  "oeuvre": "Portrait of a Man",
+  "date": "ca. 1650",
+  "artiste": "Velázquez"
  },
  "david": {
-  "musee": "Art Institute of Chicago",
-  "url": "https://www.artic.edu/artworks/113576",
-  "oeuvre": "Bust of Angelique Mongez",
-  "date": "1806",
+  "musee": "The Metropolitan Museum of Art",
+  "url": "https://www.metmuseum.org/art/collection/search/436105",
+  "oeuvre": "The Death of Socrates",
+  "date": "1787",
   "artiste": "Jacques Louis David"
  },
  "daumier": {
