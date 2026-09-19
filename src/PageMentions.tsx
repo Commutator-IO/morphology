@@ -83,7 +83,8 @@ export function PageMentions() {
             réservés&nbsp;» et nomme trois détenteurs : Jean-François Debord et
             ses ayants droit, les Beaux-Arts de Paris, et l'Université PSL pour
             la numérisation. Les séances ont été réalisées par Cyril de
-            Turkheim.
+            Turckheim — que le catalogue Bibnum crédite comme réalisateur sans
+            le compter parmi les détenteurs.
           </p>
           <p>
             Ce site invoque, pour ce qu'il publie, l'exception de courte citation
