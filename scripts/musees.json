@@ -339,5 +339,68 @@
   "oeuvre": "Landscape with Saint John on Patmos",
   "date": "1640",
   "artiste": "Nicolas Poussin"
+ },
+ "vesale": {
+  "musee": "Internet Archive",
+  "url": "https://archive.org/details/gri_33125008502920",
+  "oeuvre": "De humani corporis fabrica libri septem",
+  "date": "1543",
+  "artiste": "André Vésale"
+ },
+ "bourgery": {
+  "musee": "Internet Archive",
+  "url": "https://archive.org/details/BIUSante_02083x01",
+  "oeuvre": "Traité complet de l'anatomie de l'homme, par les Drs Bourgery et Claude Bernard et le professeur-dessinateur-anatomiste N.H. Jacob, avec le concours de Ludovic Hirschfeld. Tome Ier.",
+  "date": "1866",
+  "artiste": "J.-B. M. Bourgery, planches de N.-H. Jacob"
+ },
+ "duchenne": {
+  "musee": "Internet Archive",
+  "url": "https://archive.org/details/mecanismedelaphy00duch",
+  "oeuvre": "Mécanisme de la physionomie humaine",
+  "date": "1862",
+  "artiste": "Duchenne de Boulogne"
+ },
+ "darwin": {
+  "musee": "Internet Archive",
+  "url": "https://archive.org/details/india.history.resource.85465",
+  "oeuvre": "The Expression of the Emotions in Man and Animals",
+  "date": "1872",
+  "artiste": "Charles Darwin"
+ },
+ "strauss-durckheim": {
+  "musee": "Internet Archive",
+  "url": "https://archive.org/details/anatomiedescrip00stragoog",
+  "oeuvre": "Anatomie descriptive et comparative du chat",
+  "date": "1845",
+  "artiste": "Hercule Straus-Durckheim"
+ },
+ "duval": {
+  "musee": "Internet Archive",
+  "url": "https://archive.org/details/b20418085",
+  "oeuvre": "Précis d'anatomie à l'usage des artistes",
+  "date": "1881",
+  "artiste": "Mathias Duval"
+ },
+ "paul-richer": {
+  "musee": "Internet Archive",
+  "url": "https://archive.org/details/AnatomieArtistiqueDescriptionDesFormesExtrieuresDuCorpsHumain",
+  "oeuvre": "Anatomie artistique : description des formes extérieures du corps humain",
+  "date": "1890",
+  "artiste": "Paul Richer"
+ },
+ "ecorche": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/3169",
+  "oeuvre": "Male Ecorché",
+  "date": "c. 1810",
+  "artiste": "John Partridge"
+ },
+ "pieta": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/160235",
+  "oeuvre": "Pietà",
+  "date": "c. 1686",
+  "artiste": "Filippo Parodi"
  }
 }

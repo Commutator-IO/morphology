@@ -663,7 +663,13 @@
    "duchesne",
    "duchenne de boulogne",
    "duchene"
-  ]
+  ],
+  "musee": {
+   "nom": "Internet Archive",
+   "url": "https://archive.org/details/mecanismedelaphy00duch",
+   "oeuvre": "Mécanisme de la physionomie humaine",
+   "date": "1862"
+  }
  },
  {
   "id": "vesale",
@@ -675,7 +681,13 @@
    "vesale",
    "vesalius",
    "vessale"
-  ]
+  ],
+  "musee": {
+   "nom": "Internet Archive",
+   "url": "https://archive.org/details/gri_33125008502920",
+   "oeuvre": "De humani corporis fabrica libri septem",
+   "date": "1543"
+  }
  },
  {
   "id": "duval",
@@ -686,7 +698,13 @@
   "variantes": [
    "mathias duval",
    "duval"
-  ]
+  ],
+  "musee": {
+   "nom": "Internet Archive",
+   "url": "https://archive.org/details/b20418085",
+   "oeuvre": "Précis d'anatomie à l'usage des artistes",
+   "date": "1881"
+  }
  },
  {
   "id": "paul-richer",
@@ -697,7 +715,13 @@
   "variantes": [
    "paul richer",
    "richer"
-  ]
+  ],
+  "musee": {
+   "nom": "Internet Archive",
+   "url": "https://archive.org/details/AnatomieArtistiqueDescriptionDesFormesExtrieuresDuCorpsHumain",
+   "oeuvre": "Anatomie artistique : description des formes extérieures du corps humain",
+   "date": "1890"
+  }
  },
  {
   "id": "bourgery",
@@ -708,7 +732,13 @@
   "variantes": [
    "bourgery",
    "bourgery et jacob"
-  ]
+  ],
+  "musee": {
+   "nom": "Internet Archive",
+   "url": "https://archive.org/details/BIUSante_02083x01",
+   "oeuvre": "Traité complet de l'anatomie de l'homme, par les Drs Bourgery et Claude Bernard et le professeur-dessinateur-anatomiste N.H. Jacob, avec le concours de Ludovic Hirschfeld. Tome Ier.",
+   "date": "1866"
+  }
  },
  {
   "id": "louvre",
@@ -803,7 +833,13 @@
    "ecorche",
    "ecorches",
    "l ecorche"
-  ]
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/3169",
+   "oeuvre": "Male Ecorché",
+   "date": "c. 1810"
+  }
  },
  {
   "id": "marietta",
@@ -828,7 +864,13 @@
   "variantes": [
    "pieta",
    "la pieta"
-  ]
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/160235",
+   "oeuvre": "Pietà",
+   "date": "c. 1686"
+  }
  },
  {
   "id": "venus-de-milo",
@@ -1090,7 +1132,13 @@
    "darwin",
    "darwinisme",
    "darwinien"
-  ]
+  ],
+  "musee": {
+   "nom": "Internet Archive",
+   "url": "https://archive.org/details/india.history.resource.85465",
+   "oeuvre": "The Expression of the Emotions in Man and Animals",
+   "date": "1872"
+  }
  },
  {
   "id": "strauss-durckheim",
@@ -1102,6 +1150,11 @@
    "strauss durckheim",
    "straus durckheim"
   ],
-  "musee": null
+  "musee": {
+   "nom": "Internet Archive",
+   "url": "https://archive.org/details/anatomiedescrip00stragoog",
+   "oeuvre": "Anatomie descriptive et comparative du chat",
+   "date": "1845"
+  }
  }
 ]

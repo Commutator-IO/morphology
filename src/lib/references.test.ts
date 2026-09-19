@@ -137,6 +137,9 @@ describe('liens de musée', () => {
     'collections.louvre.fr',
     'www.mauritshuis.nl',
     'www.parismuseescollections.paris.fr',
+    // Numérisations de livres, pour les anatomistes : chaque page ouverte et son
+    // titre relevé, comme pour les notices d'œuvre.
+    'archive.org',
   ]);
 
   const avecLien = REFERENCES.filter((r) => r.musee);
@@ -156,7 +159,7 @@ describe('liens de musée', () => {
   it('nomme l’œuvre dès qu’il s’agit d’une collection', () => {
     for (const r of avecLien) {
       const collection = new URL(r.musee!.url).hostname.match(
-        /artic|metmuseum|collections\.louvre|mauritshuis|parismuseescollections/,
+        /artic|metmuseum|collections\.louvre|mauritshuis|parismuseescollections|archive\.org/,
       );
       if (collection) expect(r.musee!.oeuvre, r.id).toBeTruthy();
     }
