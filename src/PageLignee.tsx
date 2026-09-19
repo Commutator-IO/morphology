@@ -42,7 +42,7 @@ function Plaque({ figure }: { figure: Figure }) {
     .slice(0, 2)
     .join('');
   return (
-    <div className="relative aspect-[4/5] w-14 shrink-0 self-start overflow-hidden rounded-md border border-ink-200 bg-ink-100 sm:w-16">
+    <div className="relative aspect-[3/4] w-20 shrink-0 self-start overflow-hidden rounded-md border border-ink-200 bg-ink-100 sm:w-24">
       {figure.portrait ? (
         <img
           src={figure.portrait}
@@ -55,7 +55,7 @@ function Plaque({ figure }: { figure: Figure }) {
       ) : (
         <div
           aria-hidden="true"
-          className="titre flex h-full w-full items-center justify-center text-[17px] text-ink-400"
+          className="titre flex h-full w-full items-center justify-center text-[22px] text-ink-400"
         >
           {initiales}
         </div>
