@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { FIGURES, parSection, SECTIONS } from './filiation';
+import { FIGURES, parSection, SECTIONS } from './lignee';
 
 /**
  * Une bibliographie est le genre d'objet qu'on remplit volontiers de mémoire,
@@ -7,7 +7,7 @@ import { FIGURES, parSection, SECTIONS } from './filiation';
  * an, un ouvrage attribué au mauvais auteur. Ces tests imposent la règle du
  * site — rien n'est publié sans sa provenance.
  */
-describe('filiation', () => {
+describe('lignée', () => {
   it('a des identifiants uniques', () => {
     const ids = FIGURES.map((f) => f.id);
     expect(new Set(ids).size).toBe(ids.length);

@@ -9,7 +9,7 @@
  * Chaque entrée porte sa source. C'est la règle du site : on ne cite pas de
  * mémoire, et ce qui n'a pas pu être vérifié le dit.
  */
-import brut from '../data/filiation.json';
+import brut from '../data/lignee.json';
 
 export type Role = 'avant' | 'apres' | 'autour';
 

@@ -1,5 +1,5 @@
 import { Entete, Pied } from './components/Cadre';
-import { FIGURES, parSection, SECTIONS } from './lib/filiation';
+import { FIGURES, parSection, SECTIONS } from './lib/lignee';
 
 /**
  * D'où vient ce cours, et ce qu'il a produit.
@@ -10,16 +10,16 @@ import { FIGURES, parSection, SECTIONS } from './lib/filiation';
  * échoué — c'est la règle du site, et elle vaut pour une bibliographie plus
  * encore qu'ailleurs, où la citation de mémoire est la faute ordinaire.
  */
-export function PageFiliation() {
+export function PageLignee() {
   const numerises = FIGURES.flatMap((f) => f.ouvrages).filter((o) => o.url).length;
 
   return (
     <>
-      <Entete chemin="/filiation/" />
+      <Entete chemin="/lignee/" />
 
       <main className="mx-auto max-w-4xl px-4 pb-16">
         <h1 className="titre mt-4 text-xl leading-tight text-ink-900 sm:mt-6 sm:text-3xl">
-          Filiation
+          Lignée
         </h1>
         <p className="mt-3 text-[15px] leading-relaxed text-ink-700">
           Un cours ne sort pas de rien. Celui-ci prolonge une chaire tenue depuis
