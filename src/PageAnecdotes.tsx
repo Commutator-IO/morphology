@@ -14,15 +14,20 @@ import { duree, horodate, lienYoutube } from './lib/lexique';
 /**
  * Les moments où le cours sort de son sujet.
  *
- * Page volontairement prudente. On ne sait pas ce qui se dit à ces
- * instants-là : les sous-titres ne notent aucun rire, le repérage est lexical,
- * et la reconnaissance vocale fabrique des mots crus là où Debord parle de
- * graticule. On donne donc des points d'écoute et le mot qui les a fait
- * remonter — à l'auditeur de juger, ce que personne ne peut faire à sa place.
+ * Debord digresse beaucoup, et c'est une part de l'enseignement : un souvenir
+ * d'atelier, un échange avec la salle, et surtout des comparaisons prises hors
+ * de l'art — un sport, un animal, un geste ordinaire — qui expliquent une forme
+ * mieux qu'une planche.
+ *
+ * Chaque moment assez intelligible porte une notice de deux ou trois phrases,
+ * écrite pour ce site. Les autres restent de simples points d'écoute : les
+ * décrire supposerait de deviner, et deviner ce qu'a dit quelqu'un de réel
+ * n'est pas une option.
  */
 export function PageAnecdotes() {
   const [categorie, setCategorie] = useState<Categorie | null>(null);
-  const [masquerDouteux, setMasquerDouteux] = useState(false);
+  const [comparaisons, setComparaisons] = useState(false);
+  const [decritsSeuls, setDecritsSeuls] = useState(true);
   const [lecture, setLecture] = useState<Lecture | null>(null);
   const [taille, setTaille] = useState<TailleLecteur>(lireTaille);
 
@@ -33,13 +38,16 @@ export function PageAnecdotes() {
 
   const groupes = useMemo(() => {
     const filtres = MOMENTS.filter(
-      (m) => (!categorie || m.categorie === categorie) && !(masquerDouteux && m.douteux),
+      (m) =>
+        (!categorie || m.categorie === categorie) &&
+        (!comparaisons || m.comparaison) &&
+        (!decritsSeuls || m.note),
     );
     return grouperParSeance(filtres);
-  }, [categorie, masquerDouteux]);
+  }, [categorie, comparaisons, decritsSeuls]);
 
   const total = groupes.reduce((s, g) => s + g.moments.length, 0);
-  const douteux = MOMENTS.filter((m) => m.douteux).length;
+  const decrits = MOMENTS.filter((m) => m.note).length;
 
   return (
     <>
@@ -50,33 +58,21 @@ export function PageAnecdotes() {
           Quand le cours sort de son sujet
         </h1>
         <p className="mt-3 hidden text-[15px] leading-relaxed text-ink-700 sm:block">
-          Debord digresse : un souvenir d'atelier, une rencontre, un mot plus vert
-          que les autres. {MOMENTS.length} moments repérés dans {groupes.length}{' '}
-          séances — des points d'écoute, pas un florilège.
+          Un souvenir d'atelier, un échange avec la salle, une comparaison prise
+          hors de l'art. {decrits} de ces moments sont décrits ici en deux ou
+          trois phrases ; touchez l'horodatage pour aller les entendre.
         </p>
-
-        {/* La réserve est en tête et non en note de bas de page : elle change la
-            façon de lire toute la liste, et une mise en garde qu'on découvre
-            après coup ne sert à rien. */}
-        <div className="mt-4 rounded-[var(--radius-card)] border border-os-200 bg-os-50 px-4 py-3 text-[13px] leading-relaxed text-ink-700">
-          <b className="font-semibold text-ink-900">Des points d'écoute, pas un
-          florilège.</b>{' '}
-          Le ton familier est bien celui du cours — un auditeur l'a confirmé à
-          l'oreille. Mais le repérage, lui, est lexical : il ne dit pas ce qui se
-          dit, seulement qu'un mot est passé là. Et la transcription se trompe
-          parfois sur le mot lui-même : elle écrit « gratte-cul » là où Debord dit{' '}
-          <i>graticule</i>, le carroyage du dessinateur. Les {douteux} repères
-          marqués <span className="text-os-700">?</span> portent un mot souvent
-          déformé : l'instant vaut, le mot est à confirmer.
-        </div>
 
         <div className="rangee-filtres mt-4">
           <button
             type="button"
-            onClick={() => setCategorie(null)}
-            aria-pressed={categorie === null}
+            onClick={() => {
+              setCategorie(null);
+              setComparaisons(false);
+            }}
+            aria-pressed={categorie === null && !comparaisons}
             className={`puce-filtre ${
-              categorie === null
+              categorie === null && !comparaisons
                 ? 'border-brand-600 bg-brand-600 text-white'
                 : 'border-ink-300 bg-white text-ink-600'
             }`}
@@ -87,7 +83,10 @@ export function PageAnecdotes() {
             <button
               key={c}
               type="button"
-              onClick={() => setCategorie(categorie === c ? null : c)}
+              onClick={() => {
+                setCategorie(categorie === c ? null : c);
+                setComparaisons(false);
+              }}
               aria-pressed={categorie === c}
               className={`puce-filtre ${
                 categorie === c
@@ -98,29 +97,56 @@ export function PageAnecdotes() {
               {CATEGORIES[c].libelle}
             </button>
           ))}
+          {/* Les comparaisons traversent les trois catégories : un sport peut
+              venir dans un souvenir comme dans un échange avec la salle. */}
           <button
             type="button"
-            onClick={() => setMasquerDouteux((v) => !v)}
-            aria-pressed={masquerDouteux}
+            onClick={() => {
+              setComparaisons((v) => !v);
+              setCategorie(null);
+            }}
+            aria-pressed={comparaisons}
             className={`puce-filtre ${
-              masquerDouteux
+              comparaisons
+                ? 'border-brand-600 bg-brand-600 text-white'
+                : 'border-ink-300 bg-white text-ink-600'
+            }`}
+          >
+            Comparaisons hors art
+          </button>
+          <button
+            type="button"
+            onClick={() => setDecritsSeuls((v) => !v)}
+            aria-pressed={decritsSeuls}
+            className={`puce-filtre ${
+              decritsSeuls
                 ? 'border-ink-800 bg-ink-800 text-white'
                 : 'border-ink-300 bg-white text-ink-600'
             }`}
           >
-            Masquer les douteux
+            Décrits seulement
           </button>
         </div>
 
-        {categorie && (
+        {comparaisons ? (
           <p className="mt-3 text-[13px] leading-relaxed text-ink-600">
-            {CATEGORIES[categorie].propos}
+            Debord y explique une forme par un domaine étranger à l'art — le
+            volley-ball, la planche à voile, le cheval, le chat, un marteau mal
+            tenu. Ce sont souvent les passages où l'anatomie devient la plus
+            claire.
           </p>
+        ) : (
+          categorie && (
+            <p className="mt-3 text-[13px] leading-relaxed text-ink-600">
+              {CATEGORIES[categorie].propos}
+            </p>
+          )
         )}
 
         <p className="tabular mt-3 text-xs text-ink-500">
           {total} moment{total > 1 ? 's' : ''} · {groupes.length} séance
           {groupes.length > 1 ? 's' : ''}
+          {!decritsSeuls && ' · les moments sans notice sont de simples repères'}
         </p>
 
         <div className={`mt-4 lg:grid lg:gap-8 ${grilleDe(taille)}`}>
@@ -140,11 +166,11 @@ export function PageAnecdotes() {
                   <span className="text-ink-400">({duree(seance.dureeS)})</span>
                 </h2>
 
-                <ul className="mt-2 flex flex-wrap gap-x-1.5 gap-y-1">
+                <ul className="mt-2.5 space-y-2.5">
                   {moments.map((m) => (
-                    <li key={m.t}>
+                    <li key={m.t} className="flex items-start gap-2.5">
                       <a
-                        className="puce-temps"
+                        className="puce-temps mt-px shrink-0"
                         href={lienYoutube(seance.id, m.t)}
                         target="_blank"
                         rel="noreferrer"
@@ -155,13 +181,19 @@ export function PageAnecdotes() {
                         }}
                       >
                         {horodate(m.t)}
-                        {/* Le mot déclencheur est dit, jamais la phrase : il
-                            annonce ce qu'on va chercher sans prêter de propos. */}
-                        <span className={`ml-1.5 ${m.douteux ? 'text-os-700' : 'text-ink-400'}`}>
-                          {m.mot}
-                          {m.douteux ? ' ?' : ''}
-                        </span>
                       </a>
+                      {m.note ? (
+                        <p className="text-[14px] leading-relaxed text-ink-800">
+                          {m.note}
+                          {m.comparaison && (
+                            <span className="ml-1.5 rounded border border-os-200 bg-os-50 px-1.5 py-0.5 align-middle text-[11px] text-os-700">
+                              hors art
+                            </span>
+                          )}
+                        </p>
+                      ) : (
+                        <p className="mt-2 text-[13px] text-ink-400">{m.mot}</p>
+                      )}
                     </li>
                   ))}
                 </ul>

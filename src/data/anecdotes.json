@@ -6,52 +6,55 @@
    "video": "-cDGU22RFqU",
    "t": 4294,
    "mot": "je vous raconte",
-   "categorie": "souvenir"
+   "categorie": "souvenir",
+   "note": "Debord raconte une scène d'un film d'Yves Robert qui le fait rêver : dans un compartiment de train d'autrefois, le petit Gibus se retrouve assis entre deux dames au langage particulièrement délié."
   },
   {
    "video": "-cDGU22RFqU",
    "t": 5930,
    "mot": "cul",
-   "categorie": "familier",
-   "douteux": true
+   "categorie": "familier"
   },
   {
    "video": "-cDGU22RFqU",
    "t": 6177,
    "mot": "cul",
-   "categorie": "familier",
-   "douteux": true
+   "categorie": "familier"
   },
   {
    "video": "-Tss3qgdhW4",
    "t": 2508,
    "mot": "mon ami",
-   "categorie": "souvenir"
+   "categorie": "salle"
   },
   {
    "video": "-Tss3qgdhW4",
    "t": 5357,
    "mot": "quand j etais",
-   "categorie": "souvenir"
+   "categorie": "souvenir",
+   "note": "Debord parle de l'assistant qu'il avait pris lorsqu'il était jeune, un garçon que passionnait précisément tout ce qui ne l'intéressait pas lui-même. Il observe qu'ils avaient chacun leur morphologie, l'un tout en force."
   },
   {
    "video": "0IO_ymdbLPU",
    "t": 2538,
    "mot": "mon ami",
-   "categorie": "souvenir"
+   "categorie": "salle"
   },
   {
    "video": "17Doi4NAYY0",
    "t": 827,
    "mot": "testicules",
    "categorie": "familier",
-   "douteux": true
+   "note": "Pour montrer pourquoi l'axe de l'avant-bras doit rester constant quand le radius pivote, Debord prend l'exemple du marteau : si l'axe se déplace, on se le prend sur les parties, puis on frappe dans le vide.",
+   "comparaison": true
   },
   {
    "video": "17Doi4NAYY0",
    "t": 1141,
    "mot": "quand j etais",
-   "categorie": "souvenir"
+   "categorie": "souvenir",
+   "note": "Interrogeant un étudiant archer sur le creux où se loge le cubitus, Debord se souvient qu'enfant il ne tirait qu'à l'arc de fortune, et qu'il rêvait des arcs du Moyen Âge à une époque où cela n'était pas du tout à la mode.",
+   "comparaison": true
   },
   {
    "video": "17Doi4NAYY0",
@@ -63,112 +66,114 @@
    "video": "17Doi4NAYY0",
    "t": 5380,
    "mot": "mon ami",
-   "categorie": "souvenir"
+   "categorie": "salle"
   },
   {
    "video": "2nGLn4TKsp0",
    "t": 3406,
    "mot": "penis",
-   "categorie": "familier",
-   "douteux": true
+   "categorie": "familier"
   },
   {
    "video": "2nGLn4TKsp0",
    "t": 4636,
    "mot": "quand j etais",
-   "categorie": "souvenir"
+   "categorie": "souvenir",
+   "note": "Souvenir de service militaire, au train des équipages. Debord avait fait retoucher son uniforme pour avoir l'air un peu plus élégant."
   },
   {
    "video": "2nGLn4TKsp0",
    "t": 6292,
    "mot": "testicules",
    "categorie": "familier",
-   "douteux": true
+   "note": "Debord commente une petite sculpture d'Augsbourg du XVIe siècle, qu'on peut poser sur un bureau dans deux ou trois positions différentes. Il s'amuse du personnage qui sourit entre ses jambes et conclut la séance là-dessus."
   },
   {
    "video": "4IIUE6NVqDU",
    "t": 1880,
    "mot": "mon ami",
-   "categorie": "souvenir"
+   "categorie": "salle"
   },
   {
    "video": "4IIUE6NVqDU",
    "t": 4691,
    "mot": "copuler",
    "categorie": "familier",
-   "douteux": true
+   "note": "À propos du transverse du nez, muscle de la mauvaise humeur chez Duchenne de Boulogne, Debord signale qu'on le retrouve contracté sur tous les visages de satyres de l'Antiquité. Il l'appelle le muscle de la lubricité, et note qu'il s'actionne involontairement."
   },
   {
    "video": "65d7NtvHAk0",
    "t": 4260,
    "mot": "quand j etais",
-   "categorie": "souvenir"
+   "categorie": "souvenir",
+   "note": "Debord évoque son prédécesseur à la chaire, qui se trouvait drôle et dont les livres restaient lisibles jusqu'aux années soixante-dix. L'occasion de rappeler comment lui-même est venu à la morphologie."
   },
   {
    "video": "65d7NtvHAk0",
    "t": 4744,
    "mot": "penis",
    "categorie": "familier",
-   "douteux": true
+   "note": "Ayant cru qu'une exposition intitulée « masters » serait anatomique, Debord s'était déplacé pour rien. Il en tire une plaisanterie sur son propre statut de brave homme bientôt à la retraite, qui se contente de dessiner une main."
   },
   {
    "video": "68R-oaodzTg",
    "t": 4914,
    "mot": "mon ami",
-   "categorie": "souvenir"
+   "categorie": "salle"
   },
   {
    "video": "68R-oaodzTg",
    "t": 5671,
    "mot": "mon ami",
-   "categorie": "souvenir"
+   "categorie": "salle"
   },
   {
    "video": "68R-oaodzTg",
    "t": 6842,
    "mot": "mon ami",
-   "categorie": "souvenir"
+   "categorie": "salle"
   },
   {
    "video": "7wpyHczLt9Q",
    "t": 3748,
    "mot": "testicules",
    "categorie": "familier",
-   "douteux": true
+   "note": "Le nom de « jumeaux » est une sottise, soutient Debord : aucune forme du corps n'a de jumelle, ni les mollets, ni la thyroïde, ni rien d'autre."
   },
   {
    "video": "7wpyHczLt9Q",
    "t": 3843,
    "mot": "testicules",
    "categorie": "familier",
-   "douteux": true
+   "note": "Dessiner des formes symétriques est pour Debord une vulgarité. Il n'y a selon lui que le culturisme pour produire des volumes aussi laids et aussi symétriques, la stupidité entraînant la symétrie.",
+   "comparaison": true
   },
   {
    "video": "bLQCuSOB8tA",
    "t": 280,
    "mot": "cul",
-   "categorie": "familier",
-   "douteux": true
+   "categorie": "familier"
   },
   {
    "video": "bLQCuSOB8tA",
    "t": 1062,
    "mot": "mon ami",
-   "categorie": "souvenir"
+   "categorie": "salle"
   },
   {
    "video": "bLQCuSOB8tA",
    "t": 4836,
    "mot": "testicules",
    "categorie": "familier",
-   "douteux": true
+   "note": "En expliquant que l'homme aussi possède une glande mammaire, Debord évoque les oreillons contractés à la puberté, qui peuvent provoquer une orchite grave, et les traitements hormonaux qui s'ensuivaient.",
+   "comparaison": true
   },
   {
    "video": "bLQCuSOB8tA",
    "t": 6159,
    "mot": "bordel",
    "categorie": "familier",
-   "douteux": true
+   "note": "Digression sur la destruction de Dresde sous les bombardements, ville du XVIIIe siècle rasée. Debord s'indigne de ce gâchis et se félicite qu'un Vermeer y ait survécu."
   },
   {
    "video": "bLQCuSOB8tA",
@@ -181,14 +186,15 @@
    "t": 3049,
    "mot": "cul",
    "categorie": "familier",
-   "douteux": true
+   "note": "En comparant l'arrière-train du cheval à celui de l'homme, Debord s'agace qu'on prenne l'arrière de la cuisse pour une face : il suffit de repérer l'anus pour savoir de quel côté l'on est.",
+   "comparaison": true
   },
   {
    "video": "BySad1olbq4",
    "t": 3470,
    "mot": "cul",
    "categorie": "familier",
-   "douteux": true
+   "note": "À propos du coccyx, Debord rappelle la douleur d'un coup de pied au derrière et la plaisanterie du réfectoire — retirer la chaise au moment où l'autre s'assoit — qui fait tomber tout le poids sur ce petit os triangulaire."
   },
   {
    "video": "BySad1olbq4",
@@ -206,44 +212,47 @@
    "video": "E7VxdQNu9jo",
    "t": 2370,
    "mot": "mon ami",
-   "categorie": "souvenir"
+   "categorie": "salle"
   },
   {
    "video": "E7VxdQNu9jo",
    "t": 4119,
    "mot": "merde",
-   "categorie": "familier"
+   "categorie": "familier",
+   "note": "Debord lit à la classe un passage du Livre de Tobie, où le personnage s'endort dehors et reçoit une fiente d'oiseau dans les yeux, ce qui le rend aveugle. Il s'amuse de la traduction, plus crue que celle qu'on attendrait."
   },
   {
    "video": "E7VxdQNu9jo",
    "t": 5136,
    "mot": "cul",
-   "categorie": "familier",
-   "douteux": true
+   "categorie": "familier"
   },
   {
    "video": "E7VxdQNu9jo",
    "t": 5247,
    "mot": "pisser",
-   "categorie": "familier"
+   "categorie": "familier",
+   "note": "Recommandation de voyage glissée en fin de séance : il faut aller à Mantoue, dit Debord, malgré les cars de touristes."
   },
   {
    "video": "FeAucP4aKS8",
    "t": 452,
    "mot": "je me souviens",
-   "categorie": "souvenir"
+   "categorie": "souvenir",
+   "note": "Debord conteste l'idée reçue selon laquelle un bassin large faciliterait l'accouchement. Il se souvient d'un professeur de son cours du soir qui, pour démontrer quelque chose, avait empoigné les hanches d'un modèle — et rappelle comment sont parfois les professeurs."
   },
   {
    "video": "FeAucP4aKS8",
    "t": 1871,
    "mot": "mon ami",
-   "categorie": "souvenir"
+   "categorie": "salle"
   },
   {
    "video": "FeAucP4aKS8",
    "t": 4545,
    "mot": "quand j etais",
-   "categorie": "souvenir"
+   "categorie": "souvenir",
+   "note": "Souvenir d'enfance : petit garçon, il adorait aller se faire couper les cheveux là où venaient les forts des Halles, parmi les grandes blouses blanches. Il se demande si sa morphologie n'a pas commencé là, à regarder passer les gens."
   },
   {
    "video": "FeAucP4aKS8",
@@ -255,26 +264,28 @@
    "video": "FHeKCC3ZiOU",
    "t": 2829,
    "mot": "cul",
-   "categorie": "familier",
-   "douteux": true
+   "categorie": "familier"
   },
   {
    "video": "FuwzDJ5NU5M",
    "t": 4251,
    "mot": "figurez vous",
-   "categorie": "souvenir"
+   "categorie": "souvenir",
+   "note": "Debord raconte avoir appris son métier chez Simonini, décorateur de théâtre qui l'avait embauché, et en copiant au Louvre. Il décrit la technique du peintre de rideaux, qui tenait deux pinceaux à la fois."
   },
   {
    "video": "FuwzDJ5NU5M",
    "t": 5849,
    "mot": "mon ami",
-   "categorie": "souvenir"
+   "categorie": "salle"
   },
   {
    "video": "H2HqbPEaxk8",
    "t": 1975,
    "mot": "mon ami",
-   "categorie": "souvenir"
+   "categorie": "salle",
+   "note": "À propos de la ceinture scapulaire qui glisse sur la cage, Debord signale que les véliplanchistes ont les omoplates qui s'écartent, déformées par la pratique.",
+   "comparaison": true
   },
   {
    "video": "H2HqbPEaxk8",
@@ -286,13 +297,13 @@
    "video": "H2HqbPEaxk8",
    "t": 4938,
    "mot": "mon ami",
-   "categorie": "souvenir"
+   "categorie": "salle"
   },
   {
    "video": "H2HqbPEaxk8",
    "t": 7059,
    "mot": "mon ami",
-   "categorie": "souvenir"
+   "categorie": "salle"
   },
   {
    "video": "IDr53Cr4fsU",
@@ -305,31 +316,35 @@
    "t": 4676,
    "mot": "cul",
    "categorie": "familier",
-   "douteux": true
+   "note": "Portrait de sa grand-mère, morte à quatre-vingt-seize ans et qui ne pouvait plus marcher sans corset. Debord précise qu'elle marchait vite, qu'il avait du mal à la suivre, et décrit la silhouette que le corset lui donnait.",
+   "comparaison": true
   },
   {
    "video": "IIjBn3C3d5g",
    "t": 3259,
    "mot": "mon ami",
-   "categorie": "souvenir"
+   "categorie": "salle"
   },
   {
    "video": "kc2e56cun8U",
    "t": 1764,
    "mot": "quand j etais",
-   "categorie": "souvenir"
+   "categorie": "souvenir",
+   "note": "Debord annonce lui-même une anecdote et jure qu'elle est vraie. Il raconte avoir été, jeune homme, l'assistant de plusieurs artistes, et se dit très fier d'avoir été celui de Cassandre."
   },
   {
    "video": "kc2e56cun8U",
    "t": 1979,
    "mot": "je me souviens",
-   "categorie": "souvenir"
+   "categorie": "souvenir",
+   "note": "Dans la même série de souvenirs, Debord évoque Dalí et le surnom que lui avait donné Breton, anagramme de son nom. Il rapporte un propos du peintre sur la poitrine féminine."
   },
   {
    "video": "kc2e56cun8U",
    "t": 2335,
    "mot": "quand j etais",
-   "categorie": "souvenir"
+   "categorie": "souvenir",
+   "note": "Digression sur les gens qui fument dans la rue, et sur les jeunes femmes en particulier, ce qui agace Debord autant par l'odeur que par le geste."
   },
   {
    "video": "kc2e56cun8U",
@@ -341,46 +356,50 @@
    "video": "kc2e56cun8U",
    "t": 5923,
    "mot": "quand j etais",
-   "categorie": "souvenir"
+   "categorie": "souvenir",
+   "note": "Debord dit avoir entendu les bombes lorsqu'il était petit, et en rêver encore la nuit. Il coupe court aussitôt, ne voulant pas être démagogue."
   },
   {
    "video": "LHaB3iu4zIw",
    "t": 1921,
    "mot": "figurez vous",
-   "categorie": "souvenir"
+   "categorie": "souvenir",
+   "note": "Souvenir de jeunesse autour de Leonor Fini, peintre longtemps méprisée chez qui passait pourtant la terre entière. Debord évoque au passage son lycée, Henri-IV, où l'on entrait alors par concours en sixième."
   },
   {
    "video": "LHaB3iu4zIw",
    "t": 2744,
    "mot": "quand j etais",
-   "categorie": "souvenir"
+   "categorie": "souvenir",
+   "note": "Les Halles de son enfance, qu'il décrit comme un paradis enchanteur — l'odeur, l'animation, et des prostituées dont l'habillement était autrement plus inventif qu'aujourd'hui."
   },
   {
    "video": "LHaB3iu4zIw",
    "t": 4112,
    "mot": "cul",
    "categorie": "familier",
-   "douteux": true
+   "note": "Debord refuse net d'écrire un livre de morphologie. Son enseignement est oral et magistral, dit-il, et ne peut pas être autre chose."
   },
   {
    "video": "LHaB3iu4zIw",
    "t": 5099,
    "mot": "cul",
-   "categorie": "familier",
-   "douteux": true
+   "categorie": "familier"
   },
   {
    "video": "LHaB3iu4zIw",
    "t": 6783,
    "mot": "je me souviens",
-   "categorie": "souvenir"
+   "categorie": "souvenir",
+   "note": "Tous les Balthus importants sont aux États-Unis, la France n'ayant pas su les acquérir. Debord se souvient qu'on s'était moqué de lui lorsqu'il l'avait dit, à l'occasion d'une exposition organisée grâce à Pierre Matisse."
   },
   {
    "video": "lPiLzxL9qk4",
    "t": 1141,
    "mot": "cul",
    "categorie": "familier",
-   "douteux": true
+   "note": "Pour expliquer le cucullaire, Debord passe par le chat, chez qui le muscle est très net. Il avoue au passage être allergique aux poils de chat.",
+   "comparaison": true
   },
   {
    "video": "lPiLzxL9qk4",
@@ -398,67 +417,68 @@
    "video": "lPiLzxL9qk4",
    "t": 4282,
    "mot": "je me souviens",
-   "categorie": "souvenir"
+   "categorie": "souvenir",
+   "note": "Debord évoque les conférences qu'il a données dans une clinique d'Illkirch-Graffenstaden, près de Strasbourg, installée dans un parc magnifique. L'occasion d'une remarque sur les praticiens, parfois méprisants les uns envers les autres."
   },
   {
    "video": "lPiLzxL9qk4",
    "t": 5115,
    "mot": "mon ami",
-   "categorie": "souvenir"
+   "categorie": "salle"
   },
   {
    "video": "LxhM7KErZas",
    "t": 669,
    "mot": "cul",
    "categorie": "familier",
-   "douteux": true
+   "note": "En plaçant le moyen fessier, Debord rappelle que la piqûre qu'on dit faite « dans la fesse » est en réalité faite dans ce muscle, et non dans le grand fessier.",
+   "comparaison": true
   },
   {
    "video": "LxhM7KErZas",
    "t": 1378,
    "mot": "cul",
-   "categorie": "familier",
-   "douteux": true
+   "categorie": "familier"
   },
   {
    "video": "LxhM7KErZas",
    "t": 2753,
    "mot": "cul",
-   "categorie": "familier",
-   "douteux": true
+   "categorie": "familier"
   },
   {
    "video": "LxhM7KErZas",
    "t": 4006,
    "mot": "je me souviens",
-   "categorie": "souvenir"
+   "categorie": "souvenir",
+   "note": "Souvenir de dissection. Ce que Debord n'a jamais oublié, ce n'est pas la vue mais le bruit que faisaient les faisceaux musculaires lorsqu'il les séparait les uns des autres."
   },
   {
    "video": "LxhM7KErZas",
    "t": 5136,
    "mot": "cul",
-   "categorie": "familier",
-   "douteux": true
+   "categorie": "familier"
   },
   {
    "video": "LxhM7KErZas",
    "t": 5629,
    "mot": "cul",
    "categorie": "familier",
-   "douteux": true
+   "note": "À propos d'un marcheur de la course Strasbourg-Paris, Debord relève la profondeur des sillons musculaires, preuve d'une décontraction totale. Il en profite pour rappeler que le corps est sous vide, hormis le tube digestif.",
+   "comparaison": true
   },
   {
    "video": "N32pB-1QXS0",
    "t": 436,
    "mot": "cul",
    "categorie": "familier",
-   "douteux": true
+   "note": "En plaçant les ligaments de la région sacrée, Debord revendique en souriant une exigence qu'il attribue à Rembrandt : que l'anus soit bien placé dans le dessin."
   },
   {
    "video": "N32pB-1QXS0",
    "t": 1020,
    "mot": "mon ami",
-   "categorie": "souvenir"
+   "categorie": "salle"
   },
   {
    "video": "N32pB-1QXS0",
@@ -470,64 +490,67 @@
    "video": "N32pB-1QXS0",
    "t": 5115,
    "mot": "cul",
-   "categorie": "familier",
-   "douteux": true
+   "categorie": "familier"
   },
   {
    "video": "ndTYL4boSgE",
    "t": 2512,
    "mot": "je me souviens",
-   "categorie": "souvenir"
+   "categorie": "souvenir",
+   "note": "Sur les cadavres, l'espace entre la cage et le bassin est réel, alors que les livres d'anatomie l'escamotent et font de tout le monde des danseuses. Debord cite Victor Hugo à propos de la taille qu'on prend aux filles."
   },
   {
    "video": "ndTYL4boSgE",
    "t": 5574,
    "mot": "mon ami",
-   "categorie": "souvenir"
+   "categorie": "salle"
   },
   {
    "video": "Nha5ZI8PVo0",
    "t": 1132,
    "mot": "quand j etais",
-   "categorie": "souvenir"
+   "categorie": "souvenir",
+   "note": "La crête du tibia est protégée par le jambier antérieur. Debord se souvient qu'enfant, au football, on glissait des morceaux de pneu de bicyclette sous les chaussettes en guise de protège-tibias, et qu'on trouvait cela très chic.",
+   "comparaison": true
   },
   {
    "video": "Nha5ZI8PVo0",
    "t": 2135,
    "mot": "cul",
-   "categorie": "familier",
-   "douteux": true
+   "categorie": "familier"
   },
   {
    "video": "Nha5ZI8PVo0",
    "t": 3201,
    "mot": "mon ami",
-   "categorie": "souvenir"
+   "categorie": "salle"
   },
   {
    "video": "Nha5ZI8PVo0",
    "t": 3753,
    "mot": "quand j etais",
-   "categorie": "souvenir"
+   "categorie": "souvenir",
+   "note": "Debord explique pourquoi il dit toujours « jument » : enfant, pour le laisser tranquille, on le mettait dans un enclos avec une jument — jamais un étalon, plus dangereux — ou dans un baquet d'eau.",
+   "comparaison": true
   },
   {
    "video": "Nha5ZI8PVo0",
    "t": 4314,
    "mot": "merde",
-   "categorie": "familier"
+   "categorie": "familier",
+   "note": "Anecdote de plateau : un machiniste cherche pendant dix minutes le bon placement d'un projecteur, jusqu'à ce que Bérard tranche. Debord rappelle que c'est ce même Bérard, et non un couturier, qui a dessiné la première collection de Christian Dior."
   },
   {
    "video": "Nha5ZI8PVo0",
    "t": 5388,
    "mot": "testicules",
-   "categorie": "familier",
-   "douteux": true
+   "categorie": "familier"
   },
   {
    "video": "oXJs2-3OAlA",
    "t": 1192,
    "mot": "mon ami",
-   "categorie": "souvenir"
+   "categorie": "salle"
   },
   {
    "video": "oXJs2-3OAlA",
@@ -539,13 +562,14 @@
    "video": "oXJs2-3OAlA",
    "t": 2291,
    "mot": "mon ami",
-   "categorie": "souvenir"
+   "categorie": "salle"
   },
   {
    "video": "oXJs2-3OAlA",
    "t": 3532,
    "mot": "couilles",
-   "categorie": "familier"
+   "categorie": "familier",
+   "note": "Debord explique s'être acharné sur les mollets pour une raison précise : il fallait faire comprendre qu'il ne s'agit pas de deux masses identiques accolées, l'interne descendant plus bas que l'externe."
   },
   {
    "video": "oXJs2-3OAlA",
@@ -557,63 +581,69 @@
    "video": "oXJs2-3OAlA",
    "t": 5644,
    "mot": "mon ami",
-   "categorie": "souvenir"
+   "categorie": "salle"
   },
   {
    "video": "oXJs2-3OAlA",
    "t": 5866,
    "mot": "mon ami",
-   "categorie": "souvenir"
+   "categorie": "salle"
   },
   {
    "video": "pA9J6JWr0CQ",
    "t": 3473,
    "mot": "mon ami",
-   "categorie": "souvenir"
+   "categorie": "salle"
   },
   {
    "video": "pA9J6JWr0CQ",
    "t": 4192,
    "mot": "cul",
    "categorie": "familier",
-   "douteux": true
+   "note": "Chez le chat, dit Debord, c'est le long du cucullaire qu'il aime être caressé. Il précise aussitôt qu'il ne faudrait pas lui ouvrir la peau à cet endroit pour vérifier.",
+   "comparaison": true
   },
   {
    "video": "pA9J6JWr0CQ",
    "t": 5907,
    "mot": "je me souviens",
-   "categorie": "souvenir"
+   "categorie": "souvenir",
+   "note": "Devant des aquatintes des années 1830, Debord évoque Baudelaire et les vers des Phares, dont il avoue ne plus se rappeler le texte exact."
   },
   {
    "video": "qGdHRpt1qns",
    "t": 1190,
    "mot": "mon ami",
-   "categorie": "souvenir"
+   "categorie": "salle",
+   "note": "Debord évoque un roman d'Irène Frain, dont l'une des héroïnes, la cinquantaine passée, s'adonne au tir à l'arc. La salle l'aide à retrouver le nom de l'autrice.",
+   "comparaison": true
   },
   {
    "video": "qGdHRpt1qns",
    "t": 3385,
    "mot": "je me souviens",
-   "categorie": "souvenir"
+   "categorie": "souvenir",
+   "note": "À propos de l'indépendance du petit doigt et de l'annulaire, Debord se souvient du musée historique de Nancy, ville qu'il trouve sublime, et de ses brasseries."
   },
   {
    "video": "qGdHRpt1qns",
    "t": 3779,
    "mot": "figurez vous",
-   "categorie": "souvenir"
+   "categorie": "souvenir",
+   "note": "Debord règle son compte à la morphopsychologie, discipline qu'un auteur des années trente prétendait utile au recrutement. Il la range avec la graphologie parmi les impostures, et se réjouit qu'elle ait presque disparu."
   },
   {
    "video": "qGdHRpt1qns",
    "t": 6331,
    "mot": "cul",
-   "categorie": "familier",
-   "douteux": true
+   "categorie": "familier"
   },
   {
    "video": "Qh-CpCTQCJ4",
    "t": 703,
    "mot": "quand j etais",
-   "categorie": "souvenir"
+   "categorie": "souvenir",
+   "note": "Le squelette d'atelier a servi si longtemps qu'il a vieilli. Debord raconte l'avoir tapé quand il était jeune pour que la cage thoracique cesse de ressembler à un ballon de football."
   },
   {
    "video": "Qh-CpCTQCJ4",
@@ -625,7 +655,8 @@
    "video": "Qh-CpCTQCJ4",
    "t": 4852,
    "mot": "vous allez rire",
-   "categorie": "salle"
+   "categorie": "salle",
+   "note": "Debord annonce les commentaires qui accompagnent les photographies de Duchenne de Boulogne, et prévient la salle qu'elle va rire des formules du médecin. Il ajoute que ce sont ces légendes — sourcilier, souffrance profonde avec résignation — qui ont servi à former son propre regard."
   },
   {
    "video": "RYcT89bug4U",
@@ -637,7 +668,8 @@
    "video": "RYcT89bug4U",
    "t": 4544,
    "mot": "quand j etais",
-   "categorie": "souvenir"
+   "categorie": "souvenir",
+   "note": "Debord date de ses années d'élève le moment où il a compris quelque chose d'essentiel : que l'extenseur commun ignore le métacarpien de l'index, et ce que cela change au dessin de la main."
   },
   {
    "video": "RYcT89bug4U",
@@ -649,144 +681,148 @@
    "video": "RYcT89bug4U",
    "t": 6171,
    "mot": "cul",
-   "categorie": "familier",
-   "douteux": true
+   "categorie": "familier"
   },
   {
    "video": "SQyL88Fq76o",
    "t": 3528,
    "mot": "mon ami",
-   "categorie": "souvenir"
+   "categorie": "salle"
   },
   {
    "video": "SQyL88Fq76o",
    "t": 5172,
    "mot": "mon ami",
-   "categorie": "souvenir"
+   "categorie": "salle"
   },
   {
    "video": "T3rO2WO_y7s",
    "t": 585,
    "mot": "quand j etais",
-   "categorie": "souvenir"
+   "categorie": "souvenir",
+   "note": "À propos d'un instrument conçu pour opérer les pieds de poliomyélitiques, Debord rappelle que sa génération n'était pas vaccinée. À l'école primaire, il voyait disparaître un ou deux camarades par an.",
+   "comparaison": true
   },
   {
    "video": "T3rO2WO_y7s",
    "t": 1880,
    "mot": "quand j etais",
-   "categorie": "souvenir"
+   "categorie": "souvenir",
+   "note": "De nouveau les protège-tibias de fortune de son enfance : un morceau de pneu glissé sous la chaussette, qu'on trouvait alors du dernier chic.",
+   "comparaison": true
   },
   {
    "video": "T3rO2WO_y7s",
    "t": 3050,
    "mot": "cul",
-   "categorie": "familier",
-   "douteux": true
+   "categorie": "familier"
   },
   {
    "video": "T3rO2WO_y7s",
    "t": 4986,
    "mot": "cul",
-   "categorie": "familier",
-   "douteux": true
+   "categorie": "familier"
   },
   {
    "video": "T3rO2WO_y7s",
    "t": 5494,
    "mot": "penis",
    "categorie": "familier",
-   "douteux": true
+   "note": "Debord s'amuse d'une planche anatomique où le sexe a été relevé et maintenu pour dégager la vue sur le périnée. Il signale au passage une exposition en cours au Musée d'art moderne de la Ville de Paris."
   },
   {
    "video": "uagciNFijmY",
    "t": 4782,
    "mot": "mon ami",
-   "categorie": "souvenir"
+   "categorie": "salle"
   },
   {
    "video": "Um8OTTlH5XQ",
    "t": 2107,
    "mot": "mon ami",
-   "categorie": "souvenir"
+   "categorie": "salle"
   },
   {
    "video": "Um8OTTlH5XQ",
    "t": 4430,
    "mot": "cul",
    "categorie": "familier",
-   "douteux": true
+   "note": "En ajoutant de la graisse et de l'affaissement à un corps vieillissant, Debord renvoie aux dessins de Dürer, de Baldung Grien et de Goya, qui aimaient représenter de vieilles femmes. Il trouve que le modelé obtenu va bien avec le caractère du personnage."
   },
   {
    "video": "Um8OTTlH5XQ",
    "t": 5291,
    "mot": "cul",
-   "categorie": "familier",
-   "douteux": true
+   "categorie": "familier"
   },
   {
    "video": "vI5qC_JpkHs",
    "t": 395,
    "mot": "je me souviens",
-   "categorie": "souvenir"
+   "categorie": "souvenir",
+   "note": "Digression sur les musées anatomiques d'Italie, à Padoue et Bologne. Celui de Bologne a été déplacé sous Mussolini dans un bâtiment sans charme ; on y voit des milliers de crânes en vitrine, émouvants, alors que la population vivante déçoit par comparaison."
   },
   {
    "video": "vI5qC_JpkHs",
    "t": 1433,
    "mot": "cul",
-   "categorie": "familier",
-   "douteux": true
+   "categorie": "familier"
   },
   {
    "video": "vI5qC_JpkHs",
    "t": 3373,
    "mot": "testicules",
    "categorie": "familier",
-   "douteux": true
+   "note": "En plaçant le scrotum sur son dessin, Debord rappelle que les deux testicules ne sont pas symétriques — le gauche descend plus bas. Il dit son horreur de la façon dont on les dessine d'ordinaire, comme pour les mollets."
   },
   {
    "video": "vI5qC_JpkHs",
    "t": 3471,
    "mot": "verge",
    "categorie": "familier",
-   "douteux": true
+   "note": "À propos du sexe masculin dans la statuaire, Debord observe que les Grecs n'en avaient pas peur et le dessinaient franchement. Il invite les élèves à faire de même, ou à s'abstenir, mais sans demi-mesure."
   },
   {
    "video": "WMJZHTZ3LZY",
    "t": 709,
    "mot": "cul",
    "categorie": "familier",
-   "douteux": true
+   "note": "En cherchant à quoi sert concrètement le mouvement de poussée du bras, Debord ne trouve que le coup de pied au derrière, dont il énumère les nuances possibles, et qui a fini selon lui par devenir un sport."
   },
   {
    "video": "WMJZHTZ3LZY",
    "t": 1233,
    "mot": "mon ami",
-   "categorie": "souvenir"
+   "categorie": "salle"
   },
   {
    "video": "WMJZHTZ3LZY",
    "t": 2207,
    "mot": "mon ami",
-   "categorie": "souvenir"
+   "categorie": "salle"
   },
   {
    "video": "WMJZHTZ3LZY",
    "t": 5650,
    "mot": "cul",
    "categorie": "familier",
-   "douteux": true
+   "note": "Debord dit avoir tout appris sur de vieilles planches d'anatomie animale, cheval et chèvre, qu'il adore. Il y retrouve la rotule, le tendon d'Achille et le talon, et invite à en tirer des formes.",
+   "comparaison": true
   },
   {
    "video": "XbY3hwY4Rbk",
    "t": 2331,
    "mot": "merde",
-   "categorie": "familier"
+   "categorie": "familier",
+   "note": "Souvenir d'atelier : rendant visite à un ami lauréat d'un prix de Rome, Debord s'était étalé en entrant, ayant glissé sur de la peinture répandue au sol."
   },
   {
    "video": "XbY3hwY4Rbk",
    "t": 3012,
    "mot": "je me souviens",
-   "categorie": "souvenir"
+   "categorie": "souvenir",
+   "note": "Debord décrit la morphologie du volleyeur — jumeaux larges, jambes courtes, prêtes à bondir — et ce que le geste au filet fait ressortir des muscles du dos.",
+   "comparaison": true
   },
   {
    "video": "XbY3hwY4Rbk",
@@ -798,7 +834,7 @@
    "video": "XbY3hwY4Rbk",
    "t": 4121,
    "mot": "mon ami",
-   "categorie": "souvenir"
+   "categorie": "salle"
   },
   {
    "video": "xPRzam0rqDw",
@@ -810,41 +846,43 @@
    "video": "xPRzam0rqDw",
    "t": 2271,
    "mot": "quand j etais",
-   "categorie": "souvenir"
+   "categorie": "souvenir",
+   "note": "De nouveau le salon de coiffure de son enfance : c'est là, dit-il, en regardant les hommes attendre leur tour, qu'il a appris à regarder."
   },
   {
    "video": "xPRzam0rqDw",
    "t": 6063,
    "mot": "quand j etais",
-   "categorie": "souvenir"
+   "categorie": "souvenir",
+   "note": "À propos d'un nu de Goya, Debord observe que l'abondance d'images dénudées d'aujourd'hui a émoussé quelque chose. Il ajoute qu'étant jeune homme, il n'aurait pas supporté cette profusion."
   },
   {
    "video": "ycr4a1eAkn0",
    "t": 2820,
    "mot": "cul",
    "categorie": "familier",
-   "douteux": true
+   "note": "À propos des chaussures qui déforment la démarche, Debord évoque la légende du pied bandé et d'une courtisane chinoise, et la fascination attachée à ces déformations volontaires.",
+   "comparaison": true
   },
   {
    "video": "ycr4a1eAkn0",
    "t": 4136,
    "mot": "testicules",
    "categorie": "familier",
-   "douteux": true
+   "note": "En posant les gastrocnémiens, Debord s'en prend à leur nom vulgaire de « jumeaux » : ils ne sont pas plus jumeaux qu'une paire de testicules, puisque rien n'est symétrique dans le corps."
   },
   {
    "video": "ycr4a1eAkn0",
    "t": 6105,
    "mot": "verge",
-   "categorie": "familier",
-   "douteux": true
+   "categorie": "familier"
   },
   {
    "video": "ZdgpRuXGY40",
    "t": 5856,
    "mot": "cul",
    "categorie": "familier",
-   "douteux": true
+   "note": "Commentant une gravure du Livre de Tobie, Debord s'arrête sur le chien du premier plan, dont il trouve l'arrière-train particulièrement bien dessiné, avant de passer aux personnages."
   }
  ]
 }

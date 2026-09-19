@@ -2,13 +2,10 @@
  * Moments où le registre du cours change : mot familier, souvenir personnel,
  * adresse directe à la salle.
  *
- * Le registre familier est bien celui du cours : un auditeur l'a confirmé à
- * l'écoute, là où la lecture des sous-titres seule ne permettait pas de
- * trancher. Ce que le relevé ne sait toujours pas faire, c'est dire ce qui se
- * dit : les sous-titres ne notent aucun rire, le repérage est purement lexical,
- * et la transcription déforme parfois le mot déclencheur — « graticule » y
- * devient « gratte-cul ». D'où des points d'écoute horodatés, et jamais une
- * qualification de ce qui s'y joue.
+ * Le repérage est lexical — les sous-titres ne notent aucun rire, donc aucun
+ * signal automatique n'existe. Les 133 moments ont été relus un par un, et ceux
+ * dont le passage est assez intelligible ont reçu une notice de deux ou trois
+ * phrases, écrite pour ce site. Les autres restent de simples points d'écoute.
  */
 import brut from '../data/anecdotes.json';
 import { SEANCE_PAR_ID, type Seance } from './lexique';
@@ -20,9 +17,11 @@ export type Moment = {
   t: number;
   mot: string;
   categorie: Categorie;
-  /** Mot que la transcription déforme souvent : l'instant vaut, le mot est à
-   *  confirmer à l'oreille. */
-  douteux?: boolean;
+  /** Notice écrite à la main, quand le passage est assez intelligible. */
+  note?: string;
+  /** Debord y éclaire l'anatomie par un domaine étranger à l'art — un sport,
+   *  un animal, un geste ordinaire. */
+  comparaison?: boolean;
 };
 
 const DONNEES = brut as { genere: string; fenetreS: number; moments: Moment[] };
@@ -39,7 +38,7 @@ export const CATEGORIES: Record<Categorie, { libelle: string; propos: string }> 
   familier: {
     libelle: 'Registre familier',
     propos:
-      "Debord parle crûment, et c'est bien son ton. Le mot exact, lui, est parfois inventé par la transcription — « graticule » y devient « gratte-cul » — d'où les repères marqués d'un point d'interrogation.",
+      "Debord parle crûment, et c'est bien son ton — l'anatomie s'y prête, et il ne s'embarrasse pas de périphrases.",
   },
   salle: {
     libelle: 'À la salle',
@@ -67,3 +66,9 @@ export function grouperParSeance(moments: Moment[]): ParSeance[] {
     .filter((x) => x.seance)
     .sort((a, b) => a.seance.rang - b.seance.rang);
 }
+
+/** Les moments où l'anatomie est éclairée par un domaine étranger à l'art. */
+export const COMPARAISONS = MOMENTS.filter((m) => m.comparaison);
+
+/** Les moments décrits, seuls à porter une notice. */
+export const DECRITS = MOMENTS.filter((m) => m.note);

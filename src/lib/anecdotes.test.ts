@@ -14,7 +14,7 @@ describe('anecdotes', () => {
     // des instants et un mot isolé — jamais une phrase du cours. Un mot pris
     // dans son contexte suffirait à reproduire ce que Debord dit, et à lui
     // prêter des propos que la transcription a peut-être inventés.
-    const champsAutorises = new Set(['video', 't', 'mot', 'categorie', 'douteux']);
+    const champsAutorises = new Set(['video', 't', 'mot', 'categorie', 'note', 'comparaison']);
     for (const m of MOMENTS) {
       for (const k of Object.keys(m)) expect(champsAutorises, k).toContain(k);
       expect(m.mot.split(/\s+/).length, `« ${m.mot} » est trop long`).toBeLessThanOrEqual(4);
@@ -53,16 +53,22 @@ describe('anecdotes', () => {
     }
   });
 
-  it('signale comme douteux les mots que la relecture a démentis', () => {
-    // « graticule » transcrit « gratte-cul » : ces mots-là remontent presque
-    // toujours d'une déformation, et les publier sans réserve prêterait à
-    // quelqu'un de réel des propos qu'il n'a pas tenus.
-    const DOUTEUX = ['cul', 'penis', 'verge', 'testicules', 'copuler', 'bordel'];
-    for (const m of MOMENTS) {
-      if (DOUTEUX.includes(m.mot)) expect(m.douteux, m.mot).toBe(true);
-      else expect(m.douteux, m.mot).toBeUndefined();
+  it('garde les notices courtes, deux ou trois phrases', () => {
+    // Une notice dit de quoi parle la digression ; elle ne la raconte pas. La
+    // borne est là pour que la page reste un index et ne devienne pas une
+    // reprise du cours.
+    for (const m of MOMENTS.filter((x) => x.note)) {
+      expect(m.note!.length, `${m.video}|${m.t}`).toBeLessThanOrEqual(400);
+      const phrases = m.note!.split(/[.!?]\s/).length;
+      expect(phrases, `${m.video}|${m.t}`).toBeLessThanOrEqual(3);
     }
-    expect(MOMENTS.some((m) => m.douteux)).toBe(true);
+    expect(MOMENTS.filter((x) => x.note).length).toBeGreaterThanOrEqual(60);
+  });
+
+  it('marque des comparaisons hors art, toutes décrites', () => {
+    const c = MOMENTS.filter((m) => m.comparaison);
+    expect(c.length).toBeGreaterThanOrEqual(15);
+    for (const m of c) expect(m.note, `${m.video}|${m.t}`).toBeTruthy();
   });
 
   it('range les repères d’une séance dans l’ordre du cours', () => {
