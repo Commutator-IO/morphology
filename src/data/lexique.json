@@ -860,11 +860,7 @@
    "humerus",
    "humeral",
    "humerale",
-   "tete de l humerus",
-   "epicondyle",
-   "epicondyles",
-   "epicondylite",
-   "epitrochlee"
+   "tete de l humerus"
   ],
   "situation": {
    "vue": "face",
@@ -885,6 +881,66 @@
   }
  },
  {
+  "id": "epitrochlee",
+  "terme": "Épitrochlée / épicondyle",
+  "categorie": "repere",
+  "region": "coude",
+  "moderne": "Epicondylus medialis / lateralis humeri",
+  "aussi": [
+   "tubérosité interne",
+   "tubérosité externe"
+  ],
+  "definition": "Les deux saillies qui terminent l'humérus de part et d'autre du coude, palpables sous la peau. En dedans l'épitrochlée, plus forte, d'où partent les fléchisseurs et la masse de l'avant-bras ; en dehors l'épicondyle, plus discret, d'où partent les extenseurs. Entre elles passe l'axe de flexion du coude, et leur écart donne au bras sa largeur au niveau du pli. La transcription automatique ne les écrit jamais : l'épitrochlée devient « pete rock » ou « épître aux clés », l'épicondyle « épicondylite ».",
+  "variantes": [
+   "epitrochlee",
+   "epitrochleen",
+   "epitrochleenne",
+   "epicondyle",
+   "epicondyles",
+   "epicondylien",
+   "epicondylite",
+   "pete rock",
+   "epitre aux cles",
+   "epitres aux cles",
+   "epitre aux clayes",
+   "epitre en cle",
+   "pitres oakley",
+   "epitres oakley",
+   "pitres rock",
+   "epitre rock",
+   "lepi troquerait"
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     20,
+     112,
+     4,
+     4
+    ],
+    [
+     31,
+     112,
+     4,
+     4
+    ],
+    [
+     113,
+     112,
+     4,
+     4
+    ],
+    [
+     124,
+     112,
+     4,
+     4
+    ]
+   ]
+  }
+ },
+ {
   "id": "olecrane",
   "terme": "Olécrane",
   "categorie": "repere",
@@ -895,7 +951,12 @@
    "olecrane",
    "olecranien",
    "pointe du coude",
-   "bec du cubitus"
+   "bec du cubitus",
+   "olecranienne",
+   "ole cranien",
+   "ole cranienne",
+   "ole cramer",
+   "cavite olecranienne"
   ],
   "situation": {
    "vue": "dos",
@@ -1671,17 +1732,28 @@
   "categorie": "muscle",
   "region": "avant-bras",
   "moderne": "Musculi flexores",
-  "definition": "Loge antérieure et interne de l'avant-bras, toute partie de l'épitrochlée. Charnue en haut, tendineuse en bas : le relief musculaire cède la place aux cordes visibles au poignet.",
+  "definition": "Loge antérieure et interne de l'avant-bras, toute partie de l'épitrochlée. Charnue en haut, tendineuse en bas : le relief musculaire cède la place aux cordes visibles au poignet. Debord dit le plus souvent « les fléchisseurs », sans préciser : la jambe a les siens, rangés ici sous fléchisseurs des orteils.",
   "variantes": [
-   "flechisseur",
-   "flechisseurs",
    "grand palmaire",
    "petit palmaire",
    "grand palmer",
    "aponevrose palmaire",
    "aponevrose palmer",
    "cubital anterieur",
-   "rond pronateur"
+   "rond pronateur",
+   "flechisseur du pouce",
+   "flechisseurs du pouce",
+   "flechisseur commun des doigts",
+   "flechisseur des doigts",
+   "flechisseurs des doigts",
+   "flechisseurs de l avant bras",
+   "flechisseur de l avant bras",
+   "?flechisseur",
+   "?flechisseurs",
+   "?flechisseur superficiel",
+   "?flechisseur profond",
+   "?flechisseurs superficiels",
+   "?flechisseurs profonds"
   ],
   "situation": {
    "vue": "face",
@@ -1697,6 +1769,112 @@
      132,
      5,
      14
+    ]
+   ]
+  },
+  "contexte": [
+   "avant bras",
+   "main",
+   "mains",
+   "doigt",
+   "doigts",
+   "poignet",
+   "pouce",
+   "cubital",
+   "palmaire",
+   "epitrochlee",
+   "radius",
+   "coude",
+   "humerus",
+   "carpe",
+   "phalange",
+   "phalanges",
+   "index",
+   "annulaire",
+   "auriculaire",
+   "paume",
+   "paumes",
+   "epitrochle",
+   "coudes",
+   "cubitus",
+   "radial",
+   "olecrane",
+   "epicondyle",
+   "epicondylite",
+   "epitre aux cles",
+   "epitre aux clayes",
+   "pete rock",
+   "pitres oakley"
+  ]
+ },
+ {
+  "id": "flechisseurs-orteils",
+  "terme": "Fléchisseurs des orteils",
+  "categorie": "muscle",
+  "region": "jambe",
+  "moderne": "Musculi flexores digitorum pedis",
+  "aussi": [
+   "long fléchisseur commun des orteils",
+   "long fléchisseur propre du gros orteil"
+  ],
+  "definition": "Plan profond de la loge postérieure de la jambe, sous le triceps sural. Rien n'en paraît au mollet : leurs tendons contournent la malléole interne et gagnent la plante, où ils fléchissent les orteils et commandent l'appui. Le mot seul — « les fléchisseurs » — désigne selon le passage ceux-ci ou ceux de l'avant-bras.",
+  "variantes": [
+   "flechisseur commun des orteils",
+   "flechisseurs communs des orteils",
+   "flechisseur des orteils",
+   "flechisseurs des orteils",
+   "flechisseur du gros orteil",
+   "flechisseur propre du gros orteil",
+   "flechisseur plantaire",
+   "flechisseurs plantaires",
+   "court flechisseur plantaire",
+   "?flechisseur",
+   "?flechisseurs",
+   "?flechisseur superficiel",
+   "?flechisseur profond",
+   "?flechisseurs superficiels",
+   "?flechisseurs profonds"
+  ],
+  "contexte": [
+   "orteil",
+   "orteils",
+   "pied",
+   "pieds",
+   "jambe",
+   "jambes",
+   "cheville",
+   "tibia",
+   "perone",
+   "calcaneum",
+   "plantaire",
+   "plante",
+   "malleole",
+   "achille",
+   "soleaire",
+   "solaire",
+   "jumeaux",
+   "jumeau",
+   "mollet",
+   "talon",
+   "jambier",
+   "jambiers",
+   "cuisse",
+   "genou"
+  ],
+  "situation": {
+   "vue": "dos",
+   "taches": [
+    [
+     57,
+     262,
+     4,
+     20
+    ],
+    [
+     89,
+     262,
+     4,
+     20
     ]
    ]
   }

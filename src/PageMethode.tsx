@@ -116,6 +116,13 @@ export function PageMethode() {
               minutes produirait quarante liens vers le même développement.
             </li>
             <li>
+              Un mot que deux termes se partagent — « fléchisseur » se dit de
+              l'avant-bras comme de la jambe — n'est attribué qu'au vu du
+              voisinage : on compte, autour de la mention, les mots propres à
+              chaque région, et le plus fourni l'emporte. À égalité, la mention
+              n'est rangée nulle part : mieux vaut la perdre que la ranger à tort.
+            </li>
+            <li>
               L'horodatage recule de quelques secondes sur la mention, pour qu'on
               arrive avant le mot plutôt qu'après.
             </li>

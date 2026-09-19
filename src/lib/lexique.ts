@@ -23,6 +23,11 @@ export type Terme = {
   aussi?: string[];
   definition: string;
   variantes: string[];
+  /** Mots du voisinage qui décident d'une variante ambiguë — celles préfixées
+   *  « ? ». « Fléchisseur » se dit de l'avant-bras comme de la jambe : c'est le
+   *  passage qui tranche, et l'arbitrage se fait à l'indexation
+   *  (`scripts/indexer.mjs`), pas à l'affichage. */
+  contexte?: string[];
   /** Où le terme se trouve sur la silhouette du plan du corps, dans le repère
    *  de celle-ci. Absent pour les notions qui ne sont situées nulle part —
    *  aplomb, méplat, raccourci — et pour ce qui reste à placer. */

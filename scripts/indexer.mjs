@@ -26,6 +26,13 @@ const FENETRE_S = 45;
  *  tomber avant le mot plutôt qu'après, faute de quoi on arrive en retard. */
 const AMORCE_S = 4;
 
+/** Largeur, en caractères, du voisinage lu pour trancher un mot ambigu.
+ *  « Fléchisseur » se dit de l'avant-bras comme de la jambe : seul le passage
+ *  autour le dit. Six cents caractères valent environ une minute de parole —
+ *  assez pour attraper « orteil » ou « poignet », pas assez pour ramasser le
+ *  sujet d'avant. */
+const CONTEXTE_C = 600;
+
 /** Les deux relevés à produire : d'où vient la liste, où va l'index. */
 const RELEVES = [
   { nom: 'vocabulaire', lexique: 'lexique.json', sortie: 'occurrences.json' },
@@ -72,8 +79,11 @@ function instantDe(jalons, offset) {
 const echappe = (v) => v.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/ /g, '\\s+');
 
 /**
- * Deux motifs par terme : l'un cherché sur le texte plié, l'autre — les
- * variantes préfixées « ! » — sur le texte accentué.
+ * Trois motifs par terme : l'un cherché sur le texte plié, l'autre — les
+ * variantes préfixées « ! » — sur le texte accentué, le troisième — celles
+ * préfixées « ? » — mis en attente d'arbitrage, faute de désigner à lui seul
+ * une notion : deux termes peuvent réclamer le même mot, et c'est le voisinage
+ * qui tranche (voir `arbitrer`).
  *
  * La plus longue variante passe d'abord pour que « grand dorsal » gagne sur
  * « dorsal » et ne soit pas compté deux fois.
@@ -86,8 +96,59 @@ function motifsDe(terme) {
     return u.length ? new RegExp(`\\b(?:${u.join('|')})\\b`, 'g') : null;
   };
   const strictes = terme.variantes.filter((v) => v.startsWith('!')).map((v) => v.slice(1));
-  const souples = terme.variantes.filter((v) => !v.startsWith('!'));
-  return { souple: range(souples, false), strict: range(strictes, true) };
+  const ambigues = terme.variantes.filter((v) => v.startsWith('?')).map((v) => v.slice(1));
+  const souples = terme.variantes.filter((v) => !/^[!?]/.test(v));
+  return {
+    souple: range(souples, false),
+    strict: range(strictes, true),
+    ambigu: range(ambigues, false),
+    contexte: (terme.contexte ?? []).map((m) => motif(m)).filter(Boolean),
+  };
+}
+
+/**
+ * Combien de mots du contexte d'un terme entourent cette position.
+ *
+ * Le compte, et non la simple présence : quand « fléchisseur » tombe dans un
+ * passage qui parle de la main et cite le pied en passant, c'est le nombre de
+ * mots de chaque bord qui fait pencher.
+ */
+function poidsDuContexte(plie, offset, mots) {
+  const fenetre = plie.slice(Math.max(0, offset - CONTEXTE_C), offset + CONTEXTE_C);
+  let n = 0;
+  for (const mot of mots) {
+    const re = new RegExp(`\\b${echappe(mot)}\\b`, 'g');
+    n += [...fenetre.matchAll(re)].length;
+  }
+  return n;
+}
+
+/**
+ * Attribue les mentions ambiguës, une par une, au terme dont le voisinage parle
+ * le plus fort. Un terme qui tient déjà la position par une locution entière l'a
+ * gagnée d'avance ; une position que personne ne réclame plus fort qu'un autre
+ * est abandonnée, car une mention mal rangée coûte plus cher qu'une mention
+ * perdue.
+ */
+function arbitrer(plie, litiges, tenues, motsDe) {
+  const gagnees = new Map(); // id du terme -> offsets
+  let rendues = 0;
+  let perdues = 0;
+  for (const [offset, candidats] of litiges) {
+    if (tenues.has(offset)) continue;
+    let meilleur = null;
+    let second = 0;
+    for (const id of candidats) {
+      const poids = poidsDuContexte(plie, offset, motsDe.get(id));
+      if (!meilleur || poids > meilleur.poids) { second = meilleur?.poids ?? 0; meilleur = { id, poids }; }
+      else if (poids > second) second = poids;
+    }
+    if (!meilleur || meilleur.poids === 0 || meilleur.poids === second) { perdues++; continue; }
+    if (!gagnees.has(meilleur.id)) gagnees.set(meilleur.id, []);
+    gagnees.get(meilleur.id).push(offset);
+    rendues++;
+  }
+  return { gagnees, rendues, perdues };
 }
 
 function relever({ nom, lexique: fichier, sortie: fichierSortie }) {
@@ -97,16 +158,44 @@ function relever({ nom, lexique: fichier, sortie: fichierSortie }) {
 
   for (const t of lexique) index[t.id] = { total: 0, videos: {} };
 
+  let arbitrees = 0;
+  let abandonnees = 0;
+
   for (const video of corpus) {
     const { plie, accentue, jalons } = aplatir(video);
     if (!jalons.length) continue;
-    const trouves = [];
+
+    // Premier passage : ce que chaque terme tient par lui-même, et ce qu'il
+    // réclame sans pouvoir le prouver seul.
+    const fermes = new Map(); // id du terme -> offsets
+    const litiges = new Map(); // offset -> [ids]
+    const tenues = new Set(); // offsets déjà gagnés par une locution entière
+    const motsDe = new Map(); // id du terme -> mots de contexte
     for (const terme of lexique) {
-      const { souple, strict } = motifsDe(terme);
+      const { souple, strict, ambigu, contexte } = motifsDe(terme);
+      motsDe.set(terme.id, contexte);
       const offsets = [];
       if (souple) for (const m of plie.matchAll(souple)) offsets.push(m.index);
       if (strict) for (const m of accentue.matchAll(strict)) offsets.push(m.index);
-      offsets.sort((a, b) => a - b);
+      if (offsets.length) {
+        fermes.set(terme.id, offsets);
+        for (const off of offsets) tenues.add(off);
+      }
+      if (!ambigu || !contexte.length) continue;
+      for (const m of plie.matchAll(ambigu)) {
+        if (!litiges.has(m.index)) litiges.set(m.index, []);
+        litiges.get(m.index).push(terme.id);
+      }
+    }
+
+    // Second passage : le voisinage tranche.
+    const { gagnees, rendues, perdues } = arbitrer(plie, litiges, tenues, motsDe);
+    arbitrees += rendues;
+    abandonnees += perdues;
+
+    for (const terme of lexique) {
+      const offsets = [...(fermes.get(terme.id) ?? []), ...(gagnees.get(terme.id) ?? [])]
+        .sort((a, b) => a - b);
       const instants = [];
       for (const off of offsets) {
         const t = Math.max(0, instantDe(jalons, off) - AMORCE_S);
@@ -117,12 +206,7 @@ function relever({ nom, lexique: fichier, sortie: fichierSortie }) {
       if (!instants.length) continue;
       index[terme.id].videos[video.id] = instants;
       index[terme.id].total += instants.length;
-      trouves.push(terme.id);
     }
-    // `trouves` ne sert qu'au compte affiché ci-dessous : le classement des termes
-    // par séance n'est pas publié, il se déduit de `termes` et le dupliquer ferait
-    // 61 ko de plus à télécharger, avec deux vérités pour un même fait.
-    void trouves;
   }
 
   const resultat = {
@@ -145,6 +229,10 @@ function relever({ nom, lexique: fichier, sortie: fichierSortie }) {
     console.log(`  ${String(v.total).padStart(4)}  ${id}  (${Object.keys(v.videos).length} séances)`);
   }
   console.log(`\njamais relevés (${muets.length}) : ${muets.map(([id]) => id).join(', ') || '—'}`);
+  if (arbitrees || abandonnees) {
+    console.log(`\nmots ambigus : ${arbitrees} tranchés par le voisinage, ` +
+      `${abandonnees} laissés de côté faute de voisinage net.`);
+  }
 
 }
 
