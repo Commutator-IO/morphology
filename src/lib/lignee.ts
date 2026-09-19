@@ -45,6 +45,9 @@ export type Figure = {
    *  les vivants il n'en existe pas : leur plaque montre leurs initiales
    *  plutôt qu'un visage que personne n'a le droit de montrer. */
   portrait?: string;
+  /** Recadrage de la plaque quand le fichier libre n'est pas un portrait :
+   *  point d'ancrage (object-position) et facteur de zoom. */
+  cadrage?: { position: string; zoom?: number };
   /**
    * Moments du cours où Debord parle de cette personne.
    *

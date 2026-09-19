@@ -33,9 +33,13 @@ import {
  * La plaque de portrait.
  *
  * Liée depuis Wikimedia Commons, jamais réhébergée, et seulement quand le
- * fichier est dans le domaine public ou sous licence libre. Pour les vivants il
- * n'en existe pas : la plaque montre alors leurs initiales plutôt qu'un visage
- * que personne n'a le droit de reproduire.
+ * fichier est dans le domaine public ou sous licence libre. Quand il n'en
+ * existe pas — c'est le cas de la moitié des vivants — la plaque montre leurs
+ * initiales plutôt qu'un visage que personne n'a le droit de reproduire.
+ *
+ * Le seul fichier libre n'est parfois pas un portrait mais un plan large où la
+ * personne fait quelques pour cent de l'image ; `cadrage` ancre alors la plaque
+ * sur elle et zoome, avec une miniature assez grande pour rester nette.
  */
 function Plaque({ figure }: { figure: Figure }) {
   const initiales = figure.nom
@@ -53,7 +57,12 @@ function Plaque({ figure }: { figure: Figure }) {
           loading="lazy"
           referrerPolicy="no-referrer"
           className="h-full w-full object-cover"
-          style={{ objectPosition: '50% 20%' }}
+          style={{
+            objectPosition: figure.cadrage?.position ?? '50% 20%',
+            ...(figure.cadrage?.zoom
+              ? { transform: `scale(${figure.cadrage.zoom})`, transformOrigin: figure.cadrage.position }
+              : {}),
+          }}
         />
       ) : (
         <div

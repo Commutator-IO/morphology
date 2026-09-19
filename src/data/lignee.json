@@ -388,7 +388,11 @@
   "source": "Élève cité dans la notice Wikipédia de Debord, qui orthographie son nom « Cavalo » ; sa propre notice Wikipédia donne « Cavallo », avec sa date et son lieu de naissance. Portrait : Wikimedia Commons, fichier « Ricardo Cavallo et Barbet Schroeder 2023.jpg ».",
   "dates": "né en 1954",
   "ne": 1954,
-  "portrait": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Ricardo_Cavallo_et_Barbet_Schroeder_2023.jpg/500px-Ricardo_Cavallo_et_Barbet_Schroeder_2023.jpg"
+  "portrait": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Ricardo_Cavallo_et_Barbet_Schroeder_2023.jpg/1280px-Ricardo_Cavallo_et_Barbet_Schroeder_2023.jpg",
+  "cadrage": {
+   "position": "33% 27%",
+   "zoom": 4
+  }
  },
  {
   "id": "paquignon",
@@ -444,7 +448,11 @@
   "source": "Cité parmi les élèves dans la notice Wikipédia de Debord. Cette filiation n'a pu être corroborée par aucune autre source ici : à prendre comme une affirmation de Wikipédia, non comme un fait établi. Années de naissance et de mort d'après Wikidata. Portrait : Wikimedia Commons, fichier « Portrait of Henri Cartier-Bresson - Paris - 1954 - Kimura Ihei.png ».",
   "ne": 1908,
   "mort": 2004,
-  "portrait": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Portrait_of_Henri_Cartier-Bresson_-_Paris_-_1954_-_Kimura_Ihei.png/500px-Portrait_of_Henri_Cartier-Bresson_-_Paris_-_1954_-_Kimura_Ihei.png"
+  "portrait": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Portrait_of_Henri_Cartier-Bresson_-_Paris_-_1954_-_Kimura_Ihei.png/1280px-Portrait_of_Henri_Cartier-Bresson_-_Paris_-_1954_-_Kimura_Ihei.png",
+  "cadrage": {
+   "position": "48% 35%",
+   "zoom": 2.2
+  }
  },
  {
   "id": "turckheim",
