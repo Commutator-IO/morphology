@@ -1464,11 +1464,27 @@
   "moderne": "Musculus obliquus",
   "definition": "Nappes latérales de l'abdomen, en deux plans croisés. Leur épaisseur fait le flanc, et leur bord supérieur passe sous le rebord costal en une courbe qui marque la taille.",
   "variantes": [
-   "oblique",
-   "obliques",
    "grand oblique",
+   "grands obliques",
    "petit oblique",
-   "obliquement"
+   "petits obliques",
+   "obliques de l abdomen",
+   "petit oubli",
+   "petits oublis",
+   "?oblique",
+   "?obliques",
+   "-ligne oblique",
+   "-lignes obliques",
+   "-en oblique",
+   "-plus oblique",
+   "-tres oblique",
+   "-est oblique",
+   "-sont obliques",
+   "-bassin oblique",
+   "-oblique en bas",
+   "-oblique vers",
+   "-oblique qui",
+   "-oblique comme"
   ],
   "situation": {
    "vue": "face",
@@ -1486,7 +1502,25 @@
      15
     ]
    ]
-  }
+  },
+  "contexte": [
+   "abdomen",
+   "abdominaux",
+   "ventre",
+   "grand droit",
+   "grands droits",
+   "flanc",
+   "flancs",
+   "digitations",
+   "dentele",
+   "nombril",
+   "taille",
+   "arcade crurale",
+   "aine",
+   "pubis",
+   "cotes",
+   "thorax"
+  ]
  },
  {
   "id": "grand-dentele",

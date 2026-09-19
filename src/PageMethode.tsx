@@ -123,6 +123,13 @@ export function PageMethode() {
               n'est rangée nulle part : mieux vaut la perdre que la ranger à tort.
             </li>
             <li>
+              Certaines tournures, relevées puis vérifiées à l'écoute, disent au
+              contraire que le mot n'est pas la notion : « un bout de trapèze »
+              est une figure qu'on dessine, « une ligne oblique » une direction
+              et non le muscle du flanc. Elles annulent la mention pour tout le
+              monde.
+            </li>
+            <li>
               L'horodatage recule de quelques secondes sur la mention, pour qu'on
               arrive avant le mot plutôt qu'après.
             </li>
