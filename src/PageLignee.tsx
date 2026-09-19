@@ -336,6 +336,20 @@ export function PageLignee() {
 
                         <p className="mt-2 text-[15px] leading-relaxed text-ink-800">{f.notice}</p>
 
+                        {f.instagram && (
+                          <p className="mt-2 text-[13px]">
+                            <a
+                              href={`https://www.instagram.com/${f.instagram}/`}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="text-brand-700 underline underline-offset-2"
+                            >
+                              @{f.instagram} ↗
+                            </a>
+                            <span className="text-ink-400"> — son travail d'aujourd'hui</span>
+                          </p>
+                        )}
+
                         {f.ouvrages.length > 0 && (
                           <ul className="mt-3 space-y-2">
                             {f.ouvrages.map((o) => (

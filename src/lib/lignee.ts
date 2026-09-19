@@ -35,6 +35,11 @@ export type Figure = {
   role: Role;
   notice: string;
   ouvrages: Ouvrage[];
+  /** Identifiant Instagram, quand le compte a pu être authentifié — la
+   *  biographie ou une publication devait nommer la personne et son métier.
+   *  Absent plutôt que deviné : renvoyer vers un homonyme serait pire que
+   *  ne rien mettre. */
+  instagram?: string;
   source: string;
 };
 
