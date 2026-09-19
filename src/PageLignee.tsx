@@ -253,6 +253,8 @@ function Frise({ actif, onChoisir }: { actif: Figure; onChoisir: (f: Figure) => 
  * faute de quoi quarante-six lignes d'une barre chacune feraient un mur.
  */
 function BandeHistorique() {
+  const [survole, setSurvole] = useState<Classique | null>(null);
+
   const lignes: Classique[][] = [];
   for (const c of CLASSIQUES) {
     // Une marge de dix ans évite que deux barres se touchent bout à bout et
@@ -268,9 +270,24 @@ function BandeHistorique() {
       <figcaption className="text-[11px] font-bold tracking-[0.1em] text-ink-400 uppercase">
         En arrière-plan : les {CLASSIQUES.length} artistes cités en cours
       </figcaption>
-      <div className="relative mt-2.5">
-        {/* La fenêtre de la frise principale, pour situer l'une par rapport à
-            l'autre d'un coup d'œil. */}
+
+      {/* La bulle occupe une ligne réservée au-dessus de la bande, plutôt que de
+          flotter par-dessus les barres : elle ne masque jamais ce qu'on survole,
+          et la bande ne saute pas de hauteur quand elle apparaît. */}
+      <p className="mt-2 h-4 text-[12px] leading-4">
+        {survole ? (
+          <span className="text-ink-800">
+            <span className="font-semibold">{survole.nom}</span>{' '}
+            <span className="tabular text-ink-400">
+              {survole.ne}-{survole.mort}
+            </span>
+          </span>
+        ) : (
+          <span className="text-ink-400">Survolez une barre pour lire le nom.</span>
+        )}
+      </p>
+
+      <div className="relative mt-1">
         <span
           aria-hidden="true"
           className="absolute inset-y-0 rounded-sm bg-brand-50"
@@ -287,21 +304,32 @@ function BandeHistorique() {
             style={{ left: `${place(a)}%` }}
           />
         ))}
-        <ul className="relative space-y-[2px] pb-4">
+        <ul className="relative space-y-[3px] pb-4" onMouseLeave={() => setSurvole(null)}>
           {lignes.map((ligne, i) => (
-            <li key={i} className="relative h-[7px]">
-              {ligne.map((c) => (
-                <a
-                  key={c.id}
-                  href={`/references/#${c.id}`}
-                  title={`${c.nom} (${c.ne}-${c.mort})`}
-                  className="absolute inset-y-0 rounded-[2px] bg-ink-300 transition-colors hover:bg-brand-500"
-                  style={{
-                    left: `${place(c.ne)}%`,
-                    width: `${Math.max(place(c.mort) - place(c.ne), 0.6)}%`,
-                  }}
-                />
-              ))}
+            <li key={i} className="relative h-[9px]">
+              {ligne.map((c) => {
+                const actif = survole?.id === c.id;
+                return (
+                  <a
+                    key={c.id}
+                    href={`/references/#${c.id}`}
+                    onMouseEnter={() => setSurvole(c)}
+                    onFocus={() => setSurvole(c)}
+                    onBlur={() => setSurvole(null)}
+                    aria-label={`${c.nom}, ${c.ne}-${c.mort}`}
+                    className={`absolute inset-y-0 rounded-[2px] transition-colors ${
+                      actif ? 'bg-brand-600' : 'bg-ink-300'
+                    }`}
+                    style={{
+                      left: `${place(c.ne)}%`,
+                      // Un plancher de 1,6 % : en deçà, les vies courtes du
+                      // XIVe siècle faisaient des barres de quatre pixels,
+                      // impossibles à viser à la souris.
+                      width: `${Math.max(place(c.mort) - place(c.ne), 1.6)}%`,
+                    }}
+                  />
+                );
+              })}
             </li>
           ))}
         </ul>
@@ -318,8 +346,7 @@ function BandeHistorique() {
       <p className="mt-2 text-[12px] leading-relaxed text-ink-500">
         Sept siècles de peinture et de sculpture, contre deux générations
         d'enseignement — la zone claire. Debord cite surtout la Renaissance et le
-        XIX<sup>e</sup> siècle ; survolez une barre pour le nom, cliquez pour les
-        passages où il en parle.
+        XIX<sup>e</sup> siècle ; cliquez une barre pour les passages où il en parle.
       </p>
     </figure>
   );
