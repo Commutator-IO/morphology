@@ -99,10 +99,19 @@
     @apply border-brand-300 bg-brand-100;
   }
 
-  /* Filtre. Même hauteur de cible que les horodatages. */
+  /* Filtre. 40 px sur téléphone plutôt que 44 : ce sont des commandes
+     secondaires, larges, et quatre pixels gagnés sur trois rangées rendent une
+     ligne de résultats. Les horodatages, eux, restent à 44 px — c'est le geste
+     principal, et celui qu'on rate. */
   .puce-filtre {
-    @apply inline-flex min-h-11 shrink-0 items-center rounded-full border px-3.5
+    @apply inline-flex min-h-10 shrink-0 items-center rounded-full border px-3.5
       text-sm font-medium whitespace-nowrap transition active:scale-95;
+  }
+
+  @variant lg {
+    .puce-filtre {
+      @apply min-h-11;
+    }
   }
 
   /* Rangée de filtres.

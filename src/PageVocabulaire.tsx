@@ -34,6 +34,9 @@ export function PageVocabulaire() {
   // Sur grand écran, la séance se joue à droite ; sur téléphone ce panneau
   // n'est pas rendu et l'état reste simplement nul.
   const [lecture, setLecture] = useState<Lecture | null>(null);
+  // Replié par défaut sur téléphone : on ouvre ce site pour retrouver un mot en
+  // quelques secondes, pas pour régler des filtres.
+  const [filtresOuverts, setFiltresOuverts] = useState(false);
 
   const resultats = useMemo(() => {
     const filtres = LEXIQUE.filter(
@@ -77,16 +80,23 @@ export function PageVocabulaire() {
       <Entete chemin="/" />
 
       <main className="mx-auto max-w-4xl lg:max-w-6xl px-4 pb-16">
-        <h1 className="titre mt-6 text-2xl leading-tight text-ink-900 sm:text-3xl">
-          Le vocabulaire de l'anatomie, séance par séance
+        {/* Sur téléphone, le titre est court et l'explication disparaît : elle
+            repoussait la recherche sous la ligne de flottaison, alors que
+            l'usage est de sortir le téléphone en cours et de chercher un mot.
+            Le texte reste à partir de sm, où il ne coûte rien. */}
+        <h1 className="titre mt-4 text-xl leading-tight text-ink-900 sm:mt-6 sm:text-3xl">
+          <span className="sm:hidden">Vocabulaire de l'anatomie</span>
+          <span className="hidden sm:inline">
+            Le vocabulaire de l'anatomie, séance par séance
+          </span>
         </h1>
-        <p className="mt-3 text-[15px] leading-relaxed text-ink-700">
+        <p className="mt-3 hidden text-[15px] leading-relaxed text-ink-700 sm:block">
           {LEXIQUE.length} termes d'ostéologie, de myologie et de morphologie, avec
           pour chacun les moments du cours où Debord le prononce. Touchez un
           horodatage : la séance démarre à cet instant, sans quitter la page.
           Le bouton <i>Arrêter</i> — ou la touche Échap — coupe la lecture.
         </p>
-        <p className="mt-2 text-[13px] leading-relaxed text-ink-500">
+        <p className="mt-2 hidden text-[13px] leading-relaxed text-ink-500 sm:block">
           {passagesTotal.toLocaleString('fr-FR')} passages repérés dans{' '}
           {SEANCES.length} séances, soit environ{' '}
           {Math.round(SEANCES.reduce((s, x) => s + (x.dureeS ?? 0), 0) / 3600)} heures
@@ -101,7 +111,7 @@ export function PageVocabulaire() {
             lui-même collant : les deux ne doivent pas se chevaucher. */}
         <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_25rem] lg:gap-8">
           <div>
-        <div className="sticky top-[5.75rem] z-20 -mx-4 mt-5 border-b border-ink-200/70 bg-ink-50/95 px-4 pt-3 pb-2.5 backdrop-blur lg:mx-0 lg:px-0">
+        <div className="sticky top-[5.75rem] z-20 -mx-4 mt-3 border-b sm:mt-5 border-ink-200/70 bg-ink-50/95 px-4 pt-3 pb-2.5 backdrop-blur lg:mx-0 lg:px-0">
           <label className="sr-only" htmlFor="recherche">
             Chercher un terme
           </label>
@@ -162,9 +172,30 @@ export function PageVocabulaire() {
             ))}
           </div>
 
-          {/* Les filtres débordent volontairement en défilement horizontal :
-              cinq catégories ne tiennent pas sur 375 px, et les replier
-              coûterait un geste. */}
+          {/* Sur téléphone, la barre collante occupait un tiers de l'écran.
+              Catégories et tri passent derrière « Filtres » : ne reste visible
+              que ce dont on se sert en premier, la recherche et la région. Sur
+              grand écran la place existe, et tout reste déplié. */}
+          <div className="mt-1.5 flex items-center justify-between gap-3">
+            <p className="tabular text-xs text-ink-500">
+              {resultats.length} terme{resultats.length > 1 ? 's' : ''}
+            </p>
+            <button
+              type="button"
+              onClick={() => setFiltresOuverts((v) => !v)}
+              aria-expanded={filtresOuverts}
+              className="flex min-h-9 items-center gap-1 rounded-lg border border-ink-300 bg-white px-2.5 text-xs font-medium text-ink-700 active:bg-ink-100 lg:hidden"
+            >
+              {/* Une fois replié, rien d'autre ne dirait qu'un filtre est actif :
+                  le bouton porte donc son nom. */}
+              {categorie ? CATEGORIES[categorie].libelle : 'Filtres'}
+              <span aria-hidden="true" className="text-ink-400">
+                {filtresOuverts ? '▴' : '▾'}
+              </span>
+            </button>
+          </div>
+
+          <div className={`${filtresOuverts ? 'block' : 'hidden'} lg:block`}>
           <div className="rangee-filtres mt-1.5">
             <button
               type="button"
@@ -195,22 +226,20 @@ export function PageVocabulaire() {
             ))}
           </div>
 
-          <div className="mt-1.5 flex items-center justify-between gap-3">
-            <p className="tabular text-xs text-ink-500">
-              {resultats.length} terme{resultats.length > 1 ? 's' : ''}
-            </p>
-            <label className="flex items-center gap-1.5 text-xs text-ink-500">
-              Trier
-              <select
-                value={tri}
-                onChange={(e) => setTri(e.target.value as Tri)}
-                className="min-h-9 rounded-lg border border-ink-300 bg-white px-2 text-xs text-ink-800"
-              >
-                <option value="alpha">A → Z</option>
-                <option value="frequence">Le plus dit</option>
-                <option value="region">Par région</option>
-              </select>
-            </label>
+            <div className="mt-1.5 flex justify-end">
+              <label className="flex items-center gap-1.5 text-xs text-ink-500">
+                Trier
+                <select
+                  value={tri}
+                  onChange={(e) => setTri(e.target.value as Tri)}
+                  className="min-h-9 rounded-lg border border-ink-300 bg-white px-2 text-xs text-ink-800"
+                >
+                  <option value="alpha">A → Z</option>
+                  <option value="frequence">Le plus dit</option>
+                  <option value="region">Par région</option>
+                </select>
+              </label>
+            </div>
           </div>
         </div>
 

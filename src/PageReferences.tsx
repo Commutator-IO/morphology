@@ -49,15 +49,15 @@ export function PageReferences() {
       <Entete chemin="/references/" />
 
       <main className="mx-auto max-w-4xl lg:max-w-6xl px-4 pb-16">
-        <h1 className="titre mt-6 text-2xl leading-tight text-ink-900 sm:text-3xl">
+        <h1 className="titre mt-4 text-xl leading-tight text-ink-900 sm:mt-6 sm:text-3xl">
           Ce que Debord donne à regarder
         </h1>
-        <p className="mt-3 text-[15px] leading-relaxed text-ink-700">
+        <p className="mt-3 hidden text-[15px] leading-relaxed text-ink-700 sm:block">
           Les séances se ferment presque toujours sur des œuvres : un Rembrandt à la
           plume, un écorché, une salle du Louvre où aller vérifier. {REFERENCES.length}{' '}
           références relevées, {mentions} mentions en tout.
         </p>
-        <p className="mt-2 text-[13px] leading-relaxed text-ink-500">
+        <p className="mt-2 hidden text-[13px] leading-relaxed text-ink-500 sm:block">
           Chaque nom de cette liste a été vérifié passage par passage. La
           transcription automatique confond volontiers un patronyme et un mot
           courant — « léger », « carrière », « boucher », « durer » — et ces faux
@@ -70,7 +70,7 @@ export function PageReferences() {
 
         <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_25rem] lg:gap-8">
           <div>
-        <div className="sticky top-[5.75rem] z-20 -mx-4 mt-5 border-b border-ink-200/70 bg-ink-50/95 px-4 pt-3 pb-2.5 backdrop-blur lg:mx-0 lg:px-0">
+        <div className="sticky top-[5.75rem] z-20 -mx-4 mt-3 border-b sm:mt-5 border-ink-200/70 bg-ink-50/95 px-4 pt-3 pb-2.5 backdrop-blur lg:mx-0 lg:px-0">
           <label className="sr-only" htmlFor="recherche-ref">
             Chercher une référence
           </label>

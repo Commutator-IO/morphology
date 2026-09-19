@@ -34,10 +34,10 @@ export function PageSeances() {
       <Entete chemin="/seances/" />
 
       <main className="mx-auto max-w-4xl lg:max-w-6xl px-4 pb-16">
-        <h1 className="titre mt-6 text-2xl leading-tight text-ink-900 sm:text-3xl">
+        <h1 className="titre mt-4 text-xl leading-tight text-ink-900 sm:mt-6 sm:text-3xl">
           Les {SEANCES.length} séances
         </h1>
-        <p className="mt-3 text-[15px] leading-relaxed text-ink-700">
+        <p className="mt-3 hidden text-[15px] leading-relaxed text-ink-700 sm:block">
           Environ {Math.round(total / 3600)} heures de cours filmées aux Beaux-Arts
           de Paris. Les séances sont rangées ici dans l'ordre du raisonnement —
           l'ensemble d'abord, la région ensuite, le muscle en dernier — et non dans
@@ -45,7 +45,7 @@ export function PageSeances() {
           d'origine.
         </p>
 
-        <div className="rangee-filtres mt-5">
+        <div className="rangee-filtres mt-3 sm:mt-5">
           <button
             type="button"
             onClick={() => setGroupe(null)}

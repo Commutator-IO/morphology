@@ -84,7 +84,12 @@ export const GROUPES: {
   parties: string[];
 }[] = [
   { id: 'tete', libelle: 'Tête et cou', regions: ['tete', 'cou'], parties: ['tete'] },
-  { id: 'torse', libelle: 'Torse', regions: ['tronc', 'dos'], parties: ['tronc', 'dos'] },
+  { id: 'torse', libelle: 'Torse', regions: ['tronc'], parties: ['tronc'] },
+  // Le dos a sa propre entrée : c'est la plus grosse partie du cours — six
+  // séances, parce que l'omoplate glisse sur la cage — et le confondre avec le
+  // torse revenait à rendre introuvable ce à quoi Debord consacre le plus de
+  // temps.
+  { id: 'dos', libelle: 'Dos', regions: ['dos'], parties: ['dos'] },
   {
     id: 'bras',
     libelle: 'Épaule et bras',
