@@ -5,49 +5,54 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#faf9f7" />
+
+    <!--
+      Page de renvoi : cet onglet vivait sous /anecdotes/ avant de s'appeler
+      Digressions. On ne casse pas un lien qu'on a pu donner à des étudiants.
+
+      `noindex` mais pas `nofollow` : les moteurs doivent suivre le renvoi et
+      créditer la nouvelle adresse, sans garder celle-ci dans leur index. Le
+      canonique dit la même chose. C'est ce qu'on peut faire de mieux sans
+      serveur — GitHub Pages ne sait pas répondre 301.
+    -->
+    <meta name="robots" content="noindex, follow" />
+    <link rel="canonical" href="https://morphologie.commutator.io/digressions/" />
+    <meta http-equiv="refresh" content="0; url=/digressions/" />
+    <title>Cette page a déménagé — Digressions</title>
+
     <script>
-      // Filet de sécurité pour l'hébergement statique : après un redéploiement,
-      // une page encore en cache peut référencer un asset dont le nom a changé,
-      // d'où une page blanche. On détecte l'échec de chargement et on recharge
-      // une fois — un rechargement revalide le HTML et récupère les bons noms.
-      (function () {
-        try {
-          addEventListener(
-            'error',
-            function (e) {
-              var el = e.target;
-              var url = el && (el.src || el.href);
-              if (url && /\/assets\//.test(url) && !sessionStorage.getItem('rechargeAsset')) {
-                sessionStorage.setItem('rechargeAsset', '1');
-                location.reload();
-              }
-            },
-            true,
-          );
-          addEventListener('load', function () {
-            sessionStorage.removeItem('rechargeAsset');
-          });
-        } catch (_) {}
-      })();
+      // Avant le rendu, et en conservant l'ancre : un lien partagé pointait
+      // peut-être un moment précis. `replace` plutôt que `href` pour que le
+      // bouton Retour ramène d'où l'on vient, et non sur ce renvoi.
+      location.replace('/digressions/' + location.hash);
     </script>
-    <meta name="description" content="Étude de l'oralité pédagogique de Jean-François Debord : souvenirs d'atelier, adresses à la salle, changements de registre, comparaisons prises hors de l'art. Repérage lexical, donné comme points d'écoute horodatés vers les séances." />
-    <link rel="canonical" href="https://morphologie.commutator.io/anecdotes/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="fr_FR" />
-    <meta property="og:site_name" content="Morphologie — Jean-François Debord" />
-    <meta property="og:title" content="Quand le cours sort de son sujet — morphologie de J.-F. Debord" />
-    <meta property="og:description" content="Étude de l'oralité pédagogique de Jean-François Debord : souvenirs d'atelier, adresses à la salle, changements de registre, comparaisons prises hors de l'art. Repérage lexical, donné comme points d'écoute horodatés vers les séances." />
-    <meta property="og:url" content="https://morphologie.commutator.io/anecdotes/" />
-    <title>Quand le cours sort de son sujet — morphologie de J.-F. Debord</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        background: #faf9f7;
+        color: #45403a;
+        font:
+          16px/1.6 ui-sans-serif,
+          system-ui,
+          sans-serif;
+        text-align: center;
+      }
+      a {
+        color: #9c4221;
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/mainAnecdotes.tsx"></script>
+    <p>
+      L'onglet <strong>Anecdotes</strong> s'appelle désormais
+      <strong>Digressions</strong>.<br />
+      <a href="/digressions/">Continuer vers la page</a>
+    </p>
   </body>
 </html>

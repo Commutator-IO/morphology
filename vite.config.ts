@@ -12,11 +12,28 @@ const ORIGINE = process.env.SITE_URL ?? 'https://morphologie.commutator.io'
 const PAGES = {
   main: 'index.html',
   references: 'references/index.html',
-  anecdotes: 'anecdotes/index.html',
+  digressions: 'digressions/index.html',
   seances: 'seances/index.html',
   lignee: 'lignee/index.html',
   methode: 'methode/index.html',
   mentions: 'mentions/index.html',
+} as const
+
+/**
+ * Anciennes adresses, conservées vivantes.
+ *
+ * L'onglet des digressions a d'abord vécu sous `/anecdotes/`. Le mot promettait
+ * un florilège de bons mots, l'URL a suivi le libellé — mais des liens ont pu
+ * être partagés entre-temps, et l'hébergement statique ne sait pas rediriger
+ * côté serveur. Une page de renvoi tient ce rôle : elle coûte moins d'un kilo-
+ * octet et évite qu'un lien donné à des étudiants tombe sur un 404.
+ *
+ * Elles sont tenues à part des pages : elles se construisent comme elles, mais
+ * n'ont rien à faire dans le plan du site, qui ne doit annoncer qu'une adresse
+ * par contenu.
+ */
+const REDIRECTIONS = {
+  anecdotes: 'anecdotes/index.html',
 } as const
 
 /** Date du dernier commit, en ISO — l'en-tête et l'index sont partagés, donc
@@ -77,7 +94,10 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: Object.fromEntries(
-        Object.entries(PAGES).map(([cle, page]) => [cle, resolve(import.meta.dirname, page)]),
+        Object.entries({ ...PAGES, ...REDIRECTIONS }).map(([cle, page]) => [
+          cle,
+          resolve(import.meta.dirname, page),
+        ]),
       ),
     },
   },

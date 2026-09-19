@@ -11,7 +11,7 @@ Site en français, servi sur https://morphologie.commutator.io
 
 - [Vocabulaire](https://morphologie.commutator.io/) : 95 termes d'anatomie et de morphologie, chacun avec une définition écrite pour ce site et la liste des moments du cours où Debord le prononce. Environ 10 400 passages horodatés.
 - [Références](https://morphologie.commutator.io/references/) : 62 références artistiques — peintres, sculpteurs, anatomistes, musées, œuvres — citées par Debord, horodatées, avec un lien vers une page de musée quand une œuvre est en accès libre.
-- [Digressions](https://morphologie.commutator.io/anecdotes/) : 139 moments où le cours sort de son sujet, donnés comme une étude de l'oralité pédagogique de Debord — souvenir d'atelier, adresse à la salle, registre familier, comparaison prise hors de l'art. 65 portent une notice de deux ou trois phrases. Ce n'est pas un florilège de bons mots.
+- [Digressions](https://morphologie.commutator.io/digressions/) : 139 moments où le cours sort de son sujet, donnés comme une étude de l'oralité pédagogique de Debord — souvenir d'atelier, adresse à la salle, registre familier, comparaison prise hors de l'art. 65 portent une notice de deux ou trois phrases. Ce n'est pas un florilège de bons mots.
 - [Séances](https://morphologie.commutator.io/seances/) : les 45 séances rangées par région du corps.
 - [Lignée](https://morphologie.commutator.io/lignee/) : la chaire d'anatomie artistique avant Debord et les élèves qui ont écrit après lui, sous forme de frise.
 - [Méthode](https://morphologie.commutator.io/methode/) : comment l'index est construit, et ce qu'il vaut.

@@ -16,7 +16,7 @@ reformule pas et ne l'héberge pas.
 | -------------- | ------------------------------------------------------------------------------- |
 | `/`            | 95 termes d'anatomie et de morphologie, chacun horodaté dans les séances        |
 | `/references/` | 73 références — peintres, sculpteurs, anatomistes, musées, œuvres               |
-| `/anecdotes/`  | 139 moments où le cours sort de son sujet, dont 65 décrits                      |
+| `/digressions/` | 139 moments où le cours sort de son sujet, dont 65 décrits                      |
 | `/seances/`    | Les 45 séances rangées par région du corps                                      |
 | `/lignee/`     | 18 figures : la chaire d'anatomie avant Debord, et ceux qui ont écrit après lui |
 | `/methode/`    | Comment l'index est construit, et ce qu'il vaut                                 |
@@ -26,7 +26,7 @@ reformule pas et ne l'héberge pas.
 YouTube. Sur grand écran, il la place dans un lecteur à droite de la liste, sans
 quitter l'index.
 
-L'onglet `/anecdotes/` s'intitule **Digressions**, et ce n'est pas un florilège
+L'onglet `/digressions/` ne recueille pas un florilège
 de bons mots : Debord enseigne de vive voix, deux heures sans notes, et ces
 écarts sont ses outils de pédagogue.
 

@@ -19,7 +19,7 @@ import { useEffect, useRef } from 'react';
 const VUES: { chemin: string; libelle: string }[] = [
   { chemin: '/', libelle: 'Vocabulaire' },
   { chemin: '/references/', libelle: 'Références' },
-  { chemin: '/anecdotes/', libelle: 'Digressions' },
+  { chemin: '/digressions/', libelle: 'Digressions' },
   { chemin: '/seances/', libelle: 'Séances' },
   { chemin: '/lignee/', libelle: 'Lignée' },
   { chemin: '/methode/', libelle: 'Méthode' },

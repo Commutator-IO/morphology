@@ -26,7 +26,7 @@ import { duree, horodate, lienYoutube } from './lib/lexique';
  * décrire supposerait de deviner, et deviner ce qu'a dit quelqu'un de réel
  * n'est pas une option.
  */
-export function PageAnecdotes() {
+export function PageDigressions() {
   const [categorie, setCategorie] = useState<Categorie | null>(null);
   const [comparaisons, setComparaisons] = useState(false);
   const [decritsSeuls, setDecritsSeuls] = useState(true);
@@ -53,7 +53,7 @@ export function PageAnecdotes() {
 
   return (
     <>
-      <Entete chemin="/anecdotes/" />
+      <Entete chemin="/digressions/" />
 
       <main className="mx-auto max-w-4xl px-4 pb-16 lg:max-w-6xl">
         <h1 className="titre mt-4 text-xl leading-tight text-ink-900 sm:mt-6 sm:text-3xl">
