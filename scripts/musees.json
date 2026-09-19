@@ -70,18 +70,18 @@
   "artiste": "Peter Paul Rubens"
  },
  "titien": {
-  "musee": "Art Institute of Chicago",
-  "url": "https://www.artic.edu/artworks/55006",
-  "oeuvre": "Self-Portrait",
-  "date": "n.d.",
+  "musee": "The Metropolitan Museum of Art",
+  "url": "https://www.metmuseum.org/art/collection/search/437827",
+  "oeuvre": "Venus and the Lute Player",
+  "date": "ca. 1565–70",
   "artiste": "Titian"
  },
  "raphael": {
-  "musee": "Art Institute of Chicago",
-  "url": "https://www.artic.edu/artworks/114932",
-  "oeuvre": "Upraised Right Hand, with Palm Facing Outward: Study for Saint Peter",
-  "date": "1518/20",
-  "artiste": "Raphael"
+  "musee": "The Metropolitan Museum of Art",
+  "url": "https://www.metmuseum.org/art/collection/search/337075",
+  "oeuvre": "Lucretia",
+  "date": "1508–10",
+  "artiste": "Raphael (Raffaello Sanzio or Santi)"
  },
  "delacroix": {
   "musee": "Art Institute of Chicago",
