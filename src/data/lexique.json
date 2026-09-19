@@ -1063,7 +1063,6 @@
    "carpienne",
    "carpiens",
    "scaphoide",
-   "pisiforme",
    "os crochu",
    "trapeze osseux"
   ],
@@ -1081,6 +1080,52 @@
      152,
      5,
      4
+    ]
+   ]
+  }
+ },
+ {
+  "id": "pisiforme",
+  "terme": "Pisiforme",
+  "categorie": "repere",
+  "region": "main",
+  "moderne": "Os pisiforme",
+  "aussi": [
+   "petit pois"
+  ],
+  "definition": "Le plus petit os du carpe, du côté du petit doigt, à la base de l'éminence hypothénar. Il n'appartient pas vraiment à la rangée : c'est un os sésamoïde pris dans le tendon du cubital antérieur, posé en avant du pyramidal. On le roule sous le doigt comme un pois, et c'est ce qui en fait un repère — le seul point fixe du bord interne du poignet, d'où partent la saillie de l'hypothénar et le pli de flexion. La transcription ne l'écrit jamais : « pizy forme », « lépidi forme », « pays forme », « plaisir forme ».",
+  "variantes": [
+   "pisiforme",
+   "pisiformes",
+   "os pisiforme",
+   "pizy forme",
+   "lepidi forme",
+   "pays forme",
+   "physique forme",
+   "plaisir forme",
+   "busy forme",
+   "pise forme",
+   "pissis forme",
+   "pire forme",
+   "psy forme",
+   "fizi forme",
+   "plizy forme",
+   "pizi forme"
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     19,
+     153,
+     2.5,
+     2.5
+    ],
+    [
+     126.5,
+     153,
+     2.5,
+     2.5
     ]
    ]
   }
