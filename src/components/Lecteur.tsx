@@ -77,62 +77,58 @@ export function Lecteur({
             />
           </div>
 
-          <div className="flex items-start gap-3 px-3.5 py-2.5">
-            <div className="min-w-0 flex-1">
-              <p className="titre truncate text-[15px] leading-snug text-ink-900 lg:whitespace-normal">
-                {lecture.titre}
-              </p>
-              <p className="mt-1 text-xs text-ink-500">
-                <a
-                  href={lienYoutube(lecture.videoId, lecture.instant)}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="underline underline-offset-2"
-                >
-                  Ouvrir sur YouTube ↗
-                </a>
-              </p>
-            </div>
+          {/* Le titre sur sa propre ligne, les commandes dessous.
+              Au cran « petite » le panneau ne fait que 352 px : titre et boutons
+              sur la même ligne s'y écrasaient mutuellement. Empiler vaut mieux
+              qu'un compromis qui ne tient à aucune des trois largeurs. */}
+          <div className="px-3.5 py-2.5">
+            <p className="titre text-[15px] leading-snug text-ink-900">{lecture.titre}</p>
 
-            {/* Bouton d'arrêt plutôt que simple croix : c'est le geste qu'on
-                cherche en cours, souvent dans l'urgence, et il doit se toucher
-                sans viser. 44 px de haut comme toutes les cibles du site. */}
-            <div className="flex shrink-0 items-center gap-2">
-              {/* Réglage de largeur : sur grand écran seulement, puisque c'est
-                  le partage avec la colonne de texte qu'il déplace. */}
-              {taille && onTaille && (
-                <div
-                  role="group"
-                  aria-label="Largeur du lecteur"
-                  className="hidden items-center rounded-lg border border-ink-300 lg:flex"
-                >
-                  {TAILLES.map((t) => (
-                    <button
-                      key={t.id}
-                      type="button"
-                      onClick={() => onTaille(t.id)}
-                      aria-pressed={taille === t.id}
-                      title={`Largeur ${t.libelle.toLowerCase()}`}
-                      className={`min-h-9 px-2 text-xs font-medium transition first:rounded-l-lg last:rounded-r-lg ${
-                        taille === t.id
-                          ? 'bg-ink-800 text-white'
-                          : 'text-ink-600 hover:bg-ink-100'
-                      }`}
-                    >
-                      {t.libelle}
-                    </button>
-                  ))}
-                </div>
-              )}
-
-              <button
-                type="button"
-                onClick={onFermer}
-                aria-label="Arrêter la vidéo"
-                className="flex min-h-11 shrink-0 items-center gap-1.5 rounded-lg border border-ink-300 px-3 text-sm font-medium text-ink-700 transition active:scale-95 active:bg-ink-100"
+            <div className="mt-2 flex items-center justify-between gap-2">
+              <a
+                href={lienYoutube(lecture.videoId, lecture.instant)}
+                target="_blank"
+                rel="noreferrer"
+                className="shrink-0 text-xs text-ink-500 underline underline-offset-2 transition hover:text-ink-900"
               >
-                <span aria-hidden="true">✕</span> Arrêter
-              </button>
+                Ouvrir sur YouTube ↗
+              </a>
+
+              <div className="flex shrink-0 items-center gap-2">
+                {taille && onTaille && (
+                  <div
+                    role="group"
+                    aria-label="Largeur du lecteur"
+                    className="hidden items-center rounded-lg border border-ink-300 lg:flex"
+                  >
+                    {TAILLES.map((t) => (
+                      <button
+                        key={t.id}
+                        type="button"
+                        onClick={() => onTaille(t.id)}
+                        aria-pressed={taille === t.id}
+                        title={`Largeur ${t.libelle.toLowerCase()}`}
+                        className={`min-h-9 px-2 text-xs font-medium transition first:rounded-l-lg last:rounded-r-lg ${
+                          taille === t.id
+                            ? 'bg-ink-800 text-white'
+                            : 'text-ink-600 hover:bg-ink-100'
+                        }`}
+                      >
+                        {t.libelle}
+                      </button>
+                    ))}
+                  </div>
+                )}
+
+                <button
+                  type="button"
+                  onClick={onFermer}
+                  aria-label="Arrêter la vidéo"
+                  className="flex min-h-11 shrink-0 items-center gap-1.5 rounded-lg border border-ink-300 px-3 text-sm font-medium text-ink-700 transition active:scale-95 active:bg-ink-100"
+                >
+                  <span aria-hidden="true">✕</span> Arrêter
+                </button>
+              </div>
             </div>
           </div>
 
