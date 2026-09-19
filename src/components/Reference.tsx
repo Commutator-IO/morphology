@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { placePourLecteur } from '../lib/ecran';
 import { duree, horodate, lienYoutube } from '../lib/lexique';
 import {
   passagesDeReference,
@@ -92,7 +91,7 @@ export function CarteReference({
                           target="_blank"
                           rel="noreferrer"
                           onClick={(e) => {
-                            if (!onLire || !placePourLecteur()) return;
+                            if (!onLire) return;
                             if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
                             e.preventDefault();
                             onLire({ videoId: seance.id, instant: i, titre: seance.titre });

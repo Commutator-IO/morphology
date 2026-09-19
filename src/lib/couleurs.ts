@@ -66,3 +66,55 @@ export const REGIONS: Record<string, string> = {
 };
 
 export const ORDRE_REGIONS = Object.keys(REGIONS);
+
+/**
+ * Groupes de régions, tels qu'on parle d'une séance d'atelier : « hier j'ai
+ * travaillé les mains ».
+ *
+ * Les régions fines du lexique (avant-bras, coude, genou…) sont trop
+ * nombreuses pour faire des filtres utilisables au pouce, et personne ne dit
+ * « j'ai étudié le coude ». Ces six groupes correspondent à la façon dont le
+ * cours lui-même se découpe : `parties` fait le lien avec les séances, pour
+ * qu'un même filtre vaille des deux côtés.
+ */
+export const GROUPES: {
+  id: string;
+  libelle: string;
+  regions: string[];
+  parties: string[];
+}[] = [
+  { id: 'tete', libelle: 'Tête et cou', regions: ['tete', 'cou'], parties: ['tete'] },
+  { id: 'torse', libelle: 'Torse', regions: ['tronc', 'dos'], parties: ['tronc', 'dos'] },
+  {
+    id: 'bras',
+    libelle: 'Épaule et bras',
+    regions: ['epaule', 'bras', 'coude'],
+    parties: ['epaule', 'bras'],
+  },
+  {
+    id: 'main',
+    libelle: 'Main',
+    regions: ['avant-bras', 'main'],
+    parties: ['avantbras-main'],
+  },
+  {
+    id: 'jambe',
+    libelle: 'Bassin et jambe',
+    regions: ['bassin', 'cuisse', 'genou', 'jambe'],
+    parties: ['membre-inferieur'],
+  },
+  { id: 'pied', libelle: 'Pied', regions: ['pied'], parties: ['pied'] },
+];
+
+export const GROUPE_PAR_ID = new Map(GROUPES.map((g) => [g.id, g]));
+
+/**
+ * Le groupe auquel appartient une région, s'il y en a un.
+ *
+ * Les termes de région « general » — aplomb, méplat, relief — n'en ont aucun :
+ * ils valent pour tout le corps, et les faire remonter dans chaque groupe
+ * noierait le filtre sous des mots qu'on n'a pas cherchés.
+ */
+export function groupeDeRegion(region: string): string | null {
+  return GROUPES.find((g) => g.regions.includes(region))?.id ?? null;
+}

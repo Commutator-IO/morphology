@@ -43,6 +43,23 @@ export function PageMethode() {
           </p>
         </Section>
 
+        <Section titre="Lire une séance depuis l'index">
+          <p>
+            Un horodatage lance la séance dans la page : à droite de la liste sur
+            un écran large, ancrée en bas sur un téléphone. La lecture s'arrête
+            avec le bouton <i>Arrêter</i> ou la touche <kbd>Échap</kbd> — à ceci
+            près que si le curseur est entré dans le lecteur, c'est YouTube qui
+            reçoit la touche : cliquez la page d'abord.
+          </p>
+          <p>
+            Jouer dans la page plutôt que d'ouvrir YouTube a une raison : une fois
+            parti, on ne peut plus rien proposer, ni arrêter, ni revenir à sa
+            place dans l'index. Le lien vers YouTube reste offert sous le lecteur,
+            et un clic avec Ctrl, Cmd ou la molette ouvre la séance dans un onglet
+            comme n'importe quel lien.
+          </p>
+        </Section>
+
         <Section titre="Comment les horodatages sont trouvés">
           <ol className="list-decimal space-y-2 pl-5">
             <li>

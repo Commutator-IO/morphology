@@ -13,7 +13,7 @@ import {
   SEANCES,
   totalDe,
 } from './lexique';
-import { CATEGORIES, REGIONS } from './couleurs';
+import { CATEGORIES, GROUPES, groupeDeRegion, REGIONS } from './couleurs';
 
 /**
  * L'index publié est un fichier généré : ces tests vérifient qu'il est cohérent
@@ -166,5 +166,45 @@ describe('mise en forme', () => {
     expect(duree(null)).toBe('—');
     expect(duree(600)).toBe('10 min');
     expect(duree(6300)).toBe('1 h 45');
+  });
+});
+
+describe('groupes de régions', () => {
+  it('range chaque région du lexique dans un groupe, sauf « tout le corps »', () => {
+    // Une région oubliée ferait disparaître ses termes de tous les filtres sans
+    // que rien ne le signale : c'est le genre d'absence qu'on ne remarque pas.
+    for (const region of new Set(LEXIQUE.map((t) => t.region))) {
+      if (region === 'general') {
+        expect(groupeDeRegion(region), region).toBeNull();
+        continue;
+      }
+      expect(groupeDeRegion(region), `région ${region} sans groupe`).not.toBeNull();
+    }
+  });
+
+  it('n’assigne jamais une région à deux groupes', () => {
+    const vues = new Set<string>();
+    for (const g of GROUPES) {
+      for (const r of g.regions) {
+        expect(vues, `${r} apparaît deux fois`).not.toContain(r);
+        vues.add(r);
+      }
+    }
+  });
+
+  it('ne nomme que des régions et des parties qui existent', () => {
+    const parties = new Set(PARTIES.map((p) => p.id));
+    for (const g of GROUPES) {
+      for (const r of g.regions) expect(REGIONS[r], `${g.id} → région ${r}`).toBeDefined();
+      for (const p of g.parties) expect(parties, `${g.id} → partie ${p}`).toContain(p);
+    }
+  });
+
+  it('laisse chaque groupe non vide des deux côtés', () => {
+    // Un filtre qui ne rend rien est pire qu'un filtre absent.
+    for (const g of GROUPES) {
+      expect(LEXIQUE.some((t) => g.regions.includes(t.region)), `${g.id} : aucun terme`).toBe(true);
+      expect(SEANCES.some((s) => g.parties.includes(s.partie)), `${g.id} : aucune séance`).toBe(true);
+    }
   });
 });

@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { CATEGORIES, REGIONS } from '../lib/couleurs';
-import { placePourLecteur } from '../lib/ecran';
 import type { Lecture } from './Lecteur';
 import {
   duree,
@@ -115,11 +114,10 @@ export function CarteTerme({
                             target="_blank"
                             rel="noreferrer"
                             onClick={(e) => {
-                              // Reste un vrai lien : sans place pour le lecteur,
-                              // avec un clic du milieu ou une touche de
-                              // modification, le navigateur fait son travail
-                              // habituel et l'on part sur YouTube.
-                              if (!onLire || !placePourLecteur()) return;
+                              // Reste un vrai lien : avec un clic du milieu ou
+                              // une touche de modification, le navigateur fait
+                              // son travail habituel et l'on part sur YouTube.
+                              if (!onLire) return;
                               if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
                               e.preventDefault();
                               onLire({ videoId: seance.id, instant: t, titre: seance.titre });

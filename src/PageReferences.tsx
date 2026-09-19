@@ -68,7 +68,9 @@ export function PageReferences() {
           .
         </p>
 
-        <div className="sticky top-[5.75rem] z-20 -mx-4 mt-5 border-b border-ink-200/70 bg-ink-50/95 px-4 pt-3 pb-2.5 backdrop-blur">
+        <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_25rem] lg:items-start lg:gap-8">
+          <div>
+        <div className="sticky top-[5.75rem] z-20 -mx-4 mt-5 border-b border-ink-200/70 bg-ink-50/95 px-4 pt-3 pb-2.5 backdrop-blur lg:mx-0 lg:px-0">
           <label className="sr-only" htmlFor="recherche-ref">
             Chercher une référence
           </label>
@@ -142,8 +144,6 @@ export function PageReferences() {
           </div>
         </div>
 
-        <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_25rem] lg:items-start lg:gap-8">
-          <div>
             {resultats.length === 0 ? (
               <p className="mt-8 text-[15px] leading-relaxed text-ink-600">
                 Aucune référence ne correspond à « {requete} ».

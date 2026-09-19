@@ -4,6 +4,8 @@ import { Lecteur, type Lecture } from './components/Lecteur';
 import { CarteTerme } from './components/Terme';
 import {
   CATEGORIES,
+  GROUPES,
+  groupeDeRegion,
   ORDRE_CATEGORIES,
   ORDRE_REGIONS,
   REGIONS,
@@ -25,6 +27,9 @@ type Tri = 'alpha' | 'frequence' | 'region';
 export function PageVocabulaire() {
   const [requete, setRequete] = useState('');
   const [categorie, setCategorie] = useState<Categorie | null>(null);
+  // La région du corps est le filtre le plus utile après une séance d'atelier :
+  // on arrive en sachant qu'on a travaillé les mains, pas en cherchant un mot.
+  const [groupe, setGroupe] = useState<string | null>(null);
   const [tri, setTri] = useState<Tri>('alpha');
   // Sur grand écran, la séance se joue à droite ; sur téléphone ce panneau
   // n'est pas rendu et l'état reste simplement nul.
@@ -32,7 +37,10 @@ export function PageVocabulaire() {
 
   const resultats = useMemo(() => {
     const filtres = LEXIQUE.filter(
-      (t) => (!categorie || t.categorie === categorie) && correspond(t, requete),
+      (t) =>
+        (!categorie || t.categorie === categorie) &&
+        (!groupe || groupeDeRegion(t.region) === groupe) &&
+        correspond(t, requete),
     );
     if (tri === 'frequence') {
       return [...filtres].sort((a, b) => totalDe(b.id) - totalDe(a.id) || parAlphabet(a, b));
@@ -44,7 +52,7 @@ export function PageVocabulaire() {
       );
     }
     return [...filtres].sort(parAlphabet);
-  }, [requete, categorie, tri]);
+  }, [requete, categorie, groupe, tri]);
 
   // En tri par région, les entrées sont coupées par un intertitre : sans lui,
   // une liste triée sans qu'on voie pourquoi passe pour une liste en désordre.
@@ -75,7 +83,8 @@ export function PageVocabulaire() {
         <p className="mt-3 text-[15px] leading-relaxed text-ink-700">
           {LEXIQUE.length} termes d'ostéologie, de myologie et de morphologie, avec
           pour chacun les moments du cours où Debord le prononce. Touchez un
-          horodatage : la séance s'ouvre sur YouTube à cet instant.
+          horodatage : la séance démarre à cet instant, sans quitter la page.
+          Le bouton <i>Arrêter</i> — ou la touche Échap — coupe la lecture.
         </p>
         <p className="mt-2 text-[13px] leading-relaxed text-ink-500">
           {passagesTotal.toLocaleString('fr-FR')} passages repérés dans{' '}
@@ -90,7 +99,9 @@ export function PageVocabulaire() {
 
         {/* Barre d'outils collante. `top-[5.75rem]` la pose juste sous l'en-tête,
             lui-même collant : les deux ne doivent pas se chevaucher. */}
-        <div className="sticky top-[5.75rem] z-20 -mx-4 mt-5 border-b border-ink-200/70 bg-ink-50/95 px-4 pt-3 pb-2.5 backdrop-blur">
+        <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_25rem] lg:items-start lg:gap-8">
+          <div>
+        <div className="sticky top-[5.75rem] z-20 -mx-4 mt-5 border-b border-ink-200/70 bg-ink-50/95 px-4 pt-3 pb-2.5 backdrop-blur lg:mx-0 lg:px-0">
           <label className="sr-only" htmlFor="recherche">
             Chercher un terme
           </label>
@@ -118,10 +129,43 @@ export function PageVocabulaire() {
             )}
           </div>
 
+          {/* Région d'abord : c'est par là qu'on arrive quand on révise ce
+              qu'on vient d'étudier. Défilement horizontal assumé — six groupes
+              ne tiennent pas sur 375 px, et les replier coûterait un geste. */}
+          <div className="-mx-4 mt-2 flex gap-1.5 overflow-x-auto px-4 pb-1 lg:mx-0 lg:px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            <button
+              type="button"
+              onClick={() => setGroupe(null)}
+              aria-pressed={groupe === null}
+              className={`puce-filtre ${
+                groupe === null
+                  ? 'border-brand-600 bg-brand-600 text-white'
+                  : 'border-ink-300 bg-white text-ink-600'
+              }`}
+            >
+              Tout le corps
+            </button>
+            {GROUPES.map((g) => (
+              <button
+                key={g.id}
+                type="button"
+                onClick={() => setGroupe(groupe === g.id ? null : g.id)}
+                aria-pressed={groupe === g.id}
+                className={`puce-filtre ${
+                  groupe === g.id
+                    ? 'border-brand-600 bg-brand-600 text-white'
+                    : 'border-ink-300 bg-white text-ink-600'
+                }`}
+              >
+                {g.libelle}
+              </button>
+            ))}
+          </div>
+
           {/* Les filtres débordent volontairement en défilement horizontal :
               cinq catégories ne tiennent pas sur 375 px, et les replier
               coûterait un geste. */}
-          <div className="-mx-4 mt-2 flex gap-1.5 overflow-x-auto px-4 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <div className="-mx-4 mt-1.5 flex gap-1.5 overflow-x-auto px-4 pb-1 lg:mx-0 lg:px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             <button
               type="button"
               onClick={() => setCategorie(null)}
@@ -170,14 +214,27 @@ export function PageVocabulaire() {
           </div>
         </div>
 
+        {groupe && (
+          <p className="mt-3 text-[13px] leading-relaxed text-ink-600">
+            Vocabulaire propre à cette région. Les termes qui valent pour tout le
+            corps — aplomb, méplat, relief, orientations — restent sous{' '}
+            <button
+              type="button"
+              onClick={() => setGroupe(null)}
+              className="text-brand-700 underline underline-offset-2"
+            >
+              Tout le corps
+            </button>
+            .
+          </p>
+        )}
+
         {categorie && (
-          <p className="mt-4 text-[13px] leading-relaxed text-ink-600">
+          <p className="mt-3 text-[13px] leading-relaxed text-ink-600">
             {CATEGORIES[categorie].propos}
           </p>
         )}
 
-        <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_25rem] lg:items-start lg:gap-8">
-          <div>
         {resultats.length === 0 ? (
           <p className="mt-8 text-[15px] leading-relaxed text-ink-600">
             Aucun terme ne correspond à « {requete} ». La recherche accepte les

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Entete, Pied } from './components/Cadre';
 import { Lecteur, type Lecture } from './components/Lecteur';
-import { placePourLecteur } from './lib/ecran';
+import { GROUPES, GROUPE_PAR_ID } from './lib/couleurs';
 import { duree, lienYoutube, PARTIES, SEANCES, termesDe } from './lib/lexique';
 
 /**
@@ -21,6 +21,13 @@ const APERCU = 4;
 export function PageSeances() {
   const total = SEANCES.reduce((s, x) => s + (x.dureeS ?? 0), 0);
   const [lecture, setLecture] = useState<Lecture | null>(null);
+  // Même filtre que sur le vocabulaire, pour qu'on puisse passer de l'un à
+  // l'autre sans changer de façon de penser : « les mains », des deux côtés.
+  const [groupe, setGroupe] = useState<string | null>(null);
+
+  const partiesVisibles = groupe
+    ? PARTIES.filter((p) => GROUPE_PAR_ID.get(groupe)?.parties.includes(p.id))
+    : PARTIES;
 
   return (
     <>
@@ -38,17 +45,68 @@ export function PageSeances() {
           d'origine.
         </p>
 
-        <nav aria-label="Parties" className="mt-5 flex flex-wrap gap-1.5">
-          {PARTIES.map((p) => (
-            <a key={p.id} href={`#${p.id}`} className="puce-filtre border-ink-300 bg-white text-ink-600">
-              {p.titre}
-            </a>
+        <div className="-mx-4 mt-5 flex gap-1.5 overflow-x-auto px-4 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <button
+            type="button"
+            onClick={() => setGroupe(null)}
+            aria-pressed={groupe === null}
+            className={`puce-filtre ${
+              groupe === null
+                ? 'border-brand-600 bg-brand-600 text-white'
+                : 'border-ink-300 bg-white text-ink-600'
+            }`}
+          >
+            Tout le cours
+          </button>
+          {GROUPES.map((g) => (
+            <button
+              key={g.id}
+              type="button"
+              onClick={() => setGroupe(groupe === g.id ? null : g.id)}
+              aria-pressed={groupe === g.id}
+              className={`puce-filtre ${
+                groupe === g.id
+                  ? 'border-brand-600 bg-brand-600 text-white'
+                  : 'border-ink-300 bg-white text-ink-600'
+              }`}
+            >
+              {g.libelle}
+            </button>
           ))}
-        </nav>
+        </div>
+
+        {groupe === null && (
+          <nav aria-label="Parties" className="mt-3 flex flex-wrap gap-1.5">
+            {PARTIES.map((p) => (
+              <a
+                key={p.id}
+                href={`#${p.id}`}
+                className="puce-filtre border-ink-300 bg-white text-ink-600"
+              >
+                {p.titre}
+              </a>
+            ))}
+          </nav>
+        )}
 
         <div className="mt-8 lg:grid lg:grid-cols-[minmax(0,1fr)_25rem] lg:items-start lg:gap-8">
           <div className="space-y-10">
-          {PARTIES.map((partie) => {
+            {groupe && (
+              <p className="text-[13px] leading-relaxed text-ink-600">
+                Séances consacrées à cette région. L'introduction et les vues
+                d'ensemble, qui ne portent sur aucune région en particulier,
+                reviennent avec{' '}
+                <button
+                  type="button"
+                  onClick={() => setGroupe(null)}
+                  className="text-brand-700 underline underline-offset-2"
+                >
+                  Tout le cours
+                </button>
+                .
+              </p>
+            )}
+          {partiesVisibles.map((partie) => {
             const seances = SEANCES.filter((s) => s.partie === partie.id);
             const heures = seances.reduce((a, s) => a + (s.dureeS ?? 0), 0);
             return (
@@ -71,9 +129,8 @@ export function PageSeances() {
                           rel="noreferrer"
                           className="flex items-start gap-3"
                           onClick={(e) => {
-                            // Même règle que les horodatages : le lien reste un
-                            // lien dès qu'il n'y a pas de lecteur à nourrir.
-                            if (!placePourLecteur()) return;
+                            // Même règle que les horodatages : un clic modifié
+                            // reste une navigation ordinaire vers YouTube.
                             if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
                             e.preventDefault();
                             setLecture({ videoId: s.id, instant: 0, titre: s.titre });
