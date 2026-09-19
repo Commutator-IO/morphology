@@ -14,6 +14,7 @@ export function PageMethode() {
   const muets = LEXIQUE.filter((t) => totalDe(t.id) === 0);
   const passages = LEXIQUE.reduce((s, t) => s + totalDe(t.id), 0);
   const mentions = REFERENCES.reduce((s, r) => s + totalDeReference(r.id), 0);
+  const avecMusee = REFERENCES.filter((r) => r.musee).length;
 
   return (
     <>
@@ -141,6 +142,45 @@ export function PageMethode() {
             mention, et un test échoue si l'une d'elles n'en a plus. C'est une
             liste sûre mais close : un nom cité une seule fois et mal transcrit
             n'y figure pas.
+          </p>
+        </Section>
+
+        <Section titre="Les liens vers les musées">
+          <p>
+            {avecMusee} des {REFERENCES.length} références portent un lien vers une
+            page de musée. Aucune de ces adresses n'a été écrite de mémoire : elles
+            viennent des API ouvertes de l'Art Institute of Chicago et du
+            Metropolitan Museum, qui rendent l'adresse officielle de l'objet, son
+            auteur et son statut de domaine public. La précaution n'est pas
+            théorique — une adresse du Louvre qui semblait être celle de la Vénus
+            de Milo désignait en réalité un cippe.
+          </p>
+          <p>
+            <b className="font-semibold text-ink-900">
+              Ce n'est pas l'œuvre projetée en cours.
+            </b>{' '}
+            Les sous-titres ne donnent pas les titres des diapositives. Le lien mène
+            à une œuvre de la personne citée, dans une collection dont l'image est
+            en accès libre : de quoi mettre un visage sur un nom, sans rien affirmer
+            de faux. Quand la collection en proposait une, l'œuvre retenue montre un
+            corps plutôt qu'un paysage.
+          </p>
+          <p>
+            L'appariement par patronyme seul donne des faux : « Follower of Leonardo
+            da Vinci » n'est pas Léonard, « Cecco del Caravaggio » et « Polidoro da
+            Caravaggio » ne sont pas le Caravage, « Antoine Masson », graveur du
+            XVII<sup>e</sup>, n'est pas André Masson. Les mentions d'atelier et
+            d'attribution sont donc rejetées, et les patronymes partagés exigent le
+            prénom. Un test refuse qu'une œuvre d'atelier soit attribuée au maître.
+          </p>
+          <p>
+            Les {REFERENCES.length - avecMusee} références sans lien le sont pour
+            trois raisons, toutes assumées : l'œuvre est encore sous droits, et
+            aucune image n'en est librement diffusée — c'est le cas de Picasso, de
+            Giacometti, de Bacon, de Miró, de Masson et de Balthus ; ou la personne
+            n'est pas représentée dans ces deux collections ; ou il s'agit d'une
+            œuvre précise tenue par un musée dont la recherche est fermée aux
+            robots, et deviner son adresse reviendrait à l'inventer.
           </p>
         </Section>
 

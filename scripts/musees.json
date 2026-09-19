@@ -1,0 +1,261 @@
+{
+ "rembrandt": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/74",
+  "oeuvre": "Three Oriental Figures (Jacob and Laban?)",
+  "date": "1641",
+  "artiste": "Rembrandt van Rijn"
+ },
+ "michel-ange": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/4163",
+  "oeuvre": "Archers Shooting at a Herm, Triumph of Bacchus, and Other Studies",
+  "date": "n.d.",
+  "artiste": "Michelangelo Buonarroti"
+ },
+ "leonard": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/272694",
+  "oeuvre": "Divine Proportion",
+  "date": "Venice: Paganinus de Paganinus, 1509",
+  "artiste": "Leonardo da Vinci"
+ },
+ "goya": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/89043",
+  "oeuvre": "Portrait of General José Manuel Romero",
+  "date": "c. 1810",
+  "artiste": "Francisco José de Goya y Lucientes"
+ },
+ "veronese": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/15251",
+  "oeuvre": "Head of a Woman",
+  "date": "c. 1575",
+  "artiste": "Veronese (Paolo Caliari)"
+ },
+ "velasquez": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/21934",
+  "oeuvre": "Kitchen Scene",
+  "date": "1618–20",
+  "artiste": "Diego Velázquez"
+ },
+ "david": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/113576",
+  "oeuvre": "Bust of Angelique Mongez",
+  "date": "1806",
+  "artiste": "Jacques Louis David"
+ },
+ "daumier": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/21068",
+  "oeuvre": "“You Sniff the Merchandise… Before Buying It,” plate 32 from Types Parisiens",
+  "date": "1839",
+  "artiste": "Honoré-Victorin Daumier"
+ },
+ "tintoret": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/24901",
+  "oeuvre": "Reclining Male Nude, Foreshortened",
+  "date": "1562",
+  "artiste": "Tintoretto"
+ },
+ "rubens": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/235541",
+  "oeuvre": "A Sheet of Anatomical Studies",
+  "date": "1600/10",
+  "artiste": "Peter Paul Rubens"
+ },
+ "titien": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/55006",
+  "oeuvre": "Self-Portrait",
+  "date": "n.d.",
+  "artiste": "Titian"
+ },
+ "raphael": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/114932",
+  "oeuvre": "Upraised Right Hand, with Palm Facing Outward: Study for Saint Peter",
+  "date": "1518/20",
+  "artiste": "Raphael"
+ },
+ "delacroix": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/6081",
+  "oeuvre": "Study for Marphise and the Mistress of Pinabel",
+  "date": "c. 1852",
+  "artiste": "Eugène Delacroix"
+ },
+ "schiele": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/29424",
+  "oeuvre": "The Artist's Mother",
+  "date": "1907",
+  "artiste": "Egon Schiele"
+ },
+ "klimt": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/154795",
+  "oeuvre": "Male Nude with Left Foot on a Pedestal",
+  "date": "1879",
+  "artiste": "Gustav Klimt"
+ },
+ "caravage": {
+  "musee": "The Metropolitan Museum of Art",
+  "url": "https://www.metmuseum.org/art/collection/search/435844",
+  "oeuvre": "The Musicians",
+  "date": "1597",
+  "artiste": "Caravaggio (Michelangelo Merisi)"
+ },
+ "mantegna": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/82064",
+  "oeuvre": "Study for the Triumphs of Julius Caesar: Canvas No. I",
+  "date": "n.d.",
+  "artiste": "Andrea Mantegna"
+ },
+ "ingres": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/4558",
+  "oeuvre": "Study",
+  "date": "c. 1842",
+  "artiste": "Jean Auguste Dominique Ingres"
+ },
+ "courbet": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/93342",
+  "oeuvre": "Rêverie (Portrait of Gabrielle Borreau)",
+  "date": "1862",
+  "artiste": "Gustave Courbet"
+ },
+ "lautrec": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/86204",
+  "oeuvre": "Old Man and Young Girl",
+  "date": "1899",
+  "artiste": "Henri de Toulouse-Lautrec"
+ },
+ "matisse": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/27984",
+  "oeuvre": "Woman before an Aquarium",
+  "date": "1921–23",
+  "artiste": "Henri Matisse"
+ },
+ "van-gogh": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/80607",
+  "oeuvre": "Self-Portrait",
+  "date": "1887",
+  "artiste": "Vincent van Gogh"
+ },
+ "vuillard": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/84293",
+  "oeuvre": "Old Woman at a Stove",
+  "date": "1893",
+  "artiste": "Édouard Jean Vuillard"
+ },
+ "bonnard": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/116238",
+  "oeuvre": "France-Champagne",
+  "date": "1889–91",
+  "artiste": "Pierre Bonnard"
+ },
+ "degas": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/13551",
+  "oeuvre": "Self-Portrait",
+  "date": "1857",
+  "artiste": "Hilaire Germain Edgar Degas"
+ },
+ "cranach": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/87760",
+  "oeuvre": "Portrait of Magdalena of Saxony, Wife of Elector Joachim II of Brandenburg",
+  "date": "c. 1529",
+  "artiste": "Lucas Cranach the Elder"
+ },
+ "manet": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/14591",
+  "oeuvre": "Woman Reading",
+  "date": "1880–82",
+  "artiste": "Édouard Manet"
+ },
+ "poussin": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/112535",
+  "oeuvre": "Man Kneeling With Jug (recto); Standing Man (verso)",
+  "date": "n.d.",
+  "artiste": "Nicolas Poussin"
+ },
+ "corot": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/43119",
+  "oeuvre": "Ville d'Avray: Pond with Boatman, Evening",
+  "date": "1862–63",
+  "artiste": "Jean Baptiste Camille Corot"
+ },
+ "modigliani": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/80586",
+  "oeuvre": "Portrait of a Woman",
+  "date": "c. 1917/19",
+  "artiste": "Amedeo Modigliani"
+ },
+ "giotto": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/114477",
+  "oeuvre": "Ascension of Christ",
+  "date": "n.d.",
+  "artiste": "Giotto di Bondone"
+ },
+ "fra-angelico": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/129756",
+  "oeuvre": "Saint Anthony Abbot",
+  "date": "1440–41",
+  "artiste": "Fra Angelico"
+ },
+ "primatice": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/136980",
+  "oeuvre": "Fortitude (Study for the \"Cabinet du roi\" [King's Study])",
+  "date": "1541/45",
+  "artiste": "Francesco Primaticcio"
+ },
+ "houdon": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/144965",
+  "oeuvre": "Bust of Anne-Marie-Louise Thomas de Domangeville de Sérilly, Comtesse de Pange",
+  "date": "1780",
+  "artiste": "Jean Antoine Houdon"
+ },
+ "carpeaux": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/41319",
+  "oeuvre": "Portrait Bust of Comtesse d'Affry, née Lucie de Maillardoz (1816-1897)",
+  "date": "1860–70",
+  "artiste": "Jean Baptiste Carpeaux"
+ },
+ "maillol": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/110716",
+  "oeuvre": "Adam and Eve",
+  "date": "1895",
+  "artiste": "Aristide Joseph-Bonaventure Maillol"
+ },
+ "bouchardon": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/54861",
+  "oeuvre": "A Saint Clothing the Poor Among the Ruins of an Earthquake",
+  "date": null,
+  "artiste": "Edme Bouchardon"
+ }
+}

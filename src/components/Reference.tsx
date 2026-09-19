@@ -63,6 +63,34 @@ export function CarteReference({
         <div className="border-t border-ink-100 px-4 pt-3.5 pb-4">
           <p className="text-[15px] leading-relaxed text-ink-800">{reference.note}</p>
 
+          {reference.musee && (
+            <p className="mt-3 text-[13px] leading-relaxed text-ink-600">
+              <a
+                href={reference.musee.url}
+                target="_blank"
+                rel="noreferrer"
+                className="text-brand-700 underline underline-offset-2"
+              >
+                {reference.musee.oeuvre
+                  ? `« ${reference.musee.oeuvre} »`
+                  : reference.musee.nom}{' '}
+                ↗
+              </a>
+              {reference.musee.oeuvre && (
+                <>
+                  {reference.musee.date ? ` (${reference.musee.date})` : ''} —{' '}
+                  {reference.musee.nom}
+                  {/* Dire que ce n'est pas la diapositive du cours : les
+                      sous-titres ne donnent pas les titres projetés, et laisser
+                      croire le contraire tromperait sur la source. */}
+                  <span className="text-ink-400">
+                    . Une œuvre en accès libre, pas celle projetée en cours.
+                  </span>
+                </>
+              )}
+            </p>
+          )}
+
           <div className="mt-4">
             <p className="text-xs font-medium tracking-wide text-ink-500 uppercase">
               Où Debord en parle

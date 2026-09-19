@@ -90,3 +90,67 @@ describe('références', () => {
     expect(trouve('')).toHaveLength(REFERENCES.length);
   });
 });
+
+describe('liens de musée', () => {
+  /** Les seuls domaines vérifiés à la main. Un lien ailleurs signalerait une
+   *  URL écrite de mémoire — le mode d'erreur exact qu'on cherche à éviter : un
+   *  ark du Louvre « plausible » s'est révélé désigner un cippe, pas la Vénus. */
+  const DOMAINES = new Set([
+    'www.artic.edu',
+    'www.metmuseum.org',
+    'www.louvre.fr',
+    'www.museodelprado.es',
+    'www.musee-orsay.fr',
+    'www.petitpalais.paris.fr',
+    'www.museivaticani.va',
+  ]);
+
+  const avecLien = REFERENCES.filter((r) => r.musee);
+
+  it('couvre une bonne part des références', () => {
+    expect(avecLien.length).toBeGreaterThanOrEqual(40);
+  });
+
+  it('ne pointe que vers des domaines vérifiés, en https', () => {
+    for (const r of avecLien) {
+      const u = new URL(r.musee!.url);
+      expect(u.protocol, r.id).toBe('https:');
+      expect(DOMAINES, `${r.id} → ${u.hostname}`).toContain(u.hostname);
+    }
+  });
+
+  it('nomme l’œuvre dès qu’il s’agit d’une collection', () => {
+    for (const r of avecLien) {
+      const collection = new URL(r.musee!.url).hostname.match(/artic|metmuseum/);
+      if (collection) expect(r.musee!.oeuvre, r.id).toBeTruthy();
+    }
+  });
+
+  it('donne à chaque lieu le site de son institution', () => {
+    for (const r of REFERENCES.filter((x) => x.type === 'lieu')) {
+      expect(r.musee, r.id).toBeDefined();
+    }
+  });
+
+  it('laisse sans lien ce qui est encore sous droits', () => {
+    // Picasso, Giacometti, Bacon, Miró, Masson, Balthus : aucune image en accès
+    // libre n'existe, et en fabriquer un lien reviendrait à renvoyer vers une
+    // reproduction non autorisée. L'absence est ici le résultat correct.
+    for (const id of ['picasso', 'giacometti', 'bacon', 'miro', 'masson', 'balthus']) {
+      const r = REFERENCES.find((x) => x.id === id);
+      expect(r, id).toBeDefined();
+      expect(r!.musee, `${id} ne devrait pas avoir de lien`).toBeUndefined();
+    }
+  });
+
+  it('n’attribue pas une œuvre d’atelier au maître', () => {
+    // « Follower of Leonardo », « Cecco del Caravaggio », « Antoine Masson » :
+    // tous passaient le premier filtre par simple inclusion du patronyme.
+    for (const r of avecLien) {
+      const t = (r.musee!.oeuvre ?? '').toLowerCase();
+      for (const q of ['follower of', 'workshop of', 'imitator of', 'circle of']) {
+        expect(t, `${r.id} : ${t}`).not.toContain(q);
+      }
+    }
+  });
+});

@@ -1,65 +1,913 @@
 [
-{"id":"rembrandt","nom":"Rembrandt","type":"peintre","dates":"1606-1669","note":"La référence la plus constante du cours. Debord y revient pour le dessin à la plume, où quelques traits inégaux suffisent à poser un volume et son poids — l'inverse du contour égal qu'on apprend à tracer.","variantes":["rembrandt","rembrand"]},
-{"id":"michel-ange","nom":"Michel-Ange","type":"peintre","dates":"1475-1564","note":"Convoqué pour la construction musculaire poussée jusqu'à l'invention : le corps y obéit à une logique de forces plutôt qu'au relevé d'un modèle.","variantes":["michel ange","michelange","michel angelo","buonarroti"]},
-{"id":"leonard","nom":"Léonard de Vinci","type":"peintre","dates":"1452-1519","note":"L'ancêtre direct de la discipline : le premier à dessiner la dissection pour comprendre la forme extérieure, et non pour illustrer un traité.","variantes":["leonard de vinci","leonard","vinci","de vinci"]},
-{"id":"goya","nom":"Goya","type":"peintre","dates":"1746-1828","note":"Cité pour les corps vieillis et déformés, que l'anatomie académique ne prépare pas à voir.","variantes":["goya"]},
-{"id":"veronese","nom":"Véronèse","type":"peintre","dates":"1528-1588","note":"Les grandes figures en raccourci, vues de bas, où la perspective du corps prime sur son détail.","variantes":["veronese","veronaise","paul veronese"]},
-{"id":"velasquez","nom":"Vélasquez","type":"peintre","dates":"1599-1660","note":"La justesse du volume obtenue sans contour appuyé — l'exemple que Debord oppose au dessin cerné.","variantes":["velasquez","velazquez","velas quez"]},
-{"id":"balthus","nom":"Balthus","type":"peintre","dates":"1908-2001","note":"Peintre que Debord a connu, et dont il rapporte les propos sur le dessin d'après modèle.","variantes":["balthus"]},
-{"id":"david","nom":"Jacques-Louis David","type":"peintre","dates":"1748-1825","note":"L'académisme dans sa version la plus tendue. Debord l'invoque autant comme repoussoir que comme modèle.","variantes":["david"]},
-{"id":"daumier","nom":"Daumier","type":"peintre","dates":"1808-1879","note":"Le mouvement saisi par la masse plutôt que par le contour, et la charge comme moyen de dire une structure.","variantes":["daumier"]},
-{"id":"tintoret","nom":"Le Tintoret","type":"peintre","dates":"1518-1594","note":"Les figures vues en plongée ou en contre-plongée, construites d'après des maquettes suspendues.","variantes":["tintoret","le tintoret","tintoretto"]},
-{"id":"rubens","nom":"Rubens","type":"peintre","dates":"1577-1640","note":"La chair comme matière qui pèse et déborde — le contre-exemple du corps sculptural.","variantes":["rubens"]},
-{"id":"titien","nom":"Titien","type":"peintre","dates":"1488-1576","note":"Le modelé obtenu par la couleur seule, sans dessin préalable apparent.","variantes":["titien","le titien","tiziano"]},
-{"id":"picasso","nom":"Picasso","type":"peintre","dates":"1881-1973","note":"Cité pour les déformations qui restent anatomiquement lisibles : déformer suppose de savoir d'où l'on part.","variantes":["picasso"]},
-{"id":"raphael","nom":"Raphaël","type":"peintre","dates":"1483-1520","note":"L'étude préparatoire à la sanguine, où la recherche de la forme reste visible sous la mise au net.","variantes":["raphael","raffaello"]},
-{"id":"delacroix","nom":"Delacroix","type":"peintre","dates":"1798-1863","note":"Les carnets d'études d'après l'écorché et le modèle vivant, tenus toute une vie.","variantes":["delacroix"]},
-{"id":"schiele","nom":"Egon Schiele","type":"peintre","dates":"1890-1918","note":"Le corps décharné où l'os affleure partout : un cas limite qui rend l'ostéologie directement visible.","variantes":["schiele","egon schiele"]},
-{"id":"klimt","nom":"Klimt","type":"peintre","dates":"1862-1918","note":"Les dessins de nu à la ligne, très éloignés des tableaux ornés qui l'ont rendu célèbre.","variantes":["klimt"]},
-{"id":"caravage","nom":"Le Caravage","type":"peintre","dates":"1571-1610","note":"La lumière qui découpe le relief en tranches, et révèle la forme par l'ombre portée.","variantes":["caravage","le caravage","caravaggio"]},
-{"id":"mantegna","nom":"Mantegna","type":"peintre","dates":"1431-1506","note":"Le raccourci extrême, traité comme un problème de géométrie autant que d'anatomie.","variantes":["mantegna"]},
-{"id":"ingres","nom":"Ingres","type":"peintre","dates":"1780-1867","note":"La ligne continue et les libertés prises avec l'anatomie au nom de la forme.","variantes":["ingres"]},
-{"id":"courbet","nom":"Courbet","type":"peintre","dates":"1819-1877","note":"Le corps ordinaire, sans correction académique.","variantes":["courbet"]},
-{"id":"lautrec","nom":"Toulouse-Lautrec","type":"peintre","dates":"1864-1901","note":"Le mouvement noté au vol, et la déformation comme signature d'une attitude.","variantes":["toulouse lautrec","lautrec"]},
-{"id":"matisse","nom":"Matisse","type":"peintre","dates":"1869-1954","note":"Le dessin réduit à la ligne, qui suppose la connaissance du volume pour pouvoir s'en passer.","variantes":["matisse"]},
-{"id":"van-gogh","nom":"Van Gogh","type":"peintre","dates":"1853-1890","note":"Les dessins de paysans, construits par la masse et le geste plutôt que par le contour.","variantes":["van gogh","vangogh"]},
-{"id":"vuillard","nom":"Édouard Vuillard","type":"peintre","dates":"1868-1940","note":"Cité à travers un propos rapporté sur les outils du dessinateur.","variantes":["vuillard","edouard vuillard"]},
-{"id":"bonnard","nom":"Bonnard","type":"peintre","dates":"1867-1947","note":"Nommé aux côtés de Vuillard, dans le souvenir d'une génération que Debord rattache à l'École.","variantes":["bonnard"]},
-{"id":"degas","nom":"Degas","type":"peintre","dates":"1834-1917","note":"Le corps en mouvement contraint — danseuses, baigneuses — étudié sous des angles que l'atelier ne donne pas.","variantes":["degas"]},
-{"id":"cranach","nom":"Cranach","type":"peintre","dates":"1472-1553","note":"Le nu nordique, aux proportions étrangères au canon italien.","variantes":["cranach"]},
-{"id":"manet","nom":"Manet","type":"peintre","dates":"1832-1883","note":"Mentionné pour une ébauche de portrait, à propos de ce qu'une étude laisse voir du travail.","variantes":["manet"]},
-{"id":"bronzino","nom":"Bronzino","type":"peintre","dates":"1503-1572","note":"Le modelé lisse et froid du maniérisme florentin, où l'anatomie devient ornement.","variantes":["bronzino"]},
-{"id":"poussin","nom":"Poussin","type":"peintre","dates":"1594-1665","note":"La figure construite comme un volume dans l'espace, souvent d'après des figurines de cire.","variantes":["poussin"]},
-{"id":"corot","nom":"Corot","type":"peintre","dates":"1796-1875","note":"Évoqué par la Marietta, son académie romaine, que Debord commente comme un cas d'étude.","variantes":["corot"]},
-{"id":"modigliani","nom":"Modigliani","type":"peintre","dates":"1884-1920","note":"L'allongement systématique du cou et du visage, écart mesurable par rapport au canon.","variantes":["modigliani"]},
-{"id":"giotto","nom":"Giotto","type":"peintre","dates":"1266-1337","note":"Les mains des fresques, où le volume est déjà construit avant que l'anatomie ne soit enseignée.","variantes":["giotto"]},
-{"id":"piero","nom":"Piero della Francesca","type":"peintre","dates":"1412-1492","note":"La figure traitée comme un solide géométrique, éclairée d'une lumière égale.","variantes":["piero della francesca","della francesca","piero"]},
-{"id":"fra-angelico","nom":"Fra Angelico","type":"peintre","dates":"1395-1455","note":"Cité au fil d'une comparaison sur le traitement des mains.","variantes":["fra angelico","angelico"]},
-{"id":"primatice","nom":"Le Primatice","type":"peintre","dates":"1504-1570","note":"Les figures allongées de Fontainebleau, dont Debord relève l'écart de proportion assumé.","variantes":["primatice","le primatice","primaticcio"]},
-{"id":"masson","nom":"André Masson","type":"peintre","dates":"1896-1987","note":"Mentionné à propos du dessin automatique et de ce qu'il doit, malgré tout, à la connaissance de la forme.","variantes":["andre masson","masson"]},
-{"id":"miro","nom":"Miró","type":"peintre","dates":"1893-1983","note":"Évoqué à travers un portrait montré en cours.","variantes":["miro"]},
-{"id":"bacon","nom":"Francis Bacon","type":"peintre","dates":"1909-1992","note":"La déformation de la chair poussée à la limite du reconnaissable, qui reste indexée sur une anatomie exacte.","variantes":["francis bacon","bacon"]},
-{"id":"houdon","nom":"Houdon","type":"sculpteur","dates":"1741-1828","note":"L'auteur de l'Écorché qui sert de référence dans tous les ateliers depuis deux siècles.","variantes":["houdon"]},
-{"id":"giacometti","nom":"Giacometti","type":"sculpteur","dates":"1901-1966","note":"La figure réduite à son axe et à sa tension, obtenue par retraits successifs.","variantes":["giacometti"]},
-{"id":"carpeaux","nom":"Carpeaux","type":"sculpteur","dates":"1827-1875","note":"Le mouvement en sculpture, et le modelé pris sur le vif.","variantes":["carpeaux"]},
-{"id":"maillol","nom":"Maillol","type":"sculpteur","dates":"1861-1944","note":"Le volume simplifié jusqu'à la masse pleine, sans détail musculaire.","variantes":["maillol"]},
-{"id":"bouchardon","nom":"Bouchardon","type":"sculpteur","dates":"1698-1762","note":"Son petit écorché, et les figures de l'escalier de l'École, que Debord commente comme des pièces d'enseignement.","variantes":["bouchardon"]},
-{"id":"praxitele","nom":"Praxitèle","type":"sculpteur","dates":"IVe s. av. J.-C.","note":"Le déhanchement grec, source lointaine de toute station hanchée occidentale.","variantes":["praxitele"]},
-{"id":"duchenne","nom":"Duchenne de Boulogne","type":"anatomiste","dates":"1806-1875","note":"Le médecin qui a photographié les visages sous stimulation électrique pour isoler l'action de chaque muscle peaucier. Debord y revient comme à une preuve expérimentale de la mimique.","variantes":["duchenne","duchesne","duchenne de boulogne","duchene"]},
-{"id":"vesale","nom":"Vésale","type":"anatomiste","dates":"1514-1564","note":"Le fondateur de l'anatomie moderne, dont les planches posent l'écorché debout dans un paysage — un parti pris de dessinateur autant que de savant.","variantes":["vesale","vesalius","vessale"]},
-{"id":"duval","nom":"Mathias Duval","type":"anatomiste","dates":"1844-1907","note":"Professeur d'anatomie aux Beaux-Arts, que Debord cite comme l'un de ses prédécesseurs dans la chaire.","variantes":["mathias duval","duval"]},
-{"id":"paul-richer","nom":"Paul Richer","type":"anatomiste","dates":"1849-1933","note":"Prédécesseur de Debord à la chaire d'anatomie artistique, auteur du traité qui a formé des générations d'élèves.","variantes":["paul richer","richer"]},
-{"id":"bourgery","nom":"Bourgery et Jacob","type":"anatomiste","dates":"1831-1854","note":"Le grand atlas d'anatomie lithographié au XIXe siècle, dont Debord discute la fidélité planche en main.","variantes":["bourgery","bourgery et jacob"]},
-{"id":"louvre","nom":"Le Louvre","type":"lieu","note":"Le lieu de référence du cours : Debord y renvoie pour aller voir sur pièce ce que la diapositive ne montre qu'à plat.","variantes":["louvre","le louvre","au louvre"]},
-{"id":"prado","nom":"Le Prado","type":"lieu","note":"Pour les Vélasquez et les Goya, cités d'après leur accrochage madrilène.","variantes":["prado","le prado"]},
-{"id":"orsay","nom":"Musée d'Orsay","type":"lieu","note":"Pour la sculpture et la peinture du XIXe siècle.","variantes":["orsay","musee dorsay","d orsay"]},
-{"id":"petit-palais","nom":"Petit Palais","type":"lieu","note":"Collections de dessins et de sculptures que Debord recommande d'aller voir.","variantes":["petit palais"]},
-{"id":"sixtine","nom":"Chapelle Sixtine","type":"lieu","note":"Le plafond et le Jugement dernier, cités pour les corps en raccourci et les attitudes impossibles à faire tenir à un modèle.","variantes":["sixtine","chapelle sixtine"]},
-{"id":"vatican","nom":"Vatican","type":"lieu","note":"Les collections antiques, source des torses et des fragments qui servent de modèles d'atelier.","variantes":["vatican"]},
-{"id":"ecorche","nom":"L'écorché","type":"oeuvre","note":"La figure dépouillée de sa peau, moulée en plâtre et présente dans tous les ateliers. Debord s'en sert constamment, tout en rappelant que c'est une reconstitution et non un relevé.","variantes":["ecorche","ecorches","l ecorche"]},
-{"id":"marietta","nom":"La Marietta","type":"oeuvre","note":"L'académie romaine peinte par Corot d'après un modèle nommé, que Debord commente comme un cas de dessin d'après nature assumé.","variantes":["marietta"]},
-{"id":"pieta","nom":"Pietà","type":"oeuvre","note":"Le motif du corps porté, inerte : le cas type du corps sans tonus, que rien ne soutient.","variantes":["pieta","la pieta"]},
-{"id":"venus-de-milo","nom":"Vénus de Milo","type":"oeuvre","note":"Le canon féminin antique, et la station hanchée dans sa version la plus diffusée.","variantes":["venus de milo"]},
-{"id":"gladiateur","nom":"Gladiateur Borghèse","type":"oeuvre","note":"La figure antique en fente extrême, étude de tension musculaire sur tout le corps.","variantes":["gladiateur","gladiateur borghese"]},
-{"id":"lecon-anatomie","nom":"La Leçon d'anatomie","type":"oeuvre","note":"Le tableau de Rembrandt où la dissection est mise en scène : à la fois sujet du cours et objet d'histoire.","variantes":["lecon d anatomie","lecon danatomie"]}
+ {
+  "id": "rembrandt",
+  "nom": "Rembrandt",
+  "type": "peintre",
+  "dates": "1606-1669",
+  "note": "La référence la plus constante du cours. Debord y revient pour le dessin à la plume, où quelques traits inégaux suffisent à poser un volume et son poids — l'inverse du contour égal qu'on apprend à tracer.",
+  "variantes": [
+   "rembrandt",
+   "rembrand"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/74",
+   "oeuvre": "Three Oriental Figures (Jacob and Laban?)",
+   "date": "1641"
+  }
+ },
+ {
+  "id": "michel-ange",
+  "nom": "Michel-Ange",
+  "type": "peintre",
+  "dates": "1475-1564",
+  "note": "Convoqué pour la construction musculaire poussée jusqu'à l'invention : le corps y obéit à une logique de forces plutôt qu'au relevé d'un modèle.",
+  "variantes": [
+   "michel ange",
+   "michelange",
+   "michel angelo",
+   "buonarroti"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/4163",
+   "oeuvre": "Archers Shooting at a Herm, Triumph of Bacchus, and Other Studies",
+   "date": "n.d."
+  }
+ },
+ {
+  "id": "leonard",
+  "nom": "Léonard de Vinci",
+  "type": "peintre",
+  "dates": "1452-1519",
+  "note": "L'ancêtre direct de la discipline : le premier à dessiner la dissection pour comprendre la forme extérieure, et non pour illustrer un traité.",
+  "variantes": [
+   "leonard de vinci",
+   "leonard",
+   "vinci",
+   "de vinci"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/272694",
+   "oeuvre": "Divine Proportion",
+   "date": "Venice: Paganinus de Paganinus, 1509"
+  }
+ },
+ {
+  "id": "goya",
+  "nom": "Goya",
+  "type": "peintre",
+  "dates": "1746-1828",
+  "note": "Cité pour les corps vieillis et déformés, que l'anatomie académique ne prépare pas à voir.",
+  "variantes": [
+   "goya"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/89043",
+   "oeuvre": "Portrait of General José Manuel Romero",
+   "date": "c. 1810"
+  }
+ },
+ {
+  "id": "veronese",
+  "nom": "Véronèse",
+  "type": "peintre",
+  "dates": "1528-1588",
+  "note": "Les grandes figures en raccourci, vues de bas, où la perspective du corps prime sur son détail.",
+  "variantes": [
+   "veronese",
+   "veronaise",
+   "paul veronese"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/15251",
+   "oeuvre": "Head of a Woman",
+   "date": "c. 1575"
+  }
+ },
+ {
+  "id": "velasquez",
+  "nom": "Vélasquez",
+  "type": "peintre",
+  "dates": "1599-1660",
+  "note": "La justesse du volume obtenue sans contour appuyé — l'exemple que Debord oppose au dessin cerné.",
+  "variantes": [
+   "velasquez",
+   "velazquez",
+   "velas quez"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/21934",
+   "oeuvre": "Kitchen Scene",
+   "date": "1618–20"
+  }
+ },
+ {
+  "id": "balthus",
+  "nom": "Balthus",
+  "type": "peintre",
+  "dates": "1908-2001",
+  "note": "Peintre que Debord a connu, et dont il rapporte les propos sur le dessin d'après modèle.",
+  "variantes": [
+   "balthus"
+  ]
+ },
+ {
+  "id": "david",
+  "nom": "Jacques-Louis David",
+  "type": "peintre",
+  "dates": "1748-1825",
+  "note": "L'académisme dans sa version la plus tendue. Debord l'invoque autant comme repoussoir que comme modèle.",
+  "variantes": [
+   "david"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/113576",
+   "oeuvre": "Bust of Angelique Mongez",
+   "date": "1806"
+  }
+ },
+ {
+  "id": "daumier",
+  "nom": "Daumier",
+  "type": "peintre",
+  "dates": "1808-1879",
+  "note": "Le mouvement saisi par la masse plutôt que par le contour, et la charge comme moyen de dire une structure.",
+  "variantes": [
+   "daumier"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/21068",
+   "oeuvre": "“You Sniff the Merchandise… Before Buying It,” plate 32 from Types Parisiens",
+   "date": "1839"
+  }
+ },
+ {
+  "id": "tintoret",
+  "nom": "Le Tintoret",
+  "type": "peintre",
+  "dates": "1518-1594",
+  "note": "Les figures vues en plongée ou en contre-plongée, construites d'après des maquettes suspendues.",
+  "variantes": [
+   "tintoret",
+   "le tintoret",
+   "tintoretto"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/24901",
+   "oeuvre": "Reclining Male Nude, Foreshortened",
+   "date": "1562"
+  }
+ },
+ {
+  "id": "rubens",
+  "nom": "Rubens",
+  "type": "peintre",
+  "dates": "1577-1640",
+  "note": "La chair comme matière qui pèse et déborde — le contre-exemple du corps sculptural.",
+  "variantes": [
+   "rubens"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/235541",
+   "oeuvre": "A Sheet of Anatomical Studies",
+   "date": "1600/10"
+  }
+ },
+ {
+  "id": "titien",
+  "nom": "Titien",
+  "type": "peintre",
+  "dates": "1488-1576",
+  "note": "Le modelé obtenu par la couleur seule, sans dessin préalable apparent.",
+  "variantes": [
+   "titien",
+   "le titien",
+   "tiziano"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/55006",
+   "oeuvre": "Self-Portrait",
+   "date": "n.d."
+  }
+ },
+ {
+  "id": "picasso",
+  "nom": "Picasso",
+  "type": "peintre",
+  "dates": "1881-1973",
+  "note": "Cité pour les déformations qui restent anatomiquement lisibles : déformer suppose de savoir d'où l'on part.",
+  "variantes": [
+   "picasso"
+  ]
+ },
+ {
+  "id": "raphael",
+  "nom": "Raphaël",
+  "type": "peintre",
+  "dates": "1483-1520",
+  "note": "L'étude préparatoire à la sanguine, où la recherche de la forme reste visible sous la mise au net.",
+  "variantes": [
+   "raphael",
+   "raffaello"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/114932",
+   "oeuvre": "Upraised Right Hand, with Palm Facing Outward: Study for Saint Peter",
+   "date": "1518/20"
+  }
+ },
+ {
+  "id": "delacroix",
+  "nom": "Delacroix",
+  "type": "peintre",
+  "dates": "1798-1863",
+  "note": "Les carnets d'études d'après l'écorché et le modèle vivant, tenus toute une vie.",
+  "variantes": [
+   "delacroix"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/6081",
+   "oeuvre": "Study for Marphise and the Mistress of Pinabel",
+   "date": "c. 1852"
+  }
+ },
+ {
+  "id": "schiele",
+  "nom": "Egon Schiele",
+  "type": "peintre",
+  "dates": "1890-1918",
+  "note": "Le corps décharné où l'os affleure partout : un cas limite qui rend l'ostéologie directement visible.",
+  "variantes": [
+   "schiele",
+   "egon schiele"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/29424",
+   "oeuvre": "The Artist's Mother",
+   "date": "1907"
+  }
+ },
+ {
+  "id": "klimt",
+  "nom": "Klimt",
+  "type": "peintre",
+  "dates": "1862-1918",
+  "note": "Les dessins de nu à la ligne, très éloignés des tableaux ornés qui l'ont rendu célèbre.",
+  "variantes": [
+   "klimt"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/154795",
+   "oeuvre": "Male Nude with Left Foot on a Pedestal",
+   "date": "1879"
+  }
+ },
+ {
+  "id": "caravage",
+  "nom": "Le Caravage",
+  "type": "peintre",
+  "dates": "1571-1610",
+  "note": "La lumière qui découpe le relief en tranches, et révèle la forme par l'ombre portée.",
+  "variantes": [
+   "caravage",
+   "le caravage",
+   "caravaggio"
+  ],
+  "musee": {
+   "nom": "The Metropolitan Museum of Art",
+   "url": "https://www.metmuseum.org/art/collection/search/435844",
+   "oeuvre": "The Musicians",
+   "date": "1597"
+  }
+ },
+ {
+  "id": "mantegna",
+  "nom": "Mantegna",
+  "type": "peintre",
+  "dates": "1431-1506",
+  "note": "Le raccourci extrême, traité comme un problème de géométrie autant que d'anatomie.",
+  "variantes": [
+   "mantegna"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/82064",
+   "oeuvre": "Study for the Triumphs of Julius Caesar: Canvas No. I",
+   "date": "n.d."
+  }
+ },
+ {
+  "id": "ingres",
+  "nom": "Ingres",
+  "type": "peintre",
+  "dates": "1780-1867",
+  "note": "La ligne continue et les libertés prises avec l'anatomie au nom de la forme.",
+  "variantes": [
+   "ingres"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/4558",
+   "oeuvre": "Study",
+   "date": "c. 1842"
+  }
+ },
+ {
+  "id": "courbet",
+  "nom": "Courbet",
+  "type": "peintre",
+  "dates": "1819-1877",
+  "note": "Le corps ordinaire, sans correction académique.",
+  "variantes": [
+   "courbet"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/93342",
+   "oeuvre": "Rêverie (Portrait of Gabrielle Borreau)",
+   "date": "1862"
+  }
+ },
+ {
+  "id": "lautrec",
+  "nom": "Toulouse-Lautrec",
+  "type": "peintre",
+  "dates": "1864-1901",
+  "note": "Le mouvement noté au vol, et la déformation comme signature d'une attitude.",
+  "variantes": [
+   "toulouse lautrec",
+   "lautrec"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/86204",
+   "oeuvre": "Old Man and Young Girl",
+   "date": "1899"
+  }
+ },
+ {
+  "id": "matisse",
+  "nom": "Matisse",
+  "type": "peintre",
+  "dates": "1869-1954",
+  "note": "Le dessin réduit à la ligne, qui suppose la connaissance du volume pour pouvoir s'en passer.",
+  "variantes": [
+   "matisse"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/27984",
+   "oeuvre": "Woman before an Aquarium",
+   "date": "1921–23"
+  }
+ },
+ {
+  "id": "van-gogh",
+  "nom": "Van Gogh",
+  "type": "peintre",
+  "dates": "1853-1890",
+  "note": "Les dessins de paysans, construits par la masse et le geste plutôt que par le contour.",
+  "variantes": [
+   "van gogh",
+   "vangogh"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/80607",
+   "oeuvre": "Self-Portrait",
+   "date": "1887"
+  }
+ },
+ {
+  "id": "vuillard",
+  "nom": "Édouard Vuillard",
+  "type": "peintre",
+  "dates": "1868-1940",
+  "note": "Cité à travers un propos rapporté sur les outils du dessinateur.",
+  "variantes": [
+   "vuillard",
+   "edouard vuillard"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/84293",
+   "oeuvre": "Old Woman at a Stove",
+   "date": "1893"
+  }
+ },
+ {
+  "id": "bonnard",
+  "nom": "Bonnard",
+  "type": "peintre",
+  "dates": "1867-1947",
+  "note": "Nommé aux côtés de Vuillard, dans le souvenir d'une génération que Debord rattache à l'École.",
+  "variantes": [
+   "bonnard"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/116238",
+   "oeuvre": "France-Champagne",
+   "date": "1889–91"
+  }
+ },
+ {
+  "id": "degas",
+  "nom": "Degas",
+  "type": "peintre",
+  "dates": "1834-1917",
+  "note": "Le corps en mouvement contraint — danseuses, baigneuses — étudié sous des angles que l'atelier ne donne pas.",
+  "variantes": [
+   "degas"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/13551",
+   "oeuvre": "Self-Portrait",
+   "date": "1857"
+  }
+ },
+ {
+  "id": "cranach",
+  "nom": "Cranach",
+  "type": "peintre",
+  "dates": "1472-1553",
+  "note": "Le nu nordique, aux proportions étrangères au canon italien.",
+  "variantes": [
+   "cranach"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/87760",
+   "oeuvre": "Portrait of Magdalena of Saxony, Wife of Elector Joachim II of Brandenburg",
+   "date": "c. 1529"
+  }
+ },
+ {
+  "id": "manet",
+  "nom": "Manet",
+  "type": "peintre",
+  "dates": "1832-1883",
+  "note": "Mentionné pour une ébauche de portrait, à propos de ce qu'une étude laisse voir du travail.",
+  "variantes": [
+   "manet"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/14591",
+   "oeuvre": "Woman Reading",
+   "date": "1880–82"
+  }
+ },
+ {
+  "id": "bronzino",
+  "nom": "Bronzino",
+  "type": "peintre",
+  "dates": "1503-1572",
+  "note": "Le modelé lisse et froid du maniérisme florentin, où l'anatomie devient ornement.",
+  "variantes": [
+   "bronzino"
+  ]
+ },
+ {
+  "id": "poussin",
+  "nom": "Poussin",
+  "type": "peintre",
+  "dates": "1594-1665",
+  "note": "La figure construite comme un volume dans l'espace, souvent d'après des figurines de cire.",
+  "variantes": [
+   "poussin"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/112535",
+   "oeuvre": "Man Kneeling With Jug (recto); Standing Man (verso)",
+   "date": "n.d."
+  }
+ },
+ {
+  "id": "corot",
+  "nom": "Corot",
+  "type": "peintre",
+  "dates": "1796-1875",
+  "note": "Évoqué par la Marietta, son académie romaine, que Debord commente comme un cas d'étude.",
+  "variantes": [
+   "corot"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/43119",
+   "oeuvre": "Ville d'Avray: Pond with Boatman, Evening",
+   "date": "1862–63"
+  }
+ },
+ {
+  "id": "modigliani",
+  "nom": "Modigliani",
+  "type": "peintre",
+  "dates": "1884-1920",
+  "note": "L'allongement systématique du cou et du visage, écart mesurable par rapport au canon.",
+  "variantes": [
+   "modigliani"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/80586",
+   "oeuvre": "Portrait of a Woman",
+   "date": "c. 1917/19"
+  }
+ },
+ {
+  "id": "giotto",
+  "nom": "Giotto",
+  "type": "peintre",
+  "dates": "1266-1337",
+  "note": "Les mains des fresques, où le volume est déjà construit avant que l'anatomie ne soit enseignée.",
+  "variantes": [
+   "giotto"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/114477",
+   "oeuvre": "Ascension of Christ",
+   "date": "n.d."
+  }
+ },
+ {
+  "id": "piero",
+  "nom": "Piero della Francesca",
+  "type": "peintre",
+  "dates": "1412-1492",
+  "note": "La figure traitée comme un solide géométrique, éclairée d'une lumière égale.",
+  "variantes": [
+   "piero della francesca",
+   "della francesca",
+   "piero"
+  ]
+ },
+ {
+  "id": "fra-angelico",
+  "nom": "Fra Angelico",
+  "type": "peintre",
+  "dates": "1395-1455",
+  "note": "Cité au fil d'une comparaison sur le traitement des mains.",
+  "variantes": [
+   "fra angelico",
+   "angelico"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/129756",
+   "oeuvre": "Saint Anthony Abbot",
+   "date": "1440–41"
+  }
+ },
+ {
+  "id": "primatice",
+  "nom": "Le Primatice",
+  "type": "peintre",
+  "dates": "1504-1570",
+  "note": "Les figures allongées de Fontainebleau, dont Debord relève l'écart de proportion assumé.",
+  "variantes": [
+   "primatice",
+   "le primatice",
+   "primaticcio"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/136980",
+   "oeuvre": "Fortitude (Study for the \"Cabinet du roi\" [King's Study])",
+   "date": "1541/45"
+  }
+ },
+ {
+  "id": "masson",
+  "nom": "André Masson",
+  "type": "peintre",
+  "dates": "1896-1987",
+  "note": "Mentionné à propos du dessin automatique et de ce qu'il doit, malgré tout, à la connaissance de la forme.",
+  "variantes": [
+   "andre masson",
+   "masson"
+  ]
+ },
+ {
+  "id": "miro",
+  "nom": "Miró",
+  "type": "peintre",
+  "dates": "1893-1983",
+  "note": "Évoqué à travers un portrait montré en cours.",
+  "variantes": [
+   "miro"
+  ]
+ },
+ {
+  "id": "bacon",
+  "nom": "Francis Bacon",
+  "type": "peintre",
+  "dates": "1909-1992",
+  "note": "La déformation de la chair poussée à la limite du reconnaissable, qui reste indexée sur une anatomie exacte.",
+  "variantes": [
+   "francis bacon",
+   "bacon"
+  ]
+ },
+ {
+  "id": "houdon",
+  "nom": "Houdon",
+  "type": "sculpteur",
+  "dates": "1741-1828",
+  "note": "L'auteur de l'Écorché qui sert de référence dans tous les ateliers depuis deux siècles.",
+  "variantes": [
+   "houdon"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/144965",
+   "oeuvre": "Bust of Anne-Marie-Louise Thomas de Domangeville de Sérilly, Comtesse de Pange",
+   "date": "1780"
+  }
+ },
+ {
+  "id": "giacometti",
+  "nom": "Giacometti",
+  "type": "sculpteur",
+  "dates": "1901-1966",
+  "note": "La figure réduite à son axe et à sa tension, obtenue par retraits successifs.",
+  "variantes": [
+   "giacometti"
+  ]
+ },
+ {
+  "id": "carpeaux",
+  "nom": "Carpeaux",
+  "type": "sculpteur",
+  "dates": "1827-1875",
+  "note": "Le mouvement en sculpture, et le modelé pris sur le vif.",
+  "variantes": [
+   "carpeaux"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/41319",
+   "oeuvre": "Portrait Bust of Comtesse d'Affry, née Lucie de Maillardoz (1816-1897)",
+   "date": "1860–70"
+  }
+ },
+ {
+  "id": "maillol",
+  "nom": "Maillol",
+  "type": "sculpteur",
+  "dates": "1861-1944",
+  "note": "Le volume simplifié jusqu'à la masse pleine, sans détail musculaire.",
+  "variantes": [
+   "maillol"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/110716",
+   "oeuvre": "Adam and Eve",
+   "date": "1895"
+  }
+ },
+ {
+  "id": "bouchardon",
+  "nom": "Bouchardon",
+  "type": "sculpteur",
+  "dates": "1698-1762",
+  "note": "Son petit écorché, et les figures de l'escalier de l'École, que Debord commente comme des pièces d'enseignement.",
+  "variantes": [
+   "bouchardon"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/54861",
+   "oeuvre": "A Saint Clothing the Poor Among the Ruins of an Earthquake"
+  }
+ },
+ {
+  "id": "praxitele",
+  "nom": "Praxitèle",
+  "type": "sculpteur",
+  "dates": "IVe s. av. J.-C.",
+  "note": "Le déhanchement grec, source lointaine de toute station hanchée occidentale.",
+  "variantes": [
+   "praxitele"
+  ]
+ },
+ {
+  "id": "duchenne",
+  "nom": "Duchenne de Boulogne",
+  "type": "anatomiste",
+  "dates": "1806-1875",
+  "note": "Le médecin qui a photographié les visages sous stimulation électrique pour isoler l'action de chaque muscle peaucier. Debord y revient comme à une preuve expérimentale de la mimique.",
+  "variantes": [
+   "duchenne",
+   "duchesne",
+   "duchenne de boulogne",
+   "duchene"
+  ]
+ },
+ {
+  "id": "vesale",
+  "nom": "Vésale",
+  "type": "anatomiste",
+  "dates": "1514-1564",
+  "note": "Le fondateur de l'anatomie moderne, dont les planches posent l'écorché debout dans un paysage — un parti pris de dessinateur autant que de savant.",
+  "variantes": [
+   "vesale",
+   "vesalius",
+   "vessale"
+  ]
+ },
+ {
+  "id": "duval",
+  "nom": "Mathias Duval",
+  "type": "anatomiste",
+  "dates": "1844-1907",
+  "note": "Professeur d'anatomie aux Beaux-Arts, que Debord cite comme l'un de ses prédécesseurs dans la chaire.",
+  "variantes": [
+   "mathias duval",
+   "duval"
+  ]
+ },
+ {
+  "id": "paul-richer",
+  "nom": "Paul Richer",
+  "type": "anatomiste",
+  "dates": "1849-1933",
+  "note": "Prédécesseur de Debord à la chaire d'anatomie artistique, auteur du traité qui a formé des générations d'élèves.",
+  "variantes": [
+   "paul richer",
+   "richer"
+  ]
+ },
+ {
+  "id": "bourgery",
+  "nom": "Bourgery et Jacob",
+  "type": "anatomiste",
+  "dates": "1831-1854",
+  "note": "Le grand atlas d'anatomie lithographié au XIXe siècle, dont Debord discute la fidélité planche en main.",
+  "variantes": [
+   "bourgery",
+   "bourgery et jacob"
+  ]
+ },
+ {
+  "id": "louvre",
+  "nom": "Le Louvre",
+  "type": "lieu",
+  "note": "Le lieu de référence du cours : Debord y renvoie pour aller voir sur pièce ce que la diapositive ne montre qu'à plat.",
+  "variantes": [
+   "louvre",
+   "le louvre",
+   "au louvre"
+  ],
+  "musee": {
+   "nom": "Site officiel du musée du Louvre",
+   "url": "https://www.louvre.fr"
+  }
+ },
+ {
+  "id": "prado",
+  "nom": "Le Prado",
+  "type": "lieu",
+  "note": "Pour les Vélasquez et les Goya, cités d'après leur accrochage madrilène.",
+  "variantes": [
+   "prado",
+   "le prado"
+  ],
+  "musee": {
+   "nom": "Museo Nacional del Prado",
+   "url": "https://www.museodelprado.es"
+  }
+ },
+ {
+  "id": "orsay",
+  "nom": "Musée d'Orsay",
+  "type": "lieu",
+  "note": "Pour la sculpture et la peinture du XIXe siècle.",
+  "variantes": [
+   "orsay",
+   "musee dorsay",
+   "d orsay"
+  ],
+  "musee": {
+   "nom": "Musée d'Orsay",
+   "url": "https://www.musee-orsay.fr"
+  }
+ },
+ {
+  "id": "petit-palais",
+  "nom": "Petit Palais",
+  "type": "lieu",
+  "note": "Collections de dessins et de sculptures que Debord recommande d'aller voir.",
+  "variantes": [
+   "petit palais"
+  ],
+  "musee": {
+   "nom": "Petit Palais",
+   "url": "https://www.petitpalais.paris.fr"
+  }
+ },
+ {
+  "id": "sixtine",
+  "nom": "Chapelle Sixtine",
+  "type": "lieu",
+  "note": "Le plafond et le Jugement dernier, cités pour les corps en raccourci et les attitudes impossibles à faire tenir à un modèle.",
+  "variantes": [
+   "sixtine",
+   "chapelle sixtine"
+  ],
+  "musee": {
+   "nom": "Musei Vaticani",
+   "url": "https://www.museivaticani.va"
+  }
+ },
+ {
+  "id": "vatican",
+  "nom": "Vatican",
+  "type": "lieu",
+  "note": "Les collections antiques, source des torses et des fragments qui servent de modèles d'atelier.",
+  "variantes": [
+   "vatican"
+  ],
+  "musee": {
+   "nom": "Musei Vaticani",
+   "url": "https://www.museivaticani.va"
+  }
+ },
+ {
+  "id": "ecorche",
+  "nom": "L'écorché",
+  "type": "oeuvre",
+  "note": "La figure dépouillée de sa peau, moulée en plâtre et présente dans tous les ateliers. Debord s'en sert constamment, tout en rappelant que c'est une reconstitution et non un relevé.",
+  "variantes": [
+   "ecorche",
+   "ecorches",
+   "l ecorche"
+  ]
+ },
+ {
+  "id": "marietta",
+  "nom": "La Marietta",
+  "type": "oeuvre",
+  "note": "L'académie romaine peinte par Corot d'après un modèle nommé, que Debord commente comme un cas de dessin d'après nature assumé.",
+  "variantes": [
+   "marietta"
+  ]
+ },
+ {
+  "id": "pieta",
+  "nom": "Pietà",
+  "type": "oeuvre",
+  "note": "Le motif du corps porté, inerte : le cas type du corps sans tonus, que rien ne soutient.",
+  "variantes": [
+   "pieta",
+   "la pieta"
+  ]
+ },
+ {
+  "id": "venus-de-milo",
+  "nom": "Vénus de Milo",
+  "type": "oeuvre",
+  "note": "Le canon féminin antique, et la station hanchée dans sa version la plus diffusée.",
+  "variantes": [
+   "venus de milo"
+  ]
+ },
+ {
+  "id": "gladiateur",
+  "nom": "Gladiateur Borghèse",
+  "type": "oeuvre",
+  "note": "La figure antique en fente extrême, étude de tension musculaire sur tout le corps.",
+  "variantes": [
+   "gladiateur",
+   "gladiateur borghese"
+  ]
+ },
+ {
+  "id": "lecon-anatomie",
+  "nom": "La Leçon d'anatomie",
+  "type": "oeuvre",
+  "note": "Le tableau de Rembrandt où la dissection est mise en scène : à la fois sujet du cours et objet d'histoire.",
+  "variantes": [
+   "lecon d anatomie",
+   "lecon danatomie"
+  ]
+ }
 ]

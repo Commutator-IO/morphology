@@ -22,6 +22,16 @@ export type Reference = {
   dates?: string;
   note: string;
   variantes: string[];
+  /**
+   * Une page de musée qui diffuse publiquement l'image d'une œuvre.
+   *
+   * Ce n'est pas l'œuvre que Debord projetait : les sous-titres ne donnent pas
+   * les titres des diapositives, et les inventer serait pire que se taire. On
+   * renvoie donc à une œuvre de la personne, dans une collection dont l'image
+   * est en accès libre — de quoi mettre un visage sur un nom sans rien
+   * affirmer de faux. Les entrées « lieu » renvoient au site de l'institution.
+   */
+  musee?: { nom: string; url: string; oeuvre?: string; date?: string };
 };
 
 export const REFERENCES = referencesBrut as Reference[];
