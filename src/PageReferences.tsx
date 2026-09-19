@@ -68,7 +68,7 @@ export function PageReferences() {
           .
         </p>
 
-        <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_25rem] lg:items-start lg:gap-8">
+        <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_25rem] lg:gap-8">
           <div>
         <div className="sticky top-[5.75rem] z-20 -mx-4 mt-5 border-b border-ink-200/70 bg-ink-50/95 px-4 pt-3 pb-2.5 backdrop-blur lg:mx-0 lg:px-0">
           <label className="sr-only" htmlFor="recherche-ref">
@@ -96,7 +96,7 @@ export function PageReferences() {
             )}
           </div>
 
-          <div className="-mx-4 mt-2 flex gap-1.5 overflow-x-auto px-4 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <div className="rangee-filtres mt-2">
             <button
               type="button"
               onClick={() => setType(null)}

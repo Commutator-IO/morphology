@@ -99,7 +99,7 @@ export function PageVocabulaire() {
 
         {/* Barre d'outils collante. `top-[5.75rem]` la pose juste sous l'en-tête,
             lui-même collant : les deux ne doivent pas se chevaucher. */}
-        <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_25rem] lg:items-start lg:gap-8">
+        <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_25rem] lg:gap-8">
           <div>
         <div className="sticky top-[5.75rem] z-20 -mx-4 mt-5 border-b border-ink-200/70 bg-ink-50/95 px-4 pt-3 pb-2.5 backdrop-blur lg:mx-0 lg:px-0">
           <label className="sr-only" htmlFor="recherche">
@@ -132,7 +132,7 @@ export function PageVocabulaire() {
           {/* Région d'abord : c'est par là qu'on arrive quand on révise ce
               qu'on vient d'étudier. Défilement horizontal assumé — six groupes
               ne tiennent pas sur 375 px, et les replier coûterait un geste. */}
-          <div className="-mx-4 mt-2 flex gap-1.5 overflow-x-auto px-4 pb-1 lg:mx-0 lg:px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <div className="rangee-filtres mt-2">
             <button
               type="button"
               onClick={() => setGroupe(null)}
@@ -165,7 +165,7 @@ export function PageVocabulaire() {
           {/* Les filtres débordent volontairement en défilement horizontal :
               cinq catégories ne tiennent pas sur 375 px, et les replier
               coûterait un geste. */}
-          <div className="-mx-4 mt-1.5 flex gap-1.5 overflow-x-auto px-4 pb-1 lg:mx-0 lg:px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <div className="rangee-filtres mt-1.5">
             <button
               type="button"
               onClick={() => setCategorie(null)}

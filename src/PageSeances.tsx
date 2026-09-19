@@ -45,7 +45,7 @@ export function PageSeances() {
           d'origine.
         </p>
 
-        <div className="-mx-4 mt-5 flex gap-1.5 overflow-x-auto px-4 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <div className="rangee-filtres mt-5">
           <button
             type="button"
             onClick={() => setGroupe(null)}
@@ -89,7 +89,7 @@ export function PageSeances() {
           </nav>
         )}
 
-        <div className="mt-8 lg:grid lg:grid-cols-[minmax(0,1fr)_25rem] lg:items-start lg:gap-8">
+        <div className="mt-8 lg:grid lg:grid-cols-[minmax(0,1fr)_25rem] lg:gap-8">
           <div className="space-y-10">
             {groupe && (
               <p className="text-[13px] leading-relaxed text-ink-600">

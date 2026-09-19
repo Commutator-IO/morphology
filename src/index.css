@@ -105,6 +105,31 @@
       text-sm font-medium whitespace-nowrap transition active:scale-95;
   }
 
+  /* Rangée de filtres.
+     Sur téléphone, les puces défilent latéralement — c'est l'usage, et les
+     faire passer à la ligne donnerait trois rangées collantes qui mangeraient
+     l'écran. Le dégradé d'estompe à droite dit qu'il en reste hors champ : une
+     coupure nette, elle, passe pour la fin de la liste.
+     Dès lg, la colonne est assez large pour tout montrer : on passe à la ligne
+     et on supprime à la fois le débord et l'estompe, qui n'auraient plus de
+     sens. */
+  .rangee-filtres {
+    @apply -mx-4 flex gap-1.5 overflow-x-auto px-4 pb-1;
+    scrollbar-width: none;
+    mask-image: linear-gradient(to right, #000 calc(100% - 2.5rem), transparent);
+  }
+
+  .rangee-filtres::-webkit-scrollbar {
+    display: none;
+  }
+
+  @variant lg {
+    .rangee-filtres {
+      @apply mx-0 flex-wrap overflow-visible px-0;
+      mask-image: none;
+    }
+  }
+
   .field-label {
     @apply mb-1.5 block text-sm font-medium text-ink-700;
   }
