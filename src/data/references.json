@@ -797,7 +797,7 @@
   "id": "ecorche",
   "nom": "L'écorché",
   "type": "oeuvre",
-  "note": "La figure dépouillée de sa peau, moulée en plâtre et présente dans tous les ateliers. Debord s'en sert constamment, tout en rappelant que c'est une reconstitution et non un relevé.",
+  "note": "La figure dépouillée de sa peau, moulée en plâtre et présente dans tous les ateliers. Debord s'en sert constamment — c'est celui de Houdon qu'il nomme — tout en rappelant que c'est une reconstitution et non un relevé.",
   "variantes": [
    "ecorche",
    "ecorches",
@@ -875,6 +875,26 @@
   }
  },
  {
+  "id": "egypte",
+  "nom": "Bas-reliefs égyptiens",
+  "type": "oeuvre",
+  "dates": null,
+  "note": "La convention égyptienne revient tout au long du cours : le corps donné par ses vues les plus lisibles, profil et face combinés, dans une attitude que personne ne tient dans la vie. Debord y admire surtout l'extrême discrétion des courbures.",
+  "variantes": [
+   "egyptien",
+   "egyptienne",
+   "egyptiens",
+   "egyptiennes",
+   "egypte"
+  ],
+  "musee": {
+   "nom": "The Metropolitan Museum of Art",
+   "url": "https://www.metmuseum.org/art/collection/search/590874",
+   "oeuvre": "Tomb Chapel of Raemkai",
+   "date": "ca. 2446–2389 av. J.-C."
+  }
+ },
+ {
   "id": "gericault",
   "nom": "Géricault",
   "type": "peintre",
@@ -927,6 +947,139 @@
   }
  },
  {
+  "id": "gauguin",
+  "nom": "Gauguin",
+  "type": "peintre",
+  "dates": "1848-1903",
+  "note": "Convoqué pour son conseil, que Debord reprend à son compte : laisser tomber les Grecs et se reporter à l'Égypte. Le goût du plat et du décoratif contre le modelé, c'est-à-dire l'autre façon de tenir un corps sur une surface.",
+  "variantes": [
+   "gauguin",
+   "goguin"
+  ],
+  "musee": {
+   "nom": "The Metropolitan Museum of Art",
+   "url": "https://www.metmuseum.org/art/collection/search/438821",
+   "oeuvre": "Ia Orana Maria (Hail Mary)",
+   "date": "1891"
+  }
+ },
+ {
+  "id": "goltzius",
+  "nom": "Hendrick Goltzius",
+  "type": "peintre",
+  "dates": "1558-1617",
+  "note": "Le graveur maniériste de Haarlem, dont Debord commente un Hercule : une musculature poussée jusqu'à l'excès, qu'il trouve à la fois authentique et comique. L'occasion de rappeler que l'outrance anatomique ne date pas d'hier.",
+  "variantes": [
+   "goltzius",
+   "gaulle sus",
+   "goal sus",
+   "gold sus"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/6135",
+   "oeuvre": "Hercules Killing Cacus",
+   "date": "1588"
+  }
+ },
+ {
+  "id": "jan-muller",
+  "nom": "Jan Muller",
+  "type": "peintre",
+  "dates": "1571-1628",
+  "note": "Graveur hollandais, élève de Goltzius. Debord montre ses figures musculeuses qui gesticulent en tous sens et observe, amusé, que la vulgarité ne date pas d'aujourd'hui.",
+  "variantes": [
+   "jan muller",
+   "yann muller",
+   "anne muller"
+  ],
+  "musee": {
+   "nom": "The Metropolitan Museum of Art",
+   "url": "https://www.metmuseum.org/art/collection/search/374006",
+   "oeuvre": "Arion on a Dolphin",
+   "date": "ca. 1590"
+  }
+ },
+ {
+  "id": "stubbs",
+  "nom": "George Stubbs",
+  "type": "peintre",
+  "dates": "1724-1806",
+  "note": "Le peintre anglais de chevaux du XVIIIe siècle, auteur d'une anatomie du cheval. Debord s'en sert pour la protubérance occipitale externe, lisible sur l'animal comme sur l'homme. Le cours l'appelle « John » ; c'est bien George.",
+  "variantes": [
+   "stubbs",
+   "stubs"
+  ],
+  "musee": {
+   "nom": "The Metropolitan Museum of Art",
+   "url": "https://www.metmuseum.org/art/collection/search/437764",
+   "oeuvre": "The Third Duke of Dorset's Hunter with a Groom and a Dog",
+   "date": "1768"
+  }
+ },
+ {
+  "id": "rabier",
+  "nom": "Benjamin Rabier",
+  "type": "peintre",
+  "dates": "1864-1939",
+  "note": "L'illustrateur animalier par qui tout a commencé : Debord confie que c'est à cause de lui qu'il a eu envie de dessiner. Il y relève aussi un fait de morphologie — les canards de Rabier ont des membres supérieurs, ce qui n'est pas le propre du canard.",
+  "variantes": [
+   "rabier"
+  ],
+  "musee": null
+ },
+ {
+  "id": "tiepolo",
+  "nom": "Tiepolo",
+  "type": "peintre",
+  "dates": "1696-1770",
+  "note": "Une des réserves à diapositives du cours : Debord en sort régulièrement « pour nous détendre », et y revient pour les raccourcis et les corps vus de bas en haut. Il évoque aussi les Tiepolo de Venise détruits par les bombardements.",
+  "variantes": [
+   "tiepolo",
+   "tiepollo",
+   "tie polo"
+  ],
+  "musee": {
+   "nom": "The Metropolitan Museum of Art",
+   "url": "https://www.metmuseum.org/art/collection/search/437800",
+   "oeuvre": "The Investiture of Bishop Harold as Duke of Franconia",
+   "date": "ca. 1751–52"
+  }
+ },
+ {
+  "id": "sharaku",
+  "nom": "Sharaku",
+  "type": "peintre",
+  "dates": "actif 1794-1795",
+  "note": "Le graveur japonais dont on ne sait presque rien. Debord s'arrête sur ses mains — quelques traits qui donnent un geste entier — et sur le peu de dessins qu'on possède de lui.",
+  "variantes": [
+   "sharaku"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/18765",
+   "oeuvre": "The actor Otani Oniji III as Edobei",
+   "date": "1794"
+  }
+ },
+ {
+  "id": "poussin",
+  "nom": "Nicolas Poussin",
+  "type": "peintre",
+  "dates": "1594-1665",
+  "note": "Cité une seule fois, aux côtés du Tintoret, à propos du parti pris des fonds. L'entrée ne relève que ce passage : la transcription écrit aussi « poussin » pour un fléchisseur du pouce, et le confondre remplirait l'index de faux.",
+  "variantes": [
+   "tintoret poussins",
+   "tintoret poussin"
+  ],
+  "musee": {
+   "nom": "Art Institute of Chicago",
+   "url": "https://www.artic.edu/artworks/5848",
+   "oeuvre": "Landscape with Saint John on Patmos",
+   "date": "1640"
+  }
+ },
+ {
   "id": "darwin",
   "nom": "Charles Darwin",
   "type": "anatomiste",
@@ -937,5 +1090,17 @@
    "darwinisme",
    "darwinien"
   ]
+ },
+ {
+  "id": "strauss-durckheim",
+  "nom": "Strauss-Durckheim",
+  "type": "anatomiste",
+  "dates": "1798-1865",
+  "note": "Anatomiste comparatiste, cité une fois pour le retournement du trapèze — la torsion que subit le muscle en passant de l'animal à l'homme debout.",
+  "variantes": [
+   "strauss durckheim",
+   "straus durckheim"
+  ],
+  "musee": null
  }
 ]

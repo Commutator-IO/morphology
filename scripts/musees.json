@@ -283,5 +283,61 @@
   "oeuvre": "Mont Sainte-Victoire and the Viaduct of the Arc River Valley",
   "date": "1882–85",
   "artiste": "Paul Cézanne"
+ },
+ "gauguin": {
+  "musee": "The Metropolitan Museum of Art",
+  "url": "https://www.metmuseum.org/art/collection/search/438821",
+  "oeuvre": "Ia Orana Maria (Hail Mary)",
+  "date": "1891",
+  "artiste": "Paul Gauguin"
+ },
+ "goltzius": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/6135",
+  "oeuvre": "Hercules Killing Cacus",
+  "date": "1588",
+  "artiste": "Hendrick Goltzius"
+ },
+ "jan-muller": {
+  "musee": "The Metropolitan Museum of Art",
+  "url": "https://www.metmuseum.org/art/collection/search/374006",
+  "oeuvre": "Arion on a Dolphin",
+  "date": "ca. 1590",
+  "artiste": "Jan Muller"
+ },
+ "stubbs": {
+  "musee": "The Metropolitan Museum of Art",
+  "url": "https://www.metmuseum.org/art/collection/search/437764",
+  "oeuvre": "The Third Duke of Dorset's Hunter with a Groom and a Dog",
+  "date": "1768",
+  "artiste": "George Stubbs"
+ },
+ "egypte": {
+  "musee": "The Metropolitan Museum of Art",
+  "url": "https://www.metmuseum.org/art/collection/search/590874",
+  "oeuvre": "Tomb Chapel of Raemkai",
+  "date": "ca. 2446–2389 av. J.-C.",
+  "artiste": "Ancien Empire égyptien"
+ },
+ "tiepolo": {
+  "musee": "The Metropolitan Museum of Art",
+  "url": "https://www.metmuseum.org/art/collection/search/437800",
+  "oeuvre": "The Investiture of Bishop Harold as Duke of Franconia",
+  "date": "ca. 1751–52",
+  "artiste": "Giovanni Battista Tiepolo"
+ },
+ "sharaku": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/18765",
+  "oeuvre": "The actor Otani Oniji III as Edobei",
+  "date": "1794",
+  "artiste": "Tōshūsai Sharaku"
+ },
+ "poussin": {
+  "musee": "Art Institute of Chicago",
+  "url": "https://www.artic.edu/artworks/5848",
+  "oeuvre": "Landscape with Saint John on Patmos",
+  "date": "1640",
+  "artiste": "Nicolas Poussin"
  }
 }

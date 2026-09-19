@@ -1425,6 +1425,81 @@
     ]
    }
   },
+  "egypte": {
+   "total": 44,
+   "videos": {
+    "-cDGU22RFqU": [
+     66,
+     1224,
+     3441,
+     3624,
+     3732,
+     4679,
+     4895,
+     5576,
+     5715,
+     5971,
+     6030,
+     6278,
+     6342
+    ],
+    "65d7NtvHAk0": [
+     4944
+    ],
+    "7wpyHczLt9Q": [
+     4822
+    ],
+    "BZMmmc3HVto": [
+     35,
+     118,
+     1346,
+     1610,
+     2112,
+     2240,
+     2352,
+     4108,
+     4176,
+     5809,
+     6229,
+     6374
+    ],
+    "E7VxdQNu9jo": [
+     4623
+    ],
+    "FeAucP4aKS8": [
+     3880
+    ],
+    "Nha5ZI8PVo0": [
+     4944
+    ],
+    "T3rO2WO_y7s": [
+     2557,
+     2604,
+     3177
+    ],
+    "kc2e56cun8U": [
+     141,
+     2840,
+     6027
+    ],
+    "ndTYL4boSgE": [
+     3864,
+     6452,
+     6552,
+     6655
+    ],
+    "qWn9BntEhyU": [
+     5232
+    ],
+    "vI5qC_JpkHs": [
+     4405
+    ],
+    "ycr4a1eAkn0": [
+     2667,
+     3635
+    ]
+   }
+  },
   "gericault": {
    "total": 6,
    "videos": {
@@ -1466,6 +1541,113 @@
     ]
    }
   },
+  "gauguin": {
+   "total": 4,
+   "videos": {
+    "-cDGU22RFqU": [
+     1246,
+     4883,
+     6093
+    ],
+    "BZMmmc3HVto": [
+     6268
+    ]
+   }
+  },
+  "goltzius": {
+   "total": 3,
+   "videos": {
+    "2nGLn4TKsp0": [
+     5767,
+     5852,
+     6175
+    ]
+   }
+  },
+  "jan-muller": {
+   "total": 3,
+   "videos": {
+    "2nGLn4TKsp0": [
+     5765,
+     5881,
+     6175
+    ]
+   }
+  },
+  "stubbs": {
+   "total": 2,
+   "videos": {
+    "E7VxdQNu9jo": [
+     3400
+    ],
+    "SQyL88Fq76o": [
+     5427
+    ]
+   }
+  },
+  "rabier": {
+   "total": 1,
+   "videos": {
+    "uagciNFijmY": [
+     6321
+    ]
+   }
+  },
+  "tiepolo": {
+   "total": 14,
+   "videos": {
+    "65d7NtvHAk0": [
+     3109
+    ],
+    "E7VxdQNu9jo": [
+     5768
+    ],
+    "FeAucP4aKS8": [
+     1960
+    ],
+    "UUJWGz3BuY4": [
+     6609,
+     6792
+    ],
+    "kc2e56cun8U": [
+     6141
+    ],
+    "qGdHRpt1qns": [
+     2047,
+     5356,
+     5695,
+     6027,
+     6184,
+     6391
+    ],
+    "xPRzam0rqDw": [
+     4372,
+     5937
+    ]
+   }
+  },
+  "sharaku": {
+   "total": 5,
+   "videos": {
+    "-Tss3qgdhW4": [
+     5895,
+     6615
+    ],
+    "68R-oaodzTg": [
+     6572,
+     6640,
+     6751
+    ]
+   }
+  },
+  "poussin": {
+   "total": 1,
+   "videos": {
+    "68R-oaodzTg": [
+     4410
+    ]
+   }
+  },
   "darwin": {
    "total": 5,
    "videos": {
@@ -1481,6 +1663,14 @@
     ],
     "lPiLzxL9qk4": [
      283
+    ]
+   }
+  },
+  "strauss-durckheim": {
+   "total": 1,
+   "videos": {
+    "E7VxdQNu9jo": [
+     3394
     ]
    }
   }

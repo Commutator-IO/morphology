@@ -85,9 +85,25 @@ describe('références', () => {
     // traité, et qui remonte donc précisément là où le cours en parle.
     // « carpeaux » transcrit carpo- (articulation carpo-métacarpienne),
     // « courbet » le verbe courber, « poussin » un fléchisseur du pouce.
+    // Aucun des trois n'a de citation avérée : ils restent hors du relevé.
     const ids = new Set(REFERENCES.map((r) => r.id));
-    for (const faux of ['carpeaux', 'courbet', 'poussin', 'bronzino']) {
+    for (const faux of ['carpeaux', 'courbet', 'bronzino']) {
       expect(ids, faux).not.toContain(faux);
+    }
+  });
+
+  it('ne laisse aucun mot du cours servir de variante à lui seul', () => {
+    // Poussin fait exception à la règle ci-dessus : Debord le cite une fois,
+    // aux côtés du Tintoret, et une citation avérée a sa place au relevé. Mais
+    // ce qui pollue l'index n'est pas l'entrée, c'est le mot nu — il vaut trois
+    // fois sur quatre pour le fléchisseur du pouce. L'entrée n'existe donc qu'à
+    // travers une locution, et c'est cet invariant-là qu'il faut tenir : aucune
+    // de ces formes ne doit jamais redevenir une variante à elle seule.
+    const NUS = new Set(['poussin', 'poussins', 'carpeaux', 'courbet', 'leger', 'boucher']);
+    for (const r of REFERENCES) {
+      for (const v of r.variantes) {
+        expect(NUS, `${r.id} → « ${v} »`).not.toContain(v.trim());
+      }
     }
   });
 
