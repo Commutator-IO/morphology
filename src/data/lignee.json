@@ -339,9 +339,15 @@
   "id": "sfar",
   "nom": "Joann Sfar",
   "role": "artistes",
-  "notice": "Dessinateur de bande dessinée, l'un des auteurs les plus prolifiques de sa génération. Debord le cite trois fois dans le cours, avec affection, et rapporte de lui une formule qu'il se voit renvoyée — que le dessin n'est qu'une question d'intelligence. Un maître citant son élève qui le cite.",
-  "ouvrages": [],
-  "source": "Élève cité dans la notice Wikipédia de Jean-François Debord, qui nomme la discipline de chacun. Années de naissance et de mort d'après Wikidata. Compte Instagram vérifié : biographie « Dessinateur! », 175 000 abonnés. Debord le nomme dans les séances 10, 20 et 25.",
+  "notice": "Dessinateur de bande dessinée, l'un des auteurs les plus prolifiques de sa génération. Debord le cite trois fois dans le cours, avec affection, et rapporte de lui une formule qu'il se voit renvoyée — que le dessin n'est qu'une question d'intelligence. Un maître citant son élève qui le cite. Son Modèle vivant porte sur la pratique même que la morphologie sert : dessiner d'après le corps présent.",
+  "ouvrages": [
+   {
+    "titre": "Modèle vivant",
+    "editeur": "Albin Michel",
+    "annee": "2018"
+   }
+  ],
+  "source": "Élève cité dans la notice Wikipédia de Jean-François Debord, qui nomme la discipline de chacun. Années de naissance et de mort d'après Wikidata. Compte Instagram vérifié : biographie « Dessinateur! », 175 000 abonnés. Debord le nomme dans les séances 10, 20 et 25. Titre, éditeur et année relevés dans le catalogue Open Library.",
   "ne": 1971,
   "dates": "né en 1971",
   "instagram": "joannsfar",
