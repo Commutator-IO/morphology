@@ -482,7 +482,11 @@
    "grand trochanter",
    "trochanter",
    "trochanters",
-   "trochanterien"
+   "trochanterien",
+   "troc en terre",
+   "troc l inter",
+   "troc anter",
+   "trochanterienne"
   ],
   "situation": {
    "vue": "face",
@@ -774,7 +778,11 @@
    "tarsienne",
    "metatarse",
    "metatarsien",
-   "metatarsiens"
+   "metatarsiens",
+   "?meta",
+   "?metas",
+   "cinquieme meta",
+   "5e meta"
   ],
   "situation": {
    "vue": "face",
@@ -792,7 +800,24 @@
      6
     ]
    ]
-  }
+  },
+  "contexte": [
+   "pied",
+   "pieds",
+   "orteil",
+   "orteils",
+   "calcaneum",
+   "astragale",
+   "cuboide",
+   "scaphoide tarsien",
+   "talon",
+   "malleole",
+   "cheville",
+   "plante",
+   "arche interne",
+   "cuneiforme",
+   "gros orteil"
+  ]
  },
  {
   "id": "omoplate",
@@ -1212,7 +1237,9 @@
    "metacarpien",
    "metacarpiens",
    "metacarpienne",
-   "tetes des metacarpiens"
+   "tetes des metacarpiens",
+   "?meta",
+   "?metas"
   ],
   "situation": {
    "vue": "face",
@@ -1230,7 +1257,27 @@
      5
     ]
    ]
-  }
+  },
+  "contexte": [
+   "main",
+   "mains",
+   "pouce",
+   "index",
+   "doigt",
+   "doigts",
+   "carpe",
+   "carpien",
+   "scaphoide",
+   "poignet",
+   "phalange",
+   "phalanges",
+   "paume",
+   "trapeze",
+   "os crochu",
+   "pisiforme",
+   "auriculaire",
+   "annulaire"
+  ]
  },
  {
   "id": "phalanges",
@@ -2848,6 +2895,37 @@
    "fil a plomb",
    "centre de gravite",
    "ligne de gravite"
+  ]
+ },
+ {
+  "id": "trochlee",
+  "terme": "Trochlée / poulie",
+  "categorie": "morphologie",
+  "region": "general",
+  "moderne": "Trochlea",
+  "aussi": [
+   "poulie astragalienne",
+   "poulie de réflexion"
+  ],
+  "definition": "Surface articulaire en forme de poulie : une gorge centrale et deux lèvres, qui obligent l'os d'en face à ne bouger que dans un plan. Il y en a trois dans le cours — au coude la trochlée humérale, au genou celle où court la rotule, à la cheville la poulie astragalienne. La lèvre externe de la trochlée fémorale est la plus haute : c'est elle qui repousse la rotule en dedans, et qui décide de son aplomb. Le mot sert aussi pour un tendon qui change de direction sur un relief d'os — une poulie de réflexion. La transcription n'en écrit aucune : « troc les », « troclet », « truck les », « troquerait ».",
+  "variantes": [
+   "trochlee",
+   "trochlees",
+   "trochleen",
+   "trochleenne",
+   "troc les",
+   "troc",
+   "troclet",
+   "troque les",
+   "truck les",
+   "troquerait",
+   "trappe le",
+   "poulie",
+   "poulies",
+   "poulie astragalienne",
+   "poulies astragalienne",
+   "poulie de reflexion",
+   "poulies de reflexion"
   ]
  },
  {
