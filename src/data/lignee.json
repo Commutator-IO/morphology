@@ -92,15 +92,24 @@
   "id": "delavier",
   "nom": "Frédéric Delavier",
   "role": "apres",
-  "notice": "Cité parmi les élèves de Debord. Il a porté la morphologie hors du champ de l'art, vers le geste sportif : ses planches montrent le muscle en action plutôt qu'au repos, ce qui en a fait une référence dans un tout autre milieu que celui des Beaux-Arts.",
+  "notice": "Cité parmi les élèves de Debord. Il a porté la morphologie hors du champ de l'art, vers le geste sportif : ses planches montrent le muscle en action plutôt qu'au repos. Ses guides de musculation font référence dans ce milieu et sont traduits dans de nombreuses langues — c'est, en volume de lecteurs, la descendance la plus diffusée de cet enseignement.",
   "ouvrages": [
    {
     "titre": "Guide des mouvements de musculation : approche anatomique",
     "editeur": "Vigot",
-    "annee": "à confirmer"
+    "annee": "2001"
+   },
+   {
+    "titre": "La méthode Delavier de musculation",
+    "editeur": "Vigot",
+    "annee": "2018"
+   },
+   {
+    "titre": "Série traduite en anglais sous le titre « Strength Training Anatomy » (anatomie de l'étirement, du tronc, de la musculation féminine…)",
+    "editeur": "Human Kinetics"
    }
   ],
-  "source": "Élève cité dans la notice Wikipédia de Debord. Les références précises de ses ouvrages n'ont pas pu être vérifiées ici : les recherches ne rendent que des pages marchandes. Années de naissance et de mort d'après Wikidata.",
+  "source": "Élève cité dans la notice Wikipédia de Debord ; année de naissance d'après Wikidata. Titres, éditeurs et années relevés dans le catalogue Open Library, qui recense aussi les traductions.",
   "ne": 1967,
   "dates": "né en 1967"
  },

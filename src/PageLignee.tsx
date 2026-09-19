@@ -1,12 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
 import { Entete, Pied } from './components/Cadre';
 import {
+  CLASSIQUES,
   DATEES,
   ECHELLE,
+  ECHELLE_LONGUE,
   FIGURES,
   finDe,
   parSection,
   SECTIONS,
+  type Classique,
   type Figure,
 } from './lib/lignee';
 
@@ -160,6 +163,92 @@ function Frise({ actif, onChoisir }: { actif: Figure; onChoisir: (f: Figure) => 
   );
 }
 
+/**
+ * Le temps long, en arrière-plan.
+ *
+ * Les artistes que Debord cite en cours s'étendent de Giotto à Bacon : les
+ * placer sur la frise principale écraserait la lignée moderne, qui tient en
+ * deux générations et qui est le sujet de la page. Ils ont donc leur propre
+ * bande, plus fine et en gris, avec la fenêtre de la frise principale marquée
+ * dessus — on voit alors sur quelle épaisseur d'histoire s'appuie
+ * l'enseignement, sans que l'histoire prenne le pas sur lui.
+ *
+ * Les vies sont rangées par lignes en remplissant la première qui est libre,
+ * faute de quoi quarante-six lignes d'une barre chacune feraient un mur.
+ */
+function BandeHistorique() {
+  const lignes: Classique[][] = [];
+  for (const c of CLASSIQUES) {
+    // Une marge de dix ans évite que deux barres se touchent bout à bout et
+    // paraissent n'en faire qu'une.
+    const libre = lignes.find((l) => l[l.length - 1].mort + 10 < c.ne);
+    if (libre) libre.push(c);
+    else lignes.push([c]);
+  }
+  const { place } = ECHELLE_LONGUE;
+
+  return (
+    <figure className="mt-5 rounded-[var(--radius-card)] border border-ink-200/70 bg-white px-4 py-3.5">
+      <figcaption className="text-[11px] font-bold tracking-[0.1em] text-ink-400 uppercase">
+        En arrière-plan : les {CLASSIQUES.length} artistes cités en cours
+      </figcaption>
+      <div className="relative mt-2.5">
+        {/* La fenêtre de la frise principale, pour situer l'une par rapport à
+            l'autre d'un coup d'œil. */}
+        <span
+          aria-hidden="true"
+          className="absolute inset-y-0 rounded-sm bg-brand-50"
+          style={{
+            left: `${place(ECHELLE.debut)}%`,
+            width: `${place(ECHELLE.fin) - place(ECHELLE.debut)}%`,
+          }}
+        />
+        {ECHELLE_LONGUE.reperes.map((a) => (
+          <span
+            key={a}
+            aria-hidden="true"
+            className="absolute top-0 bottom-4 w-px bg-ink-100"
+            style={{ left: `${place(a)}%` }}
+          />
+        ))}
+        <ul className="relative space-y-[2px] pb-4">
+          {lignes.map((ligne, i) => (
+            <li key={i} className="relative h-[7px]">
+              {ligne.map((c) => (
+                <a
+                  key={c.id}
+                  href={`/references/#${c.id}`}
+                  title={`${c.nom} (${c.ne}-${c.mort})`}
+                  className="absolute inset-y-0 rounded-[2px] bg-ink-300 transition-colors hover:bg-brand-500"
+                  style={{
+                    left: `${place(c.ne)}%`,
+                    width: `${Math.max(place(c.mort) - place(c.ne), 0.6)}%`,
+                  }}
+                />
+              ))}
+            </li>
+          ))}
+        </ul>
+        {ECHELLE_LONGUE.reperes.map((a) => (
+          <span
+            key={a}
+            className="tabular absolute bottom-0 -translate-x-1/2 text-[9px] text-ink-400"
+            style={{ left: `${place(a)}%` }}
+          >
+            {a}
+          </span>
+        ))}
+      </div>
+      <p className="mt-2 text-[12px] leading-relaxed text-ink-500">
+        Sept siècles de peinture et de sculpture, contre deux générations
+        d'enseignement — la zone claire. Debord cite surtout la Renaissance et le
+        XIX<sup>e</sup> siècle ; survolez une barre pour le nom, cliquez pour les
+        passages où il en parle.
+      </p>
+    </figure>
+  );
+}
+
 export function PageLignee() {
   const [actif, setActif] = useState<Figure>(DATEES[0]);
   const fiches = useRef<(HTMLElement | null)[]>([]);
@@ -209,6 +298,8 @@ export function PageLignee() {
             document.getElementById(f.id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
           }
         />
+
+        <BandeHistorique />
 
         <Regle actif={actif} />
 

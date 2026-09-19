@@ -90,3 +90,37 @@ export const ECHELLE = (() => {
   for (let a = debut; a <= fin; a += 25) reperes.push(a);
   return { debut, fin, reperes, place: (a: number) => ((a - debut) / (fin - debut)) * 100 };
 })();
+
+/**
+ * Les artistes que Debord cite en cours, replacés dans le temps long.
+ *
+ * Ils viennent de l'onglet Références, où leur intérêt est ailleurs — savoir à
+ * quelle minute Debord en parle. Ici ils servent d'arrière-plan : ils montrent
+ * sur quelle épaisseur d'histoire s'appuie un enseignement qui, lui, tient en
+ * deux générations. D'où le second plan, littéralement — une bande fine, en
+ * gris, sous la frise principale.
+ */
+import referencesBrut from '../data/references.json';
+
+export type Classique = { id: string; nom: string; ne: number; mort: number; type: string };
+
+export const CLASSIQUES: Classique[] = (
+  referencesBrut as { id: string; nom: string; dates?: string; type: string }[]
+)
+  .flatMap((r) => {
+    // « 1606-1669 » seulement : « IVe s. av. J.-C. » ne se place pas sur une
+    // échelle d'années, et on préfère l'omettre que de l'inventer.
+    const m = /^(\d{3,4})\s*[-–]\s*(\d{3,4})$/.exec(r.dates ?? '');
+    if (!m) return [];
+    return [{ id: r.id, nom: r.nom, ne: Number(m[1]), mort: Number(m[2]), type: r.type }];
+  })
+  .sort((a, b) => a.ne - b.ne);
+
+/** Échelle du temps long, arrondie au demi-siècle. */
+export const ECHELLE_LONGUE = (() => {
+  const debut = Math.floor(Math.min(...CLASSIQUES.map((c) => c.ne)) / 50) * 50;
+  const fin = Math.ceil(Math.max(ECHELLE.fin, ...CLASSIQUES.map((c) => c.mort)) / 50) * 50;
+  const reperes: number[] = [];
+  for (let a = debut; a <= fin; a += 100) reperes.push(a);
+  return { debut, fin, reperes, place: (a: number) => ((a - debut) / (fin - debut)) * 100 };
+})();
