@@ -45,8 +45,14 @@ export type Figure = {
    *  les vivants il n'en existe pas : leur plaque montre leurs initiales
    *  plutôt qu'un visage que personne n'a le droit de montrer. */
   portrait?: string;
-  /** Renvoi vers le moment où Debord en parle, quand il le fait lui-même. */
-  ecoute?: { video: string; t: number; seance: number; horodate: string };
+  /**
+   * Moments du cours où Debord parle de cette personne.
+   *
+   * Au pluriel : Pol Le Cœur est cité dans six séances, et n'en garder qu'une
+   * serait arbitraire. C'est la source la plus directe que la page puisse
+   * offrir — pas une notice sur lui, mais sa voix à lui.
+   */
+  ecoutes?: { video: string; t: number; seance: number; horodate: string; propos: string }[];
   /** Étapes datées d'une carrière, pour la frise embarquée dans la fiche. */
   jalons?: { annee: number; fait: string }[];
   /** Vidéos ou pages où la personne parle elle-même. */

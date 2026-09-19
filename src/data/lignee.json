@@ -15,13 +15,16 @@
    }
   ],
   "portrait": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Pierre_Nicolas_Gerdy.jpg/500px-Pierre_Nicolas_Gerdy.jpg",
-  "ecoute": {
-   "video": "lPiLzxL9qk4",
-   "t": 244,
-   "seance": 26,
-   "horodate": "4:04"
-  },
-  "source": "Filiation revendiquée par Debord en séance 26 — la transcription écorche le nom en « gerdi ». Dates d'après Wikidata ; traité vérifié sur archive.org, où il est librement consultable ; portrait : Wikimedia Commons, domaine public. En revanche, rien de ce qui a été consulté n'établit qu'il ait enseigné aux Beaux-Arts : son cours est attesté par les seuls mots de Debord."
+  "source": "Filiation revendiquée par Debord en séance 26 — la transcription écorche le nom en « gerdi ». Dates d'après Wikidata ; traité vérifié sur archive.org, où il est librement consultable ; portrait : Wikimedia Commons, domaine public. En revanche, rien de ce qui a été consulté n'établit qu'il ait enseigné aux Beaux-Arts : son cours est attesté par les seuls mots de Debord.",
+  "ecoutes": [
+   {
+    "video": "lPiLzxL9qk4",
+    "t": 244,
+    "seance": 26,
+    "horodate": "4:04",
+    "propos": "Il l'appelle « vraiment mon ancêtre »"
+   }
+  ]
  },
  {
   "id": "duval",
@@ -40,7 +43,16 @@
   "source": "Filiation citée par Debord dans le cours ; notice de l'ouvrage vérifiée sur archive.org. Années de naissance et de mort d'après Wikidata. Portrait : Wikimedia Commons, domaine public.",
   "ne": 1844,
   "mort": 1907,
-  "portrait": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Mathias-Marie_Duval.jpg/500px-Mathias-Marie_Duval.jpg"
+  "portrait": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Mathias-Marie_Duval.jpg/500px-Mathias-Marie_Duval.jpg",
+  "ecoutes": [
+   {
+    "video": "4IIUE6NVqDU",
+    "t": 5922,
+    "seance": 43,
+    "horodate": "98:42",
+    "propos": "Duchenne lui légua ses photographies et son manuscrit, et à l'École"
+   }
+  ]
  },
  {
   "id": "richer",
@@ -81,9 +93,53 @@
   "id": "pol-le-coeur",
   "nom": "Pol Le Cœur",
   "role": "avant",
-  "notice": "Professeur aux Beaux-Arts de Paris dont Debord fut l'assistant à partir de 1969, avant de lui succéder à la tête du département de morphologie en 1978. C'est par lui, et non par les livres, que la transmission s'est faite : le chaînon vivant entre le traité de Richer et le cours filmé.",
+  "notice": "Chirurgien et sculpteur, spécialiste de la poliomyélite, il enseignait la morphologie aux Beaux-Arts, et c'est de lui que Debord tient la discipline : assistant à partir de 1969, il lui succède en 1978. Debord le cite à travers tout le cours — ses images d'enseignement, ses inventions chirurgicales, et surtout cette phrase qu'il lui avait dite, jeune homme : qu'il était fait pour enseigner cela. C'est le chaînon vivant entre le traité de Richer et le cours filmé.",
   "ouvrages": [],
-  "source": "D'après l'annonce de la disparition de Jean-François Debord publiée par les Beaux-Arts de Paris, beauxartsparis.fr. Aucune autre source consultée ne le documente : ni dates, ni bibliographie n'ont pu être établies."
+  "source": "Fonctions et filiation d'après l'annonce des Beaux-Arts de Paris et les mentions de Debord dans le cours, qui le nomme « Paul Le Cœur » ou simplement « Le Cœur ». Aucune autre source consultée ne le documente : ni dates ni bibliographie n'ont pu être établies.",
+  "ecoutes": [
+   {
+    "video": "FuwzDJ5NU5M",
+    "t": 650,
+    "seance": 23,
+    "horodate": "10:50",
+    "propos": "Chirurgien et sculpteur, confronté aux enfants privés de biceps par la polio"
+   },
+   {
+    "video": "65d7NtvHAk0",
+    "t": 4252,
+    "seance": 39,
+    "horodate": "70:52",
+    "propos": "C'est lui qui avait dit au jeune Debord qu'il était fait pour enseigner cela"
+   },
+   {
+    "video": "LHaB3iu4zIw",
+    "t": 684,
+    "seance": 15,
+    "horodate": "11:24",
+    "propos": "Sa façon d'enseigner les membres inférieurs, avec un disque"
+   },
+   {
+    "video": "ndTYL4boSgE",
+    "t": 6545,
+    "seance": 19,
+    "horodate": "109:05",
+    "propos": "Son image du pied : y chercher la ligne de partage des eaux"
+   },
+   {
+    "video": "oXJs2-3OAlA",
+    "t": 4418,
+    "seance": 32,
+    "horodate": "73:38",
+    "propos": "Un hommage en passant : il avait bien vu la puissance du petit pectoral"
+   },
+   {
+    "video": "uagciNFijmY",
+    "t": 1642,
+    "seance": 33,
+    "horodate": "27:22",
+    "propos": "Une de ses inventions chirurgicales, expérimentée trente ans plus tôt"
+   }
+  ]
  },
  {
   "id": "cassandre",
@@ -95,13 +151,16 @@
   "notice": "Affichiste et graphiste, de son vrai nom Adolphe Mouron. Il repère une toile de Debord exposée en galerie pendant que celui-ci fait son service militaire, et lui écrit à la caserne : il cherchait un assistant. Debord le dit en séance et y revient dans le documentaire, où il précise lui avoir rendu un hommage discret dans un coin de tableau. Maître d'un tout autre ordre que la chaire d'anatomie.",
   "ouvrages": [],
   "portrait": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Portret_van_A._M._Cassandre_in_Rijksacademie_in_Amsterdam%2C_1967.jpg/500px-Portret_van_A._M._Cassandre_in_Rijksacademie_in_Amsterdam%2C_1967.jpg",
-  "ecoute": {
-   "video": "kc2e56cun8U",
-   "t": 1764,
-   "seance": 42,
-   "horodate": "29:24"
-  },
-  "source": "Filiation dite par Debord lui-même dans la séance 42, et rapportée par sa notice Wikipédia, qui situe leur rencontre au service militaire en 1960. Dates d'après Wikipédia. Portrait : Wikimedia Commons, CC0. Les circonstances de leur rencontre sont racontées par Debord dans le documentaire de 2022."
+  "source": "Filiation dite par Debord lui-même dans la séance 42, et rapportée par sa notice Wikipédia, qui situe leur rencontre au service militaire en 1960. Dates d'après Wikipédia. Portrait : Wikimedia Commons, CC0. Les circonstances de leur rencontre sont racontées par Debord dans le documentaire de 2022.",
+  "ecoutes": [
+   {
+    "video": "kc2e56cun8U",
+    "t": 1764,
+    "seance": 42,
+    "horodate": "29:24",
+    "propos": "Il y raconte avoir été son assistant"
+   }
+  ]
  },
  {
   "id": "debord",
@@ -128,12 +187,6 @@
    }
   ],
   "source": "Carrière d'après l'annonce de sa disparition par les Beaux-Arts de Paris ; dates d'après Wikidata. Les trois articles sont énumérés par Debord lui-même en séance 26 : c'est de là que viennent le titre du premier et le propos des deux autres. Vérifiés par ailleurs : l'exposition L'Âme au corps et son catalogue, et le catalogue Duchenne de Boulogne, où les notices de bibliothèque le nomment parmi les auteurs aux côtés d'Alfred Pacquement et Catherine Mathon. Le catalogue Géricault n'a pas été retrouvé dans les catalogues consultés : il est cité d'après les seuls mots de Debord. Le changement de nom de la discipline est rapporté par Frédéric Delavier dans sa vidéo de 2020.",
-  "ecoute": {
-   "video": "lPiLzxL9qk4",
-   "t": 99,
-   "seance": 26,
-   "horodate": "1:39"
-  },
   "jalons": [
    {
     "annee": 1938,
@@ -177,6 +230,15 @@
     "url": "https://www.youtube.com/watch?v=U6HXml6LiUo",
     "libelle": "Documentaire, 2022 ↗",
     "propos": "Quarante-six minutes où il revient sur sa peinture, ses maîtres et son métier."
+   }
+  ],
+  "ecoutes": [
+   {
+    "video": "lPiLzxL9qk4",
+    "t": 99,
+    "seance": 26,
+    "horodate": "1:39",
+    "propos": "Il y énumère ses trois articles"
    }
   ]
  },
@@ -228,7 +290,7 @@
     "editeur": "Human Kinetics"
    }
   ],
-  "source": "Élève cité dans la notice Wikipédia de Debord ; année de naissance d'après Wikidata. Titres, éditeurs et années relevés dans le catalogue Open Library, qui recense aussi les traductions. Les neuf années et le rôle de Debord dans le passage de l'anatomie artistique à la morphologie viennent de sa propre vidéo de 2020. Sa rencontre avec le professeur de dissection est racontée dans sa vidéo de 2020 ; Debord confirme de son côté, en séance 26, avoir eu longtemps parmi ses élèves — venu par plaisir — l'un des professeurs de la rue des Saints-Pères. Le patronyme, que la transcription rend par « bastion », n'a pas pu être établi.",
+  "source": "Élève cité dans la notice Wikipédia de Debord ; année de naissance d'après Wikidata. Titres, éditeurs et années relevés dans le catalogue Open Library, qui recense aussi les traductions. Les neuf années et le rôle de Debord dans le passage de l'anatomie artistique à la morphologie viennent de sa propre vidéo de 2020. Sa rencontre avec le professeur de dissection est racontée dans sa vidéo de 2020 ; Debord confirme de son côté, en séance 26, avoir eu longtemps parmi ses élèves — venu par plaisir — l'un des professeurs de la rue des Saints-Pères. Le patronyme, que la transcription rend par « bastion », n'a pas pu être établi. Debord ne le nomme jamais dans le cours : leur lien n'est attesté que par Delavier.",
   "ne": 1967,
   "dates": "né en 1967",
   "liens": [
@@ -260,12 +322,35 @@
   "id": "sfar",
   "nom": "Joann Sfar",
   "role": "artistes",
-  "notice": "Dessinateur de bande dessinée, l'un des auteurs les plus prolifiques de sa génération. Son trait rapide, qui construit le volume sans jamais s'appesantir sur le contour, est de ceux que ce cours cherche à former — dessiner d'après ce qu'on a compris, non d'après ce qu'on recopie.",
+  "notice": "Dessinateur de bande dessinée, l'un des auteurs les plus prolifiques de sa génération. Debord le cite trois fois dans le cours, avec affection, et rapporte de lui une formule qu'il se voit renvoyée — que le dessin n'est qu'une question d'intelligence. Un maître citant son élève qui le cite.",
   "ouvrages": [],
-  "source": "Élève cité dans la notice Wikipédia de Jean-François Debord, qui nomme la discipline de chacun. Années de naissance et de mort d'après Wikidata. Compte Instagram vérifié : biographie « Dessinateur! », 175 000 abonnés.",
+  "source": "Élève cité dans la notice Wikipédia de Jean-François Debord, qui nomme la discipline de chacun. Années de naissance et de mort d'après Wikidata. Compte Instagram vérifié : biographie « Dessinateur! », 175 000 abonnés. Debord le nomme dans les séances 10, 20 et 25.",
   "ne": 1971,
   "dates": "né en 1971",
-  "instagram": "joannsfar"
+  "instagram": "joannsfar",
+  "ecoutes": [
+   {
+    "video": "BySad1olbq4",
+    "t": 1977,
+    "seance": 10,
+    "horodate": "32:57",
+    "propos": "« Joann Sfar, ça vous dit quelque chose ? »"
+   },
+   {
+    "video": "0IO_ymdbLPU",
+    "t": 2317,
+    "seance": 20,
+    "horodate": "38:37",
+    "propos": "Il le décrit en détail, et rapporte ce que Sfar retient de lui"
+   },
+   {
+    "video": "IDr53Cr4fsU",
+    "t": 3858,
+    "seance": 25,
+    "horodate": "64:18",
+    "propos": "« Comme le répète si gentiment Sfar »"
+   }
+  ]
  },
  {
   "id": "cavallo",

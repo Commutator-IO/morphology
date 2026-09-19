@@ -506,18 +506,27 @@ export function PageLignee() {
                         {/* La source est affichée et non reléguée : une
                             bibliographie sans provenance est une liste
                             d'affirmations. */}
-                        {f.ecoute && (
-                          <p className="mt-2 text-[13px]">
-                            <a
-                              href={`https://www.youtube.com/watch?v=${f.ecoute.video}&t=${f.ecoute.t}s`}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="text-brand-700 underline underline-offset-2"
-                            >
-                              Séance {f.ecoute.seance}, {f.ecoute.horodate} ↗
-                            </a>
-                            <span className="text-ink-400"> — Debord le raconte lui-même</span>
-                          </p>
+                        {f.ecoutes && (
+                          <div className="mt-3">
+                            <p className="text-xs font-medium tracking-wide text-ink-500 uppercase">
+                              Debord en parle
+                            </p>
+                            <ul className="mt-1.5 space-y-1">
+                              {f.ecoutes.map((ec) => (
+                                <li key={`${ec.seance}-${ec.t}`} className="text-[13px] leading-snug">
+                                  <a
+                                    href={`https://www.youtube.com/watch?v=${ec.video}&t=${ec.t}s`}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="tabular whitespace-nowrap text-brand-700 underline underline-offset-2"
+                                  >
+                                    S{ec.seance} · {ec.horodate}
+                                  </a>{' '}
+                                  <span className="text-ink-600">{ec.propos}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
                         )}
 
                         <p className="mt-3 border-t border-ink-100 pt-2.5 text-xs leading-relaxed text-ink-400">
