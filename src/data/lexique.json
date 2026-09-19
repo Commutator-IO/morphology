@@ -52,7 +52,13 @@
    "angle du maxillaire",
    "angle de la machoire",
    "angle mandibulaire",
-   "angles du maxillaire"
+   "angles du maxillaire",
+   "branche montante",
+   "branche horizontale",
+   "branche montant",
+   "menton",
+   "symphyse mentonniere",
+   "houppe du menton"
   ],
   "situation": {
    "vue": "face",
@@ -73,6 +79,189 @@
   }
  },
  {
+  "id": "nez",
+  "terme": "Nez",
+  "categorie": "repere",
+  "region": "tete",
+  "moderne": "Nasus",
+  "aussi": [
+   "nasion",
+   "os propres du nez"
+  ],
+  "definition": "Deux os courts en haut, du cartilage pour tout le reste : c'est pourquoi le nez se dessine en deux temps, la racine dure et la pointe molle. Le nasion, creux entre les deux yeux, est le point où le front change de plan — prononcé chez l'homme, doux chez la femme et l'enfant. Le reste ne tient que par le cartilage, qui s'affaisse avec l'âge et allonge le nez toute la vie.",
+  "variantes": [
+   "nez",
+   "nasion",
+   "narine",
+   "narines",
+   "os propres du nez",
+   "racine du nez",
+   "dos du nez",
+   "pointe du nez",
+   "aile du nez",
+   "ailes du nez"
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     72,
+     22,
+     4,
+     5
+    ]
+   ]
+  }
+ },
+ {
+  "id": "bouche",
+  "terme": "Bouche et lèvres",
+  "categorie": "repere",
+  "region": "tete",
+  "moderne": "Os, labia",
+  "definition": "La fente et son bourrelet. La lèvre supérieure est faite de trois parties, l'inférieure de deux — c'est ce qui donne à la bouche sa dissymétrie de haut en bas, et ce qui la fait tenir quand on la dessine. Sous elles, l'arc des dents commande tout : la bouche suit un cylindre, jamais un plan.",
+  "variantes": [
+   "bouche",
+   "levres",
+   "levre superieure",
+   "levre inferieure",
+   "levres superieures",
+   "commissure",
+   "commissures",
+   "orbiculaire des levres",
+   "?levre"
+  ],
+  "contexte": [
+   "visage",
+   "crane",
+   "machoire",
+   "maxillaire",
+   "mandibule",
+   "dents",
+   "menton",
+   "front",
+   "joue",
+   "joues",
+   "oreille",
+   "oreilles",
+   "nez",
+   "bouche",
+   "levres",
+   "sourcil",
+   "sourcils",
+   "oeil",
+   "yeux",
+   "paupiere",
+   "tempe",
+   "masseter",
+   "master",
+   "profil",
+   "tete",
+   "cou",
+   "dents",
+   "sourire",
+   "rire",
+   "commissure",
+   "menton",
+   "moustache",
+   "embouchure"
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     71,
+     30,
+     6,
+     3
+    ]
+   ]
+  }
+ },
+ {
+  "id": "larynx",
+  "terme": "Larynx / pomme d'Adam",
+  "categorie": "repere",
+  "region": "cou",
+  "moderne": "Larynx",
+  "aussi": [
+   "cartilage thyroïde",
+   "pomme d'Adam"
+  ],
+  "definition": "La saillie du cartilage thyroïde, au milieu du cou. Chez l'homme, les deux lames se referment à angle vif et la pomme d'Adam sort ; chez la femme, l'angle est ouvert et le cou reste lisse. À proportion égale, le larynx féminin est le plus haut placé. C'est, avec la clavicule, le repère qui situe le cou dans l'espace.",
+  "variantes": [
+   "larynx",
+   "pomme d adam",
+   "cartilage thyroide",
+   "thyroide",
+   "glotte",
+   "?cartilage"
+  ],
+  "contexte": [
+   "cou",
+   "gorge",
+   "clavicule",
+   "sternum",
+   "menton",
+   "machoire",
+   "trachee",
+   "voix",
+   "nuque",
+   "sterno",
+   "master",
+   "fourchette"
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     72,
+     45,
+     4,
+     4
+    ]
+   ]
+  }
+ },
+ {
+  "id": "orbite",
+  "terme": "Orbite et arcade sourcilière",
+  "categorie": "repere",
+  "region": "tete",
+  "moderne": "Orbita, arcus superciliaris",
+  "definition": "Le trou où l'œil est logé, et le bourrelet d'os qui le surplombe. L'arcade sourcilière est l'un des caractères les plus masculins du crâne : forte et continue chez l'homme, presque absente chez la femme et l'enfant, où le front descend d'un seul galbe. L'œil, lui, n'est pas au fond du trou mais tendu dessus comme une bille sous une paupière.",
+  "variantes": [
+   "orbite",
+   "orbites",
+   "orbitaire",
+   "cavite orbitaire",
+   "rebord orbitaire",
+   "arcade sourciliere",
+   "arcades sourcilieres",
+   "sourcil",
+   "sourcils",
+   "sourcilier",
+   "sourciliere"
+  ],
+  "situation": {
+   "vue": "face",
+   "taches": [
+    [
+     66,
+     17,
+     5,
+     4
+    ],
+    [
+     77,
+     17,
+     5,
+     4
+    ]
+   ]
+  }
+ },
+ {
   "id": "arcade-zygomatique",
   "terme": "Arcade zygomatique",
   "categorie": "repere",
@@ -87,7 +276,21 @@
    "zygomatique",
    "zygomatiques",
    "pommette",
-   "pommettes"
+   "pommettes",
+   "?joue",
+   "?joues",
+   "-il joue",
+   "-elle joue",
+   "-on joue",
+   "-qui joue",
+   "-ca joue",
+   "-y joue",
+   "-ne joue",
+   "-se joue",
+   "-joue avec",
+   "-joue un role",
+   "-ils jouent",
+   "-joue le jeu"
   ],
   "situation": {
    "vue": "face",
@@ -105,7 +308,40 @@
      29
     ]
    ]
-  }
+  },
+  "contexte": [
+   "visage",
+   "crane",
+   "machoire",
+   "maxillaire",
+   "mandibule",
+   "dents",
+   "menton",
+   "front",
+   "joue",
+   "joues",
+   "oreille",
+   "oreilles",
+   "nez",
+   "bouche",
+   "levres",
+   "sourcil",
+   "sourcils",
+   "oeil",
+   "yeux",
+   "paupiere",
+   "tempe",
+   "masseter",
+   "master",
+   "profil",
+   "tete",
+   "cou",
+   "pommette",
+   "masseter",
+   "zygomatique",
+   "oreille",
+   "maxillaire"
+  ]
  },
  {
   "id": "clavicule",
@@ -207,7 +443,11 @@
    "costal",
    "costale",
    "rebord costal",
-   "fausses côtes"
+   "fausses côtes",
+   "cartilage costal",
+   "cartilages costaux",
+   "?cartilage",
+   "?cartilages"
   ],
   "situation": {
    "vue": "face",
@@ -225,7 +465,21 @@
      110
     ]
    ]
-  }
+  },
+  "contexte": [
+   "cote",
+   "cotes",
+   "thorax",
+   "sternum",
+   "cage thoracique",
+   "poitrine",
+   "appendice",
+   "xiphoide",
+   "septieme",
+   "dixieme",
+   "abdomen",
+   "diaphragme"
+  ]
  },
  {
   "id": "rachis",
@@ -1867,7 +2121,16 @@
    "fibres poussiere",
    "plans poussier",
    "repli poussier",
-   "graisseuse poussiere"
+   "graisseuse poussiere",
+   "muscle frontal",
+   "frontal",
+   "frontale",
+   "palpebral",
+   "palpebrale",
+   "orbiculaire",
+   "orbiculaires",
+   "releveur de la paupiere",
+   "peaussier"
   ],
   "situation": {
    "vue": "face",
