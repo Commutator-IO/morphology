@@ -886,5 +886,17 @@
    "oeuvre": "Three Studies of Seated Women",
    "date": "c. 1715"
   }
+ },
+ {
+  "id": "darwin",
+  "nom": "Charles Darwin",
+  "type": "anatomiste",
+  "dates": "1809-1882",
+  "note": "Naturaliste, cité pour L'Expression des émotions, où il se sert des photographies de Duchenne de Boulogne — dont il garda trois tirages jamais rendus, que Debord est allé chercher en vain dans ses papiers à Cambridge. Debord l'admire pour avoir compris les structures les unes par rapport aux autres, du cœlacanthe à l'homme, tout en avouant qu'il l'agace un peu.",
+  "variantes": [
+   "darwin",
+   "darwinisme",
+   "darwinien"
+  ]
  }
 ]
