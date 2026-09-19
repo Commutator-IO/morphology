@@ -52,6 +52,10 @@
 
 @layer base {
   html {
+    /* Ce que l'en-tête occupe en haut de l'écran. L'en-tête la met à jour quand
+       il s'efface au défilement ; elle vaut sa hauteur pleine avant tout script,
+       et sur grand écran où il ne bouge jamais. */
+    --haut-entete: 5.75rem;
     scroll-behavior: smooth;
     /* Le sommaire et les filtres sont collants : sans cette marge, une ancre
        atterrit sous la barre au lieu de se montrer. */
@@ -67,7 +71,6 @@
   .titre {
     @apply font-serif font-semibold tracking-tight;
   }
-
 }
 
 /* Utilitaire et non classe de base : `tabular` est employé dans du `@apply`

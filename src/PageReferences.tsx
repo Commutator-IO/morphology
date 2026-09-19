@@ -64,15 +64,15 @@ export function PageReferences() {
           Ce que Debord donne à regarder
         </h1>
         <p className="mt-3 hidden text-[15px] leading-relaxed text-ink-700 sm:block">
-          Les séances se ferment presque toujours sur des œuvres : un Rembrandt à la
-          plume, un écorché, une salle du Louvre où aller vérifier. {REFERENCES.length}{' '}
-          références relevées, {mentions} mentions en tout.
+          Les séances se ferment presque toujours sur des œuvres : un Rembrandt à la plume,
+          un écorché, une salle du Louvre où aller vérifier. {REFERENCES.length} références
+          relevées, {mentions} mentions en tout.
         </p>
         <p className="mt-2 hidden text-[13px] leading-relaxed text-ink-500 sm:block">
-          Chaque nom de cette liste a été vérifié passage par passage. La
-          transcription automatique confond volontiers un patronyme et un mot
-          courant — « léger », « carrière », « boucher », « durer » — et ces faux
-          amis ont été écartés à la main : voir la{' '}
+          Chaque nom de cette liste a été vérifié passage par passage. La transcription
+          automatique confond volontiers un patronyme et un mot courant — « léger », «
+          carrière », « boucher », « durer » — et ces faux amis ont été écartés à la main :
+          voir la{' '}
           <a href="/methode/" className="text-brand-700 underline underline-offset-2">
             méthode
           </a>
@@ -81,79 +81,79 @@ export function PageReferences() {
 
         <div className={`lg:grid lg:gap-8 ${grilleDe(taille)}`}>
           <div>
-        <div className="sticky top-[5.75rem] z-20 -mx-4 mt-3 border-b sm:mt-5 border-ink-200/70 bg-ink-50/95 px-4 pt-3 pb-2.5 backdrop-blur lg:mx-0 lg:px-0">
-          <label className="sr-only" htmlFor="recherche-ref">
-            Chercher une référence
-          </label>
-          <div className="relative">
-            <input
-              id="recherche-ref"
-              type="search"
-              value={requete}
-              onChange={(e) => setRequete(e.target.value)}
-              placeholder="Rembrandt, Louvre, écorché…"
-              autoComplete="off"
-              className="min-h-12 w-full rounded-xl border border-ink-300 bg-white px-3.5 text-base text-ink-900 placeholder:text-ink-400 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 focus:outline-none"
-            />
-            {requete && (
-              <button
-                type="button"
-                onClick={() => setRequete('')}
-                aria-label="Effacer la recherche"
-                className="absolute top-0 right-0 flex h-12 w-12 items-center justify-center text-ink-400 active:text-ink-700"
-              >
-                ✕
-              </button>
-            )}
-          </div>
+            <div className="sticky top-[var(--haut-entete)] z-20 -mx-4 mt-3 border-b sm:mt-5 border-ink-200/70 bg-ink-50/95 px-4 pt-3 pb-2.5 backdrop-blur lg:mx-0 lg:px-0">
+              <label className="sr-only" htmlFor="recherche-ref">
+                Chercher une référence
+              </label>
+              <div className="relative">
+                <input
+                  id="recherche-ref"
+                  type="search"
+                  value={requete}
+                  onChange={(e) => setRequete(e.target.value)}
+                  placeholder="Rembrandt, Louvre, écorché…"
+                  autoComplete="off"
+                  className="min-h-12 w-full rounded-xl border border-ink-300 bg-white px-3.5 text-base text-ink-900 placeholder:text-ink-400 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 focus:outline-none"
+                />
+                {requete && (
+                  <button
+                    type="button"
+                    onClick={() => setRequete('')}
+                    aria-label="Effacer la recherche"
+                    className="absolute top-0 right-0 flex h-12 w-12 items-center justify-center text-ink-400 active:text-ink-700"
+                  >
+                    ✕
+                  </button>
+                )}
+              </div>
 
-          <div className="rangee-filtres mt-2">
-            <button
-              type="button"
-              onClick={() => setType(null)}
-              aria-pressed={type === null}
-              className={`puce-filtre ${
-                type === null
-                  ? 'border-ink-800 bg-ink-800 text-white'
-                  : 'border-ink-300 bg-white text-ink-600'
-              }`}
-            >
-              Tout
-            </button>
-            {ORDRE_TYPES.map((t) => (
-              <button
-                key={t}
-                type="button"
-                onClick={() => setType(type === t ? null : t)}
-                aria-pressed={type === t}
-                className={`puce-filtre ${
-                  type === t
-                    ? 'border-ink-800 bg-ink-800 text-white'
-                    : 'border-ink-300 bg-white text-ink-600'
-                }`}
-              >
-                {TYPES[t].pluriel}
-              </button>
-            ))}
-          </div>
+              <div className="rangee-filtres mt-2">
+                <button
+                  type="button"
+                  onClick={() => setType(null)}
+                  aria-pressed={type === null}
+                  className={`puce-filtre ${
+                    type === null
+                      ? 'border-ink-800 bg-ink-800 text-white'
+                      : 'border-ink-300 bg-white text-ink-600'
+                  }`}
+                >
+                  Tout
+                </button>
+                {ORDRE_TYPES.map((t) => (
+                  <button
+                    key={t}
+                    type="button"
+                    onClick={() => setType(type === t ? null : t)}
+                    aria-pressed={type === t}
+                    className={`puce-filtre ${
+                      type === t
+                        ? 'border-ink-800 bg-ink-800 text-white'
+                        : 'border-ink-300 bg-white text-ink-600'
+                    }`}
+                  >
+                    {TYPES[t].pluriel}
+                  </button>
+                ))}
+              </div>
 
-          <div className="mt-1.5 flex items-center justify-between gap-3">
-            <p className="tabular text-xs text-ink-500">
-              {resultats.length} référence{resultats.length > 1 ? 's' : ''}
-            </p>
-            <label className="flex items-center gap-1.5 text-xs text-ink-500">
-              Trier
-              <select
-                value={parMentions ? 'mentions' : 'alpha'}
-                onChange={(e) => setParMentions(e.target.value === 'mentions')}
-                className="min-h-9 rounded-lg border border-ink-300 bg-white px-2 text-xs text-ink-800"
-              >
-                <option value="mentions">Le plus cité</option>
-                <option value="alpha">A → Z</option>
-              </select>
-            </label>
-          </div>
-        </div>
+              <div className="mt-1.5 flex items-center justify-between gap-3">
+                <p className="tabular text-xs text-ink-500">
+                  {resultats.length} référence{resultats.length > 1 ? 's' : ''}
+                </p>
+                <label className="flex items-center gap-1.5 text-xs text-ink-500">
+                  Trier
+                  <select
+                    value={parMentions ? 'mentions' : 'alpha'}
+                    onChange={(e) => setParMentions(e.target.value === 'mentions')}
+                    className="min-h-9 rounded-lg border border-ink-300 bg-white px-2 text-xs text-ink-800"
+                  >
+                    <option value="mentions">Le plus cité</option>
+                    <option value="alpha">A → Z</option>
+                  </select>
+                </label>
+              </div>
+            </div>
 
             {resultats.length === 0 ? (
               <p className="mt-8 text-[15px] leading-relaxed text-ink-600">

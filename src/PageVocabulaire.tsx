@@ -71,13 +71,35 @@ export function PageVocabulaire() {
     }
   });
 
-  useEffect(() => {
+  /** Le pli voulu se retient ; le pli de circonstance, non. D'où l'écriture
+   *  ici, au geste, et non dans un effet qui ne saurait pas les distinguer. */
+  function basculerFiltres() {
+    const ouverts = !filtresOuverts;
+    setFiltresOuverts(ouverts);
     try {
-      localStorage.setItem('morpho.filtres', filtresOuverts ? 'ouverts' : 'replies');
+      localStorage.setItem('morpho.filtres', ouverts ? 'ouverts' : 'replies');
     } catch {
       /* stockage indisponible : le repli marche quand même, il ne survit pas. */
     }
-  }, [filtresOuverts]);
+  }
+
+  // Lancer un passage, c'est avoir fini de chercher : sur téléphone les filtres
+  // se replient pour rendre leur place à la liste et au lecteur, qui se partagent
+  // désormais l'écran. Le bouton les rouvre d'une touche, et le choix n'est pas
+  // retenu — c'est la circonstance, pas une préférence. Dès lg, rien ne bouge :
+  // la place ne manque pas et replier sous les yeux serait gratuit.
+  useEffect(() => {
+    if (!lecture) return;
+    if (window.matchMedia('(min-width: 1024px)').matches) return;
+    setFiltresOuverts(false);
+  }, [lecture]);
+
+  /** Une séance joue sur téléphone : la barre d'outils se réduit à une ligne —
+   *  le compte des résultats disparaît et passe sur la ligne du champ, avec le
+   *  bouton des filtres. Entre elle et le lecteur ancré en bas, il ne restait
+   *  qu'un tiers d'écran de liste. L'en-tête, lui, s'efface de lui-même dès
+   *  qu'on descend : c'est l'affaire de `Entete`, sur toutes les pages. */
+  const enLecture = lecture !== null;
 
   const resultats = useMemo(() => {
     const filtres = LEXIQUE.filter(
@@ -87,12 +109,15 @@ export function PageVocabulaire() {
         correspond(t, requete),
     );
     if (tri === 'frequence') {
-      return [...filtres].sort((a, b) => totalDe(b.id) - totalDe(a.id) || parAlphabet(a, b));
+      return [...filtres].sort(
+        (a, b) => totalDe(b.id) - totalDe(a.id) || parAlphabet(a, b),
+      );
     }
     if (tri === 'region') {
       return [...filtres].sort(
         (a, b) =>
-          ORDRE_REGIONS.indexOf(a.region) - ORDRE_REGIONS.indexOf(b.region) || parAlphabet(a, b),
+          ORDRE_REGIONS.indexOf(a.region) - ORDRE_REGIONS.indexOf(b.region) ||
+          parAlphabet(a, b),
       );
     }
     return [...filtres].sort(parAlphabet);
@@ -117,10 +142,7 @@ export function PageVocabulaire() {
     categorie ? CATEGORIES[categorie].libelle : null,
   ].filter((x): x is string => Boolean(x));
 
-  const passagesTotal = useMemo(
-    () => LEXIQUE.reduce((s, t) => s + totalDe(t.id), 0),
-    [],
-  );
+  const passagesTotal = useMemo(() => LEXIQUE.reduce((s, t) => s + totalDe(t.id), 0), []);
 
   return (
     <>
@@ -142,224 +164,248 @@ export function PageVocabulaire() {
             deux paragraphes repoussaient la liste d'une centaine de pixels
             — soit deux fiches de moins à l'écran. */}
         <p className="mt-2 hidden text-[13px] leading-relaxed text-ink-500 sm:block">
-          {LEXIQUE.length} termes, {passagesTotal.toLocaleString('fr-FR')} passages
-          dans {SEANCES.length} séances, environ{' '}
-          {Math.round(SEANCES.reduce((s, x) => s + (x.dureeS ?? 0), 0) / 3600)} heures
-          de cours. Repérage automatique : lisez la{' '}
+          {LEXIQUE.length} termes, {passagesTotal.toLocaleString('fr-FR')} passages dans{' '}
+          {SEANCES.length} séances, environ{' '}
+          {Math.round(SEANCES.reduce((s, x) => s + (x.dureeS ?? 0), 0) / 3600)} heures de
+          cours. Repérage automatique : lisez la{' '}
           <a href="/methode/" className="text-brand-700 underline underline-offset-2">
             méthode
           </a>{' '}
           pour savoir ce qu'il vaut.
         </p>
 
-        {/* Barre d'outils collante. `top-[5.75rem]` la pose juste sous l'en-tête,
-            lui-même collant : les deux ne doivent pas se chevaucher. */}
+        {/* Barre d'outils collante, posée juste sous l'en-tête : `--haut-entete`
+            dit ce que celui-ci occupe, et vaut zéro quand il s'est effacé — la
+            barre monte alors d'un bloc au lieu d'ouvrir une bande vide. */}
         <div className={`lg:grid lg:gap-8 ${grilleDe(taille)}`}>
           <div>
-        <div className="sticky top-[5.75rem] z-20 -mx-4 mt-3 border-b sm:mt-5 border-ink-200/70 bg-ink-50/95 px-4 pt-3 pb-2.5 backdrop-blur lg:mx-0 lg:px-0">
-          <label className="sr-only" htmlFor="recherche">
-            Chercher un terme
-          </label>
-          {/* Dès lg, le compte et le bouton des filtres passent à droite du
+            <div
+              className={`sticky top-[var(--haut-entete)] z-20 -mx-4 mt-3 border-b border-ink-200/70 bg-ink-50/95 px-4 backdrop-blur sm:mt-5 lg:mx-0 lg:px-0 lg:pt-3 lg:pb-2.5 ${
+                enLecture ? 'pt-2 pb-2' : 'pt-3 pb-2.5'
+              }`}
+            >
+              <label className="sr-only" htmlFor="recherche">
+                Chercher un terme
+              </label>
+              {/* Dès lg, le compte et le bouton des filtres passent à droite du
               champ au lieu de s'empiler dessous : la place horizontale est
               libre, et la ligne gagnée rend une fiche de plus visible. */}
-          <div className="lg:flex lg:items-center lg:gap-3">
-          <div className="relative lg:flex-1">
-            <input
-              id="recherche"
-              type="search"
-              value={requete}
-              onChange={(e) => setRequete(e.target.value)}
-              placeholder="deltoïde, omoplate, aplomb…"
-              autoComplete="off"
-              /* text-base et non text-sm : sous 16 px, iOS zoome à la mise au
-                 point du champ et décale toute la page. */
-              className="min-h-12 w-full rounded-xl border border-ink-300 bg-white px-3.5 text-base text-ink-900 placeholder:text-ink-400 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 focus:outline-none"
-            />
-            {requete && (
-              <button
-                type="button"
-                onClick={() => setRequete('')}
-                aria-label="Effacer la recherche"
-                className="absolute top-0 right-0 flex h-12 w-12 items-center justify-center text-ink-400 active:text-ink-700"
+              <div
+                className={`lg:flex lg:items-center lg:gap-3 ${
+                  enLecture ? 'flex items-center gap-2' : ''
+                }`}
               >
-                ✕
-              </button>
-            )}
-          </div>
+                <div className={`relative lg:flex-1 ${enLecture ? 'min-w-0 flex-1' : ''}`}>
+                  <input
+                    id="recherche"
+                    type="search"
+                    value={requete}
+                    onChange={(e) => setRequete(e.target.value)}
+                    placeholder="deltoïde, omoplate, aplomb…"
+                    autoComplete="off"
+                    /* text-base et non text-sm : sous 16 px, iOS zoome à la mise au
+                 point du champ et décale toute la page. */
+                    className="min-h-12 w-full rounded-xl border border-ink-300 bg-white px-3.5 text-base text-ink-900 placeholder:text-ink-400 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 focus:outline-none"
+                  />
+                  {requete && (
+                    <button
+                      type="button"
+                      onClick={() => setRequete('')}
+                      aria-label="Effacer la recherche"
+                      className="absolute top-0 right-0 flex h-12 w-12 items-center justify-center text-ink-400 active:text-ink-700"
+                    >
+                      ✕
+                    </button>
+                  )}
+                </div>
 
-          {/* Tous les filtres sont repliés, à tout format.
+                {/* Tous les filtres sont repliés, à tout format.
               Ce qu'on vient lire, c'est une définition : trois rangées de puces
               au-dessus de la liste repoussaient les premiers termes hors de
               l'écran. Ne restent visibles que la recherche et une ligne. Rien
               n'est masqué en silence — le bouton porte le nom des filtres
               actifs, et se colore tant qu'il en reste un. */}
-          <div className="mt-1.5 flex items-center justify-between gap-3 lg:mt-0 lg:shrink-0 lg:justify-end">
-            <p className="tabular text-xs text-ink-500">
-              {resultats.length} terme{resultats.length > 1 ? 's' : ''}
-            </p>
-            <button
-              type="button"
-              onClick={() => setFiltresOuverts((v) => !v)}
-              aria-expanded={filtresOuverts}
-              className={`flex min-h-9 items-center gap-1 rounded-lg border px-2.5 text-xs font-medium transition ${
-                filtresActifs.length
-                  ? 'border-brand-600 bg-brand-50 text-brand-700'
-                  : 'border-ink-300 bg-white text-ink-600'
-              }`}
-            >
-              {filtresActifs.length ? filtresActifs.join(' · ') : 'Filtres'}
-              <span aria-hidden="true" className="text-ink-400">
-                {filtresOuverts ? '▴' : '▾'}
-              </span>
-            </button>
-          </div>
-          </div>
+                <div
+                  className={`flex items-center gap-3 lg:mt-0 lg:shrink-0 lg:justify-end ${
+                    enLecture ? 'shrink-0' : 'mt-1.5 justify-between'
+                  }`}
+                >
+                  <p
+                    className={`tabular text-xs text-ink-500 ${enLecture ? 'hidden lg:block' : ''}`}
+                  >
+                    {resultats.length} terme{resultats.length > 1 ? 's' : ''}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={basculerFiltres}
+                    aria-expanded={filtresOuverts}
+                    className={`flex min-h-9 items-center gap-1 rounded-lg border px-2.5 text-xs font-medium transition ${
+                      filtresActifs.length
+                        ? 'border-brand-600 bg-brand-50 text-brand-700'
+                        : 'border-ink-300 bg-white text-ink-600'
+                    }`}
+                  >
+                    {filtresActifs.length ? filtresActifs.join(' · ') : 'Filtres'}
+                    <span aria-hidden="true" className="text-ink-400">
+                      {filtresOuverts ? '▴' : '▾'}
+                    </span>
+                  </button>
+                </div>
+              </div>
 
-          <div className={filtresOuverts ? 'block' : 'hidden'}>
-          {/* Région d'abord : c'est par là qu'on arrive quand on révise ce
+              <div className={filtresOuverts ? 'block' : 'hidden'}>
+                {/* Région d'abord : c'est par là qu'on arrive quand on révise ce
               qu'on vient d'étudier. Défilement horizontal assumé — six groupes
               ne tiennent pas sur 375 px, et les replier coûterait un geste. */}
-          <div className="rangee-filtres mt-2">
-            <button
-              type="button"
-              onClick={() => setGroupe(null)}
-              aria-pressed={groupe === null}
-              className={`puce-filtre ${
-                groupe === null
-                  ? 'border-brand-600 bg-brand-600 text-white'
-                  : 'border-ink-300 bg-white text-ink-600'
-              }`}
-            >
-              Tout le corps
-            </button>
-            {GROUPES.map((g) => (
-              <button
-                key={g.id}
-                type="button"
-                onClick={() => setGroupe(groupe === g.id ? null : g.id)}
-                aria-pressed={groupe === g.id}
-                className={`puce-filtre ${
-                  groupe === g.id
-                    ? 'border-brand-600 bg-brand-600 text-white'
-                    : 'border-ink-300 bg-white text-ink-600'
-                }`}
-              >
-                {g.libelle}
-              </button>
-            ))}
-          </div>
-          <div className="lg:flex lg:items-center lg:gap-3">
-          <div className="rangee-filtres mt-1.5 lg:flex-1">
-            <button
-              type="button"
-              onClick={() => setCategorie(null)}
-              aria-pressed={categorie === null}
-              className={`puce-filtre ${
-                categorie === null
-                  ? 'border-ink-800 bg-ink-800 text-white'
-                  : 'border-ink-300 bg-white text-ink-600'
-              }`}
-            >
-              Tout
-            </button>
-            {ORDRE_CATEGORIES.map((c) => (
-              <button
-                key={c}
-                type="button"
-                onClick={() => setCategorie(categorie === c ? null : c)}
-                aria-pressed={categorie === c}
-                className={`puce-filtre ${
-                  categorie === c
-                    ? 'border-ink-800 bg-ink-800 text-white'
-                    : 'border-ink-300 bg-white text-ink-600'
-                }`}
-              >
-                {CATEGORIES[c].libelle}
-              </button>
-            ))}
-          </div>
-
-            <div className="mt-1.5 flex justify-end lg:mt-1.5 lg:shrink-0">
-              <label className="flex items-center gap-1.5 text-xs text-ink-500">
-                Trier
-                <select
-                  value={tri}
-                  onChange={(e) => setTri(e.target.value as Tri)}
-                  className="min-h-9 rounded-lg border border-ink-300 bg-white px-2 text-xs text-ink-800"
-                >
-                  <option value="alpha">A → Z</option>
-                  <option value="frequence">Le plus dit</option>
-                  <option value="region">Par région</option>
-                </select>
-              </label>
-            </div>
-          </div>
-          </div>
-        </div>
-
-        {groupe && (
-          <p className="mt-3 text-[13px] leading-relaxed text-ink-600">
-            Les termes valables partout — aplomb, méplat, relief — sont sous{' '}
-            <button
-              type="button"
-              onClick={() => setGroupe(null)}
-              className="text-brand-700 underline underline-offset-2"
-            >
-              Tout le corps
-            </button>
-            .
-          </p>
-        )}
-
-        {categorie && (
-          <p className="mt-3 text-[13px] leading-relaxed text-ink-600">
-            {CATEGORIES[categorie].propos}
-          </p>
-        )}
-
-        {resultats.length === 0 ? (
-          <p className="mt-8 text-[15px] leading-relaxed text-ink-600">
-            Aucun terme ne correspond à « {requete} ». La recherche accepte les
-            synonymes et la nomenclature savante : « scapula » trouve l'omoplate,
-            « patella » la rotule.
-          </p>
-        ) : groupes ? (
-          <div className="mt-4 space-y-6">
-            {groupes.map(([region, termes]) => (
-              <section key={region}>
-                <h2 className="titre sticky top-[13.5rem] z-10 bg-ink-50/95 py-1.5 text-sm tracking-wide text-ink-500 uppercase backdrop-blur">
-                  {REGIONS[region] ?? region}
-                </h2>
-                <div className="mt-1.5 space-y-2">
-                  {termes.map((t) => (
-                    <CarteTerme
-                      key={t.id}
-                      terme={t}
-                      ouvertParDefaut={t.id === cible}
-                      onLire={setLecture}
-                      onOuvrir={setSitue}
-                    />
+                <div className="rangee-filtres mt-2">
+                  <button
+                    type="button"
+                    onClick={() => setGroupe(null)}
+                    aria-pressed={groupe === null}
+                    className={`puce-filtre ${
+                      groupe === null
+                        ? 'border-brand-600 bg-brand-600 text-white'
+                        : 'border-ink-300 bg-white text-ink-600'
+                    }`}
+                  >
+                    Tout le corps
+                  </button>
+                  {GROUPES.map((g) => (
+                    <button
+                      key={g.id}
+                      type="button"
+                      onClick={() => setGroupe(groupe === g.id ? null : g.id)}
+                      aria-pressed={groupe === g.id}
+                      className={`puce-filtre ${
+                        groupe === g.id
+                          ? 'border-brand-600 bg-brand-600 text-white'
+                          : 'border-ink-300 bg-white text-ink-600'
+                      }`}
+                    >
+                      {g.libelle}
+                    </button>
                   ))}
                 </div>
-              </section>
-            ))}
-          </div>
-        ) : (
-          <div className="mt-4 space-y-2">
-            {resultats.map((t) => (
-              <CarteTerme
-                key={t.id}
-                terme={t}
-                /* Un seul résultat : il n'y a rien à choisir, on déplie. Une
+                <div className="lg:flex lg:items-center lg:gap-3">
+                  <div className="rangee-filtres mt-1.5 lg:flex-1">
+                    <button
+                      type="button"
+                      onClick={() => setCategorie(null)}
+                      aria-pressed={categorie === null}
+                      className={`puce-filtre ${
+                        categorie === null
+                          ? 'border-ink-800 bg-ink-800 text-white'
+                          : 'border-ink-300 bg-white text-ink-600'
+                      }`}
+                    >
+                      Tout
+                    </button>
+                    {ORDRE_CATEGORIES.map((c) => (
+                      <button
+                        key={c}
+                        type="button"
+                        onClick={() => setCategorie(categorie === c ? null : c)}
+                        aria-pressed={categorie === c}
+                        className={`puce-filtre ${
+                          categorie === c
+                            ? 'border-ink-800 bg-ink-800 text-white'
+                            : 'border-ink-300 bg-white text-ink-600'
+                        }`}
+                      >
+                        {CATEGORIES[c].libelle}
+                      </button>
+                    ))}
+                  </div>
+
+                  <div className="mt-1.5 flex justify-end lg:mt-1.5 lg:shrink-0">
+                    <label className="flex items-center gap-1.5 text-xs text-ink-500">
+                      Trier
+                      <select
+                        value={tri}
+                        onChange={(e) => setTri(e.target.value as Tri)}
+                        className="min-h-9 rounded-lg border border-ink-300 bg-white px-2 text-xs text-ink-800"
+                      >
+                        <option value="alpha">A → Z</option>
+                        <option value="frequence">Le plus dit</option>
+                        <option value="region">Par région</option>
+                      </select>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {groupe && (
+              <p className="mt-3 text-[13px] leading-relaxed text-ink-600">
+                Les termes valables partout — aplomb, méplat, relief — sont sous{' '}
+                <button
+                  type="button"
+                  onClick={() => setGroupe(null)}
+                  className="text-brand-700 underline underline-offset-2"
+                >
+                  Tout le corps
+                </button>
+                .
+              </p>
+            )}
+
+            {categorie && (
+              <p className="mt-3 text-[13px] leading-relaxed text-ink-600">
+                {CATEGORIES[categorie].propos}
+              </p>
+            )}
+
+            {resultats.length === 0 ? (
+              <p className="mt-8 text-[15px] leading-relaxed text-ink-600">
+                Aucun terme ne correspond à « {requete} ». La recherche accepte les
+                synonymes et la nomenclature savante : « scapula » trouve l'omoplate, «
+                patella » la rotule.
+              </p>
+            ) : groupes ? (
+              <div className="mt-4 space-y-6">
+                {groupes.map(([region, termes]) => (
+                  <section key={region}>
+                    <h2
+                      /* L'intertitre se colle sous la barre d'outils : la hauteur de
+                     l'en-tête, plus celle de la barre — qui n'est pas la même
+                     selon qu'une séance joue ou non. */
+                      className={`titre sticky z-10 bg-ink-50/95 py-1.5 text-sm tracking-wide text-ink-500 uppercase backdrop-blur lg:top-[13.5rem] ${
+                        enLecture
+                          ? 'top-[calc(var(--haut-entete)+4rem)]'
+                          : 'top-[calc(var(--haut-entete)+7.75rem)]'
+                      }`}
+                    >
+                      {REGIONS[region] ?? region}
+                    </h2>
+                    <div className="mt-1.5 space-y-2">
+                      {termes.map((t) => (
+                        <CarteTerme
+                          key={t.id}
+                          terme={t}
+                          ouvertParDefaut={t.id === cible}
+                          onLire={setLecture}
+                          onOuvrir={setSitue}
+                        />
+                      ))}
+                    </div>
+                  </section>
+                ))}
+              </div>
+            ) : (
+              <div className="mt-4 space-y-2">
+                {resultats.map((t) => (
+                  <CarteTerme
+                    key={t.id}
+                    terme={t}
+                    /* Un seul résultat : il n'y a rien à choisir, on déplie. Une
                    fiche visée par une ancre se déplie aussi. */
-                ouvertParDefaut={t.id === cible || resultats.length === 1}
-                onLire={setLecture}
-                onOuvrir={setSitue}
-              />
-            ))}
-          </div>
-        )}
+                    ouvertParDefaut={t.id === cible || resultats.length === 1}
+                    onLire={setLecture}
+                    onOuvrir={setSitue}
+                  />
+                ))}
+              </div>
+            )}
           </div>
 
           <Lecteur

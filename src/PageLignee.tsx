@@ -60,7 +60,10 @@ function Plaque({ figure }: { figure: Figure }) {
           style={{
             objectPosition: figure.cadrage?.position ?? '50% 20%',
             ...(figure.cadrage?.zoom
-              ? { transform: `scale(${figure.cadrage.zoom})`, transformOrigin: figure.cadrage.position }
+              ? {
+                  transform: `scale(${figure.cadrage.zoom})`,
+                  transformOrigin: figure.cadrage.position,
+                }
               : {}),
           }}
         />
@@ -92,7 +95,10 @@ function FriseCarriere({ jalons }: { jalons: NonNullable<Figure['jalons']> }) {
   return (
     <div className="mt-3 rounded-lg border border-ink-100 bg-ink-50/60 px-3 pt-3 pb-2.5">
       <div className="relative h-4">
-        <span aria-hidden="true" className="absolute top-[7px] right-0 left-0 h-px bg-ink-300" />
+        <span
+          aria-hidden="true"
+          className="absolute top-[7px] right-0 left-0 h-px bg-ink-300"
+        />
         {jalons.map((j) => (
           <span
             key={j.annee}
@@ -105,7 +111,9 @@ function FriseCarriere({ jalons }: { jalons: NonNullable<Figure['jalons']> }) {
       <ol className="mt-1.5 space-y-1">
         {jalons.map((j) => (
           <li key={j.annee} className="flex gap-2.5 text-[13px] leading-snug">
-            <span className="tabular w-9 shrink-0 font-semibold text-brand-700">{j.annee}</span>
+            <span className="tabular w-9 shrink-0 font-semibold text-brand-700">
+              {j.annee}
+            </span>
             <span className="text-ink-700">{j.fait}</span>
           </li>
         ))}
@@ -116,7 +124,10 @@ function FriseCarriere({ jalons }: { jalons: NonNullable<Figure['jalons']> }) {
 
 /** Une figure dont l'année de naissance est établie. */
 function barre(f: Figure) {
-  return { gauche: ECHELLE.place(f.ne!), largeur: ECHELLE.place(finDe(f)) - ECHELLE.place(f.ne!) };
+  return {
+    gauche: ECHELLE.place(f.ne!),
+    largeur: ECHELLE.place(finDe(f)) - ECHELLE.place(f.ne!),
+  };
 }
 
 /**
@@ -128,7 +139,7 @@ function barre(f: Figure) {
 function Regle({ actif }: { actif: Figure }) {
   const { gauche, largeur } = barre(actif);
   return (
-    <div className="sticky top-[5.75rem] z-20 -mx-4 border-b border-ink-200/70 bg-ink-50/95 px-4 py-2.5 backdrop-blur">
+    <div className="sticky top-[var(--haut-entete)] z-20 -mx-4 border-b border-ink-200/70 bg-ink-50/95 px-4 py-2.5 backdrop-blur">
       <div className="relative h-10">
         <div className="absolute top-5 right-0 left-0 h-px bg-ink-300" />
         {ECHELLE.reperes.map((a) => (
@@ -243,9 +254,9 @@ function Frise({ actif, onChoisir }: { actif: Figure; onChoisir: (f: Figure) => 
           ))}
       </div>
       <p className="mt-2 text-[12px] leading-relaxed text-ink-500">
-        Richer meurt cinq ans avant la naissance de Debord : entre eux la
-        transmission passe par les livres, non par la parole. Les élèves, eux,
-        naissent tous pendant qu'il enseigne déjà.
+        Richer meurt cinq ans avant la naissance de Debord : entre eux la transmission passe
+        par les livres, non par la parole. Les élèves, eux, naissent tous pendant qu'il
+        enseigne déjà.
       </p>
     </figure>
   );
@@ -368,13 +379,12 @@ function BandeHistorique() {
       </div>
       <p className="mt-2 text-[12px] leading-relaxed text-ink-500">
         Sept siècles de peintres, de sculpteurs et d'
-        <span className="font-medium text-os-700">anatomistes</span> — ces
-        derniers en couleur d'os — contre deux générations d'enseignement, la
-        zone claire. Ils sont ici et non dans la frise du haut parce qu'ils sont
-        les sources du cours et non la lignée : Vésale ou Bourgery n'ont rien
-        transmis à Debord qu'un livre. Les deux qui figurent aussi plus haut,
-        Duval et Richer, y sont à un autre titre — ils ont occupé sa chaire.
-        Cliquez une barre pour les passages où il en parle.
+        <span className="font-medium text-os-700">anatomistes</span> — ces derniers en
+        couleur d'os — contre deux générations d'enseignement, la zone claire. Ils sont ici
+        et non dans la frise du haut parce qu'ils sont les sources du cours et non la lignée
+        : Vésale ou Bourgery n'ont rien transmis à Debord qu'un livre. Les deux qui figurent
+        aussi plus haut, Duval et Richer, y sont à un autre titre — ils ont occupé sa
+        chaire. Cliquez une barre pour les passages où il en parle.
       </p>
     </figure>
   );
@@ -437,16 +447,17 @@ export function PageLignee() {
           Lignée
         </h1>
         <p className="mt-3 text-[15px] leading-relaxed text-ink-700">
-          Un cours ne sort pas de rien. Celui-ci prolonge une chaire tenue depuis
-          le XIX<sup>e</sup> siècle, et il a formé des élèves qui écrivent et
-          dessinent à leur tour. {numerises} des ouvrages cités sont librement
-          consultables en ligne.
+          Un cours ne sort pas de rien. Celui-ci prolonge une chaire tenue depuis le XIX
+          <sup>e</sup> siècle, et il a formé des élèves qui écrivent et dessinent à leur
+          tour. {numerises} des ouvrages cités sont librement consultables en ligne.
         </p>
 
         <Frise
           actif={actif}
           onChoisir={(f) =>
-            document.getElementById(f.id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            document
+              .getElementById(f.id)
+              ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
           }
         />
 
@@ -457,146 +468,174 @@ export function PageLignee() {
             <Regle actif={actif} />
 
             <div className="mt-8 space-y-10">
-          {SECTIONS.map((section) => {
-            const figures = parSection(section.role);
-            if (!figures.length) return null;
-            return (
-              <section key={section.role}>
-                <h2 className="titre text-xl leading-tight text-ink-900">{section.titre}</h2>
-                <p className="mt-2 text-[14px] leading-relaxed text-ink-600">{section.propos}</p>
+              {SECTIONS.map((section) => {
+                const figures = parSection(section.role);
+                if (!figures.length) return null;
+                return (
+                  <section key={section.role}>
+                    <h2 className="titre text-xl leading-tight text-ink-900">
+                      {section.titre}
+                    </h2>
+                    <p className="mt-2 text-[14px] leading-relaxed text-ink-600">
+                      {section.propos}
+                    </p>
 
-                <div className="mt-4 space-y-3">
-                  {figures.map((f) => {
-                    const i = rang++;
-                    return (
-                      <article
-                        key={f.id}
-                        id={f.id}
-                        data-figure={f.id}
-                        ref={(n) => {
-                          fiches.current[i] = n;
-                        }}
-                        className="card scroll-mt-44 flex gap-3.5 px-4 py-3.5"
-                      >
-                        <Plaque figure={f} />
+                    <div className="mt-4 space-y-3">
+                      {figures.map((f) => {
+                        const i = rang++;
+                        return (
+                          <article
+                            key={f.id}
+                            id={f.id}
+                            data-figure={f.id}
+                            ref={(n) => {
+                              fiches.current[i] = n;
+                            }}
+                            className="card scroll-mt-44 flex gap-3.5 px-4 py-3.5"
+                          >
+                            <Plaque figure={f} />
 
-                        <div className="min-w-0 flex-1">
-                        <h3 className="titre text-[17px] leading-tight text-ink-900">
-                          {f.nom}
-                          {f.dates && (
-                            <span className="tabular ml-2 text-[13px] font-normal text-ink-400">
-                              {f.dates}
-                            </span>
-                          )}
-                        </h3>
-
-                        <p className="mt-2 text-[15px] leading-relaxed text-ink-800">{f.notice}</p>
-
-                        {f.liens?.map((l) => (
-                          <p key={l.url} className="mt-2 text-[13px]">
-                            <a
-                              href={l.url}
-                              target="_blank"
-                              rel="noreferrer"
-                              onClick={(ev) => {
-                                const id = /[?&]v=([\w-]+)/.exec(l.url)?.[1];
-                                if (id) jouer(ev, id, 0, `${f.nom} — ${l.libelle.replace(' ↗', '')}`);
-                              }}
-                              className="text-brand-700 underline underline-offset-2"
-                            >
-                              {l.libelle}
-                            </a>
-                            {l.propos && <span className="text-ink-400"> — {l.propos}</span>}
-                          </p>
-                        ))}
-
-                        {f.jalons && <FriseCarriere jalons={f.jalons} />}
-
-                        {f.instagram && (
-                          <p className="mt-2 text-[13px]">
-                            <a
-                              href={`https://www.instagram.com/${f.instagram}/`}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="text-brand-700 underline underline-offset-2"
-                            >
-                              @{f.instagram} ↗
-                            </a>
-                            <span className="text-ink-400"> — son travail d'aujourd'hui</span>
-                          </p>
-                        )}
-
-                        {f.ouvrages.length > 0 && (
-                          <ul className="mt-3 space-y-2">
-                            {f.ouvrages.map((o) => (
-                              <li key={o.titre} className="text-[14px] leading-relaxed">
-                                <i className="text-ink-900">{o.titre}</i>
-                                {(o.editeur || o.annee) && (
-                                  <span className="text-ink-500">
-                                    {o.editeur ? `, ${o.editeur}` : ''}
-                                    {o.annee ? `, ${o.annee}` : ''}
+                            <div className="min-w-0 flex-1">
+                              <h3 className="titre text-[17px] leading-tight text-ink-900">
+                                {f.nom}
+                                {f.dates && (
+                                  <span className="tabular ml-2 text-[13px] font-normal text-ink-400">
+                                    {f.dates}
                                   </span>
                                 )}
-                                {o.url && (
-                                  <>
-                                    {' — '}
-                                    <a
-                                      href={o.url}
-                                      target="_blank"
-                                      rel="noreferrer"
-                                      className="text-brand-700 underline underline-offset-2"
-                                    >
-                                      {o.url.includes('archive.org')
-                                        ? 'lire en ligne ↗'
-                                        : 'chez l’éditeur ↗'}
-                                    </a>
-                                  </>
-                                )}
-                              </li>
-                            ))}
-                          </ul>
-                        )}
+                              </h3>
 
-                        {/* La source est affichée et non reléguée : une
-                            bibliographie sans provenance est une liste
-                            d'affirmations. */}
-                        {f.ecoutes && (
-                          <div className="mt-3">
-                            <p className="text-xs font-medium tracking-wide text-ink-500 uppercase">
-                              Debord en parle
-                            </p>
-                            <ul className="mt-1.5 space-y-1">
-                              {f.ecoutes.map((ec) => (
-                                <li key={`${ec.seance}-${ec.t}`} className="text-[13px] leading-snug">
+                              <p className="mt-2 text-[15px] leading-relaxed text-ink-800">
+                                {f.notice}
+                              </p>
+
+                              {f.liens?.map((l) => (
+                                <p key={l.url} className="mt-2 text-[13px]">
                                   <a
-                                    href={`https://www.youtube.com/watch?v=${ec.video}&t=${ec.t}s`}
+                                    href={l.url}
                                     target="_blank"
                                     rel="noreferrer"
-                                    onClick={(ev) =>
-                                      jouer(ev, ec.video, ec.t, `Séance ${ec.seance} — ${f.nom}`)
-                                    }
-                                    className="tabular whitespace-nowrap text-brand-700 underline underline-offset-2"
+                                    onClick={(ev) => {
+                                      const id = /[?&]v=([\w-]+)/.exec(l.url)?.[1];
+                                      if (id)
+                                        jouer(
+                                          ev,
+                                          id,
+                                          0,
+                                          `${f.nom} — ${l.libelle.replace(' ↗', '')}`,
+                                        );
+                                    }}
+                                    className="text-brand-700 underline underline-offset-2"
                                   >
-                                    S{ec.seance} · {ec.horodate}
-                                  </a>{' '}
-                                  <span className="text-ink-600">{ec.propos}</span>
-                                </li>
+                                    {l.libelle}
+                                  </a>
+                                  {l.propos && (
+                                    <span className="text-ink-400"> — {l.propos}</span>
+                                  )}
+                                </p>
                               ))}
-                            </ul>
-                          </div>
-                        )}
 
-                        <p className="mt-3 border-t border-ink-100 pt-2.5 text-xs leading-relaxed text-ink-400">
-                          {f.source}
-                        </p>
-                        </div>
-                      </article>
-                    );
-                  })}
-                </div>
-              </section>
-            );
-          })}
+                              {f.jalons && <FriseCarriere jalons={f.jalons} />}
+
+                              {f.instagram && (
+                                <p className="mt-2 text-[13px]">
+                                  <a
+                                    href={`https://www.instagram.com/${f.instagram}/`}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="text-brand-700 underline underline-offset-2"
+                                  >
+                                    @{f.instagram} ↗
+                                  </a>
+                                  <span className="text-ink-400">
+                                    {' '}
+                                    — son travail d'aujourd'hui
+                                  </span>
+                                </p>
+                              )}
+
+                              {f.ouvrages.length > 0 && (
+                                <ul className="mt-3 space-y-2">
+                                  {f.ouvrages.map((o) => (
+                                    <li
+                                      key={o.titre}
+                                      className="text-[14px] leading-relaxed"
+                                    >
+                                      <i className="text-ink-900">{o.titre}</i>
+                                      {(o.editeur || o.annee) && (
+                                        <span className="text-ink-500">
+                                          {o.editeur ? `, ${o.editeur}` : ''}
+                                          {o.annee ? `, ${o.annee}` : ''}
+                                        </span>
+                                      )}
+                                      {o.url && (
+                                        <>
+                                          {' — '}
+                                          <a
+                                            href={o.url}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            className="text-brand-700 underline underline-offset-2"
+                                          >
+                                            {o.url.includes('archive.org')
+                                              ? 'lire en ligne ↗'
+                                              : 'chez l’éditeur ↗'}
+                                          </a>
+                                        </>
+                                      )}
+                                    </li>
+                                  ))}
+                                </ul>
+                              )}
+
+                              {/* La source est affichée et non reléguée : une
+                            bibliographie sans provenance est une liste
+                            d'affirmations. */}
+                              {f.ecoutes && (
+                                <div className="mt-3">
+                                  <p className="text-xs font-medium tracking-wide text-ink-500 uppercase">
+                                    Debord en parle
+                                  </p>
+                                  <ul className="mt-1.5 space-y-1">
+                                    {f.ecoutes.map((ec) => (
+                                      <li
+                                        key={`${ec.seance}-${ec.t}`}
+                                        className="text-[13px] leading-snug"
+                                      >
+                                        <a
+                                          href={`https://www.youtube.com/watch?v=${ec.video}&t=${ec.t}s`}
+                                          target="_blank"
+                                          rel="noreferrer"
+                                          onClick={(ev) =>
+                                            jouer(
+                                              ev,
+                                              ec.video,
+                                              ec.t,
+                                              `Séance ${ec.seance} — ${f.nom}`,
+                                            )
+                                          }
+                                          className="tabular whitespace-nowrap text-brand-700 underline underline-offset-2"
+                                        >
+                                          S{ec.seance} · {ec.horodate}
+                                        </a>{' '}
+                                        <span className="text-ink-600">{ec.propos}</span>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              )}
+
+                              <p className="mt-3 border-t border-ink-100 pt-2.5 text-xs leading-relaxed text-ink-400">
+                                {f.source}
+                              </p>
+                            </div>
+                          </article>
+                        );
+                      })}
+                    </div>
+                  </section>
+                );
+              })}
             </div>
           </div>
 

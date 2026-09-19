@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 /**
  * En-tête et pied partagés.
@@ -14,7 +14,25 @@ import { useEffect, useRef } from 'react';
  * Plutôt qu'un menu replié : ouvrir un menu coûte un geste de plus à quelqu'un
  * qui cherche un mot pendant une séance de dessin, et abréger les libellés les
  * rendrait illisibles.
+ *
+ * Sur téléphone, la barre s'efface dès qu'on descend et revient dès qu'on
+ * remonte : quatre-vingt-dix-huit pixels de titre et d'onglets pris en
+ * permanence, sous lesquels une barre de filtres est souvent collée elle aussi,
+ * ne laissaient plus grand-chose de l'écran à ce qu'on est venu lire. Elle
+ * reste en place tant qu'on est près du haut, et ne bouge jamais dès lg.
  */
+
+/** Ce que l'en-tête occupe en haut de l'écran, pour ce qui se colle dessous.
+ *  Les barres d'outils des pages s'y réfèrent par `top-[var(--haut-entete)]`
+ *  plutôt que par une valeur en dur : quand l'en-tête s'efface, elles montent
+ *  d'un bloc au lieu de laisser une bande vide où la liste défilerait à nu. */
+const HAUT = '5.75rem';
+
+/** En deçà, l'en-tête reste : on n'escamote pas une barre qu'on n'a pas encore
+ *  fini de dépasser. Et sous huit pixels de mouvement, rien ne bouge — un doigt
+ *  qui tremble sur un écran tactile ne doit pas faire clignoter la page. */
+const SEUIL_BAS = 96;
+const SEUIL_GESTE = 8;
 
 const VUES: { chemin: string; libelle: string }[] = [
   { chemin: '/', libelle: 'Vocabulaire' },
@@ -32,6 +50,7 @@ function estActif(chemin: string, courant: string): boolean {
 
 export function Entete({ chemin }: { chemin: string }) {
   const actif = useRef<HTMLAnchorElement>(null);
+  const [efface, setEfface] = useState(false);
 
   useEffect(() => {
     // `nearest` plutôt que `center` : sur grand écran rien ne défile, et l'on
@@ -39,8 +58,42 @@ export function Entete({ chemin }: { chemin: string }) {
     actif.current?.scrollIntoView({ block: 'nearest', inline: 'nearest' });
   }, []);
 
+  useEffect(() => {
+    const grandEcran = window.matchMedia('(min-width: 1024px)');
+    let precedent = window.scrollY;
+
+    const auDefilement = () => {
+      if (grandEcran.matches) return;
+      const y = window.scrollY;
+      const pas = y - precedent;
+      if (Math.abs(pas) < SEUIL_GESTE) return;
+      precedent = y;
+      setEfface(pas > 0 && y > SEUIL_BAS);
+    };
+
+    // Revenu sur grand écran, l'en-tête reprend sa place : sans cela, une barre
+    // escamotée au téléphone le resterait après un changement d'orientation ou
+    // un passage en fenêtre large.
+    const auFormat = () => grandEcran.matches && setEfface(false);
+
+    window.addEventListener('scroll', auDefilement, { passive: true });
+    grandEcran.addEventListener('change', auFormat);
+    return () => {
+      window.removeEventListener('scroll', auDefilement);
+      grandEcran.removeEventListener('change', auFormat);
+    };
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.style.setProperty('--haut-entete', efface ? '0px' : HAUT);
+  }, [efface]);
+
   return (
-    <header className="sticky top-0 z-30 border-b border-ink-200/70 bg-ink-50/90 backdrop-blur">
+    <header
+      className={`sticky top-0 z-30 border-b border-ink-200/70 bg-ink-50/90 backdrop-blur transition-transform duration-200 ${
+        efface ? 'max-lg:-translate-y-full' : ''
+      }`}
+    >
       <div className="mx-auto max-w-4xl lg:max-w-6xl px-4 pt-2.5 pb-2">
         <a href="/" className="flex items-baseline gap-2">
           <span className="titre text-[17px] text-ink-900">Morphologie</span>
@@ -94,8 +147,8 @@ export function Pied() {
           >
             cours de morphologie de Jean-François Debord
           </a>
-          , filmé aux Beaux-Arts de Paris et publié par l'Université PSL, qui en
-          tient aussi le{' '}
+          , filmé aux Beaux-Arts de Paris et publié par l'Université PSL, qui en tient aussi
+          le{' '}
           <a
             href="https://bibnum.explore.psl.eu/s/psl/ark:/18469/290s8"
             target="_blank"
@@ -104,8 +157,8 @@ export function Pied() {
           >
             catalogue de référence
           </a>
-          . Les séances appartiennent à leurs auteurs ; ce site n'en héberge
-          aucune et se contente d'y renvoyer.
+          . Les séances appartiennent à leurs auteurs ; ce site n'en héberge aucune et se
+          contente d'y renvoyer.
         </p>
         <p className="mt-4">
           Un projet{' '}
@@ -125,7 +178,10 @@ export function Pied() {
             code source
           </a>{' '}
           ·{' '}
-          <a href="/mentions/" className="underline underline-offset-4 transition hover:text-ink-900">
+          <a
+            href="/mentions/"
+            className="underline underline-offset-4 transition hover:text-ink-900"
+          >
             mentions légales
           </a>
         </p>
