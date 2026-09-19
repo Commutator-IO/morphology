@@ -14,6 +14,7 @@ const PAGES = {
   references: 'references/index.html',
   anecdotes: 'anecdotes/index.html',
   seances: 'seances/index.html',
+  filiation: 'filiation/index.html',
   methode: 'methode/index.html',
 } as const
 

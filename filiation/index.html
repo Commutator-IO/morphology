@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#faf9f7" />
+    <script>
+      // Filet de sécurité pour l'hébergement statique : après un redéploiement,
+      // une page encore en cache peut référencer un asset dont le nom a changé,
+      // d'où une page blanche. On détecte l'échec de chargement et on recharge
+      // une fois — un rechargement revalide le HTML et récupère les bons noms.
+      (function () {
+        try {
+          addEventListener(
+            'error',
+            function (e) {
+              var el = e.target;
+              var url = el && (el.src || el.href);
+              if (url && /\/assets\//.test(url) && !sessionStorage.getItem('rechargeAsset')) {
+                sessionStorage.setItem('rechargeAsset', '1');
+                location.reload();
+              }
+            },
+            true,
+          );
+          addEventListener('load', function () {
+            sessionStorage.removeItem('rechargeAsset');
+          });
+        } catch (_) {}
+      })();
+    </script>
+    <meta name="description" content="La chaire d'anatomie artistique des Beaux-Arts avant Jean-François Debord — Mathias Duval, Paul Richer — et les élèves qui ont écrit après lui. Bibliographie de morphologie, avec les numérisations librement consultables." />
+    <link rel="canonical" href="https://morphologie.commutator.io/filiation/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Morphologie — Jean-François Debord" />
+    <meta property="og:title" content="Filiation — bibliographie de morphologie autour de J.-F. Debord" />
+    <meta property="og:description" content="La chaire d'anatomie artistique des Beaux-Arts avant Jean-François Debord — Mathias Duval, Paul Richer — et les élèves qui ont écrit après lui. Bibliographie de morphologie, avec les numérisations librement consultables." />
+    <meta property="og:url" content="https://morphologie.commutator.io/filiation/" />
+    <title>Filiation — bibliographie de morphologie autour de J.-F. Debord</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/mainFiliation.tsx"></script>
+  </body>
+</html>

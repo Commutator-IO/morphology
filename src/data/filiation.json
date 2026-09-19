@@ -1,0 +1,101 @@
+[
+ {
+  "id": "duval",
+  "nom": "Mathias Duval",
+  "dates": "1844-1907",
+  "role": "avant",
+  "notice": "Médecin et anatomiste, il enseigna l'anatomie aux Beaux-Arts de Paris. Debord le nomme dans le cours comme l'un de ses prédécesseurs dans la chaire, et discute ses planches en les comparant au modèle vivant.",
+  "ouvrages": [
+   {
+    "titre": "Précis d'anatomie à l'usage des artistes",
+    "editeur": "A. Quantin",
+    "annee": "1881",
+    "url": "https://archive.org/details/b20418085"
+   }
+  ],
+  "source": "Filiation citée par Debord dans le cours ; notice de l'ouvrage vérifiée sur archive.org."
+ },
+ {
+  "id": "richer",
+  "nom": "Paul Richer",
+  "dates": "1849-1933",
+  "role": "avant",
+  "notice": "Titulaire de la chaire d'anatomie artistique des Beaux-Arts de Paris à partir de 1903. Son traité a formé des générations d'élèves et reste la référence française de la discipline ; c'est le corpus contre lequel Debord enseigne, tantôt pour s'y appuyer, tantôt pour le corriger d'après le vivant.",
+  "ouvrages": [
+   {
+    "titre": "Anatomie artistique : description des formes extérieures du corps humain",
+    "editeur": "Plon",
+    "annee": "1890",
+    "url": "https://archive.org/details/AnatomieArtistiqueDescriptionDesFormesExtrieuresDuCorpsHumain"
+   },
+   {
+    "titre": "Nouvelle anatomie artistique du corps humain",
+    "editeur": "Plon-Nourrit",
+    "annee": "1906-1929",
+    "url": "https://archive.org/details/nouvelleanatomie00rich"
+   },
+   {
+    "titre": "Physiologie artistique de l'homme en mouvement",
+    "editeur": "Doin",
+    "annee": "1895"
+   },
+   {
+    "titre": "Nouvelle anatomie artistique. Les animaux",
+    "editeur": "Plon-Nourrit",
+    "annee": "1910"
+   }
+  ],
+  "source": "Chaire et bibliographie d'après sa notice Wikipédia ; les deux premiers titres vérifiés sur archive.org, où ils sont librement consultables."
+ },
+ {
+  "id": "comar",
+  "nom": "Philippe Comar",
+  "dates": "né en 1955",
+  "role": "autour",
+  "notice": "Plasticien et écrivain, il a enseigné le dessin et la morphologie aux Beaux-Arts de Paris de 1979 à 2018. Il fut donc le collègue de Debord pendant près de vingt-cinq ans, et non son successeur — les deux enseignements ont coexisté.",
+  "ouvrages": [],
+  "source": "Dates d'enseignement d'après sa notice Wikipédia."
+ },
+ {
+  "id": "lauricella",
+  "nom": "Michel Lauricella",
+  "role": "apres",
+  "notice": "Formé aux Beaux-Arts de Paris, il enseigne la morphologie depuis une vingtaine d'années. Sa collection « Morpho » est la transposition la plus directe de cet enseignement en livres : des carnets courts, un thème par volume, construits sur le même principe que le cours — l'os d'abord, puis ce qui l'habille.",
+  "ouvrages": [
+   {
+    "titre": "Collection « Morpho » (une quinzaine de volumes : Anatomie artistique, Squelette, Mains et pieds, Tête et cou, Formes synthétiques, Graisse et plis de peau, Mammifères…)",
+    "editeur": "Eyrolles",
+    "url": "https://www.editions-eyrolles.com/Auteur/44583/michel-lauricella"
+   }
+  ],
+  "source": "Élève cité dans la notice Wikipédia de Debord ; formation, enseignement et titres d'après sa page d'auteur chez Eyrolles."
+ },
+ {
+  "id": "delavier",
+  "nom": "Frédéric Delavier",
+  "role": "apres",
+  "notice": "Cité parmi les élèves de Debord. Il a porté la morphologie hors du champ de l'art, vers le geste sportif : ses planches montrent le muscle en action plutôt qu'au repos, ce qui en a fait une référence dans un tout autre milieu que celui des Beaux-Arts.",
+  "ouvrages": [
+   {
+    "titre": "Guide des mouvements de musculation : approche anatomique",
+    "editeur": "Vigot",
+    "annee": "à confirmer"
+   }
+  ],
+  "source": "Élève cité dans la notice Wikipédia de Debord. Les références précises de ses ouvrages n'ont pas pu être vérifiées ici : les recherches ne rendent que des pages marchandes."
+ },
+ {
+  "id": "maupre",
+  "nom": "Agnès Maupré",
+  "role": "autour",
+  "notice": "Elle a tiré de l'enseignement de Debord un traité dessiné, publié en bande dessinée. C'est à ce jour la seule mise en livre du cours lui-même, que Debord refusait d'écrire — il tenait son enseignement pour oral et magistral, et le disait en séance.",
+  "ouvrages": [
+   {
+    "titre": "Petit Traité de morphologie d'après les cours donnés par Jean-François Debord",
+    "editeur": "Futuropolis",
+    "annee": "2008"
+   }
+  ],
+  "source": "D'après la notice Wikipédia de Debord ; le refus d'écrire un livre est dit par Debord dans la séance 15."
+ }
+]
