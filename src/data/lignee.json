@@ -86,9 +86,30 @@
   "ne": 1938,
   "mort": 2025,
   "role": "lui",
-  "notice": "Peintre. Il enseigne aux Beaux-Arts de Paris à partir de 1969 comme assistant de Pol Le Cœur, prend la tête du département de morphologie en 1978 et l'occupe vingt-cinq ans, jusqu'en 2003. Le cours indexé par ce site est la captation de cette dernière année.",
-  "ouvrages": [],
-  "source": "Carrière d'après l'annonce de sa disparition par les Beaux-Arts de Paris ; années de naissance et de mort d'après Wikidata."
+  "notice": "Peintre. Il enseigne aux Beaux-Arts de Paris à partir de 1969 comme assistant de Pol Le Cœur, prend la tête du département de morphologie en 1978 et l'occupe vingt-cinq ans, jusqu'en 2003. Il refusait d'écrire un livre — son enseignement était oral — mais reconnaît en séance trois articles de fond, écrits en trois mois chacun, à trois occasions.",
+  "ouvrages": [
+   {
+    "titre": "« De l'anatomie à la morphologie », dans le catalogue de l'exposition L'Âme au corps, organisée par Jean Clair au Grand Palais",
+    "editeur": "Gallimard / Éditions des Musées de France",
+    "annee": "1993"
+   },
+   {
+    "titre": "Un texte dans le catalogue d'une exposition Géricault publiée par l'École des beaux-arts, où il réfute la légende de l'atelier aux cadavres : Géricault dessinait d'après des moulages en plâtre de dissection",
+    "editeur": "École nationale supérieure des beaux-arts"
+   },
+   {
+    "titre": "Un texte dans le catalogue Duchenne de Boulogne : 1806-1875, où il soutient que Léonard avait vu juste sur la physiologie des muscles du visage",
+    "editeur": "École nationale supérieure des beaux-arts",
+    "annee": "1999"
+   }
+  ],
+  "source": "Carrière d'après l'annonce de sa disparition par les Beaux-Arts de Paris ; dates d'après Wikidata. Les trois articles sont énumérés par Debord lui-même en séance 26 : c'est de là que viennent le titre du premier et le propos des deux autres. Vérifiés par ailleurs : l'exposition L'Âme au corps et son catalogue, et le catalogue Duchenne de Boulogne, où les notices de bibliothèque le nomment parmi les auteurs aux côtés d'Alfred Pacquement et Catherine Mathon. Le catalogue Géricault n'a pas été retrouvé dans les catalogues consultés : il est cité d'après les seuls mots de Debord.",
+  "ecoute": {
+   "video": "lPiLzxL9qk4",
+   "t": 99,
+   "seance": 26,
+   "horodate": "1:39"
+  }
  },
  {
   "id": "comar",
