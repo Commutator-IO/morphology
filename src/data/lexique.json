@@ -237,7 +237,12 @@
    "apophyse epineuse",
    "apophyses epineuses",
    "epineuses",
-   "sillon median du dos"
+   "sillon median du dos",
+   "epineux",
+   "apophyses epineux",
+   "cervicales",
+   "lombaires",
+   "masse commune"
   ],
   "situation": {
    "vue": "dos",
@@ -383,7 +388,10 @@
    "epines anterieur et superieur",
    "epine anterieure superieure",
    "epines du bassin",
-   "epine du bassin"
+   "epine du bassin",
+   "lepine anterieur et superieur",
+   "lepine anterieure superieure",
+   "lepines anterieur et superieur"
   ],
   "situation": {
    "vue": "face",
@@ -446,7 +454,10 @@
    "pubien",
    "pubienne",
    "symphyse",
-   "symphyse pubienne"
+   "symphyse pubienne",
+   "lepine du pubis",
+   "epine du pubis",
+   "epines du pubis"
   ],
   "situation": {
    "vue": "face",
@@ -865,7 +876,16 @@
    "humerus",
    "humeral",
    "humerale",
-   "tete de l humerus"
+   "tete de l humerus",
+   "gouttiere bicipitale",
+   "gouttiere bissy pital",
+   "gouttiere vie si pital",
+   "gouttiere bixi pitard",
+   "gouttiere billy billy talent",
+   "gouttiere dissipe talent",
+   "gouttiere dissipe stade",
+   "bissy pital",
+   "bissy bitale"
   ],
   "situation": {
    "vue": "face",
@@ -997,7 +1017,10 @@
    "cubitale",
    "ulna",
    "ulnaire",
-   "tete du cubitus"
+   "tete du cubitus",
+   "stilo id du cubitus",
+   "stilo ide cubitale",
+   "styloide cubitale"
   ],
   "situation": {
    "vue": "face",
@@ -1030,7 +1053,11 @@
    "radiale",
    "radiaux",
    "styloide radiale",
-   "tete du radius"
+   "tete du radius",
+   "stilo id du radius",
+   "stilo id radial",
+   "stilo y du radius",
+   "stilo ide radiale"
   ],
   "situation": {
    "vue": "face",
@@ -2993,7 +3020,12 @@
    "voute plantaire",
    "voute",
    "appui",
-   "appuis"
+   "appuis",
+   "arche interne",
+   "arche externe",
+   "arche plantaire",
+   "arche un terme",
+   "arches"
   ],
   "situation": {
    "vue": "face",
