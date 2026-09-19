@@ -46,6 +46,11 @@ const CIBLES = {
   titien: ['Titian', 'titian'],
   picasso: ['Pablo Picasso', 'picasso'],
   raphael: ['Raphael', 'raphael'],
+  // Retirés du lexique : « carpeaux » est la transcription de carpo- (articulation
+  // carpo-métacarpienne), « courbet » celle du verbe courber, « poussin » celle
+  // d'un fléchisseur du pouce. Un patronyme qui entre en collision avec le
+  // vocabulaire du cours lui-même est le pire des faux amis : il remonte
+  // précisément là où le sujet est traité.
   delacroix: ['Eugène Delacroix', 'delacroix'],
   schiele: ['Egon Schiele', 'schiele'],
   klimt: ['Gustav Klimt', 'klimt'],
@@ -54,7 +59,6 @@ const CIBLES = {
   caravage: ['Caravaggio Merisi', 'merisi'],
   mantegna: ['Andrea Mantegna', 'mantegna'],
   ingres: ['Ingres', 'ingres'],
-  courbet: ['Gustave Courbet', 'courbet'],
   lautrec: ['Toulouse-Lautrec', 'lautrec'],
   matisse: ['Henri Matisse', 'matisse'],
   'van-gogh': ['Vincent van Gogh', 'gogh'],
@@ -63,8 +67,6 @@ const CIBLES = {
   degas: ['Edgar Degas', 'degas'],
   cranach: ['Lucas Cranach', 'cranach'],
   manet: ['Édouard Manet', 'manet'],
-  bronzino: ['Bronzino', 'bronzino'],
-  poussin: ['Nicolas Poussin', 'poussin'],
   corot: ['Camille Corot', 'corot'],
   modigliani: ['Amedeo Modigliani', 'modigliani'],
   giotto: ['Giotto', 'giotto'],
@@ -78,7 +80,6 @@ const CIBLES = {
   bacon: ['Francis Bacon', 'francis bacon'],
   houdon: ['Houdon', 'houdon'],
   giacometti: ['Alberto Giacometti', 'giacometti'],
-  carpeaux: ['Carpeaux', 'carpeaux'],
   maillol: ['Aristide Maillol', 'maillol'],
   bouchardon: ['Edme Bouchardon', 'bouchardon'],
   praxitele: ['Praxiteles', 'praxitel'],

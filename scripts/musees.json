@@ -125,13 +125,6 @@
   "date": "c. 1842",
   "artiste": "Jean Auguste Dominique Ingres"
  },
- "courbet": {
-  "musee": "Art Institute of Chicago",
-  "url": "https://www.artic.edu/artworks/93342",
-  "oeuvre": "Rêverie (Portrait of Gabrielle Borreau)",
-  "date": "1862",
-  "artiste": "Gustave Courbet"
- },
  "lautrec": {
   "musee": "Art Institute of Chicago",
   "url": "https://www.artic.edu/artworks/86204",
@@ -188,13 +181,6 @@
   "date": "1880–82",
   "artiste": "Édouard Manet"
  },
- "poussin": {
-  "musee": "Art Institute of Chicago",
-  "url": "https://www.artic.edu/artworks/112535",
-  "oeuvre": "Man Kneeling With Jug (recto); Standing Man (verso)",
-  "date": "n.d.",
-  "artiste": "Nicolas Poussin"
- },
  "corot": {
   "musee": "Art Institute of Chicago",
   "url": "https://www.artic.edu/artworks/43119",
@@ -236,13 +222,6 @@
   "oeuvre": "Bust of Anne-Marie-Louise Thomas de Domangeville de Sérilly, Comtesse de Pange",
   "date": "1780",
   "artiste": "Jean Antoine Houdon"
- },
- "carpeaux": {
-  "musee": "Art Institute of Chicago",
-  "url": "https://www.artic.edu/artworks/41319",
-  "oeuvre": "Portrait Bust of Comtesse d'Affry, née Lucie de Maillardoz (1816-1897)",
-  "date": "1860–70",
-  "artiste": "Jean Baptiste Carpeaux"
  },
  "maillol": {
   "musee": "Art Institute of Chicago",

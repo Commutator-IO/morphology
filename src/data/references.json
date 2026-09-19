@@ -327,22 +327,6 @@
   }
  },
  {
-  "id": "courbet",
-  "nom": "Courbet",
-  "type": "peintre",
-  "dates": "1819-1877",
-  "note": "Le corps ordinaire, sans correction académique.",
-  "variantes": [
-   "courbet"
-  ],
-  "musee": {
-   "nom": "Art Institute of Chicago",
-   "url": "https://www.artic.edu/artworks/93342",
-   "oeuvre": "Rêverie (Portrait of Gabrielle Borreau)",
-   "date": "1862"
-  }
- },
- {
   "id": "lautrec",
   "nom": "Toulouse-Lautrec",
   "type": "peintre",
@@ -471,32 +455,6 @@
    "url": "https://www.artic.edu/artworks/14591",
    "oeuvre": "Woman Reading",
    "date": "1880–82"
-  }
- },
- {
-  "id": "bronzino",
-  "nom": "Bronzino",
-  "type": "peintre",
-  "dates": "1503-1572",
-  "note": "Le modelé lisse et froid du maniérisme florentin, où l'anatomie devient ornement.",
-  "variantes": [
-   "bronzino"
-  ]
- },
- {
-  "id": "poussin",
-  "nom": "Poussin",
-  "type": "peintre",
-  "dates": "1594-1665",
-  "note": "La figure construite comme un volume dans l'espace, souvent d'après des figurines de cire.",
-  "variantes": [
-   "poussin"
-  ],
-  "musee": {
-   "nom": "Art Institute of Chicago",
-   "url": "https://www.artic.edu/artworks/112535",
-   "oeuvre": "Man Kneeling With Jug (recto); Standing Man (verso)",
-   "date": "n.d."
   }
  },
  {
@@ -651,22 +609,6 @@
   "variantes": [
    "giacometti"
   ]
- },
- {
-  "id": "carpeaux",
-  "nom": "Carpeaux",
-  "type": "sculpteur",
-  "dates": "1827-1875",
-  "note": "Le mouvement en sculpture, et le modelé pris sur le vif.",
-  "variantes": [
-   "carpeaux"
-  ],
-  "musee": {
-   "nom": "Art Institute of Chicago",
-   "url": "https://www.artic.edu/artworks/41319",
-   "oeuvre": "Portrait Bust of Comtesse d'Affry, née Lucie de Maillardoz (1816-1897)",
-   "date": "1860–70"
-  }
  },
  {
   "id": "maillol",

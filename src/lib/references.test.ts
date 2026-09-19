@@ -80,6 +80,17 @@ describe('références', () => {
     }
   });
 
+  it('exclut les patronymes qui sont du vocabulaire du cours', () => {
+    // Le pire des faux amis : un nom propre qui entre en collision avec le sujet
+    // traité, et qui remonte donc précisément là où le cours en parle.
+    // « carpeaux » transcrit carpo- (articulation carpo-métacarpienne),
+    // « courbet » le verbe courber, « poussin » un fléchisseur du pouce.
+    const ids = new Set(REFERENCES.map((r) => r.id));
+    for (const faux of ['carpeaux', 'courbet', 'poussin', 'bronzino']) {
+      expect(ids, faux).not.toContain(faux);
+    }
+  });
+
   it('cherche par nom comme par type', () => {
     const trouve = (q: string) =>
       REFERENCES.filter((r) => correspondReference(r, q)).map((r) => r.id);

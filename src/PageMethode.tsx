@@ -174,6 +174,20 @@ export function PageMethode() {
             prénom. Un test refuse qu'une œuvre d'atelier soit attribuée au maître.
           </p>
           <p>
+            <b className="font-semibold text-ink-900">
+              Le pire des faux amis est le nom propre qui est aussi du vocabulaire
+              d'anatomie.
+            </b>{' '}
+            Quatre références ont été retirées pour cette raison : « carpeaux » est
+            la transcription de <i>carpo-</i>, dans l'articulation
+            carpo-métacarpienne ; « courbet » celle du verbe <i>courber</i>, que
+            Debord emploie à chaque séance ; « poussin » celle d'un fléchisseur du{' '}
+            <i>pouce</i>. Ces noms-là remontent précisément là où le cours traite
+            leur sujet, ce qui les rend d'autant plus convaincants — et d'autant
+            plus faux. C'est un lecteur qui a signalé le premier ; les trois autres
+            ont suivi à la vérification.
+          </p>
+          <p>
             Les {REFERENCES.length - avecMusee} références sans lien le sont pour
             trois raisons, toutes assumées : l'œuvre est encore sous droits, et
             aucune image n'en est librement diffusée — c'est le cas de Picasso, de
