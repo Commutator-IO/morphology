@@ -10,7 +10,14 @@
    "crane",
    "cranes",
    "cranien",
-   "cranienne"
+   "cranienne",
+   "occipital",
+   "occipitale",
+   "occiput",
+   "protuberance occipital",
+   "protuberance occipitale",
+   "protuberance externe",
+   "trou occipital"
   ],
   "situation": {
    "vue": "face",
@@ -327,7 +334,10 @@
    "pelvien",
    "pelvienne",
    "os iliaque",
-   "iliaques"
+   "iliaques",
+   "anneau pelvien",
+   "anneaux pelvien",
+   "ceinture pelvienne"
   ],
   "situation": {
    "vue": "face",
@@ -636,7 +646,11 @@
    "tibias",
    "tibial",
    "tibiale",
-   "crete tibiale"
+   "crete tibiale",
+   "chapiteau tibial",
+   "chapiteau tibia",
+   "chapiteau du tibia",
+   "?chapiteau"
   ],
   "situation": {
    "vue": "face",
@@ -654,7 +668,19 @@
      284
     ]
    ]
-  }
+  },
+  "contexte": [
+   "tibia",
+   "jambe",
+   "genou",
+   "rotule",
+   "condyle",
+   "perone",
+   "plateau",
+   "menisque",
+   "femur",
+   "malleole"
+  ]
  },
  {
   "id": "perone",
@@ -864,7 +890,15 @@
    "?angles inferieurs",
    "angle de l omoplate",
    "angle inferieur de l omoplate",
-   "angle superieur de l omoplate"
+   "angle superieur de l omoplate",
+   "cavite glenoide",
+   "glene",
+   "glenoide",
+   "cavite glenat",
+   "cavite glenat id",
+   "cavite glenwood",
+   "cavite glendyne",
+   "cavite green aux ide"
   ],
   "situation": {
    "vue": "dos",
@@ -956,7 +990,11 @@
    "bissy bitale",
    "col de l humerus",
    "col chirurgical",
-   "col anatomique"
+   "col anatomique",
+   "numerus",
+   "le numerus",
+   "?levre externe",
+   "?levre interne"
   ],
   "situation": {
    "vue": "face",
@@ -974,7 +1012,21 @@
      108
     ]
    ]
-  }
+  },
+  "contexte": [
+   "gouttiere",
+   "bissy pital",
+   "vie si pital",
+   "pectoral",
+   "grand dorsal",
+   "humerus",
+   "numerus",
+   "tete de l humerus",
+   "bras",
+   "epaule",
+   "tuberosite",
+   "deltoide"
+  ]
  },
  {
   "id": "epitrochlee",
@@ -1143,7 +1195,13 @@
    "stilo id du radius",
    "stilo id radial",
    "stilo y du radius",
-   "stilo ide radiale"
+   "stilo ide radiale",
+   "cupule radial",
+   "cupule radiale",
+   "cupules radial",
+   "cupules radiales",
+   "?cupule",
+   "?cupules"
   ],
   "situation": {
    "vue": "face",
@@ -1161,7 +1219,22 @@
      146
     ]
    ]
-  }
+  },
+  "contexte": [
+   "radius",
+   "coude",
+   "biceps",
+   "humerus",
+   "numerus",
+   "cubitus",
+   "avant bras",
+   "rotation",
+   "pronation",
+   "supination",
+   "troc les",
+   "trochlee",
+   "tete du radius"
+  ]
  },
  {
   "id": "carpe",
@@ -2014,7 +2087,10 @@
    "brachioradial",
    "court supinateur",
    "humero stylo radial",
-   "stylo radial"
+   "stylo radial",
+   "numero stylo radial",
+   "numero stylo radiant",
+   "numero stylo"
   ],
   "situation": {
    "vue": "face",
@@ -3092,7 +3168,25 @@
    "poulie astragalienne",
    "poulies astragalienne",
    "poulie de reflexion",
-   "poulies de reflexion"
+   "poulies de reflexion",
+   "?levre externe",
+   "?levre interne"
+  ],
+  "contexte": [
+   "trochlee",
+   "troc les",
+   "troclet",
+   "truck les",
+   "rotule",
+   "condyle",
+   "condyles",
+   "femur",
+   "genou",
+   "astragale",
+   "poulie",
+   "humerus",
+   "coude",
+   "cubitus"
   ]
  },
  {
