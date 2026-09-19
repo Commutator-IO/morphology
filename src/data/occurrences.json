@@ -6748,12 +6748,45 @@
    }
   },
   "peauciers": {
-   "total": 0,
-   "videos": {}
+   "total": 5,
+   "videos": {
+    "65d7NtvHAk0": [
+     1931
+    ],
+    "FHeKCC3ZiOU": [
+     632,
+     1688
+    ],
+    "RYcT89bug4U": [
+     3037
+    ],
+    "kc2e56cun8U": [
+     6109
+    ]
+   }
   },
   "masseter": {
-   "total": 0,
-   "videos": {}
+   "total": 10,
+   "videos": {
+    "4IIUE6NVqDU": [
+     2384,
+     2652,
+     2849,
+     2940,
+     4263,
+     5418,
+     5482
+    ],
+    "Qh-CpCTQCJ4": [
+     4336
+    ],
+    "ZdgpRuXGY40": [
+     3667
+    ],
+    "pA9J6JWr0CQ": [
+     4968
+    ]
+   }
   },
   "temporal": {
    "total": 10,
@@ -7322,8 +7355,57 @@
    }
   },
   "long-supinateur": {
-   "total": 0,
-   "videos": {}
+   "total": 24,
+   "videos": {
+    "-Tss3qgdhW4": [
+     3045,
+     3167,
+     5090
+    ],
+    "17Doi4NAYY0": [
+     3462,
+     3973,
+     4344,
+     5411,
+     5596
+    ],
+    "65d7NtvHAk0": [
+     4147
+    ],
+    "FHeKCC3ZiOU": [
+     5126
+    ],
+    "LHaB3iu4zIw": [
+     5821
+    ],
+    "Qh-CpCTQCJ4": [
+     3845
+    ],
+    "RYcT89bug4U": [
+     3694
+    ],
+    "UUJWGz3BuY4": [
+     3411,
+     3503,
+     3641,
+     4418,
+     5268
+    ],
+    "ZdgpRuXGY40": [
+     4450
+    ],
+    "qGdHRpt1qns": [
+     3816
+    ],
+    "uagciNFijmY": [
+     3052,
+     4607,
+     4687
+    ],
+    "ycr4a1eAkn0": [
+     1100
+    ]
+   }
   },
   "extenseurs": {
    "total": 178,
@@ -7843,8 +7925,21 @@
    }
   },
   "eminence-hypothenar": {
-   "total": 0,
-   "videos": {}
+   "total": 4,
+   "videos": {
+    "65d7NtvHAk0": [
+     1606
+    ],
+    "68R-oaodzTg": [
+     1235
+    ],
+    "RYcT89bug4U": [
+     3361
+    ],
+    "ZdgpRuXGY40": [
+     6056
+    ]
+   }
   },
   "grand-fessier": {
    "total": 46,

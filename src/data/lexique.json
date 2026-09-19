@@ -714,14 +714,19 @@
   "aussi": [
    "muscles de la mimique"
   ],
-  "definition": "Muscles minces insérés dans la peau même du visage et du cou, sans action sur le squelette. Ils ne font pas de volume mais plissent la surface : c'est par eux que passe toute l'expression.",
+  "definition": "Muscles minces insérés dans la peau même du visage et du cou, sans action sur le squelette. Ils ne font pas de volume mais plissent la surface : c'est par eux que passe toute l'expression. La transcription écrit « poussière » là où Debord dit peaucier. Il en compte aussi un dans la main, le palmaire cutané.",
   "variantes": [
    "peaucier",
    "peauciers",
    "peauciere",
    "muscle peaucier",
    "platysma",
-   "mimique"
+   "mimique",
+   "muscle poussiere",
+   "fibres poussiere",
+   "plans poussier",
+   "repli poussier",
+   "graisseuse poussiere"
   ]
  },
  {
@@ -730,12 +735,22 @@
   "categorie": "muscle",
   "region": "tete",
   "moderne": "Musculus masseter",
-  "definition": "Muscle épais tendu de l'arcade zygomatique à l'angle de la mandibule. Il remplit le creux de la joue en arrière et se durcit visiblement à la mâchoire serrée.",
+  "definition": "Muscle épais tendu de l'arcade zygomatique à l'angle de la mandibule. Il remplit le creux de la joue en arrière et se durcit visiblement à la mâchoire serrée. La transcription écrit « master ». Debord le présente avec le temporal comme l'un des deux muscles de la mastication.",
   "variantes": [
    "masseter",
    "masseters",
    "masseterine",
-   "muscle masseter"
+   "muscle masseter",
+   "dans le master",
+   "voila le master",
+   "mais le master",
+   "pour le master",
+   "c est le master",
+   "contracte le master",
+   "le master legrand",
+   "sont les masters",
+   "sont les master",
+   "que les masters"
   ]
  },
  {
@@ -809,16 +824,19 @@
   "region": "avant-bras",
   "moderne": "Musculus brachioradialis",
   "aussi": [
-   "brachio-radial"
+   "brachio-radial",
+   "huméro-stylo-radial"
   ],
-  "definition": "Muscle qui monte du bord externe de l'humérus au poignet en formant la crête latérale de l'avant-bras. Sa saillie sépare la loge des fléchisseurs de celle des extenseurs, et sert d'arête directrice à toute la région.",
+  "definition": "Muscle qui monte du bord externe de l'humérus au poignet en formant la crête latérale de l'avant-bras. Sa saillie sépare la loge des fléchisseurs de celle des extenseurs, et sert d'arête directrice à toute la région. Debord ne dit jamais long supinateur : il l'appelle par son nom ancien, huméro-stylo-radial, que la transcription rend « numéro stylo radial ».",
   "variantes": [
    "long supinateur",
    "supinateur",
    "supinateurs",
    "brachio radial",
    "brachioradial",
-   "court supinateur"
+   "court supinateur",
+   "humero stylo radial",
+   "stylo radial"
   ]
  },
  {
@@ -881,11 +899,19 @@
   "categorie": "muscle",
   "region": "main",
   "moderne": "Eminentia hypothenaris",
-  "definition": "Coussin du bord interne de la paume, du côté de l'auriculaire. Plus plat que le thénar, il ferme la gouttière palmaire de l'autre côté.",
+  "definition": "Coussin du bord interne de la paume, du côté de l'auriculaire. Plus plat que le thénar, il ferme la gouttière palmaire de l'autre côté. Debord dit aussi, plus simplement, l'éminence du petit doigt.",
   "variantes": [
    "hypothenar",
    "eminence hypothenar",
-   "hypothenarienne"
+   "hypothenarienne",
+   "hypo thenard",
+   "hippo thenard",
+   "hypothenard",
+   "epote nar",
+   "eminence du petit doigt"
+  ],
+  "aussi": [
+   "éminence du petit doigt"
   ]
  },
  {
@@ -1180,7 +1206,7 @@
   "terme": "Proximal / distal",
   "categorie": "orientation",
   "region": "general",
-  "definition": "Près de la racine du membre, ou loin d'elle. L'épaule est proximale, la main distale, et tout le membre se lit dans cet ordre.",
+  "definition": "Près de la racine du membre, ou loin d'elle. L'épaule est proximale, la main distale, et tout le membre se lit dans cet ordre. Ni proximal ni distal ne s'entend une seule fois dans les 77 heures : le cours n'emploie pas ces termes, et l'entrée reste ici pour qui les rencontre ailleurs.",
   "variantes": [
    "proximal",
    "proximale",
