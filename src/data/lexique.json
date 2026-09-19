@@ -1345,7 +1345,9 @@
    "grands dorsaux",
    "dorsal",
    "dorsaux",
-   "latissimus"
+   "latissimus",
+   "?grand public",
+   "?grands publics"
   ],
   "situation": {
    "vue": "dos",
@@ -1363,7 +1365,25 @@
      24
     ]
    ]
-  }
+  },
+  "contexte": [
+   "dos",
+   "omoplate",
+   "omoplates",
+   "crete iliaque",
+   "lombaire",
+   "lombaires",
+   "reins",
+   "bassin",
+   "aisselle",
+   "epaule",
+   "epaules",
+   "trapeze",
+   "bras",
+   "dorsal",
+   "dorsaux",
+   "sacrum"
+  ]
  },
  {
   "id": "bandoulieres",
@@ -1406,7 +1426,9 @@
    "grands pectoraux",
    "pectoral",
    "pectoraux",
-   "pectorale"
+   "pectorale",
+   "?grand public",
+   "?grands publics"
   ],
   "situation": {
    "vue": "face",
@@ -1424,7 +1446,21 @@
      11
     ]
    ]
-  }
+  },
+  "contexte": [
+   "poitrine",
+   "sein",
+   "seins",
+   "sternum",
+   "mamelon",
+   "mamelons",
+   "clavicule",
+   "aisselle",
+   "pectoral",
+   "pectoraux",
+   "deltoide",
+   "thorax"
+  ]
  },
  {
   "id": "grand-droit",
@@ -1484,7 +1520,12 @@
    "-oblique en bas",
    "-oblique vers",
    "-oblique qui",
-   "-oblique comme"
+   "-oblique comme",
+   "?grand public",
+   "?grands publics",
+   "?petit public",
+   "?petits publics",
+   "?rend public"
   ],
   "situation": {
    "vue": "face",
@@ -1519,7 +1560,9 @@
    "aine",
    "pubis",
    "cotes",
-   "thorax"
+   "thorax",
+   "petit oblique",
+   "grand oblique"
   ]
  },
  {
@@ -1540,7 +1583,9 @@
    "denteles",
    "dentele anterieur",
    "digitations",
-   "dentelees"
+   "dentelees",
+   "?grand public",
+   "?grands publics"
   ],
   "situation": {
    "vue": "face",
@@ -1558,7 +1603,22 @@
      13
     ]
    ]
-  }
+  },
+  "contexte": [
+   "cote",
+   "cotes",
+   "digitations",
+   "interstice",
+   "interstices",
+   "thorax",
+   "cage thoracique",
+   "omoplate",
+   "aisselle",
+   "dentele",
+   "denteles",
+   "septieme",
+   "neuvieme"
+  ]
  },
  {
   "id": "sterno-cleido",
@@ -2162,7 +2222,9 @@
    "gluteaux",
    "pli fessier",
    "fesse",
-   "fesses"
+   "fesses",
+   "?grand public",
+   "?grands publics"
   ],
   "situation": {
    "vue": "dos",
@@ -2180,7 +2242,22 @@
      18
     ]
    ]
-  }
+  },
+  "contexte": [
+   "fesse",
+   "fesses",
+   "fessier",
+   "fessiers",
+   "pli fessier",
+   "sacrum",
+   "hanche",
+   "hanches",
+   "trochanter",
+   "bassin",
+   "cuisse",
+   "ischion",
+   "moyen fessier"
+  ]
  },
  {
   "id": "moyen-fessier",
