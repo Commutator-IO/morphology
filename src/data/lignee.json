@@ -13,7 +13,9 @@
     "url": "https://archive.org/details/b20418085"
    }
   ],
-  "source": "Filiation citée par Debord dans le cours ; notice de l'ouvrage vérifiée sur archive.org."
+  "source": "Filiation citée par Debord dans le cours ; notice de l'ouvrage vérifiée sur archive.org. Années de naissance et de mort d'après Wikidata.",
+  "ne": 1844,
+  "mort": 1907
  },
  {
   "id": "richer",
@@ -45,7 +47,20 @@
     "annee": "1910"
    }
   ],
-  "source": "Chaire et bibliographie d'après sa notice Wikipédia ; les deux premiers titres vérifiés sur archive.org, où ils sont librement consultables."
+  "source": "Chaire et bibliographie d'après sa notice Wikipédia ; les deux premiers titres vérifiés sur archive.org, où ils sont librement consultables. Années de naissance et de mort d'après Wikidata.",
+  "ne": 1849,
+  "mort": 1933
+ },
+ {
+  "id": "debord",
+  "nom": "Jean-François Debord",
+  "dates": "1938-2025",
+  "ne": 1938,
+  "mort": 2025,
+  "role": "lui",
+  "notice": "Peintre, il a tenu l'enseignement de morphologie aux Beaux-Arts de Paris et à l'école de kinésithérapie de l'ADERF. Le cours indexé par ce site est la captation de sa dernière année d'enseignement, en 2002-2003.",
+  "ouvrages": [],
+  "source": "Notice Wikipédia ; années de naissance et de mort d'après Wikidata."
  },
  {
   "id": "comar",
@@ -54,7 +69,8 @@
   "role": "autour",
   "notice": "Plasticien et écrivain, il a enseigné le dessin et la morphologie aux Beaux-Arts de Paris de 1979 à 2018. Il fut donc le collègue de Debord pendant près de vingt-cinq ans, et non son successeur — les deux enseignements ont coexisté.",
   "ouvrages": [],
-  "source": "Dates d'enseignement d'après sa notice Wikipédia."
+  "source": "Dates d'enseignement d'après sa notice Wikipédia. Années de naissance et de mort d'après Wikidata.",
+  "ne": 1955
  },
  {
   "id": "lauricella",
@@ -68,7 +84,9 @@
     "url": "https://www.editions-eyrolles.com/Auteur/44583/michel-lauricella"
    }
   ],
-  "source": "Élève cité dans la notice Wikipédia de Debord ; formation, enseignement et titres d'après sa page d'auteur chez Eyrolles."
+  "source": "Élève cité dans la notice Wikipédia de Debord ; formation, enseignement et titres d'après sa page d'auteur chez Eyrolles. Années de naissance et de mort d'après Wikidata.",
+  "ne": 1968,
+  "dates": "né en 1968"
  },
  {
   "id": "delavier",
@@ -82,13 +100,15 @@
     "annee": "à confirmer"
    }
   ],
-  "source": "Élève cité dans la notice Wikipédia de Debord. Les références précises de ses ouvrages n'ont pas pu être vérifiées ici : les recherches ne rendent que des pages marchandes."
+  "source": "Élève cité dans la notice Wikipédia de Debord. Les références précises de ses ouvrages n'ont pas pu être vérifiées ici : les recherches ne rendent que des pages marchandes. Années de naissance et de mort d'après Wikidata.",
+  "ne": 1967,
+  "dates": "né en 1967"
  },
  {
   "id": "maupre",
   "nom": "Agnès Maupré",
   "role": "autour",
-  "notice": "Elle a tiré de l'enseignement de Debord un traité dessiné, publié en bande dessinée. C'est à ce jour la seule mise en livre du cours lui-même, que Debord refusait d'écrire — il tenait son enseignement pour oral et magistral, et le disait en séance.",
+  "notice": "Autrice de bande dessinée, elle a tiré de l'enseignement de Debord un traité dessiné. C'est à ce jour la seule mise en livre du cours lui-même, que Debord refusait d'écrire — il tenait son enseignement pour oral et magistral, et le disait en séance.",
   "ouvrages": [
    {
     "titre": "Petit Traité de morphologie d'après les cours donnés par Jean-François Debord",
@@ -96,6 +116,75 @@
     "annee": "2008"
    }
   ],
-  "source": "D'après la notice Wikipédia de Debord ; le refus d'écrire un livre est dit par Debord dans la séance 15."
+  "source": "D'après la notice Wikipédia de Debord ; le refus d'écrire un livre est dit par Debord dans la séance 15. Années de naissance et de mort d'après Wikidata.",
+  "ne": 1983,
+  "dates": "né en 1983"
+ },
+ {
+  "id": "sfar",
+  "nom": "Joann Sfar",
+  "role": "artistes",
+  "notice": "Dessinateur de bande dessinée, l'un des auteurs les plus prolifiques de sa génération. Son trait rapide, qui construit le volume sans jamais s'appesantir sur le contour, est de ceux que ce cours cherche à former — dessiner d'après ce qu'on a compris, non d'après ce qu'on recopie.",
+  "ouvrages": [],
+  "source": "Élève cité dans la notice Wikipédia de Jean-François Debord, qui nomme la discipline de chacun. Années de naissance et de mort d'après Wikidata.",
+  "ne": 1971,
+  "dates": "né en 1971"
+ },
+ {
+  "id": "cavallo",
+  "nom": "Ricardo Cavallo",
+  "role": "artistes",
+  "notice": "Peintre. Cité parmi les élèves de Debord.",
+  "ouvrages": [],
+  "source": "Élève cité dans la notice Wikipédia de Jean-François Debord, qui nomme la discipline de chacun."
+ },
+ {
+  "id": "paquignon",
+  "nom": "Didier Paquignon",
+  "role": "artistes",
+  "notice": "Peintre. Cité parmi les élèves de Debord.",
+  "ouvrages": [],
+  "source": "Élève cité dans la notice Wikipédia de Jean-François Debord, qui nomme la discipline de chacun. Années de naissance et de mort d'après Wikidata.",
+  "ne": 1958,
+  "dates": "né en 1958"
+ },
+ {
+  "id": "bouftass",
+  "nom": "Saïd Bouftass",
+  "role": "artistes",
+  "notice": "Peintre. Cité parmi les élèves de Debord.",
+  "ouvrages": [],
+  "source": "Élève cité dans la notice Wikipédia de Jean-François Debord, qui nomme la discipline de chacun. Années de naissance et de mort d'après Wikidata.",
+  "ne": 1963,
+  "dates": "né en 1963"
+ },
+ {
+  "id": "garcia",
+  "nom": "Delphine D. Garcia",
+  "role": "artistes",
+  "notice": "Peintre. Citée parmi les élèves de Debord.",
+  "ouvrages": [],
+  "source": "Élève cité dans la notice Wikipédia de Jean-François Debord, qui nomme la discipline de chacun."
+ },
+ {
+  "id": "lallemand",
+  "nom": "Bernard Lallemand",
+  "role": "artistes",
+  "notice": "Plasticien. Cité parmi les élèves de Debord.",
+  "ouvrages": [],
+  "source": "Élève cité dans la notice Wikipédia de Jean-François Debord, qui nomme la discipline de chacun. Années de naissance et de mort d'après Wikidata.",
+  "ne": 1947,
+  "dates": "né en 1947"
+ },
+ {
+  "id": "cartier-bresson",
+  "nom": "Henri Cartier-Bresson",
+  "dates": "1908-2004",
+  "role": "artistes",
+  "notice": "Photographe, revenu au dessin dans la dernière partie de sa vie. Sa présence dans cette liste surprend et mérite d'être prise avec précaution — voir la provenance ci-dessous.",
+  "ouvrages": [],
+  "source": "Cité parmi les élèves dans la notice Wikipédia de Debord. Cette filiation n'a pu être corroborée par aucune autre source ici : à prendre comme une affirmation de Wikipédia, non comme un fait établi. Années de naissance et de mort d'après Wikidata.",
+  "ne": 1908,
+  "mort": 2004
  }
 ]
