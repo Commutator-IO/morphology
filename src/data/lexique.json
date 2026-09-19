@@ -378,7 +378,12 @@
    "epines iliaques",
    "epine anterosuperieure",
    "eias",
-   "epine anterieure"
+   "epine anterieure",
+   "epine anterieur et superieur",
+   "epines anterieur et superieur",
+   "epine anterieure superieure",
+   "epines du bassin",
+   "epine du bassin"
   ],
   "situation": {
    "vue": "face",
@@ -795,8 +800,8 @@
    "scapulaire",
    "scapulaires",
    "ceinture scapulaire",
-   "epine de lomoplate",
-   "pointe de lomoplate"
+   "epine de l omoplate",
+   "pointe de l omoplate"
   ],
   "situation": {
    "vue": "dos",
@@ -1313,8 +1318,8 @@
   "variantes": [
    "grand droit",
    "grands droits",
-   "droit de labdomen",
-   "droits de labdomen",
+   "droit de l abdomen",
+   "droits de l abdomen",
    "rectus",
    "tablettes",
    "ligne blanche",
@@ -1424,7 +1429,9 @@
    "sterno",
    "sterno clayton",
    "sterno basto",
-   "sterno cleido mastoidien"
+   "sterno cleido mastoidien",
+   "?master",
+   "?masters"
   ],
   "situation": {
    "vue": "face",
@@ -1442,7 +1449,23 @@
      50
     ]
    ]
-  }
+  },
+  "contexte": [
+   "sternum",
+   "clavicule",
+   "clavicules",
+   "cou",
+   "nuque",
+   "gorge",
+   "larynx",
+   "trapeze",
+   "occiput",
+   "mastoide",
+   "tete tourne",
+   "tourne la tete",
+   "epaule",
+   "fourchette"
+  ]
  },
  {
   "id": "peauciers",
@@ -1491,16 +1514,8 @@
    "masseters",
    "masseterine",
    "muscle masseter",
-   "dans le master",
-   "voila le master",
-   "mais le master",
-   "pour le master",
-   "c est le master",
-   "contracte le master",
-   "le master legrand",
-   "sont les masters",
-   "sont les master",
-   "que les masters"
+   "?master",
+   "?masters"
   ],
   "situation": {
    "vue": "face",
@@ -1518,7 +1533,28 @@
      5
     ]
    ]
-  }
+  },
+  "contexte": [
+   "machoire",
+   "machoires",
+   "mandibule",
+   "dent",
+   "dents",
+   "mastication",
+   "mastiquer",
+   "joue",
+   "joues",
+   "menton",
+   "tempe",
+   "tempes",
+   "temporal",
+   "zygomatique",
+   "oreille",
+   "visage",
+   "crane",
+   "mordre",
+   "maxillaire"
+  ]
  },
  {
   "id": "temporal",
@@ -2169,7 +2205,9 @@
    "fascia latin",
    "fascia",
    "aponevrose femorale",
-   "bandelette"
+   "bandelette",
+   "fascia l ata",
+   "tenseur du fascia l ata"
   ],
   "situation": {
    "vue": "face",
@@ -2300,7 +2338,7 @@
   "moderne": "Tendo calcaneus",
   "definition": "Le plus fort tendon du corps, du triceps sural au calcanéum. Il s'aplatit et se resserre en descendant, faisant de la cheville vue de dos la partie la plus étroite du membre.",
   "variantes": [
-   "tendon dachille",
+   "tendon d achille",
    "achille",
    "achilleen",
    "tendon calcaneen"
@@ -2596,7 +2634,10 @@
    "contrapposto",
    "jambe porteuse",
    "jambe libre",
-   "appui unipodal"
+   "appui unipodal",
+   "station hanche",
+   "station hanches",
+   "dehanche"
   ]
  },
  {
@@ -2746,9 +2787,9 @@
   "region": "general",
   "definition": "Exercice qui ouvre la plupart des séances : établir la figure entière — proportions, axes, aplomb, rapport des trois masses — avant d'entrer dans une région. L'ordre n'est pas pédagogique mais logique : un détail juste dans un ensemble faux reste faux.",
   "variantes": [
-   "vue densemble",
-   "vues densemble",
-   "densemble"
+   "vue d ensemble",
+   "vues d ensemble",
+   "d ensemble"
   ]
  },
  {
@@ -2827,7 +2868,9 @@
   "definition": "La source contre laquelle tout se vérifie. L'anatomie n'est pas là pour être récitée : elle sert à comprendre ce qu'on voit sur le modèle, et cède devant lui quand les deux divergent.",
   "variantes": [
    "modele vivant",
-   "modeles vivants"
+   "modeles vivants",
+   "!modèle",
+   "!modèles"
   ]
  },
  {
