@@ -3,8 +3,10 @@
   "configurations": [
     {
       "name": "morphologie",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
+      "runtimeExecutable": "/Users/michel/.local/bin/node",
+      "runtimeArgs": [
+        "node_modules/vite/bin/vite.js"
+      ],
       "port": 5173,
       "autoPort": true
     }
