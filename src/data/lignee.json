@@ -189,7 +189,7 @@
     "annee": "1999"
    }
   ],
-  "source": "Carrière d'après l'annonce de sa disparition par les Beaux-Arts de Paris ; dates d'après Wikidata. Les trois articles sont énumérés par Debord lui-même en séance 26 : c'est de là que viennent le titre du premier et le propos des deux autres. Vérifiés par ailleurs : l'exposition L'Âme au corps et son catalogue, et le catalogue Duchenne de Boulogne, où les notices de bibliothèque le nomment parmi les auteurs aux côtés d'Alfred Pacquement et Catherine Mathon. Le catalogue Géricault n'a pas été retrouvé dans les catalogues consultés : il est cité d'après les seuls mots de Debord. Le changement de nom de la discipline est rapporté par Frédéric Delavier dans sa vidéo de 2020.",
+  "source": "Carrière d'après l'annonce de sa disparition par les Beaux-Arts de Paris ; dates d'après Wikidata. Les trois articles sont énumérés par Debord lui-même en séance 26 : c'est de là que viennent le titre du premier et le propos des deux autres. Vérifiés par ailleurs : l'exposition L'Âme au corps et son catalogue, et le catalogue Duchenne de Boulogne, où les notices de bibliothèque le nomment parmi les auteurs aux côtés d'Alfred Pacquement et Catherine Mathon. Le catalogue Géricault n'a pas été retrouvé dans les catalogues consultés : il est cité d'après les seuls mots de Debord. Le changement de nom de la discipline est rapporté par Frédéric Delavier dans sa vidéo de 2020. Portrait : Wikimedia Commons, fichier « Jean-François Debord.jpg ».",
   "jalons": [
    {
     "annee": 1938,
@@ -248,7 +248,8 @@
     "horodate": "1:39",
     "propos": "Il y énumère ses trois articles"
    }
-  ]
+  ],
+  "portrait": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Jean-Fran%C3%A7ois_Debord.jpg/500px-Jean-Fran%C3%A7ois_Debord.jpg"
  },
  {
   "id": "comar",
@@ -257,8 +258,9 @@
   "role": "autour",
   "notice": "Plasticien et écrivain, il a enseigné le dessin et la morphologie aux Beaux-Arts de Paris de 1979 à 2018. Il fut donc le collègue de Debord pendant près de vingt-cinq ans, et non son successeur — les deux enseignements ont coexisté.",
   "ouvrages": [],
-  "source": "Dates d'enseignement d'après sa notice Wikipédia. Années de naissance et de mort d'après Wikidata.",
-  "ne": 1955
+  "source": "Dates d'enseignement d'après sa notice Wikipédia. Années de naissance et de mort d'après Wikidata. Portrait : Wikimedia Commons, fichier « Philippe Comar.jpg ».",
+  "ne": 1955,
+  "portrait": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Philippe_Comar.jpg/500px-Philippe_Comar.jpg"
  },
  {
   "id": "lauricella",
@@ -330,10 +332,11 @@
     "annee": "2008"
    }
   ],
-  "source": "D'après la notice Wikipédia de Debord ; le refus d'écrire un livre est dit par Debord dans la séance 15. Années de naissance et de mort d'après Wikidata. Compte Instagram vérifié : biographie « Autrice, dessinatrice, parolière ».",
+  "source": "D'après la notice Wikipédia de Debord ; le refus d'écrire un livre est dit par Debord dans la séance 15. Années de naissance et de mort d'après Wikidata. Compte Instagram vérifié : biographie « Autrice, dessinatrice, parolière ». Portrait : Wikimedia Commons, fichier « Agnès Maupré.jpg ».",
   "ne": 1983,
   "dates": "né en 1983",
-  "instagram": "agnesmaupre"
+  "instagram": "agnesmaupre",
+  "portrait": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Agn%C3%A8s_Maupr%C3%A9.jpg/500px-Agn%C3%A8s_Maupr%C3%A9.jpg"
  },
  {
   "id": "sfar",
@@ -347,7 +350,7 @@
     "annee": "2018"
    }
   ],
-  "source": "Élève cité dans la notice Wikipédia de Jean-François Debord, qui nomme la discipline de chacun. Années de naissance et de mort d'après Wikidata. Compte Instagram vérifié : biographie « Dessinateur! », 175 000 abonnés. Debord le nomme dans les séances 10, 20 et 25. Titre, éditeur et année relevés dans le catalogue Open Library.",
+  "source": "Élève cité dans la notice Wikipédia de Jean-François Debord, qui nomme la discipline de chacun. Années de naissance et de mort d'après Wikidata. Compte Instagram vérifié : biographie « Dessinateur! », 175 000 abonnés. Debord le nomme dans les séances 10, 20 et 25. Titre, éditeur et année relevés dans le catalogue Open Library. Portrait : Wikimedia Commons, fichier « Joann Sfar 1503609 Reims.jpg ».",
   "ne": 1971,
   "dates": "né en 1971",
   "instagram": "joannsfar",
@@ -373,7 +376,8 @@
     "horodate": "64:18",
     "propos": "« Comme le répète si gentiment Sfar »"
    }
-  ]
+  ],
+  "portrait": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Joann_Sfar_1503609_Reims.jpg/500px-Joann_Sfar_1503609_Reims.jpg"
  },
  {
   "id": "cavallo",
@@ -381,9 +385,10 @@
   "role": "artistes",
   "notice": "Peintre français d'origine argentine, né à Buenos Aires, en France depuis 1976 et installé dans le Finistère depuis 2003. Il peint le paysage breton sur le motif, en grands assemblages de petits panneaux.",
   "ouvrages": [],
-  "source": "Élève cité dans la notice Wikipédia de Debord, qui orthographie son nom « Cavalo » ; sa propre notice Wikipédia donne « Cavallo », avec sa date et son lieu de naissance.",
+  "source": "Élève cité dans la notice Wikipédia de Debord, qui orthographie son nom « Cavalo » ; sa propre notice Wikipédia donne « Cavallo », avec sa date et son lieu de naissance. Portrait : Wikimedia Commons, fichier « Ricardo Cavallo et Barbet Schroeder 2023.jpg ».",
   "dates": "né en 1954",
-  "ne": 1954
+  "ne": 1954,
+  "portrait": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Ricardo_Cavallo_et_Barbet_Schroeder_2023.jpg/500px-Ricardo_Cavallo_et_Barbet_Schroeder_2023.jpg"
  },
  {
   "id": "paquignon",
@@ -391,10 +396,11 @@
   "role": "artistes",
   "notice": "Peintre. Cité parmi les élèves de Debord.",
   "ouvrages": [],
-  "source": "Élève cité dans la notice Wikipédia de Jean-François Debord, qui nomme la discipline de chacun. Années de naissance et de mort d'après Wikidata. Compte Instagram vérifié : compte au nom de Didier Paquignon, peintre.",
+  "source": "Élève cité dans la notice Wikipédia de Jean-François Debord, qui nomme la discipline de chacun. Années de naissance et de mort d'après Wikidata. Compte Instagram vérifié : compte au nom de Didier Paquignon, peintre. Portrait : Wikimedia Commons, fichier « D. Paquignon.jpg ».",
   "ne": 1958,
   "dates": "né en 1958",
-  "instagram": "dpaquignon"
+  "instagram": "dpaquignon",
+  "portrait": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/D._Paquignon.jpg/500px-D._Paquignon.jpg"
  },
  {
   "id": "bouftass",
@@ -435,9 +441,10 @@
   "role": "artistes",
   "notice": "Photographe, revenu au dessin dans la dernière partie de sa vie. Sa présence dans cette liste surprend et mérite d'être prise avec précaution — voir la provenance ci-dessous.",
   "ouvrages": [],
-  "source": "Cité parmi les élèves dans la notice Wikipédia de Debord. Cette filiation n'a pu être corroborée par aucune autre source ici : à prendre comme une affirmation de Wikipédia, non comme un fait établi. Années de naissance et de mort d'après Wikidata.",
+  "source": "Cité parmi les élèves dans la notice Wikipédia de Debord. Cette filiation n'a pu être corroborée par aucune autre source ici : à prendre comme une affirmation de Wikipédia, non comme un fait établi. Années de naissance et de mort d'après Wikidata. Portrait : Wikimedia Commons, fichier « Portrait of Henri Cartier-Bresson - Paris - 1954 - Kimura Ihei.png ».",
   "ne": 1908,
-  "mort": 2004
+  "mort": 2004,
+  "portrait": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Portrait_of_Henri_Cartier-Bresson_-_Paris_-_1954_-_Kimura_Ihei.png/500px-Portrait_of_Henri_Cartier-Bresson_-_Paris_-_1954_-_Kimura_Ihei.png"
  },
  {
   "id": "turckheim",
