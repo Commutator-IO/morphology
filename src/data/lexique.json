@@ -1064,11 +1064,16 @@
    "carpiens",
    "scaphoide",
    "os crochu",
-   "trapeze osseux",
    "?trapeze",
    "?trapezes",
    "trapezoide",
-   "trapezoides"
+   "trapezoides",
+   "trapeze osseux",
+   "trapezoidaux",
+   "eminence du trapeze",
+   "rainure du trapeze",
+   "?trapezoidale",
+   "?trapezoidales"
   ],
   "situation": {
    "vue": "face",
@@ -1283,8 +1288,11 @@
    "?trapezes",
    "trapezien",
    "trapezienne",
-   "trapezoidaux",
-   "trapezoidale"
+   "-bout de trapeze",
+   "-en forme de trapeze",
+   "-forme trapezoidale",
+   "-un trapeze au depart",
+   "-dans mon trapeze"
   ],
   "situation": {
    "vue": "dos",

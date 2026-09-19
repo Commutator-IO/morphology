@@ -116,13 +116,16 @@ function motifsDe(terme) {
  * pour tous les termes, d'où qu'il vienne.
  */
 function positionsInterdites(plie, lexique) {
-  const hors = new Set();
+  const spans = [];
   for (const terme of lexique) {
     const { veto } = motifsDe(terme);
     if (!veto) continue;
-    for (const m of plie.matchAll(veto)) hors.add(m.index);
+    for (const m of plie.matchAll(veto)) spans.push([m.index, m.index + m[0].length]);
   }
-  return hors;
+  // La locution qui annule commence rarement sur le mot qu'elle annule :
+  // « un bout de trapèze » veut dire que le trapèze trois mots plus loin n'est
+  // pas le muscle. C'est donc tout l'intervalle qui est interdit.
+  return (offset) => spans.some(([a, b]) => offset >= a && offset < b);
 }
 
 /**
@@ -208,13 +211,13 @@ function relever({ nom, lexique: fichier, sortie: fichierSortie }) {
     }
 
     // Second passage : le voisinage tranche, sauf là où une locution l'interdit.
-    const interdites = positionsInterdites(plie, lexique);
-    for (const off of interdites) {
-      litiges.delete(off);
-      tenues.delete(off);
-      for (const [id, offsets] of fermes) {
-        const reste = offsets.filter((o) => o !== off);
-        if (reste.length !== offsets.length) fermes.set(id, reste);
+    const interdite = positionsInterdites(plie, lexique);
+    for (const off of [...litiges.keys()]) if (interdite(off)) litiges.delete(off);
+    for (const [id, offsets] of fermes) {
+      const reste = offsets.filter((o) => !interdite(o));
+      if (reste.length !== offsets.length) {
+        fermes.set(id, reste);
+        for (const off of offsets) if (interdite(off)) tenues.delete(off);
       }
     }
     const { gagnees, rendues, perdues } = arbitrer(plie, litiges, tenues, motsDe);
