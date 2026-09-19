@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { Entete, Pied } from './components/Cadre';
+import { Lecteur, type Lecture } from './components/Lecteur';
 import { useAncre } from './lib/ancre';
+import { ecrireTaille, grilleDe, lireTaille, type TailleLecteur } from './lib/lecteur';
 import {
   CLASSIQUES,
   DATEES,
@@ -355,8 +357,27 @@ function BandeHistorique() {
 
 export function PageLignee() {
   const [actif, setActif] = useState<Figure>(DATEES[0]);
+  const [lecture, setLecture] = useState<Lecture | null>(null);
+  const [taille, setTaille] = useState<TailleLecteur>(lireTaille);
   const fiches = useRef<(HTMLElement | null)[]>([]);
   useAncre();
+
+  function reglerTaille(t: TailleLecteur) {
+    setTaille(t);
+    ecrireTaille(t);
+  }
+
+  /**
+   * Ouvre une vidéo dans le panneau plutôt que dans un onglet.
+   *
+   * Le lien reste un lien : un clic modifié ou du milieu part sur YouTube,
+   * comme n'importe où ailleurs sur le site.
+   */
+  function jouer(e: React.MouseEvent, videoId: string, instant: number, titre: string) {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    e.preventDefault();
+    setLecture({ videoId, instant, titre });
+  }
 
   /**
    * La fiche la plus proche du tiers supérieur de l'écran est celle qu'on lit.
@@ -386,7 +407,7 @@ export function PageLignee() {
     <>
       <Entete chemin="/lignee/" />
 
-      <main className="mx-auto max-w-4xl px-4 pb-16">
+      <main className="mx-auto max-w-4xl px-4 pb-16 lg:max-w-6xl">
         <h1 className="titre mt-4 text-xl leading-tight text-ink-900 sm:mt-6 sm:text-3xl">
           Lignée
         </h1>
@@ -406,9 +427,11 @@ export function PageLignee() {
 
         <BandeHistorique />
 
-        <Regle actif={actif} />
+        <div className={`mt-6 lg:grid lg:gap-8 ${grilleDe(taille)}`}>
+          <div>
+            <Regle actif={actif} />
 
-        <div className="mt-8 space-y-10">
+            <div className="mt-8 space-y-10">
           {SECTIONS.map((section) => {
             const figures = parSection(section.role);
             if (!figures.length) return null;
@@ -450,6 +473,10 @@ export function PageLignee() {
                               href={l.url}
                               target="_blank"
                               rel="noreferrer"
+                              onClick={(ev) => {
+                                const id = /[?&]v=([\w-]+)/.exec(l.url)?.[1];
+                                if (id) jouer(ev, id, 0, `${f.nom} — ${l.libelle.replace(' ↗', '')}`);
+                              }}
                               className="text-brand-700 underline underline-offset-2"
                             >
                               {l.libelle}
@@ -520,6 +547,9 @@ export function PageLignee() {
                                     href={`https://www.youtube.com/watch?v=${ec.video}&t=${ec.t}s`}
                                     target="_blank"
                                     rel="noreferrer"
+                                    onClick={(ev) =>
+                                      jouer(ev, ec.video, ec.t, `Séance ${ec.seance} — ${f.nom}`)
+                                    }
                                     className="tabular whitespace-nowrap text-brand-700 underline underline-offset-2"
                                   >
                                     S{ec.seance} · {ec.horodate}
@@ -542,6 +572,15 @@ export function PageLignee() {
               </section>
             );
           })}
+            </div>
+          </div>
+
+          <Lecteur
+            lecture={lecture}
+            onFermer={() => setLecture(null)}
+            taille={taille}
+            onTaille={reglerTaille}
+          />
         </div>
       </main>
 
