@@ -166,6 +166,137 @@
   ]
  },
  {
+  "id": "vesale",
+  "nom": "Vésale",
+  "dates": "1514-1564",
+  "role": "sources",
+  "notice": "Le fondateur de l'anatomie moderne, qui dissèque lui-même quand ses prédécesseurs lisaient Galien. Ses planches posent l'écorché debout dans un paysage, vivant et non couché sur une table : un parti pris de dessinateur autant que de savant, et la raison pour laquelle un cours de morphologie s'y réfère encore. Debord raconte la découverte comme une révélation — un soir, le membre inférieur vu de l'intérieur.",
+  "ouvrages": [
+   {
+    "titre": "De humani corporis fabrica libri septem",
+    "annee": "1543",
+    "url": "https://archive.org/details/gri_33125008502920"
+   }
+  ],
+  "portrait": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Vesalius_Fabrica_portrait.jpg/500px-Vesalius_Fabrica_portrait.jpg",
+  "source": "Dates d'après Wikidata (Q170267) ; la Fabrica est librement consultable sur archive.org, où elle a été ouverte ; portrait : le frontispice de la Fabrica, Wikimedia Commons, domaine public. Sa place dans le cours est attestée par les sept mentions relevées dans les sous-titres.",
+  "ecoutes": [
+   {
+    "video": "LHaB3iu4zIw",
+    "t": 2095,
+    "seance": 15,
+    "horodate": "34:55",
+    "propos": "« Une révélation » : le membre inférieur vu de l'intérieur"
+   }
+  ]
+ },
+ {
+  "id": "bourgery-jacob",
+  "nom": "Bourgery et Jacob",
+  "dates": "1797-1849 et 1782-1871",
+  "role": "sources",
+  "notice": "Le Traité complet de l'anatomie de l'homme, paru de 1831 à 1854 : Jean-Baptiste Marc Bourgery écrit, Nicolas Henri Jacob dessine. Huit volumes de planches lithographiées, l'atlas français de référence du XIXe siècle. Debord le feuillette en cours et s'en sert comme on se sert d'un confrère : il relève ce que les deux hommes n'avaient pas vu — deux muscles de la face qui leur ont échappé.",
+  "ouvrages": [
+   {
+    "titre": "Traité complet de l'anatomie de l'homme",
+    "annee": "1831-1854",
+    "url": "https://archive.org/details/BIUSante_02083x01"
+   }
+  ],
+  "portrait": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Jean-Baptiste_Marc_Bourgery.jpg/500px-Jean-Baptiste_Marc_Bourgery.jpg",
+  "source": "Dates des deux hommes d'après Wikidata (Q1685675 pour Bourgery, Q1716463 pour Jacob) ; le traité est consultable sur archive.org, numérisation de la BIU Santé ; portrait de Bourgery : Wikimedia Commons, domaine public — il n'en existe pas de libre pour Jacob, dont la plaque emprunte donc celle de son coauteur.",
+  "ecoutes": [
+   {
+    "video": "4IIUE6NVqDU",
+    "t": 5581,
+    "seance": 43,
+    "horodate": "1:33:01",
+    "propos": "Ce que Bourgery et Jacob n'avaient pas vu : deux muscles de la face"
+   }
+  ]
+ },
+ {
+  "id": "duchenne",
+  "nom": "Duchenne de Boulogne",
+  "dates": "1806-1875",
+  "role": "sources",
+  "notice": "Le neurologue qui, à partir de 1852, électrise un à un les muscles du visage d'un homme insensible à la douleur et photographie ce que chacun produit. C'est la première preuve expérimentale de la mimique : non plus ce qu'un peintre croit voir, mais quel muscle fait quelle expression. Debord y revient tout au long de la séance sur la tête, et dit s'être beaucoup occupé de lui.",
+  "ouvrages": [
+   {
+    "titre": "Mécanisme de la physionomie humaine",
+    "annee": "1862",
+    "url": "https://archive.org/details/mecanismedelaphy00duch"
+   }
+  ],
+  "portrait": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Guillaume_Benjamin_Amand_Duchenne_de_Boulogne._Photomechanic_Wellcome_M0010495.jpg/500px-Guillaume_Benjamin_Amand_Duchenne_de_Boulogne._Photomechanic_Wellcome_M0010495.jpg",
+  "source": "Dates d'après Wikidata (Q551417) ; l'ouvrage de 1862 est librement consultable sur archive.org ; portrait : Wellcome Collection via Wikimedia Commons, sous licence CC BY 4.0 — le seul de cette page qui ne soit pas dans le domaine public. Quarante-neuf mentions relevées dans les sous-titres, le plus cité des auteurs après Rembrandt et le Louvre.",
+  "ecoutes": [
+   {
+    "video": "4IIUE6NVqDU",
+    "t": 120,
+    "seance": 43,
+    "horodate": "2:00",
+    "propos": "« Duchenne de Boulogne, dont je me suis beaucoup occupé »"
+   }
+  ]
+ },
+ {
+  "id": "darwin",
+  "nom": "Charles Darwin",
+  "dates": "1809-1882",
+  "role": "sources",
+  "notice": "Cité pour L'Expression des émotions, où il reprend les photographies de Duchenne pour montrer que la mimique est héritée et non apprise. Debord l'admire d'avoir compris les structures les unes par rapport aux autres, du cœlacanthe à l'homme, tout en avouant qu'il l'agace un peu — et raconte être allé à Cambridge chercher dans ses papiers trois tirages que Duchenne lui avait prêtés et qu'il n'a jamais rendus. Il ne les a pas retrouvés.",
+  "ouvrages": [
+   {
+    "titre": "The Expression of the Emotions in Man and Animals",
+    "annee": "1872",
+    "url": "https://archive.org/details/india.history.resource.85465"
+   }
+  ],
+  "portrait": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Charles_Darwin_seated_crop.jpg/500px-Charles_Darwin_seated_crop.jpg",
+  "source": "Dates d'après Wikidata (Q1035) ; l'ouvrage de 1872 est librement consultable sur archive.org ; portrait par Maull et Polyblank, Wikimedia Commons, domaine public. L'épisode des tirages de Cambridge est rapporté par Debord lui-même, et par lui seul : rien de ce qui a été consulté ne le corrobore.",
+  "ecoutes": [
+   {
+    "video": "4IIUE6NVqDU",
+    "t": 6033,
+    "seance": 43,
+    "horodate": "1:40:33",
+    "propos": "Le sujet des expériences de Duchenne, repris par Darwin"
+   },
+   {
+    "video": "4IIUE6NVqDU",
+    "t": 6204,
+    "seance": 43,
+    "horodate": "1:43:24",
+    "propos": "Les tirages jamais rendus, cherchés en vain à Cambridge"
+   }
+  ]
+ },
+ {
+  "id": "straus-durckheim",
+  "nom": "Straus-Durckheim",
+  "dates": "1790-1865",
+  "role": "sources",
+  "notice": "Naturaliste strasbourgeois, auteur d'une anatomie du chat en deux volumes qui sert de type à toute l'anatomie comparée des mammifères. Debord le cite une fois, mais pour un mot qu'il lui reprend : le retournement du trapèze, la torsion que subit le muscle en passant du quadrupède à l'homme debout. Le cours prononce « Strauss » ; l'auteur signe Straus.",
+  "ouvrages": [
+   {
+    "titre": "Anatomie descriptive et comparative du chat",
+    "annee": "1845",
+    "url": "https://archive.org/details/anatomiedescrip00stragoog"
+   }
+  ],
+  "source": "Il n'a ni page Wikipédia ni notice Wikidata : les dates viennent de la notice d'autorité d'Open Library (OL2522716A), qui donne aussi son nom complet — Hercule Eugène Grégoire Straus-Durckheim — et l'ouvrage de 1845 est consultable sur archive.org. Aucun portrait libre n'a été trouvé, d'où la plaque aux initiales.",
+  "ecoutes": [
+   {
+    "video": "E7VxdQNu9jo",
+    "t": 3394,
+    "seance": 24,
+    "horodate": "56:34",
+    "propos": "Le retournement du trapèze, nommé d'après lui"
+   }
+  ]
+ },
+ {
   "id": "debord",
   "nom": "Jean-François Debord",
   "dates": "1938-2025",
