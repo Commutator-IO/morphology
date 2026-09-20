@@ -93,6 +93,9 @@ const ECARTES = new Set([
   // the 1914-18 war that Debord, born in 1938, cannot be remembering.
   'oXJs2-3OAlA|2058',
   'RYcT89bug4U|5087',
+  // "testicules" without a note: same case as the "verge" above — he is placing
+  // them on a drawing and naming what he draws.
+  'Nha5ZI8PVo0|5388',
   // "figurez-vous" without a note: a turn of phrase inside a demonstration —
   // how the fibres twist, where the pectoral passes — and not a recollection.
   'lPiLzxL9qk4|2802',
