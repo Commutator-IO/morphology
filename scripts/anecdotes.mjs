@@ -100,6 +100,19 @@ const ECARTES = new Set([
   // "verge" without a note: he is placing the scrotum and the penis on a
   // drawing, naming what he draws. No change of register, nothing to hear.
   'ycr4a1eAkn0|6105',
+  // "je me souviens" / "je me rappelle" without a note: seven are a lapse in
+  // the middle of a demonstration — a student's first name, the shape of an
+  // eminence — and not the opening of a recollection. The last is a genuine
+  // aside on God and the void, too mangled by the subtitle to be described.
+  'BySad1olbq4|3915',
+  'H2HqbPEaxk8|2302',
+  'IDr53Cr4fsU|1544',
+  'kc2e56cun8U|3250',
+  'lPiLzxL9qk4|3975',
+  'N32pB-1QXS0|4021',
+  'oXJs2-3OAlA|4290',
+  'RYcT89bug4U|3049',
+  'xPRzam0rqDw|1194',
 ]);
 
 /** Hand-written notes, one per intelligible moment. */
