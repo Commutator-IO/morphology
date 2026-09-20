@@ -11,10 +11,10 @@ import {
 } from './references';
 
 /**
- * La liste des références est bâtie sur un tri manuel : chaque nom a été gardé
- * parce qu'on a lu le passage. Ces tests gardent les propriétés que ce tri
- * garantit, et surtout la dernière — un nom sans aucune mention signalerait
- * qu'on a laissé passer un candidat non vérifié.
+ * The reference list rests on a manual sort: every name was kept because the
+ * passage was read. These tests guard the properties that sort guarantees, and
+ * above all the last one — a name with no mention at all would mean an
+ * unverified candidate slipped through.
  */
 
 describe('références', () => {
@@ -33,8 +33,8 @@ describe('références', () => {
   });
 
   it('ne garde que des noms effectivement prononcés', () => {
-    // Une référence sans mention viendrait d'un candidat non vérifié : la liste
-    // est construite à partir des relevés, pas d'une anthologie plaquée dessus.
+    // A reference with no mention would come from an unverified candidate: the list
+    // is built from the surveys, not from an anthology laid over them.
     for (const r of REFERENCES) {
       expect(totalDeReference(r.id), `${r.id} n'est cité nulle part`).toBeGreaterThan(0);
     }
@@ -71,9 +71,9 @@ describe('références', () => {
   });
 
   it('écarte les homonymes courants relevés à l’audit', () => {
-    // « léger », « carrière », « boucher », « durer » apparaissent des dizaines
-    // de fois dans les sous-titres, mais comme mots ordinaires. Les réadmettre
-    // gonflerait la liste de références que Debord n'a jamais faites.
+    // "léger", "carrière", "boucher", "durer" appear dozens of times in the
+    // subtitles, but as ordinary words. Readmitting them would swell the list with
+    // references Debord never made.
     const ids = new Set(REFERENCES.map((r) => r.id));
     for (const faux of ['leger', 'fernand-leger', 'carriere', 'boucher', 'durer']) {
       expect(ids, faux).not.toContain(faux);
@@ -81,11 +81,11 @@ describe('références', () => {
   });
 
   it('exclut les patronymes qui sont du vocabulaire du cours', () => {
-    // Le pire des faux amis : un nom propre qui entre en collision avec le sujet
-    // traité, et qui remonte donc précisément là où le cours en parle.
-    // « carpeaux » transcrit carpo- (articulation carpo-métacarpienne),
-    // « courbet » le verbe courber, « poussin » un fléchisseur du pouce.
-    // Aucun des trois n'a de citation avérée : ils restent hors du relevé.
+    // The worst kind of false friend: a proper name colliding with the subject
+    // being taught, which therefore surfaces exactly where the course covers it.
+    // "carpeaux" transcribes carpo- (the carpometacarpal joint), "courbet" the verb
+    // courber, "poussin" a flexor of the thumb. None of the three has a confirmed
+    // citation: they stay out of the survey.
     const ids = new Set(REFERENCES.map((r) => r.id));
     for (const faux of ['carpeaux', 'courbet', 'bronzino']) {
       expect(ids, faux).not.toContain(faux);
@@ -93,12 +93,12 @@ describe('références', () => {
   });
 
   it('ne laisse aucun mot du cours servir de variante à lui seul', () => {
-    // Poussin fait exception à la règle ci-dessus : Debord le cite une fois,
-    // aux côtés du Tintoret, et une citation avérée a sa place au relevé. Mais
-    // ce qui pollue l'index n'est pas l'entrée, c'est le mot nu — il vaut trois
-    // fois sur quatre pour le fléchisseur du pouce. L'entrée n'existe donc qu'à
-    // travers une locution, et c'est cet invariant-là qu'il faut tenir : aucune
-    // de ces formes ne doit jamais redevenir une variante à elle seule.
+    // Poussin is the exception to the rule above: Debord cites him once, beside
+    // Tintoretto, and a confirmed citation belongs in the survey. But what pollutes
+    // the index is not the entry, it is the bare word — three times out of four it
+    // means the flexor of the thumb. The entry therefore exists only through a
+    // phrase, and that is the invariant to hold: none of these forms may ever
+    // become a variant on its own again.
     const NUS = new Set(['poussin', 'poussins', 'carpeaux', 'courbet', 'leger', 'boucher']);
     for (const r of REFERENCES) {
       for (const v of r.variantes) {
@@ -119,9 +119,9 @@ describe('références', () => {
 });
 
 describe('liens de musée', () => {
-  /** Les seuls domaines vérifiés à la main. Un lien ailleurs signalerait une
-   *  URL écrite de mémoire — le mode d'erreur exact qu'on cherche à éviter : un
-   *  ark du Louvre « plausible » s'est révélé désigner un cippe, pas la Vénus. */
+  /** The only domains checked by hand. A link anywhere else would signal a URL
+   *  written from memory — exactly the failure we are avoiding: a "plausible"
+   *  Louvre ark turned out to designate a cippus, not the Venus. */
   const DOMAINES = new Set([
     'www.artic.edu',
     'www.metmuseum.org',
@@ -130,15 +130,14 @@ describe('liens de musée', () => {
     'www.musee-orsay.fr',
     'www.petitpalais.paris.fr',
     'www.museivaticani.va',
-    // Notices d'œuvre, ajoutées après avoir ouvert chaque URL dans un vrai
-    // navigateur et relevé le titre de la page — le Louvre et le Mauritshuis
-    // opposent une vérification anti-robot à toute requête automatique, si
-    // bien qu'un contrôle par code HTTP ne prouverait rien.
+    // Work records, added after opening each URL in a real browser and reading the
+    // page title — the Louvre and the Mauritshuis put a bot check in front of every
+    // automated request, so an HTTP-code check would prove nothing.
     'collections.louvre.fr',
     'www.mauritshuis.nl',
     'www.parismuseescollections.paris.fr',
-    // Numérisations de livres, pour les anatomistes : chaque page ouverte et son
-    // titre relevé, comme pour les notices d'œuvre.
+    // Book digitisations, for the anatomists: each page opened and its title read,
+    // as for the work records.
     'archive.org',
   ]);
 
@@ -172,9 +171,9 @@ describe('liens de musée', () => {
   });
 
   it('laisse sans lien ce qui est encore sous droits', () => {
-    // Picasso, Giacometti, Bacon, Miró, Masson, Balthus : aucune image en accès
-    // libre n'existe, et en fabriquer un lien reviendrait à renvoyer vers une
-    // reproduction non autorisée. L'absence est ici le résultat correct.
+    // Picasso, Giacometti, Bacon, Miró, Masson, Balthus: no freely accessible image
+    // exists, and fabricating a link would mean pointing at an unauthorised
+    // reproduction. Absence is the correct result here.
     for (const id of ['picasso', 'giacometti', 'bacon', 'miro', 'masson', 'balthus']) {
       const r = REFERENCES.find((x) => x.id === id);
       expect(r, id).toBeDefined();
@@ -183,10 +182,10 @@ describe('liens de musée', () => {
   });
 
   it('ne fait pas pointer deux références sur la même œuvre', () => {
-    // L'invariant qui aurait attrapé la confusion tout seul : une recherche sur
-    // « michelangelo » a rendu « The Musicians » de Michelangelo Merisi — le
-    // Caravage — et l'a rangé sous Michel-Ange. Deux entrées renvoyant au même
-    // tableau signalent presque toujours une homonymie mal tranchée.
+    // The invariant that would have caught the mix-up on its own: a search for
+    // "michelangelo" returned "The Musicians" by Michelangelo Merisi — Caravaggio —
+    // and filed it under Michelangelo. Two entries pointing at the same painting
+    // almost always mean a badly settled homonym.
     const urls = avecLien
       .filter((r) => r.musee!.oeuvre)
       .map((r) => r.musee!.url);
@@ -194,14 +193,14 @@ describe('liens de musée', () => {
   });
 
   it('ne confond pas Michel-Ange avec le Caravage', () => {
-    // Buonarroti et Merisi portent le même prénom ; seul le patronyme distingue.
+    // Buonarroti and Merisi share a first name; only the surname tells them apart.
     const m = REFERENCES.find((r) => r.id === 'michel-ange');
     expect(m?.musee?.oeuvre ?? '').not.toContain('Musicians');
   });
 
   it('n’attribue pas une œuvre d’atelier au maître', () => {
-    // « Follower of Leonardo », « Cecco del Caravaggio », « Antoine Masson » :
-    // tous passaient le premier filtre par simple inclusion du patronyme.
+    // "Follower of Leonardo", "Cecco del Caravaggio", "Antoine Masson": all passed
+    // the first filter by merely containing the surname.
     for (const r of avecLien) {
       const t = (r.musee!.oeuvre ?? '').toLowerCase();
       for (const q of ['follower of', 'workshop of', 'imitator of', 'circle of']) {

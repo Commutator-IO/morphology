@@ -9,11 +9,11 @@ import {
 import type { Lecture } from './Lecteur';
 
 /**
- * Une référence citée dans le cours, et les moments où elle l'est.
+ * A reference cited in the course, and the moments where it is.
  *
- * Même forme repliée que les termes d'anatomie : on cherche un nom, on déplie,
- * on saute au passage. Ce qui change est le propos — ici, pourquoi Debord
- * convoque ce nom-là, et non ce que le mot désigne.
+ * Same collapsed shape as the anatomy terms: look a name up, unfold, jump to
+ * the passage. What changes is the point — here, why Debord summons that name,
+ * rather than what the word denotes.
  */
 export function CarteReference({
   reference,

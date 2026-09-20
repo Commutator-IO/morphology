@@ -1,17 +1,16 @@
 /**
- * Cherche, pour chaque référence du cours, une page de musée qui diffuse
- * publiquement l'image d'une œuvre — et vérifie que c'est bien la bonne.
+ * For each reference in the course, looks for a museum page that publicly shows
+ * an image of a work — and checks that it is the right one.
  *
- * Écrit `scripts/musees.json`, relu ensuite à la main avant d'être versé dans
- * `src/data/references.json`. Le script propose, il ne décide pas.
+ * Writes `scripts/musees.json`, reviewed by hand before being merged into
+ * `src/data/references.json`. The script proposes, it does not decide.
  *
- * Pourquoi passer par des API plutôt que par des URL écrites de mémoire : une
- * adresse de musée inventée a toutes les chances d'être plausible et fausse, et
- * la plupart des sites répondent 403 à une requête automatique — un contrôle par
- * simple code HTTP ne prouverait donc rien. Les deux institutions retenues
- * publient une API ouverte qui rend l'URL officielle de l'objet, son autrice ou
- * auteur, et son statut de domaine public : le lien est alors constaté, pas
- * supposé.
+ * Why go through APIs rather than URLs written from memory: an invented museum
+ * address stands every chance of being plausible and wrong, and most sites
+ * answer 403 to an automated request, so checking an HTTP code would prove
+ * nothing. The two institutions used here publish an open API returning the
+ * object's official URL, its artist, and its public-domain status: the link is
+ * then observed, not assumed.
  *
  *     node scripts/musees.mjs
  */
@@ -20,20 +19,19 @@ import { readFileSync, writeFileSync } from 'node:fs';
 const references = JSON.parse(readFileSync(new URL('../src/data/references.json', import.meta.url)));
 
 /**
- * Nom sous lequel chercher, et fragment que la notice doit contenir pour que
- * l'appariement soit retenu.
+ * The name to search under, and the fragment the record must contain for a
+ * match to be kept.
  *
- * Le second est le garde-fou : chercher « David » rend n'importe quoi, et une
- * recherche plein texte trouve un artiste cité dans le cartel d'une œuvre d'un
- * autre. On exige donc que le champ « artiste » de la notice contienne le
- * patronyme.
+ * The second is the guard rail: searching "David" returns anything at all, and
+ * a full-text search finds an artist cited on another artist's label. So the
+ * record's "artist" field is required to contain the surname.
  */
 const CIBLES = {
   rembrandt: ['Rembrandt', 'rembrandt'],
-  // Michelangelo Buonarroti, et non Michelangelo Merisi — qui est le Caravage.
-  // Chercher « michelangelo » a bel et bien rendu « The Musicians » du Caravage
-  // sous le nom de Michel-Ange : le prénom ne suffit pas à distinguer deux
-  // peintres majeurs, il faut le patronyme.
+  // Michelangelo Buonarroti, not Michelangelo Merisi — who is Caravaggio.
+  // Searching "michelangelo" did return Caravaggio's "The Musicians" under
+  // Michelangelo's name: a first name cannot tell two major painters apart,
+  // only the surname can.
   'michel-ange': ['Michelangelo Buonarroti', 'buonarroti'],
   leonard: ['Leonardo da Vinci', 'leonardo'],
   goya: ['Goya', 'goya'],
@@ -48,16 +46,16 @@ const CIBLES = {
   raphael: ['Raphael', 'raphael'],
   gericault: ['Théodore Géricault', 'gericault'],
   watteau: ['Antoine Watteau', 'watteau'],
-  // Retirés du lexique : « carpeaux » est la transcription de carpo- (articulation
-  // carpo-métacarpienne), « courbet » celle du verbe courber, « poussin » celle
-  // d'un fléchisseur du pouce. Un patronyme qui entre en collision avec le
-  // vocabulaire du cours lui-même est le pire des faux amis : il remonte
-  // précisément là où le sujet est traité.
+  // Dropped from the lexicon: "carpeaux" is how the ASR writes carpo- (the
+  // carpometacarpal joint), "courbet" the verb courber, "poussin" a flexor of
+  // the thumb. A surname colliding with the course's own vocabulary is the
+  // worst kind of false friend: it surfaces exactly where the subject is
+  // being taught.
   delacroix: ['Eugène Delacroix', 'delacroix'],
   schiele: ['Egon Schiele', 'schiele'],
   klimt: ['Gustav Klimt', 'klimt'],
-  // « Caravaggio » est aussi le lieu de naissance de Polidoro Caldara et de
-  // Cecco : on exige le vrai patronyme du Caravage, Merisi.
+  // "Caravaggio" is also where Polidoro Caldara and Cecco were born, so we
+  // require Caravaggio's real surname, Merisi.
   caravage: ['Caravaggio Merisi', 'merisi'],
   mantegna: ['Andrea Mantegna', 'mantegna'],
   ingres: ['Ingres', 'ingres'],
@@ -75,8 +73,8 @@ const CIBLES = {
   piero: ['Piero della Francesca', 'piero della francesca'],
   'fra-angelico': ['Fra Angelico', 'angelico'],
   primatice: ['Primaticcio', 'primaticcio'],
-  // Antoine Masson, graveur du XVIIe, n'est pas André Masson : le prénom
-  // fait seul la différence.
+  // Antoine Masson, the 17th-century engraver, is not André Masson: the first
+  // name alone tells them apart.
   masson: ['André Masson', 'andre masson'],
   miro: ['Joan Miró', 'joan mir'],
   bacon: ['Francis Bacon', 'francis bacon'],
@@ -92,10 +90,10 @@ const CIBLES = {
 const dors = (ms) => new Promise((r) => setTimeout(r, ms));
 
 /**
- * Mentions d'atelier ou d'attribution. Un premier jet les acceptait, faute de
- * quoi « Cecco del Caravaggio » — un autre peintre — passait pour le Caravage,
- * et « Follower of Leonardo da Vinci » pour Léonard. Renvoyer un élève à la
- * place du maître est une erreur de fond dans un cours d'histoire des formes.
+ * Workshop and attribution wording. A first pass accepted it, so "Cecco del
+ * Caravaggio" — another painter — passed for Caravaggio, and "Follower of
+ * Leonardo da Vinci" for Leonardo. Sending a reader to the pupil instead of the
+ * master is a substantive error in a course on the history of forms.
  */
 const QUALIFICATIFS = [
   'follower of', 'workshop of', 'imitator of', 'circle of', 'attributed to',
@@ -103,9 +101,8 @@ const QUALIFICATIFS = [
   'cecco del',
 ];
 
-/** Une œuvre qui montre un corps sert mieux un cours de morphologie qu'un
- *  paysage du même auteur : à défaut de savoir laquelle Debord projetait, on
- *  privilégie la figure. */
+/** A work showing a body serves a morphology course better than a landscape by
+ *  the same hand: not knowing which one Debord projected, prefer the figure. */
 const FIGURE = [
   'nude', 'nu ', 'figure', 'portrait', 'study', 'studies', 'anatomy', 'man',
   'woman', 'body', 'hand', 'head', 'torso', 'bust', 'académie', 'self-portrait',
@@ -117,9 +114,9 @@ function acceptable(artiste, attendu) {
   return !QUALIFICATIFS.some((q) => a.includes(q));
 }
 
-/** Rang d'une notice : plus c'est bas, mieux ça vaut.
- *  Le titre long est pénalisé — certaines lithographies de Daumier portent leur
- *  légende entière en guise de titre, trois cents caractères durant. */
+/** A record's rank: the lower the better.
+ *  Long titles are penalised — some Daumier lithographs carry their whole
+ *  caption as a title, three hundred characters of it. */
 function rang(titre) {
   const t = sansAccent(titre);
   const figure = FIGURE.some((m) => t.includes(sansAccent(m))) ? 0 : 2;
@@ -129,7 +126,7 @@ function rang(titre) {
 const sansAccent = (s) =>
   (s ?? '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
 
-/** Art Institute of Chicago : une seule requête rend des notices complètes. */
+/** Art Institute of Chicago: one request returns complete records. */
 async function chezAic(recherche, attendu) {
   const url =
     'https://api.artic.edu/api/v1/artworks/search?' +
@@ -155,23 +152,22 @@ async function chezAic(recherche, attendu) {
   };
 }
 
-/** Levée quand le Met nous limite : on arrête tout plutôt que d'insister. */
+/** Raised when the Met rate-limits us: stop everything rather than push on. */
 class Limite extends Error {}
 
-/** Rythme délibérément lent. La dernière tentative a tiré près de 1 900
- *  requêtes en quelques minutes et s'est fait couper ; la lenteur est ici une
- *  condition de réussite, pas une précaution de principe. */
+/** Deliberately slow. The previous attempt fired some 1,900 requests in a few
+ *  minutes and got cut off; here slowness is a condition of success, not a
+ *  precaution on principle. */
 const PAUSE_MS = 300;
 const MAX_NOTICES = 20;
 
 /**
- * Nombre d'artistes traités par exécution.
+ * Artists handled per run.
  *
- * Le Met coupe après quelques dizaines de requêtes quand on l'a fâché. Plutôt
- * que d'insister au sein d'une même exécution, on avance par petites salves
- * espacées : chaque passage reprend là où le précédent s'est arrêté, puisque
- * les appariements déjà au Met sont sautés et que le fichier est réécrit à
- * chaque fois.
+ * The Met cuts us off after a few dozen requests once annoyed. Rather than
+ * pushing within one run, we advance in small spaced bursts: each pass resumes
+ * where the last stopped, since matches already at the Met are skipped and the
+ * file is rewritten every time.
  */
 const MAX_PAR_SALVE = Number(process.env.SALVE ?? 3);
 
@@ -182,13 +178,13 @@ async function lire(url) {
 }
 
 /**
- * Metropolitan Museum : la recherche rend des identifiants, à ouvrir un à un.
+ * Metropolitan Museum: search returns identifiers, to be opened one by one.
  *
- * On le préfère à l'Art Institute pour une raison de vérifiabilité : son API
- * rend l'adresse de sa propre page dans `objectURL`, donc le lien est attesté
- * par l'institution. L'API de l'Art Institute n'expose aucune URL par objet, et
- * tout son domaine refuse les requêtes automatiques : ses liens ne peuvent être
- * ni tenus de la source, ni constatés.
+ * Preferred over the Art Institute for verifiability: its API returns the
+ * address of its own page in `objectURL`, so the link comes from the
+ * institution itself. The Art Institute's API exposes no per-object URL, and
+ * its whole domain refuses automated requests: its links can neither be taken
+ * from the source nor checked.
  */
 async function chezMet(recherche, attendu) {
   for (const parArtiste of [true, false]) {
@@ -223,12 +219,11 @@ async function chezMet(recherche, attendu) {
 }
 
 /**
- * On repart du relevé précédent plutôt que d'une page blanche.
+ * Start from the previous survey rather than a blank page.
  *
- * La version d'avant réécrivait tout à chaque passage : une coupure de l'API en
- * cours de route remplaçait donc des liens vérifiés par des liens moins bons,
- * en silence. Ici un appariement n'est remplacé que par un meilleur, et une
- * interruption laisse le fichier tel qu'il était.
+ * The earlier version rewrote everything on each pass, so an API cut-off
+ * mid-run silently replaced verified links with worse ones. Here a match is
+ * only replaced by a better one, and an interruption leaves the file as it was.
  */
 const fichier = new URL('./musees.json', import.meta.url);
 let trouves = {};
@@ -259,7 +254,7 @@ for (const ref of references) {
       promus++;
       console.log(`↑ ${ref.nom.padEnd(24)} ${r.artiste} — « ${r.oeuvre.slice(0, 52)} »`);
     } else if (!trouves[ref.id]) {
-      // Rien au Met et rien en réserve : on tente l'Art Institute.
+      // Nothing at the Met and nothing held back: try the Art Institute.
       const a = await chezAic(recherche, attendu);
       if (a) {
         trouves[ref.id] = a;

@@ -12,19 +12,18 @@ import { ecrireTaille, grilleDe, lireTaille, type TailleLecteur } from './lib/le
 import { duree, horodate, lienYoutube } from './lib/lexique';
 
 /**
- * Les moments où le cours sort de son sujet.
+ * The moments where the course leaves its subject.
  *
- * La page se lit comme une étude de son oralité, pas comme un florilège. Debord
- * enseigne de vive voix, deux heures durant et sans notes ; ces écarts sont ses
- * outils. Un souvenir d'atelier situe une pratique dans une histoire, un échange
- * avec la salle rattrape l'attention, un mot cru nomme une forme sans détour, et
- * les comparaisons prises hors de l'art — un sport, un animal, un geste
- * ordinaire — expliquent souvent une forme mieux qu'une planche.
+ * The page reads as a study of his speech, not as a garland. Debord teaches out
+ * loud, two hours at a time and without notes; these departures are his tools. A
+ * studio memory places a practice in a history, an exchange with the room
+ * recovers attention, a blunt word names a form without detour, and comparisons
+ * drawn from outside art — a sport, an animal, an everyday gesture — often
+ * explain a form better than a plate.
  *
- * Chaque moment assez intelligible porte une notice de deux ou trois phrases,
- * écrite pour ce site. Les autres restent de simples points d'écoute : les
- * décrire supposerait de deviner, et deviner ce qu'a dit quelqu'un de réel
- * n'est pas une option.
+ * Every moment intelligible enough carries a two- or three-sentence note written
+ * for this site. The rest stay plain listening points: describing them would
+ * mean guessing, and guessing what a real person said is not an option.
  */
 export function PageDigressions() {
   const [categorie, setCategorie] = useState<Categorie | null>(null);

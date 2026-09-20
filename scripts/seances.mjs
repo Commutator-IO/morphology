@@ -1,29 +1,29 @@
 /**
- * Construit `src/data/seances.json` : les 45 séances, leur durée, et la partie
- * du cours à laquelle elles appartiennent.
+ * Builds `src/data/seances.json`: the 45 sessions, their length, and the part
+ * of the course they belong to.
  *
- * Les titres et durées viennent de YouTube, relevés une fois puis versionnés —
- * ils ne changent pas, et la CI n'a pas à interroger YouTube pour construire le
- * site. Pour les reprendre à la source :
+ * Titles and lengths come from YouTube, collected once and then versioned —
+ * they do not change, and CI need not query YouTube to build the site. To
+ * collect them again from source:
  *
- *   yt-dlp --flat-playlist --print "%(id)s" "<url de la playlist>" > ids.txt
+ *   yt-dlp --flat-playlist --print "%(id)s" "<playlist url>" > ids.txt
  *   yt-dlp --skip-download --print "%(id)s|%(duration)s|%(title)s" -a ids.txt
  *
- * Les deux dernières lignes ne sortent pas de cette commande. La playlist n'en
- * compte que 43, alors que le catalogue Bibnum de PSL en décrit 45 : c'est en
- * comparant les deux listes qu'on a vu manquer « Les deux membres inférieurs en
- * vue latérale » et « Le bras en vue postérieure ». Les deux sont bien publiées
- * sur la chaîne de l'Université PSL, simplement hors playlist. Elles sont donc
- * rangées en fin de liste, où leur rang ne prétend pas à un ordre de cours, et
- * marquées `horsPlaylist` pour que le site puisse le dire.
+ * The last two lines do not come out of that command. The playlist holds only
+ * 43, where PSL's Bibnum catalogue describes 45: comparing the two lists is how
+ * "Les deux membres inférieurs en vue latérale" and "Le bras en vue
+ * postérieure" turned up missing. Both are published on the Université PSL
+ * channel, simply outside the playlist. They sit at the end of the list, where
+ * their rank claims no place in the course order, and carry `horsPlaylist` so
+ * the site can say so.
  *
- * Le découpage en parties, lui, est un choix : il suit l'ordre du raisonnement
- * de Debord — l'ensemble avant la région, la région avant le muscle — et non
- * l'ordre de publication de la playlist, qui mêle les sujets.
+ * The split into parts is a choice: it follows the order of Debord's reasoning
+ * — the whole before the region, the region before the muscle — and not the
+ * playlist's publication order, which mixes subjects.
  */
 import { readFileSync, writeFileSync } from 'node:fs';
 
-/** Parties du cours, dans l'ordre où elles s'enchaînent. */
+/** Parts of the course, in the order they follow one another. */
 export const PARTIES = [
   { id: 'introduction', titre: 'Introduction',
     propos: "Ce qu'est ce cours, et qui le donne." },
@@ -47,7 +47,7 @@ export const PARTIES = [
     propos: "Le crâne, les muscles peauciers, et le passage de la main au visage." },
 ];
 
-/** Séance -> partie. Clé = rang dans la liste ci-dessous (44 et 45 hors playlist). */
+/** Session -> part. Key = rank in the list below (44 and 45 are off-playlist). */
 const APPARTENANCE = {
   introduction: [1, 2],
   ensemble: [3, 7, 8, 9, 10, 11, 15],
@@ -61,11 +61,11 @@ const APPARTENANCE = {
   tete: [41, 42, 43],
 };
 
-/** Publiées sur la chaîne PSL mais absentes de la playlist : leur rang est un
- *  numéro de rangement, pas une place dans l'ordre du cours. */
+/** Published on the PSL channel but missing from the playlist: their rank is a
+ *  filing number, not a place in the course order. */
 const HORS_PLAYLIST = new Set(['BZMmmc3HVto', 'qWn9BntEhyU']);
 
-// id|durée|titre, un par ligne, dans l'ordre de la playlist.
+// id|length|title, one per line, in playlist order.
 const BRUT = readFileSync(new URL('./seances.txt', import.meta.url), 'utf8');
 
 const partieDe = new Map();
@@ -73,8 +73,8 @@ for (const [partie, rangs] of Object.entries(APPARTENANCE)) {
   for (const r of rangs) partieDe.set(r, partie);
 }
 
-/** Le préfixe « J.F. Debord : » est sur presque tous les titres : le répéter dans une
- *  liste n'apporte rien et mange la largeur, précieuse sur un téléphone. */
+/** Almost every title carries the "J.F. Debord :" prefix: repeating it in a
+ *  list adds nothing and eats width, which is precious on a phone. */
 function titreCourt(t) {
   return t
     .replace(/^(Cours de )?(J\.?\s?F\.?|Jean-François)\s+Debord\s*\d*\s*[:—-]?\s*/i, '')

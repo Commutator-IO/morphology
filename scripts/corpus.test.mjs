@@ -2,14 +2,14 @@ import { describe, expect, it } from 'vitest';
 import { accentuer, motif, plier } from './corpus.mjs';
 
 /**
- * Le premier index donnait 655 relevés à « côtes » : en rabattant les accents,
- * « côté » — omniprésent à l'oral — se confondait avec « côte ». D'où deux textes
- * alignés, et des variantes que l'on peut exiger accentuées. Ces tests gardent
- * cette correction, qui est la seule raison d'être de la mécanique.
+ * The first index gave "côtes" 655 hits: with accents folded, "côté" — which
+ * Debord says constantly — merged into "côte". Hence two aligned texts, and
+ * variants that can demand their accents. These tests guard that fix, which is
+ * the whole reason the machinery exists.
  */
 describe('normalisation du corpus', () => {
   it('garde les deux textes alignés caractère par caractère', () => {
-    // C'est ce qui permet d'horodater un relevé trouvé dans l'un avec l'autre.
+    // This is what lets a hit found in one text be timestamped from the other.
     const s = "La côte flottante, vue de ce côté-ci : l'épine, l'humérus.";
     expect(plier(s)).toHaveLength(accentuer(s).length);
   });
@@ -25,10 +25,10 @@ describe('normalisation du corpus', () => {
   it('rabat les accents sur l’ASCII sans changer la longueur', () => {
     expect(plier('épaule')).toBe('epaule');
     expect(plier('aponévrose')).toBe('aponevrose');
-    // Une ligature devient une seule lettre, et non « oe » : l'alignement des
-    // deux textes impose un repli lettre pour lettre. Ce n'est pas la bonne
-    // translittération française, c'est le prix de l'horodatage exact — et cela
-    // n'empêche rien, « œ » ne figure dans aucun terme cherché.
+    // A ligature folds to one letter, not "oe": keeping the two texts aligned
+    // forces a letter-for-letter fold. It is not correct French transliteration,
+    // it is the price of exact timestamps — and it costs nothing here, since no
+    // term we search for contains "œ".
     expect(plier('œil')).toBe('oil');
   });
 

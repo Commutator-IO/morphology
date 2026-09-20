@@ -3,17 +3,16 @@ import { LEXIQUE, SEANCES } from './lib/lexique';
 import { REFERENCES } from './lib/references';
 
 /**
- * Mentions légales, et position du site sur les droits.
+ * Legal notice, and the site's position on rights.
  *
- * Elle existe pour une raison précise : le cours n'est pas sous licence ouverte.
- * Chaque notice du catalogue Bibnum porte « Tous droits réservés » et nomme
- * trois détenteurs. Ce site ne peut donc pas se présenter comme opérant en
- * terrain libre ; il doit dire exactement ce qu'il fait, sur quel fondement, et
- * comment obtenir un retrait. Le dire soi-même, clairement et le premier, vaut
- * mieux que de l'expliquer après coup.
+ * It exists for a precise reason: the course is not openly licensed. Every
+ * record in the Bibnum catalogue carries "Tous droits réservés" and names three
+ * holders. So this site cannot present itself as working on free ground; it must
+ * say exactly what it does, on what basis, and how to obtain a takedown. Saying
+ * it oneself, clearly and first, beats explaining it afterwards.
  *
- * Volontairement hors de la barre d'onglets : six onglets défilent déjà sur un
- * téléphone, et ceci se cherche depuis le pied de page, là où on le cherche.
+ * Deliberately outside the tab bar: six tabs already scroll on a phone, and this
+ * is looked for in the footer, where people look for it.
  */
 export function PageMentions() {
   return (

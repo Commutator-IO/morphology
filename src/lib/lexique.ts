@@ -1,10 +1,10 @@
 /**
- * Accès typé au lexique et à l'index des passages.
+ * Typed access to the lexicon and to the index of passages.
  *
- * Les trois fichiers de `src/data/` sont produits par les scripts et versionnés :
- * `lexique.json` est écrit à la main (c'est le contenu), `occurrences.json` et
- * `seances.json` sont générés. Le site ne recalcule rien à l'affichage — il ne
- * pourrait pas, les transcriptions ne sont pas publiées.
+ * The three files in `src/data/` are versioned: `lexique.json` is written by
+ * hand (it is the content), `occurrences.json` and `seances.json` are
+ * generated. The site recomputes nothing at display time — it could not, since
+ * the transcripts are never published.
  */
 import lexiqueBrut from '../data/lexique.json';
 import occurrencesBrut from '../data/occurrences.json';
@@ -16,31 +16,31 @@ export type Terme = {
   terme: string;
   categorie: Categorie;
   region: string;
-  /** Nomenclature internationale, quand le mot de Debord n'est plus celui des
-   *  atlas — cubitus pour ulna, omoplate pour scapula, rotule pour patella. */
+  /** International nomenclature, where Debord's word is no longer the atlases'
+   *  — cubitus for ulna, omoplate for scapula, rotule for patella. */
   moderne?: string;
   /** Synonymes et tournures propres au cours. */
   aussi?: string[];
   definition: string;
   variantes: string[];
-  /** Mots du voisinage qui décident d'une variante ambiguë — celles préfixées
-   *  « ? ». « Fléchisseur » se dit de l'avant-bras comme de la jambe : c'est le
-   *  passage qui tranche, et l'arbitrage se fait à l'indexation
-   *  (`scripts/indexer.mjs`), pas à l'affichage. */
+  /** Surrounding words that settle an ambiguous variant — those prefixed "?".
+   *  "Fléchisseur" means the forearm as readily as the leg: the passage
+   *  decides, and the arbitration happens at indexing time
+   *  (`scripts/indexer.mjs`), never at display time. */
   contexte?: string[];
-  /** Où le terme se trouve sur la silhouette du plan du corps, dans le repère
-   *  de celle-ci. Absent pour les notions qui ne sont situées nulle part —
-   *  aplomb, méplat, raccourci — et pour ce qui reste à placer. */
+  /** Where the term sits on the body plan's silhouette, in its own
+   *  coordinates. Absent for notions located nowhere — aplomb, méplat,
+   *  raccourci — and for whatever is still unplaced. */
   situation?: Situation;
 };
 
 /**
- * Un repère sur le plan du corps.
+ * One mark on the body plan.
  *
- * Deux formes suffisent : la tache pour une masse — un muscle, un os court —,
- * le trait pour ce qui est long et oblique, fémur ou couturier. Les coordonnées
- * sont celles de la `boite` de la silhouette, et les deux vues sont
- * superposables : un repère mesuré de face vaut de dos.
+ * Two shapes suffice: a blob for a mass — a muscle, a short bone — and a line
+ * for whatever is long and slanted, femur or sartorius. Coordinates are those
+ * of the silhouette's `boite`, and the two views line up: a mark measured from
+ * the front holds from the back.
  */
 export type Situation = {
   vue: 'face' | 'dos';
@@ -57,8 +57,8 @@ export type Seance = {
   titre: string;
   titreYoutube: string;
   dureeS: number | null;
-  /** Publiée sur la chaîne PSL mais absente de la playlist. Son rang est alors
-   *  un numéro de rangement et non une place dans l'ordre de publication. */
+  /** Published on the PSL channel but missing from the playlist. Its rank is
+   *  then a filing number, not a place in publication order. */
   horsPlaylist?: boolean;
 };
 
@@ -81,10 +81,10 @@ export const FENETRE_S = OCC.fenetreS;
 export const SEANCE_PAR_ID = new Map(SEANCES.map((s) => [s.id, s]));
 export const TERME_PAR_ID = new Map(LEXIQUE.map((t) => [t.id, t]));
 
-/** Un passage : une séance, et l'instant où l'entrer. */
+/** A passage: a session, and the moment to enter it. */
 export type Passage = { seance: Seance; instants: number[] };
 
-/** Les passages d'un terme, dans l'ordre du cours. */
+/** A term's passages, in course order. */
 export function passagesDe(id: string): Passage[] {
   const e = OCC.termes[id];
   if (!e) return [];
@@ -99,12 +99,12 @@ export function totalDe(id: string): number {
 }
 
 /**
- * Les termes relevés dans une séance, du plus présent au moins présent.
+ * The terms found in a session, most present first.
  *
- * Renversé à la volée depuis l'index par terme, plutôt que publié en second
- * tableau : le même fait stocké deux fois finit toujours par diverger, et cela
- * ferait 61 ko de plus à charger sur un téléphone. Le renversement coûte un seul
- * parcours, fait une fois pour toutes au chargement du module.
+ * Inverted on the fly from the per-term index rather than published as a second
+ * table: the same fact stored twice always ends up diverging, and it would add
+ * 61 kB to download on a phone. The inversion costs one pass, done once when
+ * the module loads.
  */
 const PAR_SEANCE = (() => {
   const m = new Map<string, { terme: Terme; n: number }[]>();
@@ -127,13 +127,13 @@ export function termesDe(videoId: string): { terme: Terme; n: number }[] {
   return PAR_SEANCE.get(videoId) ?? [];
 }
 
-/** Lien YouTube, éventuellement à un instant donné. */
+/** YouTube link, optionally at a given moment. */
 export function lienYoutube(videoId: string, instant?: number): string {
   const base = `https://www.youtube.com/watch?v=${videoId}`;
   return instant === undefined ? base : `${base}&t=${instant}s`;
 }
 
-/** h:mm:ss, ou m:ss sous l'heure — la forme qu'affiche le lecteur YouTube. */
+/** h:mm:ss, or m:ss under the hour — the form the YouTube player shows. */
 export function horodate(s: number): string {
   const h = Math.floor(s / 3600);
   const m = Math.floor((s % 3600) / 60);
@@ -142,7 +142,7 @@ export function horodate(s: number): string {
   return `${h ? `${h}:` : ''}${mm}:${String(sec).padStart(2, '0')}`;
 }
 
-/** « 1 h 45 » : la durée d'une séance se lit en heures, pas en minutes. */
+/** "1 h 45": a session's length reads in hours, not minutes. */
 export function duree(s: number | null): string {
   if (!s) return '—';
   const h = Math.floor(s / 3600);
@@ -151,13 +151,13 @@ export function duree(s: number | null): string {
 }
 
 /**
- * Forme de comparaison d'une chaîne pour la recherche : minuscules, accents
- * rabattus, ponctuation ôtée.
+ * The comparison form of a string for search: lowercase, accents folded,
+ * punctuation removed.
  *
- * Indispensable ici, et pas une commodité : on cherche « deltoide » au clavier
- * d'un téléphone, sans accent et souvent sans le tréma, pour trouver
- * « Deltoïde ». Même repli que celui de l'indexeur, pour que la recherche à
- * l'écran et le relevé dans les sous-titres se comportent pareil.
+ * Necessary rather than convenient: people type "deltoide" on a phone keyboard,
+ * without accents and usually without the diaeresis, to find "Deltoïde". The
+ * same fold the indexer uses, so on-screen search and subtitle matching behave
+ * alike.
  */
 export function pliage(s: string): string {
   return s
@@ -168,9 +168,9 @@ export function pliage(s: string): string {
     .trim();
 }
 
-/** Texte contre lequel un terme est cherché : son nom, ses synonymes, sa
- *  nomenclature savante et ses variantes relevées. Chercher « scapula » doit
- *  trouver « Omoplate », sinon l'index ne sert qu'à ceux qui savent déjà. */
+/** The text a term is searched against: its name, its synonyms, its formal
+ *  nomenclature and its collected variants. Searching "scapula" must find
+ *  "Omoplate", or the index only serves those who already know. */
 const CIBLE = new Map(
   LEXIQUE.map((t) => [
     t.id,
@@ -182,11 +182,11 @@ export function correspond(t: Terme, requete: string): boolean {
   const q = pliage(requete);
   if (!q) return true;
   const cible = CIBLE.get(t.id) ?? '';
-  // Tous les mots de la requête doivent être présents : « grand dorsal » ne
-  // doit pas remonter tout ce qui contient « grand ».
+  // Every word of the query must be present: "grand dorsal" must not surface
+  // everything containing "grand".
   return q.split(' ').every((mot) => cible.includes(mot));
 }
 
-/** Tri alphabétique français, accents ignorés. */
+/** French alphabetical order, accents ignored. */
 export const parAlphabet = (a: Terme, b: Terme) =>
   a.terme.localeCompare(b.terme, 'fr', { sensitivity: 'base' });

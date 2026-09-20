@@ -11,11 +11,11 @@ import {
 } from '../lib/lexique';
 
 /**
- * Une entrée du lexique : le mot, ce qu'il désigne, et où l'entendre.
+ * A lexicon entry: the word, what it denotes, and where to hear it.
  *
- * Repliée par défaut. Quatre-vingt-quinze définitions dépliées feraient un
- * document de plusieurs mètres à faire défiler au doigt ; replié, l'index tient
- * en quelques écrans et se parcourt comme une table.
+ * Collapsed by default. A hundred definitions unfolded would make a document
+ * metres long to thumb through; collapsed, the index fits a few screens and
+ * reads like a table of contents.
  */
 export function CarteTerme({
   terme,
@@ -25,17 +25,17 @@ export function CarteTerme({
 }: {
   terme: TermeT;
   ouvertParDefaut?: boolean;
-  /** Prévient la page qu'on vient de déplier cette fiche : le plan du corps,
-   *  à droite, suit la dernière ouverte. */
+  /** Tells the page this card has just been unfolded: the body plan on the
+   *  right follows the last one opened. */
   onOuvrir?: (t: TermeT) => void;
-  /** Fourni par une page qui affiche un lecteur : sur grand écran, le clic y
-   *  place la séance au lieu d'ouvrir un onglet. */
+  /** Provided by a page showing a player: on a large screen, a click loads the
+   *  session there instead of opening a tab. */
   onLire?: (l: Lecture) => void;
 }) {
   const [ouvert, setOuvert] = useState(ouvertParDefaut ?? false);
-  // Les passages sont repliés dans la fiche ouverte : ce qu'on vient chercher,
-  // c'est la définition, et cinquante horodatages posés dessous la repoussent
-  // hors de l'écran avant qu'on l'ait lue.
+  // Passages stay folded inside an open card: what one came for is the
+  // definition, and fifty timestamps laid under it push it off screen before it
+  // has been read.
   const [passagesOuverts, setPassagesOuverts] = useState(false);
   const cat = CATEGORIES[terme.categorie];
   const total = totalDe(terme.id);
@@ -47,9 +47,9 @@ export function CarteTerme({
         <button
           type="button"
           onClick={() => {
-            // Prévenir avant de basculer, et hors de la fonction de mise à
-            // jour : celle-ci est appelée pendant le rendu, où l'on n'a pas le
-            // droit de toucher à l'état d'un autre composant.
+            // Notify before toggling, and outside the updater function: that
+            // one runs during render, where touching another component's state
+            // is not allowed.
             if (!ouvert) onOuvrir?.(terme);
             setOuvert((v) => !v);
           }}
@@ -70,9 +70,9 @@ export function CarteTerme({
                   {total} passage{total > 1 ? 's' : ''} · {passagesOuSeances(terme.id)}
                 </span>
               ) : (
-                /* Dire « non relevé » plutôt que rien : l'absence est une
-                   information — soit Debord emploie un autre mot, soit la
-                   transcription automatique l'a écorché. */
+                /* Say "non relevé" rather than nothing: the absence is
+                   information — either Debord uses another word, or the
+                   automatic transcription mangled it. */
                 <span className="text-ink-400">non relevé</span>
               )}
             </span>
@@ -140,9 +140,9 @@ export function CarteTerme({
                             target="_blank"
                             rel="noreferrer"
                             onClick={(e) => {
-                              // Reste un vrai lien : avec un clic du milieu ou
-                              // une touche de modification, le navigateur fait
-                              // son travail habituel et l'on part sur YouTube.
+                              // Still a real link: with a middle click or a
+                              // modifier key, the browser does its usual job and
+                              // we leave for YouTube.
                               if (!onLire) return;
                               if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
                               e.preventDefault();

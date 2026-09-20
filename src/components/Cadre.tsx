@@ -1,36 +1,35 @@
 import { useEffect, useRef, useState } from 'react';
 
 /**
- * En-tête et pied partagés.
+ * Shared header and footer.
  *
- * Le site est statique : chaque vue est une vraie page servie depuis son propre
- * index.html, sans routeur côté client, et un lien partagé survit.
+ * The site is static: every view is a real page served from its own index.html,
+ * with no client-side router, and a shared link survives.
  *
- * Cinq onglets ne tiennent plus sur 375 px : le dernier était coupé net. La
- * barre défile donc latéralement sous sm, avec un dégradé d'estompe qui dit
- * qu'il en reste hors champ, et l'onglet courant est amené en vue au
- * chargement — sinon on arrive sur une page dont l'onglet est invisible.
+ * Five tabs no longer fit in 375 px — the last was cut off. So the bar scrolls
+ * sideways below sm, with a fade telling you more is off screen, and the
+ * current tab is brought into view on load, or you land on a page whose tab is
+ * invisible.
  *
- * Plutôt qu'un menu replié : ouvrir un menu coûte un geste de plus à quelqu'un
- * qui cherche un mot pendant une séance de dessin, et abréger les libellés les
- * rendrait illisibles.
+ * Rather than a folded menu: opening a menu costs one more gesture to someone
+ * looking a word up mid-drawing, and shortening the labels would make them
+ * unreadable.
  *
- * Sur téléphone, la barre s'efface dès qu'on descend et revient dès qu'on
- * remonte : quatre-vingt-dix-huit pixels de titre et d'onglets pris en
- * permanence, sous lesquels une barre de filtres est souvent collée elle aussi,
- * ne laissaient plus grand-chose de l'écran à ce qu'on est venu lire. Elle
- * reste en place tant qu'on est près du haut, et ne bouge jamais dès lg.
+ * On a phone the bar hides as you scroll down and returns as you scroll up:
+ * ninety-eight pixels of title and tabs held permanently, often with a filter
+ * bar stuck under them, left little of the screen for what you came to read. It
+ * stays put while you are near the top, and never moves from lg up.
  */
 
-/** Ce que l'en-tête occupe en haut de l'écran, pour ce qui se colle dessous.
- *  Les barres d'outils des pages s'y réfèrent par `top-[var(--haut-entete)]`
- *  plutôt que par une valeur en dur : quand l'en-tête s'efface, elles montent
- *  d'un bloc au lieu de laisser une bande vide où la liste défilerait à nu. */
+/** How much room the header takes at the top, for whatever sticks under it.
+ *  Page toolbars refer to it through `top-[var(--haut-entete)]` rather than a
+ *  hard-coded value: when the header hides, they rise with it instead of
+ *  leaving a blank band the list would scroll through bare. */
 const HAUT = '5.75rem';
 
-/** En deçà, l'en-tête reste : on n'escamote pas une barre qu'on n'a pas encore
- *  fini de dépasser. Et sous huit pixels de mouvement, rien ne bouge — un doigt
- *  qui tremble sur un écran tactile ne doit pas faire clignoter la page. */
+/** Below this the header stays: you do not hide a bar you have not finished
+ *  scrolling past. And under eight pixels of movement nothing moves — a finger
+ *  shaking on a touchscreen must not make the page flicker. */
 const SEUIL_BAS = 96;
 const SEUIL_GESTE = 8;
 
@@ -53,8 +52,8 @@ export function Entete({ chemin }: { chemin: string }) {
   const [efface, setEfface] = useState(false);
 
   useEffect(() => {
-    // `nearest` plutôt que `center` : sur grand écran rien ne défile, et l'on
-    // ne veut surtout pas déplacer la page sous les yeux du lecteur.
+    // `nearest` rather than `center`: on a large screen nothing scrolls, and
+    // we certainly do not want to move the page under the reader's eyes.
     actif.current?.scrollIntoView({ block: 'nearest', inline: 'nearest' });
   }, []);
 
@@ -71,9 +70,8 @@ export function Entete({ chemin }: { chemin: string }) {
       setEfface(pas > 0 && y > SEUIL_BAS);
     };
 
-    // Revenu sur grand écran, l'en-tête reprend sa place : sans cela, une barre
-    // escamotée au téléphone le resterait après un changement d'orientation ou
-    // un passage en fenêtre large.
+    // Back on a large screen the header returns: without this, a bar hidden on
+    // a phone would stay hidden after a rotation or a switch to a wide window.
     const auFormat = () => grandEcran.matches && setEfface(false);
 
     window.addEventListener('scroll', auDefilement, { passive: true });
@@ -114,8 +112,8 @@ export function Entete({ chemin }: { chemin: string }) {
                 ref={estCourant ? actif : undefined}
                 href={v.chemin}
                 aria-current={estCourant ? 'page' : undefined}
-                /* min-h-11 : cible tactile de 44 px. Les onglets sont touchés
-                   en marchant dans un atelier, pas cliqués à la souris. */
+                /* min-h-11: a 44 px touch target. The tabs get tapped while
+                   walking around a studio, not clicked with a mouse. */
                 className={[
                   'flex min-h-11 shrink-0 items-center justify-center rounded-lg px-3 text-[13px] whitespace-nowrap transition sm:flex-1 sm:px-2 sm:text-sm',
                   estCourant

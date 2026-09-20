@@ -1,14 +1,14 @@
 /**
- * Ce qui vient avant le cours et ce qui en sort : la chaire d'anatomie
- * artistique avant Debord, et ceux qu'il a formés.
+ * What comes before the course and what comes out of it: the chair of artistic
+ * anatomy before Debord, and those he trained.
  *
- * Deux sortes d'héritiers : ceux qui ont écrit la morphologie à leur tour, et
- * ceux qui la pratiquent sans en avoir rien publié. Les seconds n'ont pas de
- * bibliographie, mais les omettre donnerait une image fausse de ce que le cours
- * a produit — un enseignement de dessin se juge d'abord sur des dessinateurs.
+ * Two kinds of heir: those who wrote morphology in their turn, and those who
+ * practise it without having published anything. The second have no
+ * bibliography, but leaving them out would misrepresent what the course
+ * produced — teaching drawing is judged first on draughtsmen.
  *
- * Chaque entrée porte sa source. C'est la règle du site : on ne cite pas de
- * mémoire, et ce qui n'a pas pu être vérifié le dit.
+ * Every entry carries its source. That is the site's rule: nothing is cited
+ * from memory, and whatever could not be checked says so.
  */
 import brut from '../data/lignee.json';
 
@@ -18,7 +18,7 @@ export type Ouvrage = {
   titre: string;
   editeur?: string;
   annee?: string;
-  /** Numérisation librement consultable, quand elle existe. */
+  /** Freely readable digitisation, where one exists. */
   url?: string;
 };
 
@@ -26,39 +26,44 @@ export type Figure = {
   id: string;
   nom: string;
   dates?: string;
-  /** Année de naissance, quand elle a pu être vérifiée. Sans elle, la figure
-   *  garde sa fiche mais n'est pas placée sur la frise : mieux vaut absente que
-   *  mal datée. */
+  /**
+   * Year of birth, where it could be verified. Without it the figure keeps its
+   * card but is left off the timeline: better absent than wrongly dated.
+   */
   ne?: number;
-  /** Année de mort ; absente pour les vivants. */
+  /** Year of death; absent for the living. */
   mort?: number;
   role: Role;
   notice: string;
   ouvrages: Ouvrage[];
-  /** Identifiant Instagram, quand le compte a pu être authentifié — la
-   *  biographie ou une publication devait nommer la personne et son métier.
-   *  Absent plutôt que deviné : renvoyer vers un homonyme serait pire que
-   *  ne rien mettre. */
+  /**
+   * Instagram handle, where the account could be authenticated — the bio or a
+   * post had to name the person and their trade. Absent rather than guessed:
+   * pointing at a namesake would be worse than nothing.
+   */
   instagram?: string;
-  /** Portrait lié depuis Wikimedia Commons, jamais réhébergé, et seulement
-   *  quand le fichier est dans le domaine public ou sous licence libre. Pour
-   *  les vivants il n'en existe pas : leur plaque montre leurs initiales
-   *  plutôt qu'un visage que personne n'a le droit de montrer. */
+  /**
+   * Portrait linked from Wikimedia Commons, never rehosted, and only when the
+   * file is public domain or freely licensed. For the living there are none:
+   * their plate shows initials rather than a face nobody may publish.
+   */
   portrait?: string;
-  /** Recadrage de la plaque quand le fichier libre n'est pas un portrait :
-   *  point d'ancrage (object-position) et facteur de zoom. */
+  /**
+   * Reframing of the plate when the free file is not a portrait: anchor point
+   * (object-position) and zoom factor.
+   */
   cadrage?: { position: string; zoom?: number };
   /**
-   * Moments du cours où Debord parle de cette personne.
+   * Moments in the course where Debord speaks of this person.
    *
-   * Au pluriel : Pol Le Cœur est cité dans six séances, et n'en garder qu'une
-   * serait arbitraire. C'est la source la plus directe que la page puisse
-   * offrir — pas une notice sur lui, mais sa voix à lui.
+   * Plural: Pol Le Cœur is cited in six sessions, and keeping only one would be
+   * arbitrary. It is the most direct source the page can offer — not a note about
+   * him, but his own voice.
    */
   ecoutes?: { video: string; t: number; seance: number; horodate: string; propos: string }[];
-  /** Étapes datées d'une carrière, pour la frise embarquée dans la fiche. */
+  /** Dated steps of a career, for the timeline inside the card. */
   jalons?: { annee: number; fait: string }[];
-  /** Vidéos ou pages où la personne parle elle-même. */
+  /** Videos or pages where the person speaks for themselves. */
   liens?: { url: string; libelle: string; propos?: string }[];
   source: string;
 };
@@ -99,15 +104,15 @@ export const SECTIONS: { role: Role; titre: string; propos: string }[] = [
 
 export const parSection = (role: Role) => FIGURES.filter((f) => f.role === role);
 
-/** Les figures placées sur la frise : celles dont l'année de naissance est établie. */
+/** Figures placed on the timeline: those whose birth year is established. */
 export const DATEES = FIGURES.filter((f) => f.ne).sort((a, b) => a.ne! - b.ne!);
 
-/** L'année de fin d'une vie sur la frise — l'année courante pour les vivants. */
+/** A life's end year on the timeline — the current year for the living. */
 export function finDe(f: Figure): number {
   return f.mort ?? new Date().getFullYear();
 }
 
-/** Bornes de l'échelle, arrondies au quart de siècle de part et d'autre. */
+/** Scale bounds, rounded to the quarter century either side. */
 export const ECHELLE = (() => {
   const debut = Math.floor(Math.min(...DATEES.map((f) => f.ne!)) / 25) * 25;
   const fin = Math.ceil(Math.max(...DATEES.map(finDe)) / 25) * 25;
@@ -117,13 +122,13 @@ export const ECHELLE = (() => {
 })();
 
 /**
- * Les artistes que Debord cite en cours, replacés dans le temps long.
+ * The artists Debord cites in class, set back in long time.
  *
- * Ils viennent de l'onglet Références, où leur intérêt est ailleurs — savoir à
- * quelle minute Debord en parle. Ici ils servent d'arrière-plan : ils montrent
- * sur quelle épaisseur d'histoire s'appuie un enseignement qui, lui, tient en
- * deux générations. D'où le second plan, littéralement — une bande fine, en
- * gris, sous la frise principale.
+ * They come from the References tab, where their interest lies elsewhere —
+ * knowing at which minute Debord speaks of them. Here they serve as backdrop:
+ * they show the depth of history a body of teaching only two generations deep
+ * leans on. Hence the literal background — a thin grey band under the main
+ * timeline.
  */
 import referencesBrut from '../data/references.json';
 
@@ -133,15 +138,15 @@ export const CLASSIQUES: Classique[] = (
   referencesBrut as { id: string; nom: string; dates?: string; type: string }[]
 )
   .flatMap((r) => {
-    // « 1606-1669 » seulement : « IVe s. av. J.-C. » ne se place pas sur une
-    // échelle d'années, et on préfère l'omettre que de l'inventer.
+    // "1606-1669" only: "IVe s. av. J.-C." does not sit on a scale of years, and
+    // omitting it beats inventing it.
     const m = /^(\d{3,4})\s*[-–]\s*(\d{3,4})$/.exec(r.dates ?? '');
     if (!m) return [];
     return [{ id: r.id, nom: r.nom, ne: Number(m[1]), mort: Number(m[2]), type: r.type }];
   })
   .sort((a, b) => a.ne - b.ne);
 
-/** Échelle du temps long, arrondie au demi-siècle. */
+/** Long-time scale, rounded to the half century. */
 export const ECHELLE_LONGUE = (() => {
   const debut = Math.floor(Math.min(...CLASSIQUES.map((c) => c.ne)) / 50) * 50;
   const fin = Math.ceil(Math.max(ECHELLE.fin, ...CLASSIQUES.map((c) => c.mort)) / 50) * 50;

@@ -1,22 +1,22 @@
 import { useEffect, type ReactNode } from 'react';
 import { TAILLES, type TailleLecteur } from '../lib/lecteur';
 
-/** Ce que le panneau joue : une séance, à un instant. */
+/** What the panel plays: a session, at a moment. */
 export type Lecture = { videoId: string; instant: number; titre: string };
 
 /**
- * Lecteur embarqué.
+ * Embedded player.
  *
- * Sur grand écran, il tient dans un panneau collant à droite de la liste : on
- * consulte l'index et la séance en même temps, et l'on suit un muscle de séance
- * en séance sans perdre sa place. Sur téléphone, il s'ancre en bas de l'écran,
- * au-dessus de la liste qui continue de défiler — même principe, moins de place.
+ * On a large screen it sits in a sticky panel to the right of the list: you
+ * read the index and watch the session at once, and follow a muscle from
+ * session to session without losing your place. On a phone it anchors to the
+ * bottom, above the list that keeps scrolling — same idea, less room.
  *
- * Jouer dans la page plutôt que de partir sur YouTube a une raison précise : une
- * fois sur YouTube, on ne peut plus rien proposer, ni arrêter la lecture, ni
- * revenir à l'index. Qui préfère l'application y va par le logo du lecteur, en
- * bas à droite de l'image : le doubler d'un lien à nous ne faisait que prendre
- * la place du titre.
+ * Playing in the page rather than leaving for YouTube has a precise reason:
+ * once on YouTube we can propose nothing more, stop nothing, and offer no way
+ * back to the index. Anyone preferring the app gets there through the player's
+ * own logo, bottom right of the picture; doubling it with a link of ours only
+ * took the title's place.
  */
 export function Lecteur({
   lecture,
@@ -27,12 +27,12 @@ export function Lecteur({
 }: {
   lecture: Lecture | null;
   onFermer: () => void;
-  /** Largeur du panneau face au texte ; absente, aucun réglage n'est proposé. */
+  /** Panel width against the text; absent, no setting is offered. */
   taille?: TailleLecteur;
   onTaille?: (t: TailleLecteur) => void;
-  /** Ce qui suit le lecteur dans la colonne de droite, à l'intérieur du bloc
-   *  collant pour rester à l'écran avec lui. À charge de ce contenu de se
-   *  masquer sous lg : là, le lecteur est ancré en bas et n'a pas de dessous. */
+  /** What follows the player in the right column, inside the sticky block so
+   *  it stays on screen with it. That content must hide itself below lg: there
+   *  the player is anchored to the bottom and has nothing under it. */
   dessous?: ReactNode;
 }) {
   useEffect(() => {
@@ -45,8 +45,8 @@ export function Lecteur({
   }, [lecture, onFermer]);
 
   if (!lecture) {
-    // Rien à jouer : sur grand écran on annonce la place que prendra le lecteur,
-    // sur téléphone on n'affiche rien plutôt qu'une bande vide en bas d'écran.
+    // Nothing to play: on a large screen we show the room the player will take,
+    // on a phone we show nothing rather than an empty band at the bottom.
     return (
       <aside className="hidden lg:block">
         <div className="sticky top-[6.5rem]">
@@ -71,9 +71,9 @@ export function Lecteur({
         <div className="card overflow-hidden rounded-none border-0 shadow-none lg:rounded-[var(--radius-card)]">
           <div className="aspect-video w-full bg-ink-900">
             <iframe
-              /* `key` force le remplacement de l'iframe à chaque changement
-                 d'instant : YouTube ne relit pas `start` sur une même iframe,
-                 et sans cela le second horodatage ne déplacerait rien. */
+              /* `key` forces the iframe to be replaced on every change of
+                 moment: YouTube does not re-read `start` on the same iframe, so
+                 without this the second timestamp would move nothing. */
               key={`${lecture.videoId}-${lecture.instant}`}
               className="h-full w-full"
               src={`https://www.youtube-nocookie.com/embed/${lecture.videoId}?start=${lecture.instant}&autoplay=1&rel=0`}
@@ -134,9 +134,9 @@ export function Lecteur({
                 onClick={onFermer}
                 aria-label="Arrêter la vidéo"
                 title="Arrêter la vidéo"
-                /* La zone touchable garde ses 44 px, mais n'en impose que 32 au
-                   bandeau : les six pixels rognés en haut et en bas mordent sur
-                   l'image, où ils ne coûtent rien. */
+                /* The touch target keeps its 44 px but imposes only 32 on the
+                   strip: the six pixels trimmed top and bottom bite into the
+                   picture, where they cost nothing. */
                 className="group -my-1.5 flex min-h-11 min-w-11 shrink-0 items-center justify-center transition active:scale-95"
               >
                 <span

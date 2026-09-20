@@ -1,36 +1,36 @@
 /**
- * Repère les moments où le registre change : langage familier, souvenir
- * personnel, adresse directe à la salle.
+ * Finds the moments where the register shifts: coarse language, personal
+ * recollection, direct address to the room.
  *
- * Écrit `src/data/anecdotes.json` — uniquement des identifiants, des instants
- * et le mot qui a déclenché le repérage. Aucun texte de transcription n'en
- * sort, ici pas plus qu'ailleurs.
+ * Writes `src/data/anecdotes.json` — identifiers, moments, and the word that
+ * triggered the match, nothing more. No transcript text leaves this script,
+ * here no more than anywhere else.
  *
- * Le repérage est lexical : les sous-titres ne notent aucun rire, il n'existe
- * donc aucun signal automatique d'une digression. Les moments retenus ont été
- * relus un par un, et ceux dont le passage est assez intelligible ont reçu une
- * notice écrite pour ce site — `scripts/anecdotes-notes.json`, versionné à
- * part pour qu'on puisse la corriger sans relancer le relevé.
+ * Detection is lexical: the subtitles note no laughter, so there is no
+ * automatic signal for a digression. Every moment kept was reviewed one by one,
+ * and those whose passage is intelligible enough were given a note written for
+ * this site — `scripts/anecdotes-notes.json`, versioned separately so it can be
+ * fixed without re-running the survey.
  *
  *     node scripts/anecdotes.mjs
  */
 import { readFileSync, writeFileSync } from 'node:fs';
 import { lireCorpus, plier } from './corpus.mjs';
 
-/** Mots dont la présence signale peut-être un écart de registre. */
+/** Words whose presence may signal a shift of register. */
 const REGISTRE = {
   familier: ['cul', 'trou du cul', 'pisser', 'chier', 'couilles', 'bite', 'baiser',
     'foutre', 'putain', 'merde', 'nichons', 'penis', 'verge', 'testicules',
     'copuler', 'bordel'],
   souvenir: ['je me souviens', 'je me rappelle', 'figurez vous', 'quand j etais',
     'je vous raconte'],
-  // « mon ami » n'annonce pas un souvenir : c'est Debord qui interpelle un
-  // étudiant — « oui mon ami », « allez-y mon ami ». La relecture des passages
-  // l'a confirmé sans exception.
+  // "mon ami" announces no recollection: it is Debord addressing a student —
+  // "oui mon ami", "allez-y mon ami". Reviewing the passages confirmed it
+  // without exception.
   salle: ['vous allez rire', 'c est une blague', 'mon ami'],
 };
 
-/** Deux mentions séparées de moins de ça appartiennent au même moment. */
+/** Two mentions closer than this belong to the same moment. */
 const FENETRE_S = 90;
 const AMORCE_S = 6;
 
@@ -38,34 +38,33 @@ const categorieDe = (mot) =>
   Object.entries(REGISTRE).find(([, mots]) => mots.includes(mot))?.[0] ?? 'familier';
 
 /**
- * Moments où Debord éclaire l'anatomie par un domaine étranger à l'art : un
- * sport, un animal, un geste ordinaire, une maladie. C'est une veine à part —
- * elle ne raconte rien de sa vie, elle sert la démonstration — et elle mérite
- * d'être filtrable pour elle-même.
+ * Moments where Debord explains anatomy through something outside art: a sport,
+ * an animal, an everyday gesture, an illness. A vein of its own — it tells
+ * nothing of his life, it serves the demonstration — and worth filtering for.
  */
 const COMPARAISONS = new Set([
-  'H2HqbPEaxk8|1975',  // véliplanchistes
-  'XbY3hwY4Rbk|3012',  // volleyeurs
-  'LxhM7KErZas|5629',  // marcheur Strasbourg-Paris
-  'Nha5ZI8PVo0|1132',  // football, protège-tibias
-  'T3rO2WO_y7s|1880',  // football, protège-tibias
-  '17Doi4NAYY0|1141',  // tir à l'arc
-  'qGdHRpt1qns|1190',  // tir à l'arc
-  'BySad1olbq4|3049',  // le cheval
-  'WMJZHTZ3LZY|5650',  // planches d'anatomie animale
-  'Nha5ZI8PVo0|3753',  // la jument
-  'lPiLzxL9qk4|1141',  // le chat
-  'pA9J6JWr0CQ|4192',  // le chat
-  '7wpyHczLt9Q|3843',  // le culturisme
-  'IDr53Cr4fsU|4676',  // le corset
-  'ycr4a1eAkn0|2820',  // le pied bandé
-  '17Doi4NAYY0|827',   // le marteau
-  'bLQCuSOB8tA|4836',  // les oreillons
-  'T3rO2WO_y7s|585',   // la poliomyélite
-  'LxhM7KErZas|669',   // la piqûre intramusculaire
+  'H2HqbPEaxk8|1975',  // windsurfers
+  'XbY3hwY4Rbk|3012',  // volleyball players
+  'LxhM7KErZas|5629',  // Strasbourg-Paris walker
+  'Nha5ZI8PVo0|1132',  // football, shin guards
+  'T3rO2WO_y7s|1880',  // football, shin guards
+  '17Doi4NAYY0|1141',  // archery
+  'qGdHRpt1qns|1190',  // archery
+  'BySad1olbq4|3049',  // the horse
+  'WMJZHTZ3LZY|5650',  // animal anatomy plates
+  'Nha5ZI8PVo0|3753',  // the mare
+  'lPiLzxL9qk4|1141',  // the cat
+  'pA9J6JWr0CQ|4192',  // the cat
+  '7wpyHczLt9Q|3843',  // bodybuilding
+  'IDr53Cr4fsU|4676',  // the corset
+  'ycr4a1eAkn0|2820',  // bound feet
+  '17Doi4NAYY0|827',   // the hammer
+  'bLQCuSOB8tA|4836',  // mumps
+  'T3rO2WO_y7s|585',   // polio
+  'LxhM7KErZas|669',   // the intramuscular injection
 ]);
 
-/** Notices écrites à la main, une par moment intelligible. */
+/** Hand-written notes, one per intelligible moment. */
 const NOTES = JSON.parse(
   readFileSync(new URL('./anecdotes-notes.json', import.meta.url), 'utf8'),
 );
@@ -113,7 +112,7 @@ const orphelines = Object.keys(NOTES).filter(
   (c) => !moments.some((m) => `${m.video}|${m.t}` === c),
 );
 if (orphelines.length) {
-  // Une notice qui ne correspond plus à aucun moment signale que le relevé a
-  // bougé sous elle : mieux vaut le savoir que la perdre en silence.
+  // A note matching no moment any more means the survey moved under it:
+  // better to hear about it than to lose the note in silence.
   console.error(`ATTENTION : ${orphelines.length} notice(s) sans moment : ${orphelines.join(', ')}`);
 }

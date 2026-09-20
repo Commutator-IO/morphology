@@ -1,13 +1,13 @@
 /**
- * Les références artistiques citées dans le cours : peintres, sculpteurs,
- * anatomistes, musées, œuvres.
+ * The artistic references cited in the course: painters, sculptors, anatomists,
+ * museums, works.
  *
- * La liste n'est pas une anthologie de l'histoire de l'art : elle ne contient
- * que des noms dont on a vérifié, en lisant le passage, qu'ils sont bien
- * prononcés comme références. Le tri a été nécessaire — la transcription
- * automatique confond « léger » l'adjectif avec un nom propre, « carrière » avec
- * un patronyme, « durer » avec Dürer. Ces faux amis ont été écartés un par un,
- * et c'est pourquoi la liste est plus courte que ce qu'un relevé brut donnerait.
+ * The list is not an anthology of art history: it holds only names checked
+ * against their passage and found to be spoken as references. The sorting was
+ * necessary — the automatic transcription confuses the adjective "léger" with
+ * the painter, "carrière" with the surname, "durer" with Dürer. These false
+ * friends were dropped one by one, which is why the list is shorter than a raw
+ * survey would give.
  */
 import referencesBrut from '../data/references.json';
 import occurrencesBrut from '../data/occurrences-references.json';
@@ -23,13 +23,13 @@ export type Reference = {
   note: string;
   variantes: string[];
   /**
-   * Une page de musée qui diffuse publiquement l'image d'une œuvre.
+   * A museum page publicly showing an image of a work.
    *
-   * Ce n'est pas l'œuvre que Debord projetait : les sous-titres ne donnent pas
-   * les titres des diapositives, et les inventer serait pire que se taire. On
-   * renvoie donc à une œuvre de la personne, dans une collection dont l'image
-   * est en accès libre — de quoi mettre un visage sur un nom sans rien
-   * affirmer de faux. Les entrées « lieu » renvoient au site de l'institution.
+   * It is not the work Debord projected: the subtitles give no slide titles,
+   * and inventing them would be worse than silence. So we link to a work by
+   * that person, in a collection whose image is freely accessible — enough to
+   * put a face to a name without asserting anything false. "Lieu" entries link
+   * to the institution's own site.
    */
   musee?: { nom: string; url: string; oeuvre?: string; date?: string };
 };
@@ -43,7 +43,7 @@ const OCC = occurrencesBrut as {
 
 export const REFERENCES_GENERE = OCC.genere;
 
-/** Libellés et ordre : les créateurs d'abord, puis où aller voir les œuvres. */
+/** Labels and order: makers first, then where to go and see the works. */
 export const TYPES: Record<TypeReference, { libelle: string; pluriel: string; puce: string }> = {
   peintre: { libelle: 'Peintre', pluriel: 'Peintres', puce: 'border-brand-200 bg-brand-50 text-brand-700' },
   sculpteur: { libelle: 'Sculpteur', pluriel: 'Sculpteurs', puce: 'border-os-200 bg-os-50 text-os-700' },
@@ -86,6 +86,6 @@ export function correspondReference(r: Reference, requete: string): boolean {
   return q.split(' ').every((mot) => cible.includes(mot));
 }
 
-/** Tri par nom, accents ignorés — « Véronèse » se range à V, pas après Z. */
+/** Sort by name, accents ignored — "Véronèse" files under V, not after Z. */
 export const parNom = (a: Reference, b: Reference) =>
   a.nom.localeCompare(b.nom, 'fr', { sensitivity: 'base' });

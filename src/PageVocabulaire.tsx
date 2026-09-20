@@ -25,12 +25,12 @@ import {
 } from './lib/lexique';
 
 /**
- * L'index du vocabulaire — la page qu'on ouvre en cours.
+ * The vocabulary index — the page one opens in class.
  *
- * Tout est pensé pour un téléphone tenu d'une main : la recherche et les filtres
- * restent collés en haut, les cartes sont repliées, et aucun élément touchable
- * ne descend sous 44 px de haut. Le tri par défaut est alphabétique parce qu'on
- * arrive en cherchant un mot précis, pas en explorant un classement.
+ * Everything is built for a phone held in one hand: search and filters stay
+ * stuck to the top, cards are collapsed, and nothing touchable falls under 44 px
+ * high. The default sort is alphabetical because people arrive looking for a
+ * precise word, not browsing a classification.
  */
 
 type Tri = 'alpha' | 'frequence' | 'region';
@@ -38,32 +38,32 @@ type Tri = 'alpha' | 'frequence' | 'region';
 export function PageVocabulaire() {
   const [requete, setRequete] = useState('');
   const [categorie, setCategorie] = useState<Categorie | null>(null);
-  // La région du corps est le filtre le plus utile après une séance d'atelier :
-  // on arrive en sachant qu'on a travaillé les mains, pas en cherchant un mot.
+  // Body region is the most useful filter after a studio session: one arrives
+  // knowing one worked on hands, not looking for a word.
   const [groupe, setGroupe] = useState<string | null>(null);
   const [tri, setTri] = useState<Tri>('alpha');
-  // Sur grand écran, la séance se joue à droite ; sur téléphone ce panneau
-  // n'est pas rendu et l'état reste simplement nul.
+  // On a large screen the session plays on the right; on a phone this panel is
+  // not rendered and the state simply stays null.
   const [lecture, setLecture] = useState<Lecture | null>(null);
-  // La dernière fiche dépliée, dont le plan du corps montre la place à droite.
-  // On suit l'ouverture et non la lecture : on veut savoir où est un terme au
-  // moment où on le lit, pas au moment où l'on lance une séance.
+  // The last card unfolded, whose place the body plan shows on the right. We
+  // follow unfolding rather than playback: one wants to know where a term is when
+  // reading it, not when starting a session.
   const [situe, setSitue] = useState<Terme | null>(null);
   const cible = useAncre();
-  // Le partage entre le texte et la vidéo se règle, et se retient : on ne veut
-  // pas le refaire à chaque terme consulté.
+  // The split between text and video is adjustable, and remembered: nobody wants
+  // to set it again for every term.
   const [taille, setTaille] = useState<TailleLecteur>(lireTaille);
 
   function reglerTaille(t: TailleLecteur) {
     setTaille(t);
     ecrireTaille(t);
   }
-  // Replié par défaut sur téléphone : on ouvre ce site pour retrouver un mot en
-  // quelques secondes, pas pour régler des filtres.
+  // Collapsed by default on a phone: this site is opened to find a word in a few
+  // seconds, not to set filters.
   const [filtresOuverts, setFiltresOuverts] = useState(() => {
-    // Le choix se retient d'une visite à l'autre : quelqu'un qui aime voir ses
-    // filtres ne doit pas les redéployer à chaque fois. Lecture protégée — en
-    // navigation privée l'accès au stockage peut lever.
+    // The choice carries from visit to visit: someone who likes seeing their
+    // filters should not have to reopen them every time. Guarded read — in private
+    // browsing, touching storage can throw.
     try {
       return localStorage.getItem('morpho.filtres') === 'ouverts';
     } catch {
@@ -71,34 +71,40 @@ export function PageVocabulaire() {
     }
   });
 
-  /** Le pli voulu se retient ; le pli de circonstance, non. D'où l'écriture
-   *  ici, au geste, et non dans un effet qui ne saurait pas les distinguer. */
+  /**
+   * A deliberate fold is remembered; a circumstantial one is not. Hence writing
+   * here, on the gesture, rather than in an effect that could not tell them
+   * apart.
+   */
   function basculerFiltres() {
     const ouverts = !filtresOuverts;
     setFiltresOuverts(ouverts);
     try {
       localStorage.setItem('morpho.filtres', ouverts ? 'ouverts' : 'replies');
     } catch {
-      /* stockage indisponible : le repli marche quand même, il ne survit pas. */
+      /** storage unavailable: folding still works, it just does not survive. */
     }
   }
 
-  // Lancer un passage, c'est avoir fini de chercher : sur téléphone les filtres
-  // se replient pour rendre leur place à la liste et au lecteur, qui se partagent
-  // désormais l'écran. Le bouton les rouvre d'une touche, et le choix n'est pas
-  // retenu — c'est la circonstance, pas une préférence. Dès lg, rien ne bouge :
-  // la place ne manque pas et replier sous les yeux serait gratuit.
+  // Starting a passage means the search is over: on a phone the filters fold away
+  // to give their room back to the list and the player, which now share the
+  // screen. The button reopens them with one tap, and the choice is not
+  // remembered — it is circumstance, not preference. From lg up nothing moves:
+  // there is room to spare, and folding under the reader's eyes would be
+  // gratuitous.
   useEffect(() => {
     if (!lecture) return;
     if (window.matchMedia('(min-width: 1024px)').matches) return;
     setFiltresOuverts(false);
   }, [lecture]);
 
-  /** Une séance joue sur téléphone : la barre d'outils se réduit à une ligne —
-   *  le compte des résultats disparaît et passe sur la ligne du champ, avec le
-   *  bouton des filtres. Entre elle et le lecteur ancré en bas, il ne restait
-   *  qu'un tiers d'écran de liste. L'en-tête, lui, s'efface de lui-même dès
-   *  qu'on descend : c'est l'affaire de `Entete`, sur toutes les pages. */
+  /**
+   * A session is playing on a phone: the toolbar shrinks to one line — the result
+   * count disappears and moves onto the search field's line, with the filter
+   * button. Between that bar and the player anchored at the bottom, only a third
+   * of a screen of list was left. The header hides itself as one scrolls: that is
+   * `Entete`'s business, on every page.
+   */
   const enLecture = lecture !== null;
 
   const resultats = useMemo(() => {
@@ -123,8 +129,8 @@ export function PageVocabulaire() {
     return [...filtres].sort(parAlphabet);
   }, [requete, categorie, groupe, tri]);
 
-  // En tri par région, les entrées sont coupées par un intertitre : sans lui,
-  // une liste triée sans qu'on voie pourquoi passe pour une liste en désordre.
+  // Sorted by region, entries are broken up by a subheading: without it, a list
+  // sorted for no visible reason reads as a list in disorder.
   const groupes = useMemo(() => {
     if (tri !== 'region') return null;
     const m = new Map<string, typeof resultats>();
@@ -136,7 +142,7 @@ export function PageVocabulaire() {
     return [...m];
   }, [resultats, tri]);
 
-  /** Ce que le bouton annonce quand tout est replié. */
+  /** What the button announces when everything is collapsed. */
   const filtresActifs = [
     groupe ? GROUPE_PAR_ID.get(groupe)?.libelle : null,
     categorie ? CATEGORIES[categorie].libelle : null,
@@ -203,8 +209,8 @@ export function PageVocabulaire() {
                     onChange={(e) => setRequete(e.target.value)}
                     placeholder="deltoïde, omoplate, aplomb…"
                     autoComplete="off"
-                    /* text-base et non text-sm : sous 16 px, iOS zoome à la mise au
-                 point du champ et décale toute la page. */
+                    /* text-base rather than text-sm: under 16 px, iOS zooms when
+                   the field takes focus and shifts the whole page. */
                     className="min-h-12 w-full rounded-xl border border-ink-300 bg-white px-3.5 text-base text-ink-900 placeholder:text-ink-400 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 focus:outline-none"
                   />
                   {requete && (
@@ -366,9 +372,9 @@ export function PageVocabulaire() {
                 {groupes.map(([region, termes]) => (
                   <section key={region}>
                     <h2
-                      /* L'intertitre se colle sous la barre d'outils : la hauteur de
-                     l'en-tête, plus celle de la barre — qui n'est pas la même
-                     selon qu'une séance joue ou non. */
+                      /* The subheading sticks under the toolbar: the header's
+                     height plus the bar's — which differs depending on whether
+                     a session is playing. */
                       className={`titre sticky z-10 bg-ink-50/95 py-1.5 text-sm tracking-wide text-ink-500 uppercase backdrop-blur lg:top-[13.5rem] ${
                         enLecture
                           ? 'top-[calc(var(--haut-entete)+4rem)]'
@@ -397,8 +403,8 @@ export function PageVocabulaire() {
                   <CarteTerme
                     key={t.id}
                     terme={t}
-                    /* Un seul résultat : il n'y a rien à choisir, on déplie. Une
-                   fiche visée par une ancre se déplie aussi. */
+                    /* One result only: there is nothing to choose, so it
+                   unfolds. A card targeted by an anchor unfolds too. */
                     ouvertParDefaut={t.id === cible || resultats.length === 1}
                     onLire={setLecture}
                     onOuvrir={setSitue}

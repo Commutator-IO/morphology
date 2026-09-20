@@ -1,54 +1,52 @@
 /**
- * Construit l'index du vocabulaire : pour chaque terme du lexique, où il est
- * prononcé dans le cours.
+ * Builds the vocabulary index: for every term in the lexicon, where it is
+ * spoken in the course.
  *
- * Les sous-titres sont dans `transcripts/`, qui n'est pas versionné : la matière
- * de travail reste locale et seul l'index dérivé — termes, comptes, horodatages —
- * est publié. C'est aussi ce qui permet à la CI de construire le site sans
- * disposer des transcriptions.
+ * The subtitles live in `transcripts/`, which is not versioned: the working
+ * material stays local and only the derived index — terms, counts, timestamps —
+ * is published. That is also what lets CI build the site without them.
  *
- * Deux index sont produits, avec la même mécanique : le vocabulaire d'anatomie
- * et les références artistiques. Un terme n'a besoin que d'un `id` et d'une
- * liste de `variantes` ; le reste — définition, dates, catégorie — ne regarde
- * que l'affichage.
+ * Two indexes come out of the same machinery: the anatomical vocabulary and the
+ * artistic references. A term needs only an `id` and a list of `variantes`; the
+ * rest — definition, dates, category — concerns display alone.
  *
  *     npm run indexer
  */
 import { writeFileSync, readFileSync } from 'node:fs';
 import { lireCorpus, accentuer, plier, motif } from './corpus.mjs';
 
-/** Deux mentions séparées de moins de ça appartiennent au même passage : on ne
- *  propose qu'un seul point d'entrée, sinon un terme dont Debord parle pendant
- *  cinq minutes produit quarante liens vers le même développement. */
+/** Two mentions closer than this belong to the same passage, and get a single
+ *  entry point. Without the rule, a term Debord dwells on for five minutes
+ *  yields forty links into the same stretch. */
 const FENETRE_S = 45;
 
-/** L'ASR pose la ponctuation au hasard ; on recule de quelques secondes pour
- *  tomber avant le mot plutôt qu'après, faute de quoi on arrive en retard. */
+/** The ASR places punctuation at random, so we back up a few seconds and land
+ *  before the word rather than after it. */
 const AMORCE_S = 4;
 
-/** Largeur, en caractères, du voisinage lu pour trancher un mot ambigu.
- *  « Fléchisseur » se dit de l'avant-bras comme de la jambe : seul le passage
- *  autour le dit. Six cents caractères valent environ une minute de parole —
- *  assez pour attraper « orteil » ou « poignet », pas assez pour ramasser le
- *  sujet d'avant. */
+/** How much surrounding text, in characters, is read to settle an ambiguous
+ *  word. "Fléchisseur" means the forearm as readily as the leg; only the
+ *  passage around it says which. Six hundred characters is about a minute of
+ *  speech — enough to catch "orteil" or "poignet", not enough to drag in the
+ *  previous subject. */
 const CONTEXTE_C = 600;
 
-/** Les deux relevés à produire : d'où vient la liste, où va l'index. */
+/** The two surveys to produce: where the list comes from, where it goes. */
 const RELEVES = [
   { nom: 'vocabulaire', lexique: 'lexique.json', sortie: 'occurrences.json' },
   { nom: 'références', lexique: 'references.json', sortie: 'occurrences-references.json' },
 ];
 
-// Le corpus est lu une fois pour les deux relevés : c'est 59 Mo de sous-titres.
+// Read once for both surveys: it is 59 MB of subtitles.
 const corpus = lireCorpus();
 
 /**
- * Texte continu d'une vidéo, plus la table qui rend un instant à partir d'une
- * position de caractère.
+ * A video's continuous text, plus the table turning a character offset back
+ * into a moment.
  *
- * Les segments de sous-titres font deux ou trois mots : une locution comme
- * « crête iliaque » tombe presque toujours à cheval sur deux segments. Chercher
- * segment par segment la manquerait une fois sur deux, d'où la concaténation.
+ * Subtitle segments run two or three words: a phrase like "crête iliaque"
+ * almost always straddles two of them. Searching segment by segment would miss
+ * it half the time, hence the concatenation.
  */
 function aplatir(video) {
   let plie = '';
@@ -61,13 +59,13 @@ function aplatir(video) {
     accentue += a + ' ';
     plie += plier(a) + ' ';
   }
-  // Les deux textes sont pliés caractère par caractère : un offset vaut pour
-  // les deux, ce qui permet de chercher dans l'un et d'horodater avec l'autre.
+  // The two texts fold character for character, so one offset serves both:
+  // search in either, timestamp from the other.
   return { plie, accentue, jalons };
 }
 
 function instantDe(jalons, offset) {
-  // Recherche dichotomique du dernier jalon commençant avant l'offset.
+  // Binary search for the last marker starting before the offset.
   let lo = 0, hi = jalons.length - 1, r = 0;
   while (lo <= hi) {
     const m = (lo + hi) >> 1;
@@ -79,14 +77,13 @@ function instantDe(jalons, offset) {
 const echappe = (v) => v.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/ /g, '\\s+');
 
 /**
- * Trois motifs par terme : l'un cherché sur le texte plié, l'autre — les
- * variantes préfixées « ! » — sur le texte accentué, le troisième — celles
- * préfixées « ? » — mis en attente d'arbitrage, faute de désigner à lui seul
- * une notion : deux termes peuvent réclamer le même mot, et c'est le voisinage
- * qui tranche (voir `arbitrer`).
+ * Three patterns per term: one searched on the folded text, one — variants
+ * prefixed "!" — on the accented text, and a third — those prefixed "?" — held
+ * for arbitration, because the word alone names no single notion: two terms may
+ * claim it, and the surrounding words decide (see `arbitrer`).
  *
- * La plus longue variante passe d'abord pour que « grand dorsal » gagne sur
- * « dorsal » et ne soit pas compté deux fois.
+ * The longest variant goes first so that "grand dorsal" beats "dorsal" instead
+ * of being counted twice.
  */
 function motifsDe(terme) {
   const range = (vs, avecAccents) => {
@@ -109,11 +106,11 @@ function motifsDe(terme) {
 }
 
 /**
- * Les mentions qu'une locution relevée à l'oreille désigne comme n'étant pas la
- * notion — variantes préfixées « - ». « Master i dit » est une mastoïdite et non
- * le masséter, « modèle des États-Unis » un motel et non le modèle : personne ne
- * doit gagner ces positions, pas même par une variante entière. Le veto vaut
- * pour tous les termes, d'où qu'il vienne.
+ * Positions that a phrase, checked by ear, marks as not being the notion —
+ * variants prefixed "-". "Master i dit" is mastoiditis and not the masseter,
+ * "modèle des États-Unis" a motel and not the model: nobody may win these
+ * positions, not even through a whole-phrase variant. A veto holds for every
+ * term, whichever one carries it.
  */
 function positionsInterdites(plie, lexique) {
   const spans = [];
@@ -122,18 +119,18 @@ function positionsInterdites(plie, lexique) {
     if (!veto) continue;
     for (const m of plie.matchAll(veto)) spans.push([m.index, m.index + m[0].length]);
   }
-  // La locution qui annule commence rarement sur le mot qu'elle annule :
-  // « un bout de trapèze » veut dire que le trapèze trois mots plus loin n'est
-  // pas le muscle. C'est donc tout l'intervalle qui est interdit.
+  // The cancelling phrase rarely starts on the word it cancels: "un bout de
+  // trapèze" says the trapèze three words along is not the muscle. So the whole
+  // span is barred, not just its first offset.
   return (offset) => spans.some(([a, b]) => offset >= a && offset < b);
 }
 
 /**
- * Combien de mots du contexte d'un terme entourent cette position.
+ * How many of a term's context words surround this position.
  *
- * Le compte, et non la simple présence : quand « fléchisseur » tombe dans un
- * passage qui parle de la main et cite le pied en passant, c'est le nombre de
- * mots de chaque bord qui fait pencher.
+ * The count, not mere presence: when "fléchisseur" falls in a passage about the
+ * hand that mentions the foot in passing, it is the number of words on each
+ * side that tips the balance.
  */
 function poidsDuContexte(plie, offset, mots) {
   const fenetre = plie.slice(Math.max(0, offset - CONTEXTE_C), offset + CONTEXTE_C);
@@ -146,11 +143,10 @@ function poidsDuContexte(plie, offset, mots) {
 }
 
 /**
- * Attribue les mentions ambiguës, une par une, au terme dont le voisinage parle
- * le plus fort. Un terme qui tient déjà la position par une locution entière l'a
- * gagnée d'avance ; une position que personne ne réclame plus fort qu'un autre
- * est abandonnée, car une mention mal rangée coûte plus cher qu'une mention
- * perdue.
+ * Awards each ambiguous mention to the term whose surroundings speak loudest.
+ * A term already holding the position through a whole-phrase variant has won it
+ * beforehand; a position nobody claims more strongly than another is dropped,
+ * since a misfiled mention costs more than a lost one.
  */
 function arbitrer(plie, litiges, tenues, motsDe) {
   const gagnees = new Map(); // id du terme -> offsets
@@ -187,8 +183,8 @@ function relever({ nom, lexique: fichier, sortie: fichierSortie }) {
     const { plie, accentue, jalons } = aplatir(video);
     if (!jalons.length) continue;
 
-    // Premier passage : ce que chaque terme tient par lui-même, et ce qu'il
-    // réclame sans pouvoir le prouver seul.
+    // First pass: what each term holds on its own, and what it claims without
+    // being able to prove it alone.
     const fermes = new Map(); // id du terme -> offsets
     const litiges = new Map(); // offset -> [ids]
     const tenues = new Set(); // offsets déjà gagnés par une locution entière
@@ -210,7 +206,7 @@ function relever({ nom, lexique: fichier, sortie: fichierSortie }) {
       }
     }
 
-    // Second passage : le voisinage tranche, sauf là où une locution l'interdit.
+    // Second pass: the surroundings decide, except where a phrase forbids it.
     const interdite = positionsInterdites(plie, lexique);
     for (const off of [...litiges.keys()]) if (interdite(off)) litiges.delete(off);
     for (const [id, offsets] of fermes) {
@@ -230,7 +226,7 @@ function relever({ nom, lexique: fichier, sortie: fichierSortie }) {
       const instants = [];
       for (const off of offsets) {
         const t = Math.max(0, instantDe(jalons, off) - AMORCE_S);
-        // Fusion des mentions rapprochées.
+        // Merge mentions that fall close together.
         if (instants.length && t - instants[instants.length - 1] < FENETRE_S) continue;
         instants.push(t);
       }

@@ -1,5 +1,5 @@
-// Passe de reconnaissance : que contient réellement le corpus ?
-// Sert à bâtir le lexique sur des observations et non sur des suppositions.
+// Reconnaissance pass: what does the corpus actually contain?
+// Used to build the lexicon from observation rather than from guesswork.
 import { lireCorpus, normaliser } from './corpus.mjs';
 
 const corpus = lireCorpus();

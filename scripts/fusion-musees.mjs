@@ -1,20 +1,20 @@
 /**
- * Verse les appariements de `musees.json` dans `src/data/references.json`.
+ * Merges the matches in `musees.json` into `src/data/references.json`.
  *
- * Séparé du relevé pour être rejouable : le relevé avance par salves espacées
- * sur plusieurs heures, et la fusion doit pouvoir être relancée après chacune
- * sans rien recalculer.
+ * Kept apart from the survey so it can be replayed: the survey advances in
+ * bursts spread over hours, and the merge must be re-runnable after each one
+ * without recomputing anything.
  *
  *     node scripts/fusion-musees.mjs
  */
 import { readFileSync, writeFileSync } from 'node:fs';
 
 /**
- * Sites d'institution, pour les entrées « lieu ».
+ * Institution websites, for the "lieu" entries.
  *
- * Vérifiés un par un en ouvrant la page et en relevant son titre : la plupart
- * des musées répondent 403 à une requête automatique, si bien qu'un contrôle
- * par code HTTP ne prouverait rien.
+ * Checked one by one by opening the page and reading its title: most museums
+ * answer 403 to an automated request, so an HTTP-code check would prove
+ * nothing.
  */
 const LIEUX = {
   louvre: ['Site officiel du musée du Louvre', 'https://www.louvre.fr'],

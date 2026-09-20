@@ -2,21 +2,19 @@ import { DOS, FACE, type Silhouette } from './silhouettes';
 import type { Terme } from '../lib/lexique';
 
 /**
- * Où le terme se trouve sur le corps.
+ * Where the term sits on the body.
  *
- * Le plan répond à la question que la définition ne règle pas quand on ne
- * connaît pas encore le mot : les adducteurs, c'est où ? Un repère sur une
- * silhouette le dit en un coup d'œil, là où « face interne de la cuisse »
- * suppose déjà qu'on sache lire « interne ».
+ * The plan answers what a definition cannot when the word is still unknown: the
+ * adductors, where are they? A mark on a silhouette says it at a glance, where
+ * "inner face of the thigh" already assumes one can read "inner".
  *
- * La précision est celle d'une silhouette nue, et pas davantage : aucune ligne
- * de construction à l'intérieur du contour, donc le repère dit « par là », pas
- * « exactement là ». Les os profonds — sacrum, ischion, pubis — sont montrés en
- * projection, à l'endroit où on les chercherait sous la peau.
+ * The precision is that of a bare silhouette and no more: no construction lines
+ * inside the outline, so the mark says "around there", not "exactly there".
+ * Deep bones — sacrum, ischium, pubis — are shown in projection, where one
+ * would look for them under the skin.
  *
- * Les termes d'orientation et de morphologie — aplomb, méplat, raccourci — ne
- * sont situés nulle part, et la fiche le dit plutôt que de leur inventer une
- * place.
+ * Terms of orientation and form — aplomb, méplat, raccourci — are located
+ * nowhere, and the card says so rather than inventing a place for them.
  */
 export function Situation({ terme }: { terme: Terme }) {
   const s = terme.situation;
@@ -78,11 +76,11 @@ export function Situation({ terme }: { terme: Terme }) {
 }
 
 /**
- * Le panneau du plan, à droite sous le lecteur.
+ * The body-plan panel, on the right under the player.
  *
- * Il suit la dernière fiche ouverte plutôt que la lecture en cours : on ouvre
- * un terme pour le lire, et c'est à ce moment qu'on veut savoir où il est, pas
- * quand on lance une séance.
+ * It follows the last card opened rather than what is playing: one opens a term
+ * to read it, and that is when one wants to know where it is — not when
+ * starting a session.
  */
 export function PanneauSituation({ terme }: { terme: Terme | null }) {
   return (

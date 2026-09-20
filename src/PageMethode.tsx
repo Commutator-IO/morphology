@@ -3,12 +3,12 @@ import { FENETRE_S, INDEX_GENERE, LEXIQUE, SEANCES, totalDe } from './lib/lexiqu
 import { REFERENCES, totalDeReference } from './lib/references';
 
 /**
- * Comment l'index est fabriqué, et ce qu'il vaut.
+ * How the index is built, and what it is worth.
  *
- * Page indispensable et non annexe : l'index repose sur une transcription
- * automatique, donc faillible. Quelqu'un qui s'en sert en cours doit savoir dans
- * quel sens il peut se tromper — un horodatage qui tombe à côté est sans gravité
- * si on s'y attend, et trompeur si on croit l'index exhaustif.
+ * A necessary page, not an appendix: the index rests on an automatic
+ * transcription, and is therefore fallible. Anyone using it in class needs to
+ * know which way it can be wrong — a timestamp landing beside the mark is
+ * harmless if expected, and misleading if the index is taken as exhaustive.
  */
 export function PageMethode() {
   const muets = LEXIQUE.filter((t) => totalDe(t.id) === 0);
@@ -340,17 +340,15 @@ export function PageMethode() {
 }
 
 /**
- * La chaîne, dessinée.
+ * The chain, drawn.
  *
- * La page dit déjà tout cela en prose, mais l'ordre est ce qu'un lecteur doit
- * retenir : d'où vient chaque fichier, à quel moment le cours cesse d'être
- * reproduit, et où une oreille humaine intervient. Le schéma descend au lieu
- * d'aller de gauche à droite — sur un téléphone, une chaîne horizontale se lit
- * en faisant glisser, c'est-à-dire mal.
+ * The page says all of it in prose already, but the order is what a reader must
+ * keep: where each file comes from, at what point the course stops being
+ * reproduced, and where a human ear steps in.
  *
- * SVG en ligne, dans la palette du site, le texte étant du vrai texte : il se
- * sélectionne et se lit à voix haute. Aucune bibliothèque : une dépendance pour
- * tracer huit rectangles coûterait plus cher qu'elle ne rapporte.
+ * Inline SVG, in the site's palette, with real text so it can be selected and
+ * read aloud. No library: a dependency to draw eight rectangles would cost more
+ * than it saves.
  */
 function Chaine() {
   const boite = { fill: 'white', stroke: 'var(--color-ink-200)', strokeWidth: 1.4, rx: 10 };

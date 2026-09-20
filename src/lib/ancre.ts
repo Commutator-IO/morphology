@@ -1,22 +1,19 @@
 import { useEffect, useState } from 'react';
 
 /**
- * Amène la fiche visée par l'ancre de l'URL, et la désigne à l'appelant.
+ * Scrolls to the card the URL's anchor points at, and names it to the caller.
  *
- * Le navigateur cherche `#rubens` au chargement du document, c'est-à-dire avant
- * que React n'ait rendu quoi que ce soit : l'élément n'existe pas encore, et
- * l'on reste en haut de la page. Il faut donc refaire le travail après le
- * montage.
+ * The browser looks for `#rubens` as the document loads — before React has
+ * rendered anything, so the element does not exist yet and we stay at the top
+ * of the page. The work has to be redone after mount.
  *
- * L'identifiant est aussi rendu à l'appelant, pour qu'il puisse déplier la
- * fiche visée : arriver sur une carte repliée, c'est arriver sur un titre sans
- * la réponse qu'on venait chercher.
+ * The id is handed back so the caller can unfold the target card: landing on a
+ * collapsed card means landing on a heading without the answer one came for.
  */
 export function useAncre(): string | null {
-  // Lu dès le premier rendu, et non dans un effet : `useState` ignore les
-  // changements de prop qui suivent le montage, si bien qu'une fiche déjà
-  // montée repliée le serait restée. L'ancre doit être connue avant que la
-  // fiche n'existe.
+  // Read on the first render rather than in an effect: `useState` ignores prop
+  // changes after mount, so a card already mounted collapsed would have stayed
+  // that way. The anchor must be known before the card exists.
   const [cible] = useState<string | null>(() => {
     if (typeof window === 'undefined') return null;
     return decodeURIComponent(window.location.hash.replace(/^#/, '')) || null;
@@ -25,13 +22,13 @@ export function useAncre(): string | null {
   useEffect(() => {
     const id = cible;
     if (!id) return;
-    // Deux tentatives, et non une : la fiche visée se déplie au montage, les
-    // portraits se chargent, la frise se dessine — chacun de ces événements
-    // déplace la cible après coup. Un seul essai atterrissait au mauvais
-    // endroit, ou nulle part.
+    // Two attempts, not one: the target card unfolds on mount, portraits load,
+    // the timeline draws — each of those moves the target afterwards. A single
+    // attempt landed in the wrong place, or nowhere.
     //
-    // `instant` parce que le document est en `scroll-behavior: smooth` : une
-    // animation en cours est annulée par le second essai, et l'on ne bouge plus.
+    // `instant` because the document uses `scroll-behavior: smooth`: an
+    // animation in flight would be cancelled by the second attempt, leaving us
+    // stuck.
     const aller = () =>
       document.getElementById(id)?.scrollIntoView({ block: 'start', behavior: 'instant' });
     const t1 = window.setTimeout(aller, 120);

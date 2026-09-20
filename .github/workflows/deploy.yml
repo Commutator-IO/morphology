@@ -3,8 +3,8 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
-  # Les contrôles tournent aussi sur les pull requests ; seul le déploiement est
-  # réservé à la branche principale.
+  # Checks run on pull requests too; only deployment is reserved for the main
+  # branch.
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -14,7 +14,7 @@ permissions:
   pages: write
   id-token: write
 
-# Un déploiement à la fois, sans annuler celui qui est en cours.
+# One deployment at a time, without cancelling the one in flight.
 concurrency:
   group: pages
   cancel-in-progress: false
@@ -33,31 +33,30 @@ jobs:
 
       - run: npm ci
 
-      # `--deny-warnings` est indispensable : sans ce drapeau, oxlint affiche
-      # ses avertissements et sort avec 0, donc l'étape ne pourrait jamais
-      # échouer.
+      # `--deny-warnings` is essential: without the flag, oxlint prints its
+      # warnings and exits 0, so this step could never fail.
       - name: Lint
         run: npm run lint
 
-      # L'index publié est un fichier généré : les tests sont ce qui garantit
-      # qu'il est cohérent avec le lexique et les séances. Les transcriptions
-      # n'étant pas versionnées, la CI ne peut pas le recalculer — elle ne peut
-      # que le vérifier, et c'est pourquoi ces tests ne sont pas facultatifs.
+      # The published index is a generated file: these tests are what keeps it
+      # consistent with the lexicon and the sessions. The transcripts are not
+      # versioned, so CI cannot recompute it — only check it, which is why these
+      # tests are not optional.
       - name: Unit tests
         run: npm test
 
-      # `npm run build` enchaîne `tsc -b` puis `vite build` : une erreur de type
-      # fait échouer cette étape.
+      # `npm run build` runs `tsc -b` then `vite build`: a type error fails
+      # this step.
       #
-      # Le site est servi depuis le domaine morphologie.commutator.io, donc
-      # depuis la racine : les assets ne doivent pas être préfixés et BASE_PATH
-      # reste vide (vite.config.ts retombe alors sur "/").
-      # Sans domaine personnalisé, un site de projet vit sous /<dépôt>/ et il
-      # faudrait BASE_PATH: /${{ github.event.repository.name }}/
+      # The site is served from morphologie.commutator.io, hence from the root:
+      # assets must not be prefixed and BASE_PATH stays empty (vite.config.ts
+      # then falls back to "/").
+      # Without a custom domain, a project site lives under /<repo>/ and would
+      # need BASE_PATH: /${{ github.event.repository.name }}/
       - name: Build
         run: npm run build
 
-      # `enablement: true` provisionne Pages si le dépôt ne l'a pas encore.
+      # `enablement: true` provisions Pages if the repo has not enabled it.
       - uses: actions/configure-pages@v6
         if: github.event_name != 'pull_request'
         with:
@@ -71,7 +70,7 @@ jobs:
   deploy:
     name: Deploy
     needs: build
-    # Une pull request ne déploie pas : elle ne passe que les contrôles.
+    # A pull request does not deploy: it only runs the checks.
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     environment:

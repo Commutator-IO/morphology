@@ -6,9 +6,9 @@ import tailwindcss from '@tailwindcss/vite'
 
 const ORIGINE = process.env.SITE_URL ?? 'https://morphologie.commutator.io'
 
-// Une page HTML par vue. La même table sert au build et au plan du site.
-// Le vocabulaire est à la racine : c'est l'outil qu'on ouvre en cours, et non
-// une annexe de la liste des séances.
+// One HTML page per view. The same table serves the build and the sitemap.
+// The vocabulary sits at the root: it is the tool one opens in class, not an
+// appendix to the list of sessions.
 const PAGES = {
   main: 'index.html',
   references: 'references/index.html',
@@ -20,25 +20,26 @@ const PAGES = {
 } as const
 
 /**
- * Anciennes adresses, conservées vivantes.
+ * Old addresses, kept alive.
  *
- * L'onglet des digressions a d'abord vécu sous `/anecdotes/`. Le mot promettait
- * un florilège de bons mots, l'URL a suivi le libellé — mais des liens ont pu
- * être partagés entre-temps, et l'hébergement statique ne sait pas rediriger
- * côté serveur. Une page de renvoi tient ce rôle : elle coûte moins d'un kilo-
- * octet et évite qu'un lien donné à des étudiants tombe sur un 404.
+ * The digressions tab first lived under `/anecdotes/`. The word promised a
+ * garland of witticisms, so the URL followed the label — but links may have
+ * been shared meanwhile, and static hosting cannot redirect server-side. A
+ * forwarding page does the job: it costs under a kilobyte and keeps a link
+ * handed to students off a 404.
  *
- * Elles sont tenues à part des pages : elles se construisent comme elles, mais
- * n'ont rien à faire dans le plan du site, qui ne doit annoncer qu'une adresse
- * par contenu.
+ * Held apart from the pages: they build like them, but have no place in the
+ * sitemap, which must announce one address per piece of content.
  */
 const REDIRECTIONS = {
   anecdotes: 'anecdotes/index.html',
 } as const
 
-/** Date du dernier commit, en ISO — l'en-tête et l'index sont partagés, donc
- *  n'importe quel commit peut modifier n'importe quelle page. Sans dépôt git,
- *  on n'écrit pas de date plutôt que d'en inventer une. */
+/**
+ * Date of the last commit, ISO — the header and the index are shared, so any
+ * commit can change any page. Without a git repository we write no date rather
+ * than invent one.
+ */
 function dernierCommit(): string | null {
   try {
     return execFileSync('git', ['log', '-1', '--format=%cI'], {
@@ -50,7 +51,7 @@ function dernierCommit(): string | null {
   }
 }
 
-/** Écrit sitemap.xml et robots.txt à partir de PAGES, pendant le build. */
+/** Writes sitemap.xml and robots.txt from PAGES, during the build. */
 function planDuSite(): Plugin {
   return {
     name: 'plan-du-site',
@@ -88,8 +89,8 @@ function planDuSite(): Plugin {
 
 export default defineConfig({
   plugins: [react(), tailwindcss(), planDuSite()],
-  // GitHub Pages sert un site de projet sous /<dépôt>/ ; sur un domaine dédié
-  // la racine suffit, et le workflow laisse BASE_PATH vide.
+  // GitHub Pages serves a project site under /<repo>/; on a dedicated domain the
+  // root is enough, and the workflow leaves BASE_PATH empty.
   base: process.env.BASE_PATH ?? '/',
   build: {
     rollupOptions: {

@@ -1,23 +1,23 @@
 /**
- * Moments où le registre du cours change : mot familier, souvenir personnel,
- * adresse directe à la salle.
+ * Moments where the course changes register: a coarse word, a personal
+ * recollection, a direct address to the room.
  *
- * Ce ne sont pas des parenthèses dans l'enseignement, c'est l'enseignement même.
- * Debord fait cours d'une voix, pendant deux heures, sans notes : le souvenir
- * d'atelier situe une pratique, l'adresse à la salle vérifie qu'on suit, et le
- * mot cru nomme une forme sans périphrase, donc sans flou. Les regrouper ici
- * donne à lire sa manière de tenir un amphithéâtre, pas un florilège de bons
- * mots.
+ * These are not asides in the teaching, they are the teaching. Debord lectures
+ * for two hours from his voice alone, without notes: the studio memory places a
+ * practice, the address to the room checks that people are following, and the
+ * blunt word names a form without circumlocution, hence without vagueness.
+ * Gathering them here shows how he holds a lecture hall, not a garland of
+ * witticisms.
  *
- * Le repérage est lexical — les sous-titres ne notent aucun rire, donc aucun
- * signal automatique n'existe. Les 139 moments ont été relus un par un, et ceux
- * dont le passage était assez intelligible ont reçu une notice de deux ou trois
- * phrases, écrite pour ce site. Les autres restent de simples points d'écoute :
- * les décrire supposerait de deviner ce qu'a dit quelqu'un de réel.
+ * Detection is lexical — the subtitles note no laughter, so no automatic signal
+ * exists. The 139 moments were reviewed one by one, and those whose passage was
+ * intelligible enough were given a two- or three-sentence note written for this
+ * site. The rest stay plain listening points: describing them would mean
+ * guessing what a real person said.
  *
- * La catégorie, elle, vient du mot qui a déclenché le repérage, et se trompe
- * parfois : « figurez-vous » range en souvenir un passage qui n'en est pas un.
- * La notice dit alors ce qu'il en est, et c'est elle qu'on lit.
+ * The category comes from the word that triggered the match, and is sometimes
+ * wrong: "figurez-vous" files as recollection a passage that is not one. The
+ * note then says what it is, and the note is what one reads.
  */
 import brut from '../data/anecdotes.json';
 import { SEANCE_PAR_ID, type Seance } from './lexique';
@@ -29,10 +29,12 @@ export type Moment = {
   t: number;
   mot: string;
   categorie: Categorie;
-  /** Notice écrite à la main, quand le passage est assez intelligible. */
+  /** Hand-written note, when the passage is intelligible enough. */
   note?: string;
-  /** Debord y éclaire l'anatomie par un domaine étranger à l'art — un sport,
-   *  un animal, un geste ordinaire. */
+  /**
+   * Debord explains anatomy through something outside art — a sport, an animal,
+   * an everyday gesture.
+   */
   comparaison?: boolean;
 };
 
@@ -61,7 +63,7 @@ export const CATEGORIES: Record<Categorie, { libelle: string; propos: string }> 
 
 export const ORDRE: Categorie[] = ['souvenir', 'familier', 'salle'];
 
-/** Les moments d'une séance, dans l'ordre du cours. */
+/** A session's moments, in course order. */
 export type ParSeance = { seance: Seance; moments: Moment[] };
 
 export function grouperParSeance(moments: Moment[]): ParSeance[] {
@@ -80,8 +82,8 @@ export function grouperParSeance(moments: Moment[]): ParSeance[] {
     .sort((a, b) => a.seance.rang - b.seance.rang);
 }
 
-/** Les moments où l'anatomie est éclairée par un domaine étranger à l'art. */
+/** Moments where anatomy is explained through something outside art. */
 export const COMPARAISONS = MOMENTS.filter((m) => m.comparaison);
 
-/** Les moments décrits, seuls à porter une notice. */
+/** The described moments, the only ones carrying a note. */
 export const DECRITS = MOMENTS.filter((m) => m.note);

@@ -16,10 +16,10 @@ import {
 import { CATEGORIES, GROUPES, groupeDeRegion, REGIONS } from './couleurs';
 
 /**
- * L'index publié est un fichier généré : ces tests vérifient qu'il est cohérent
- * avec le lexique et avec les séances, et qu'il n'a pas été committé dans un état
- * intermédiaire. Ils tiennent lieu de garde-fou en CI, où les transcriptions —
- * non versionnées — ne sont pas là pour le recalculer.
+ * The published index is a generated file: these tests check it is consistent
+ * with the lexicon and the sessions, and that it was not committed halfway
+ * through. They stand as the guard rail in CI, where the transcripts — not
+ * versioned — are absent and cannot recompute it.
  */
 
 describe('lexique', () => {
@@ -81,8 +81,8 @@ describe('index des passages', () => {
   });
 
   it('place chaque horodatage dans la durée de sa séance', () => {
-    // L'invariant qui attrape une erreur de conversion ou de décalage : un
-    // horodatage au-delà de la fin renvoie vers une vidéo qui s'arrête aussitôt.
+    // The invariant that catches a unit or offset error: a timestamp past the end
+    // sends the viewer to a video that stops at once.
     for (const t of LEXIQUE) {
       for (const { seance, instants } of passagesDe(t.id)) {
         for (const i of instants) {
@@ -130,7 +130,7 @@ describe('recherche', () => {
   });
 
   it('accepte la nomenclature internationale pour un terme classique', () => {
-    // Sans cela l'index ne sert qu'à ceux qui connaissent déjà le mot de Debord.
+    // Without this the index only serves those who already know Debord's word.
     expect(trouve('scapula')).toContain('omoplate');
     expect(trouve('patella')).toContain('rotule');
     expect(trouve('ulna')).toContain('cubitus');
@@ -171,8 +171,8 @@ describe('mise en forme', () => {
 
 describe('groupes de régions', () => {
   it('range chaque région du lexique dans un groupe, sauf « tout le corps »', () => {
-    // Une région oubliée ferait disparaître ses termes de tous les filtres sans
-    // que rien ne le signale : c'est le genre d'absence qu'on ne remarque pas.
+    // A forgotten region would drop its terms from every filter with nothing to
+    // signal it: the kind of absence nobody notices.
     for (const region of new Set(LEXIQUE.map((t) => t.region))) {
       if (region === 'general') {
         expect(groupeDeRegion(region), region).toBeNull();
@@ -201,7 +201,7 @@ describe('groupes de régions', () => {
   });
 
   it('laisse chaque groupe non vide des deux côtés', () => {
-    // Un filtre qui ne rend rien est pire qu'un filtre absent.
+    // A filter that returns nothing is worse than no filter.
     for (const g of GROUPES) {
       expect(LEXIQUE.some((t) => g.regions.includes(t.region)), `${g.id} : aucun terme`).toBe(true);
       expect(SEANCES.some((s) => g.parties.includes(s.partie)), `${g.id} : aucune séance`).toBe(true);

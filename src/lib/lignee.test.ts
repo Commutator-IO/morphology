@@ -2,10 +2,10 @@ import { describe, expect, it } from 'vitest';
 import { FIGURES, parSection, SECTIONS } from './lignee';
 
 /**
- * Une bibliographie est le genre d'objet qu'on remplit volontiers de mémoire,
- * et c'est là qu'on se trompe : un éditeur approximatif, une date décalée d'un
- * an, un ouvrage attribué au mauvais auteur. Ces tests imposent la règle du
- * site — rien n'est publié sans sa provenance.
+ * A bibliography is the kind of thing one happily fills in from memory, and
+ * that is where it goes wrong: an approximate publisher, a date off by a year,
+ * a book under the wrong name. These tests impose the site's rule — nothing is
+ * published without its provenance.
  */
 describe('lignée', () => {
   it('a des identifiants uniques', () => {
@@ -16,8 +16,8 @@ describe('lignée', () => {
   it('exige une provenance pour chaque entrée', () => {
     for (const f of FIGURES) {
       expect(f.source.length, `${f.id} sans source`).toBeGreaterThan(30);
-      // Pas de plancher sur la notice : pour plusieurs peintres, tout ce qu’on
-      // peut dire honnêtement tient en une ligne, et l’allonger serait meubler.
+      // No minimum length on the note: for several painters, everything one can
+      // honestly say fits in a line, and padding it would be filler.
       expect(f.notice.length, `${f.id}`).toBeGreaterThan(20);
     }
   });
@@ -34,8 +34,8 @@ describe('lignée', () => {
     for (const f of FIGURES) {
       for (const o of f.ouvrages) {
         expect(o.titre.length, f.id).toBeGreaterThan(5);
-        // Une date est soit une année ou une fourchette, soit l'aveu qu'on ne
-        // l'a pas vérifiée. Jamais une approximation présentée comme un fait.
+        // A date is either a year or a range, or an admission that it was not checked.
+        // Never an approximation dressed as fact.
         if (o.annee) {
           expect(o.annee, `${f.id} : ${o.annee}`).toMatch(/^(\d{4}(-\d{4})?|à confirmer)$/);
         }

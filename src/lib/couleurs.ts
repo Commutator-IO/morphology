@@ -1,14 +1,14 @@
 /**
- * Catégories et régions : libellés, couleurs, ordre d'affichage.
+ * Categories and regions: labels, colours, display order.
  *
- * Dans `src/lib/` et non dans un fichier de composants : oxlint exige qu'un
- * module de composants n'exporte que des composants.
+ * In `src/lib/` rather than with the components: oxlint requires a component
+ * module to export components only.
  */
 
 export type Categorie = 'os' | 'muscle' | 'repere' | 'orientation' | 'morphologie';
 
-/** Une catégorie porte une couleur *et* un mot : la couleur seule ne se lit pas
- *  en niveaux de gris, ni pour un daltonien, ni sous le soleil d'un atelier. */
+/** A category carries a colour *and* a word: colour alone does not read in
+ *  greyscale, nor for a colour-blind reader, nor in a sunlit studio. */
 export const CATEGORIES: Record<Categorie, { libelle: string; puce: string; propos: string }> = {
   os: {
     libelle: 'Os',
@@ -45,8 +45,8 @@ export const ORDRE_CATEGORIES: Categorie[] = [
   'orientation',
 ];
 
-/** Régions, de haut en bas puis du tronc vers les extrémités — l'ordre dans
- *  lequel on parcourt un corps, plus utile qu'un classement alphabétique. */
+/** Regions, top to bottom then trunk outwards — the order in which one reads a
+ *  body, more useful than alphabetical. */
 export const REGIONS: Record<string, string> = {
   tete: 'Tête',
   cou: 'Cou',
@@ -68,14 +68,13 @@ export const REGIONS: Record<string, string> = {
 export const ORDRE_REGIONS = Object.keys(REGIONS);
 
 /**
- * Groupes de régions, tels qu'on parle d'une séance d'atelier : « hier j'ai
- * travaillé les mains ».
+ * Region groups, as one talks about a studio session: "yesterday I worked on
+ * hands".
  *
- * Les régions fines du lexique (avant-bras, coude, genou…) sont trop
- * nombreuses pour faire des filtres utilisables au pouce, et personne ne dit
- * « j'ai étudié le coude ». Ces six groupes correspondent à la façon dont le
- * cours lui-même se découpe : `parties` fait le lien avec les séances, pour
- * qu'un même filtre vaille des deux côtés.
+ * The lexicon's fine regions (forearm, elbow, knee…) are too many to make
+ * filters usable with a thumb, and nobody says "I studied the elbow". These
+ * groups match how the course itself divides up: `parties` ties them to the
+ * sessions, so one filter serves both sides.
  */
 export const GROUPES: {
   id: string;
@@ -85,10 +84,9 @@ export const GROUPES: {
 }[] = [
   { id: 'tete', libelle: 'Tête et cou', regions: ['tete', 'cou'], parties: ['tete'] },
   { id: 'torse', libelle: 'Torse', regions: ['tronc'], parties: ['tronc'] },
-  // Le dos a sa propre entrée : c'est la plus grosse partie du cours — six
-  // séances, parce que l'omoplate glisse sur la cage — et le confondre avec le
-  // torse revenait à rendre introuvable ce à quoi Debord consacre le plus de
-  // temps.
+  // The back gets its own entry: it is the largest part of the course — six
+  // sessions, because the shoulder blade slides over the rib cage — and folding
+  // it into the torso hid what Debord spends most time on.
   { id: 'dos', libelle: 'Dos', regions: ['dos'], parties: ['dos'] },
   {
     id: 'bras',
@@ -114,11 +112,11 @@ export const GROUPES: {
 export const GROUPE_PAR_ID = new Map(GROUPES.map((g) => [g.id, g]));
 
 /**
- * Le groupe auquel appartient une région, s'il y en a un.
+ * The group a region belongs to, if any.
  *
- * Les termes de région « general » — aplomb, méplat, relief — n'en ont aucun :
- * ils valent pour tout le corps, et les faire remonter dans chaque groupe
- * noierait le filtre sous des mots qu'on n'a pas cherchés.
+ * Terms in the "general" region — aplomb, méplat, relief — have none: they hold
+ * for the whole body, and surfacing them in every group would drown the filter
+ * in words nobody asked for.
  */
 export function groupeDeRegion(region: string): string | null {
   return GROUPES.find((g) => g.regions.includes(region))?.id ?? null;

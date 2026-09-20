@@ -4,16 +4,16 @@ import { CATEGORIES, grouperParSeance, MOMENTS, ORDRE } from './anecdotes';
 import { SEANCE_PAR_ID } from './lexique';
 
 /**
- * Ce relevé est le seul du site à toucher au contenu parlé plutôt qu'au
- * vocabulaire. Les tests y veillent donc surtout à une chose : qu'il n'en
- * publie rien d'autre que des repères.
+ * This survey is the only one on the site touching spoken content rather than
+ * vocabulary. So the tests mainly watch one thing: that it publishes nothing
+ * but pointers.
  */
 describe('anecdotes', () => {
   it('ne publie aucun texte de transcription', () => {
-    // L'invariant qui compte. Le fichier ne doit contenir que des identifiants,
-    // des instants et un mot isolé — jamais une phrase du cours. Un mot pris
-    // dans son contexte suffirait à reproduire ce que Debord dit, et à lui
-    // prêter des propos que la transcription a peut-être inventés.
+    // The invariant that matters. The file must hold identifiers, moments and one
+    // isolated word — never a sentence of the course. A word taken in context would
+    // be enough to reproduce what Debord says, and to put in his mouth what the
+    // transcription may have invented.
     const champsAutorises = new Set(['video', 't', 'mot', 'categorie', 'note', 'comparaison']);
     for (const m of MOMENTS) {
       for (const k of Object.keys(m)) expect(champsAutorises, k).toContain(k);
@@ -54,9 +54,8 @@ describe('anecdotes', () => {
   });
 
   it('garde les notices courtes, deux ou trois phrases', () => {
-    // Une notice dit de quoi parle la digression ; elle ne la raconte pas. La
-    // borne est là pour que la page reste un index et ne devienne pas une
-    // reprise du cours.
+    // A note says what the digression is about; it does not retell it. The limit
+    // keeps the page an index rather than a rewrite of the course.
     for (const m of MOMENTS.filter((x) => x.note)) {
       expect(m.note!.length, `${m.video}|${m.t}`).toBeLessThanOrEqual(400);
       const phrases = m.note!.split(/[.!?]\s/).length;

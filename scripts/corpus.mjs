@@ -1,18 +1,17 @@
 /**
- * Lecture des sous-titres json3 et normalisation du texte.
+ * Reads the json3 subtitles and normalises their text.
  *
- * Deux normalisations, de même longueur caractère pour caractère, afin qu'une
- * position trouvée dans l'une désigne le même endroit dans l'autre :
+ * Two normalisations, character-for-character the same length, so that a
+ * position found in one points at the same place in the other:
  *
- *   - `plier`      : accents rabattus sur l'ASCII. Tolérant, c'est le défaut :
- *                    l'ASR écrit « sterno cléido » aussi bien que « sternocleido ».
- *   - `accentuer`  : accents conservés. Nécessaire pour les quelques mots que
- *                    l'accent seul distingue — « côte » la côte et « côté » le
- *                    côté, qui sans lui se confondent et noient l'index.
+ *   - `plier`      : accents folded to ASCII. Lenient, and the default: the
+ *                    ASR writes "sterno cléido" as readily as "sternocleido".
+ *   - `accentuer`  : accents kept. Needed for the few words the accent alone
+ *                    tells apart — "côte" the rib and "côté" the side, which
+ *                    otherwise merge and drown the index.
  *
- * Le repli one-to-one (é → e) est préférable à NFD suivi d'une suppression des
- * diacritiques : NFD change la longueur de la chaîne, et les deux textes ne
- * seraient plus alignés.
+ * The one-to-one fold (é → e) beats NFD plus diacritic stripping: NFD changes
+ * the string's length, and the two texts would no longer line up.
  */
 import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
@@ -22,7 +21,7 @@ export const DOSSIER = new URL('../transcripts/', import.meta.url).pathname;
 const ACCENTS = 'àâäáãåçéèêëíìîïñóòôöõúùûüýÿœæ';
 const PLIES = /*  */ 'aaaaaaceeeeiiiinooooouuuuyyoa';
 
-/** Minuscules, ponctuation ramenée à l'espace, accents conservés. */
+/** Lowercase, punctuation turned into spaces, accents kept. */
 export function accentuer(s) {
   let out = '';
   for (const c of s.toLowerCase().normalize('NFC')) {
@@ -32,7 +31,7 @@ export function accentuer(s) {
   return out;
 }
 
-/** Comme `accentuer`, accents rabattus. Même longueur, mêmes positions. */
+/** Like `accentuer`, with accents folded. Same length, same offsets. */
 export function plier(s) {
   let out = '';
   for (const c of accentuer(s)) {
@@ -42,7 +41,7 @@ export function plier(s) {
   return out;
 }
 
-/** Normalisation d'un motif de recherche : espaces réduits, bords nettoyés. */
+/** Normalises a search pattern: runs of spaces collapsed, edges trimmed. */
 export function motif(s, avecAccents = false) {
   return (avecAccents ? accentuer(s) : plier(s)).replace(/\s+/g, ' ').trim();
 }
@@ -57,7 +56,7 @@ export function lireCorpus() {
     for (const e of d.events ?? []) {
       if (!e.segs) continue;
       const texte = e.segs.map((s) => s.utf8 ?? '').join('').replace(/\s+/g, ' ').trim();
-      // Les mentions de régie — « [Applaudissements] » — ne sont pas du discours.
+      // Stage cues — "[Applaudissements]" — are not speech.
       if (!texte || texte.startsWith('[')) continue;
       segments.push({ t: Math.floor(e.tStartMs / 1000), texte });
     }
@@ -66,5 +65,5 @@ export function lireCorpus() {
   return out;
 }
 
-/** Compat : l'outil de fréquences travaille sur l'ASCII. */
+/** Compatibility: the frequency tool works on ASCII. */
 export const normaliser = (s) => motif(s);

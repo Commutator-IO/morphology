@@ -15,12 +15,12 @@ import {
 } from './lib/references';
 
 /**
- * Les références artistiques du cours.
+ * The course's artistic references.
  *
- * Debord ne sépare pas l'anatomie de son usage : presque chaque séance se ferme
- * sur des diapositives de tableaux, de dessins ou de sculptures où la forme
- * qu'on vient d'étudier se voit à l'œuvre. Cette page rassemble ces renvois pour
- * qu'on puisse y retourner directement.
+ * Debord does not separate anatomy from its use: nearly every session closes on
+ * slides of paintings, drawings or sculptures where the form just studied is
+ * seen at work. This page gathers those pointers so one can go back to them
+ * directly.
  */
 export function PageReferences() {
   const [requete, setRequete] = useState('');
@@ -28,8 +28,8 @@ export function PageReferences() {
   const [parMentions, setParMentions] = useState(true);
   const [lecture, setLecture] = useState<Lecture | null>(null);
   const cible = useAncre();
-  // Le partage entre le texte et la vidéo se règle, et se retient : on ne veut
-  // pas le refaire à chaque terme consulté.
+  // The split between text and video is adjustable, and remembered: nobody wants
+  // to set it again for every term.
   const [taille, setTaille] = useState<TailleLecteur>(lireTaille);
 
   function reglerTaille(t: TailleLecteur) {
@@ -41,8 +41,8 @@ export function PageReferences() {
     const filtrees = REFERENCES.filter(
       (r) => (!type || r.type === type) && correspondReference(r, requete),
     );
-    // Par défaut le plus cité d'abord : la fréquence dit à elle seule ce que
-    // Debord regarde le plus, et c'est l'information que cette page apporte.
+    // Most cited first by default: frequency alone says what Debord looks at most,
+    // and that is what this page brings.
     return parMentions
       ? [...filtrees].sort(
           (a, b) => totalDeReference(b.id) - totalDeReference(a.id) || parNom(a, b),

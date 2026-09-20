@@ -1,14 +1,14 @@
 /**
- * Les deux silhouettes du plan du corps, face et dos.
+ * The two silhouettes of the body plan, front and back.
  *
- * Dessin de Sebastian Wallroth, publié sur Wikimedia Commons sous CC0 : rien
- * n'oblige à le créditer, on le fait quand même dans les mentions légales.
+ * Drawing by Sebastian Wallroth, published on Wikimedia Commons under CC0:
+ * nothing requires crediting it, and the legal notice credits it anyway.
  *
- * Le tracé est conservé tel quel, translations comprises : les repères des
- * termes sont posés dans le repère de la `boite`, pas dans celui des tracés,
- * et une remise à plat des coordonnées ne servirait qu'à introduire des
- * écarts. Les deux vues n'ont pas tout à fait la même hauteur — 318,5 contre
- * 314,9 — ce qui suffit pour qu'un repère du dos se calcule sur sa propre vue.
+ * The path is kept as it is, translations included: the terms' marks are placed
+ * in the `boite` coordinates, not the path's, and flattening the coordinates
+ * would only introduce drift. The two views differ slightly in height — 318.5
+ * against 314.9 — which is enough that a back mark must be computed on its own
+ * view.
  */
 export type Silhouette = { boite: string; traces: { d: string; t?: string }[] };
 

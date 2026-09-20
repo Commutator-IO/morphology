@@ -6,32 +6,34 @@ import { GROUPES, GROUPE_PAR_ID } from './lib/couleurs';
 import { duree, lienYoutube, PARTIES, SEANCES, termesDe } from './lib/lexique';
 
 /**
- * Les 45 séances, regroupées par partie.
+ * The 45 sessions, grouped by part.
  *
- * L'ordre est celui du raisonnement de Debord — l'ensemble avant la région, la
- * région avant le muscle — et non celui de la playlist, qui mêle les sujets au
- * fil de la publication. Le rang d'origine reste affiché pour qu'on retrouve la
- * séance dans la playlist.
+ * The order is that of Debord's reasoning — the whole before the region, the
+ * region before the muscle — not the playlist's, which mixes subjects as they
+ * were published. The original rank stays on screen so the session can be found
+ * in the playlist again.
  */
 
-/** Les quelques termes les plus présents dans une séance : de quoi savoir ce
- *  qu'on va y trouver sans avoir à l'ouvrir. Quatre suffisent sur un téléphone ;
- *  au-delà, la liste cesse d'être lisible d'un coup d'œil. */
+/**
+ * The few terms most present in a session: enough to know what is in it without
+ * opening it. Four is plenty on a phone; beyond that the list stops being
+ * readable at a glance.
+ */
 const APERCU = 4;
 
 export function PageSeances() {
   const total = SEANCES.reduce((s, x) => s + (x.dureeS ?? 0), 0);
   const [lecture, setLecture] = useState<Lecture | null>(null);
-  // Le partage entre le texte et la vidéo se règle, et se retient : on ne veut
-  // pas le refaire à chaque terme consulté.
+  // The split between text and video is adjustable, and remembered: nobody wants
+  // to set it again for every term.
   const [taille, setTaille] = useState<TailleLecteur>(lireTaille);
 
   function reglerTaille(t: TailleLecteur) {
     setTaille(t);
     ecrireTaille(t);
   }
-  // Même filtre que sur le vocabulaire, pour qu'on puisse passer de l'un à
-  // l'autre sans changer de façon de penser : « les mains », des deux côtés.
+  // Same filter as on the vocabulary, so one can move between them without
+  // changing how one thinks: "hands", on both sides.
   const [groupe, setGroupe] = useState<string | null>(null);
 
   const partiesVisibles = groupe
@@ -152,8 +154,8 @@ export function PageSeances() {
                           rel="noreferrer"
                           className="flex items-start gap-3"
                           onClick={(e) => {
-                            // Même règle que les horodatages : un clic modifié
-                            // reste une navigation ordinaire vers YouTube.
+                            // Same rule as the timestamps: a modified click stays ordinary navigation to
+                            // YouTube.
                             if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
                             e.preventDefault();
                             setLecture({ videoId: s.id, instant: 0, titre: s.titre });

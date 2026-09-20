@@ -17,29 +17,29 @@ import {
 } from './lib/lignee';
 
 /**
- * La lignée, sous forme de frise.
+ * The lineage, as a timeline.
  *
- * Reprise du motif de l'onglet Timeline de germain-project : une règle collée
- * sous l'en-tête, une barre par vie sur la même échelle, et la barre de la
- * fiche qu'on lit qui s'allume à mesure qu'on descend la colonne.
+ * The pattern comes from germain-project's Timeline tab: a ruler stuck under the
+ * header, one bar per life on the same scale, and the bar of the card being read
+ * lighting up as one goes down the column.
  *
- * Ici la frise n'est pas un ornement : elle montre d'un coup d'œil ce qu'une
- * liste ne dit pas — que Richer meurt cinq ans avant la naissance de Debord, de
- * sorte que la transmission passe par les livres et non par la parole, et que
- * ses élèves naissent tous pendant qu'il enseigne déjà.
+ * Here the timeline is no ornament: it shows at a glance what a list cannot —
+ * that Richer dies five years before Debord is born, so the transmission passes
+ * through books and not through speech, and that his students are all born while
+ * he is already teaching.
  */
 
 /**
- * La plaque de portrait.
+ * The portrait plate.
  *
- * Liée depuis Wikimedia Commons, jamais réhébergée, et seulement quand le
- * fichier est dans le domaine public ou sous licence libre. Quand il n'en
- * existe pas — c'est le cas de la moitié des vivants — la plaque montre leurs
- * initiales plutôt qu'un visage que personne n'a le droit de reproduire.
+ * Linked from Wikimedia Commons, never rehosted, and only when the file is
+ * public domain or freely licensed. Where none exists — the case for half the
+ * living — the plate shows their initials rather than a face nobody may
+ * reproduce.
  *
- * Le seul fichier libre n'est parfois pas un portrait mais un plan large où la
- * personne fait quelques pour cent de l'image ; `cadrage` ancre alors la plaque
- * sur elle et zoome, avec une miniature assez grande pour rester nette.
+ * The only free file is sometimes not a portrait but a wide shot where the
+ * person occupies a few per cent of the image; `cadrage` then anchors the plate
+ * on them and zooms, with a thumbnail large enough to stay sharp.
  */
 function Plaque({ figure }: { figure: Figure }) {
   const initiales = figure.nom
@@ -80,12 +80,12 @@ function Plaque({ figure }: { figure: Figure }) {
 }
 
 /**
- * La frise embarquée dans une fiche.
+ * The timeline inside a card.
  *
- * Deux lectures du même contenu : un axe avec un point par étape, qui donne
- * d'un coup d'œil la forme d'une carrière — ici trente-quatre ans d'un côté et
- * vingt-deux de l'autre — puis la liste datée, qui seule se lit vraiment. L'axe
- * sans la liste serait décoratif ; la liste sans l'axe perdrait les intervalles.
+ * Two readings of the same content: an axis with one dot per step, giving the
+ * shape of a career at a glance — thirty-four years on one side, twenty-two on
+ * the other — then the dated list, which alone truly reads. The axis without the
+ * list would be decorative; the list without the axis would lose the intervals.
  */
 function FriseCarriere({ jalons }: { jalons: NonNullable<Figure['jalons']> }) {
   const debut = jalons[0].annee;
@@ -122,7 +122,7 @@ function FriseCarriere({ jalons }: { jalons: NonNullable<Figure['jalons']> }) {
   );
 }
 
-/** Une figure dont l'année de naissance est établie. */
+/** A figure whose year of birth is established. */
 function barre(f: Figure) {
   return {
     gauche: ECHELLE.place(f.ne!),
@@ -131,10 +131,10 @@ function barre(f: Figure) {
 }
 
 /**
- * La règle, collée sous l'en-tête.
+ * The ruler, stuck under the header.
  *
- * La vie qu'on lit y est tracée en sanguine, son année de naissance imprimée
- * au-dessus : descendre la page promène la barre sur près de deux siècles.
+ * The life being read is drawn on it in sanguine, its birth year printed above:
+ * scrolling the page walks the bar across nearly two centuries.
  */
 function Regle({ actif }: { actif: Figure }) {
   const { gauche, largeur } = barre(actif);
@@ -188,11 +188,10 @@ function Regle({ actif }: { actif: Figure }) {
 }
 
 /**
- * Toutes les vies d'un coup.
+ * Every life at once.
  *
- * Une barre par personne sur l'échelle de la règle, celle qu'on lit en
- * sanguine, celle de Debord en ocre pour qu'on retrouve le centre. Cliquer une
- * barre mène à sa fiche.
+ * One bar per person on the ruler's scale, the one being read in sanguine,
+ * Debord's in ochre so the centre stays findable. Clicking a bar opens its card.
  */
 function Frise({ actif, onChoisir }: { actif: Figure; onChoisir: (f: Figure) => void }) {
   return (
@@ -263,25 +262,23 @@ function Frise({ actif, onChoisir }: { actif: Figure; onChoisir: (f: Figure) => 
 }
 
 /**
- * Le temps long, en arrière-plan.
+ * Long time, in the background.
  *
- * Les artistes que Debord cite en cours s'étendent de Giotto à Bacon : les
- * placer sur la frise principale écraserait la lignée moderne, qui tient en
- * deux générations et qui est le sujet de la page. Ils ont donc leur propre
- * bande, plus fine et en gris, avec la fenêtre de la frise principale marquée
- * dessus — on voit alors sur quelle épaisseur d'histoire s'appuie
- * l'enseignement, sans que l'histoire prenne le pas sur lui.
+ * The artists Debord cites run from Giotto to Bacon: putting them on the main
+ * timeline would crush the modern lineage, which spans two generations and is
+ * the page's subject. So they get their own band, thinner and grey, with the
+ * main timeline's window marked on it — one then sees the depth of history the
+ * teaching leans on, without history taking over from it.
  *
- * Les vies sont rangées par lignes en remplissant la première qui est libre,
- * faute de quoi quarante-six lignes d'une barre chacune feraient un mur.
+ * Lives are packed into rows by filling the first free one, or forty-six rows of
+ * a single bar each would make a wall.
  */
 function BandeHistorique() {
   const [survole, setSurvole] = useState<Classique | null>(null);
 
   const lignes: Classique[][] = [];
   for (const c of CLASSIQUES) {
-    // Une marge de dix ans évite que deux barres se touchent bout à bout et
-    // paraissent n'en faire qu'une.
+    // A ten-year margin keeps two bars from touching end to end and reading as one.
     const libre = lignes.find((l) => l[l.length - 1].mort + 10 < c.ne);
     if (libre) libre.push(c);
     else lignes.push([c]);
@@ -343,10 +340,10 @@ function BandeHistorique() {
                     onFocus={() => setSurvole(c)}
                     onBlur={() => setSurvole(null)}
                     aria-label={`${c.nom}, ${c.ne}-${c.mort}`}
-                    /* Les anatomistes en couleur d'os, le reste en gris. Ils ne
-                       sont que sept sur cinquante-huit, et ce sont eux qui font
-                       le socle de la discipline enseignée : noyés dans la même
-                       teinte que les peintres, on ne les voyait pas. */
+                    /* Anatomists in bone colour, the rest in grey. They are only
+                       seven out of fifty-eight, and they are the ones who lay the
+                       groundwork of the discipline taught: drowned in the same
+                       tint as the painters, they went unseen. */
                     className={`absolute inset-y-0 rounded-[2px] transition-colors ${
                       actif
                         ? 'bg-brand-600'
@@ -356,9 +353,8 @@ function BandeHistorique() {
                     }`}
                     style={{
                       left: `${place(c.ne)}%`,
-                      // Un plancher de 1,6 % : en deçà, les vies courtes du
-                      // XIVe siècle faisaient des barres de quatre pixels,
-                      // impossibles à viser à la souris.
+                      // A 1.6% floor: below it, short fourteenth-century lives made bars four pixels
+                      // wide, impossible to aim at with a mouse.
                       width: `${Math.max(place(c.mort) - place(c.ne), 1.6)}%`,
                     }}
                   />
@@ -403,10 +399,10 @@ export function PageLignee() {
   }
 
   /**
-   * Ouvre une vidéo dans le panneau plutôt que dans un onglet.
+   * Opens a video in the panel rather than in a tab.
    *
-   * Le lien reste un lien : un clic modifié ou du milieu part sur YouTube,
-   * comme n'importe où ailleurs sur le site.
+   * The link stays a link: a modified or middle click leaves for YouTube, as
+   * anywhere else on the site.
    */
   function jouer(e: React.MouseEvent, videoId: string, instant: number, titre: string) {
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
@@ -415,9 +411,9 @@ export function PageLignee() {
   }
 
   /**
-   * La fiche la plus proche du tiers supérieur de l'écran est celle qu'on lit.
-   * `rootMargin` resserre la bande observée à ce bandeau, pour que la règle
-   * bouge quand une fiche arrive plutôt que quand la précédente s'en va.
+   * The card nearest the upper third of the screen is the one being read.
+   * `rootMargin` narrows the observed band to that strip, so the ruler moves when
+   * a card arrives rather than when the previous one leaves.
    */
   useEffect(() => {
     const noeuds = fiches.current.filter((n): n is HTMLElement => n !== null);
