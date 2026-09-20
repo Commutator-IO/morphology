@@ -136,6 +136,10 @@ describe('liens de musée', () => {
     'collections.louvre.fr',
     'www.mauritshuis.nl',
     'www.parismuseescollections.paris.fr',
+    // The school's own catalogue: the écorché cast it links to comes from Paul
+    // Richer's anatomy collection, inventoried in the very room Debord taught
+    // in. Page opened and its title read, like the others.
+    'catzarts.beauxartsparis.fr',
     // Book digitisations, for the anatomists: each page opened and its title read,
     // as for the work records.
     'archive.org',
