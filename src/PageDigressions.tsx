@@ -8,7 +8,7 @@ import {
   ORDRE,
   type Categorie,
 } from './lib/anecdotes';
-import { ecrireTaille, grilleDe, lireTaille, type TailleLecteur } from './lib/lecteur';
+import { grilleDe } from './lib/lecteur';
 import { duree, horodate, lienYoutube } from './lib/lexique';
 
 /**
@@ -30,12 +30,6 @@ export function PageDigressions() {
   const [comparaisons, setComparaisons] = useState(false);
   const [decritsSeuls, setDecritsSeuls] = useState(true);
   const [lecture, setLecture] = useState<Lecture | null>(null);
-  const [taille, setTaille] = useState<TailleLecteur>(lireTaille);
-
-  function reglerTaille(t: TailleLecteur) {
-    setTaille(t);
-    ecrireTaille(t);
-  }
 
   const groupes = useMemo(() => {
     const filtres = MOMENTS.filter(
@@ -163,7 +157,7 @@ export function PageDigressions() {
           {!decritsSeuls && ' · les moments sans notice sont de simples repères'}
         </p>
 
-        <div className={`mt-4 lg:grid lg:gap-8 ${grilleDe(taille)}`}>
+        <div className={`mt-4 lg:grid lg:gap-8 ${grilleDe('petite')}`}>
           <div className="space-y-4">
             {groupes.map(({ seance, moments }) => (
               <section key={seance.id} className="card px-4 py-3.5">
@@ -215,12 +209,9 @@ export function PageDigressions() {
             ))}
           </div>
 
-          <Lecteur
-            lecture={lecture}
-            onFermer={() => setLecture(null)}
-            taille={taille}
-            onTaille={reglerTaille}
-          />
+          {/* Fixed small, with no setting offered: the notes are read in one
+              column, and a wide player leaves nothing of the list. */}
+          <Lecteur lecture={lecture} onFermer={() => setLecture(null)} />
         </div>
       </main>
 
