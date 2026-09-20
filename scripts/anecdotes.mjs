@@ -64,6 +64,32 @@ const COMPARAISONS = new Set([
   'LxhM7KErZas|669',   // the intramuscular injection
 ]);
 
+/**
+ * Moments dropped after listening, with the reason.
+ *
+ * Two kinds. Some are not the word at all: the ASR writes "cul vital" for
+ * cubital antérieur, "cul boyle" for cuboïde, "penis du cou" for peauciers du
+ * cou — the detection fires on a sound, not on speech. The others are a short
+ * oath in passing, with no teaching in them: losing one's notes, a remark on a
+ * photograph. The coarse word stays wherever it names a form, which is what it
+ * is doing most of the time here.
+ */
+const ECARTES = new Set([
+  'FHeKCC3ZiOU|2829',  // "cul vital anterieur" = cubital antérieur
+  'T3rO2WO_y7s|3050',  // "cul boyle" = cuboïde
+  'T3rO2WO_y7s|4986',  // "cul bri" = cuboïde
+  '2nGLn4TKsp0|3406',  // "penis du cou" = peauciers du cou
+  '-cDGU22RFqU|5930',  // "ti cul large", unintelligible
+  '-cDGU22RFqU|6177',  // "gratte cul l age", unintelligible
+  'bLQCuSOB8tA|280',   // "le cul parents marques", unintelligible
+  '17Doi4NAYY0|1626',  // "baiser les mains", a courtesy and not the coarse sense
+  'E7VxdQNu9jo|295',   // "merde j'ai oublié mes notes"
+  'FeAucP4aKS8|6002',  // "des kilos de merde posés les uns sur les autres"
+  'Qh-CpCTQCJ4|3497',  // "tout à sa merde", on contemporary painting
+  'bLQCuSOB8tA|6433',  // "elles font pas chier"
+  'LxhM7KErZas|1378',  // "coup de pied au cul"
+]);
+
 /** Hand-written notes, one per intelligible moment. */
 const NOTES = JSON.parse(
   readFileSync(new URL('./anecdotes-notes.json', import.meta.url), 'utf8'),
@@ -84,6 +110,7 @@ for (const v of corpus) {
     if (seg.t - dernier < FENETRE_S) continue;
     dernier = seg.t;
     const t = Math.max(0, seg.t - AMORCE_S);
+    if (ECARTES.has(`${v.id}|${t}`)) continue;
     moments.push({
       video: v.id,
       t,
@@ -111,6 +138,15 @@ console.log(`  ${moments.filter((m) => m.comparaison).length} comparaisons hors 
 const orphelines = Object.keys(NOTES).filter(
   (c) => !moments.some((m) => `${m.video}|${m.t}` === c),
 );
+const ecartOrphelin = [...ECARTES].filter((c) => {
+  const [video, t] = c.split('|');
+  return !corpus.some((v) => v.id === video && v.segments.some((s) => s.t - AMORCE_S === Number(t)));
+});
+if (ecartOrphelin.length) {
+  // Same rule as the notes: a discard matching no moment means the survey moved
+  // under it.
+  console.error(`ATTENTION : ${ecartOrphelin.length} écart(s) sans moment : ${ecartOrphelin.join(', ')}`);
+}
 if (orphelines.length) {
   // A note matching no moment any more means the survey moved under it:
   // better to hear about it than to lose the note in silence.

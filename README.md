@@ -14,15 +14,15 @@ reformule pas et ne l'héberge pas.
 
 | Page           | Contenu                                                                         |
 | -------------- | ------------------------------------------------------------------------------- |
-| `/`            | 95 termes d'anatomie et de morphologie, chacun horodaté dans les séances        |
+| `/`            | 109 termes d'anatomie et de morphologie, chacun horodaté dans les séances       |
 | `/references/` | 73 références — peintres, sculpteurs, anatomistes, musées, œuvres               |
-| `/digressions/` | 139 moments où le cours sort de son sujet, dont 65 décrits                      |
+| `/digressions/` | 126 moments où le cours sort de son sujet, dont 71 décrits                      |
 | `/seances/`    | Les 45 séances rangées par région du corps                                      |
-| `/lignee/`     | 18 figures : la chaire d'anatomie avant Debord, et ceux qui ont écrit après lui |
+| `/lignee/`     | 23 figures : les livres qu'il ouvre, la chaire avant lui, et ceux qu'il a formés |
 | `/methode/`    | Comment l'index est construit, et ce qu'il vaut                                 |
 | `/mentions/`   | Éditeur, droits sur le cours, procédure de retrait                              |
 
-10 810 horodatages en tout. Sur téléphone, un horodatage ouvre la séance dans
+12 160 horodatages en tout. Sur téléphone, un horodatage ouvre la séance dans
 YouTube. Sur grand écran, il la place dans un lecteur à droite de la liste, sans
 quitter l'index.
 
