@@ -357,6 +357,7 @@ function Chaine() {
   const titre = { fontSize: 12.5, fontWeight: 600, fill: 'var(--color-ink-900)', textAnchor: 'middle' as const };
   const detail = { fontSize: 9.5, fill: 'var(--color-ink-500)', textAnchor: 'middle' as const };
   const mono = { fontFamily: 'ui-monospace, Menlo, monospace' };
+  const fleche = { stroke: 'var(--color-ink-400)', strokeWidth: 1.3, markerEnd: 'url(#fleche)' };
 
   return (
     <Section titre="La chaîne, d'un bout à l'autre">
@@ -366,12 +367,12 @@ function Chaine() {
         dernière étape est la seule qu'aucun fichier ne peut garantir.
       </p>
 
-      <div className="card mx-auto max-w-[34rem] px-3 py-4">
+      <div className="card overflow-x-auto px-3 py-4">
         <svg
-          viewBox="0 0 340 664"
-          className="w-full"
+          viewBox="0 0 1040 330"
+          className="w-full min-w-[720px]"
           role="img"
-          aria-label="La chaîne : les 45 séances filmées donnent, par yt-dlp, des sous-titres automatiques jamais publiés ; la reconnaissance vocale n'ayant aucun modèle d'anatomie, elle écrit « pete rock » pour épitrochlée et « grand public » pour grand oblique ; le lexique porte ces graphies fautives comme variantes, avec trois préfixes — accent strict, mot ambigu tranché par le voisinage, veto ; l'indexation produit un fichier d'identifiants et de secondes, d'où le site ; une relecture à l'oreille corrige le lexique et fait tout recommencer."
+          aria-label="La chaîne : les 45 séances filmées donnent, par yt-dlp, des sous-titres automatiques jamais publiés ; ces sous-titres portent des erreurs de transcription — « pete rock » pour épitrochlée, « grand public » pour grand oblique — que le lexique recueille comme variantes, avec trois préfixes : accent strict, mot ambigu tranché par le voisinage, veto ; l'indexation produit un fichier d'identifiants et de secondes, d'où le site ; une relecture à l'oreille corrige le lexique et fait tout recommencer."
           style={{ fontFamily: 'var(--font-sans)' }}
         >
           <defs>
@@ -379,106 +380,113 @@ function Chaine() {
               markerWidth="6" markerHeight="6" orient="auto-start-reverse">
               <path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--color-ink-400)" strokeWidth="1.6" />
             </marker>
-            <marker id="flecheClaire" viewBox="0 0 10 10" refX="9" refY="5"
+            <marker id="flecheCraie" viewBox="0 0 10 10" refX="9" refY="5"
               markerWidth="6" markerHeight="6" orient="auto-start-reverse">
               <path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--color-craie-600)" strokeWidth="1.6" />
+            </marker>
+            <marker id="flecheBrand" viewBox="0 0 10 10" refX="9" refY="5"
+              markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--color-brand-300)" strokeWidth="1.6" />
             </marker>
           </defs>
 
           {/* 1 — la source */}
-          <rect x="30" y="6" width="296" height="44" {...boite} />
-          <text x="178" y="25" {...titre}>45 séances filmées</text>
-          <text x="178" y="40" {...detail}>YouTube · Bibnum, Université PSL · 77 heures</text>
+          <rect x="6" y="30" width="150" height="72" {...boite} />
+          <text x="81" y="55" {...titre}>45 séances</text>
+          <text x="81" y="72" {...detail}>YouTube · Bibnum, PSL</text>
+          <text x="81" y="85" {...detail}>77 heures filmées</text>
 
-          <line x1="178" y1="54" x2="178" y2="76" stroke="var(--color-ink-400)" strokeWidth="1.3"
-            markerEnd="url(#fleche)" />
-          <text x="186" y="69" fontSize="9" fill="var(--color-ink-400)" style={mono}>yt-dlp --write-auto-subs</text>
+          <line x1="160" y1="66" x2="202" y2="66" {...fleche} />
+          <text x="181" y="52" fontSize="8.5" fill="var(--color-ink-400)" textAnchor="middle" style={mono}>yt-dlp</text>
+          <text x="181" y="82" fontSize="8" fill="var(--color-ink-400)" textAnchor="middle">sous-titres</text>
 
           {/* 2 — les sous-titres, qui ne sortent pas d'ici */}
-          <rect x="30" y="80" width="296" height="50" {...boite} />
-          <text x="178" y="99" {...titre} style={mono}>transcripts/*.json3</text>
-          <text x="178" y="114" {...detail}>59 Mo · non versionnés · jamais publiés</text>
-          <text x="178" y="125" {...detail}>c'est ici que s'arrête le texte du cours</text>
+          <rect x="206" y="30" width="168" height="72" {...boite} />
+          <text x="290" y="53" {...titre} style={mono}>transcripts/</text>
+          <text x="290" y="69" {...detail}>59 Mo · non versionnés</text>
+          <text x="290" y="82" {...detail}>jamais publiés — le texte</text>
+          <text x="290" y="94" {...detail}>du cours s'arrête ici</text>
 
-          <line x1="178" y1="134" x2="178" y2="152" stroke="var(--color-ink-400)" strokeWidth="1.3"
-            markerEnd="url(#fleche)" />
+          <line x1="378" y1="66" x2="420" y2="66" {...fleche} />
 
-          {/* 3 — le défaut de la matière première */}
-          <rect x="30" y="156" width="296" height="74" rx="10" fill="var(--color-brand-50)"
-            stroke="var(--color-brand-200)" strokeWidth="1.4" />
-          <text x="178" y="175" fontSize="12" fontWeight="600" fill="var(--color-brand-700)" textAnchor="middle">
-            La transcription ne connaît pas l'anatomie
-          </text>
-          <text x="178" y="191" fontSize="9.5" fill="var(--color-brand-700)" textAnchor="middle">
-            « pete rock » pour épitrochlée · « grand public » pour
-          </text>
-          <text x="178" y="203" fontSize="9.5" fill="var(--color-brand-700)" textAnchor="middle">
-            grand oblique · « janvier » pour jambier · « numerus »
-          </text>
-          <text x="178" y="215" fontSize="9.5" fill="var(--color-brand-700)" textAnchor="middle">
-            pour humérus · « solaire » pour soléaire
-          </text>
-
-          <line x1="178" y1="234" x2="178" y2="252" stroke="var(--color-ink-400)" strokeWidth="1.3"
-            markerEnd="url(#fleche)" />
-
-          {/* 4 — le lexique, où se rattrape le défaut */}
-          <rect x="30" y="256" width="296" height="80" {...boite} />
-          <text x="178" y="275" {...titre} style={mono}>lexique.json</text>
-          <text x="178" y="290" {...detail}>chaque terme porte ses variantes — le mot, ses</text>
-          <text x="178" y="302" {...detail}>flexions, et les graphies fautives relevées</text>
-          <text x="178" y="321" fontSize="9" fill="var(--color-ink-500)" textAnchor="middle">
-            <tspan style={mono} fill="var(--color-brand-600)">!</tspan> accent strict ·{' '}
-            <tspan style={mono} fill="var(--color-brand-600)">?</tspan> tranché par le voisinage ·{' '}
+          {/* 3 — le lexique */}
+          <rect x="424" y="30" width="168" height="72" {...boite} />
+          <text x="508" y="53" {...titre} style={mono}>lexique.json</text>
+          <text x="508" y="70" {...detail}>le mot, ses flexions, et</text>
+          <text x="508" y="82" {...detail}>les graphies fautives</text>
+          <text x="508" y="95" fontSize="8.5" fill="var(--color-ink-500)" textAnchor="middle">
+            <tspan style={mono} fill="var(--color-brand-600)">!</tspan> accent ·{' '}
+            <tspan style={mono} fill="var(--color-brand-600)">?</tspan> voisinage ·{' '}
             <tspan style={mono} fill="var(--color-brand-600)">−</tspan> veto
           </text>
 
-          <line x1="178" y1="340" x2="178" y2="360" stroke="var(--color-ink-400)" strokeWidth="1.3"
-            markerEnd="url(#fleche)" />
-          <text x="186" y="353" fontSize="9" fill="var(--color-ink-400)" style={mono}>npm run indexer</text>
+          <line x1="596" y1="66" x2="638" y2="66" {...fleche} />
+          <text x="617" y="52" fontSize="8" fill="var(--color-ink-400)" textAnchor="middle" style={mono}>npm run</text>
+          <text x="617" y="82" fontSize="8" fill="var(--color-ink-400)" textAnchor="middle" style={mono}>indexer</text>
 
-          {/* 5 — l'indexation */}
-          <rect x="30" y="364" width="296" height="74" {...boite} />
-          <text x="178" y="383" {...titre}>Indexation</text>
-          <text x="178" y="398" {...detail}>recherche sur le texte continu d'une séance</text>
-          <text x="178" y="410" {...detail}>deux mentions à moins de 45 s n'en font qu'une</text>
-          <text x="178" y="422" {...detail}>un mot partagé se tranche sur ±600 caractères</text>
-          <text x="178" y="433" {...detail}>à égalité, la mention est abandonnée</text>
+          {/* 4 — l'indexation */}
+          <rect x="642" y="30" width="168" height="72" {...boite} />
+          <text x="726" y="51" {...titre}>Indexation</text>
+          <text x="726" y="67" {...detail}>sur le texte continu</text>
+          <text x="726" y="79" {...detail}>deux mentions à 45 s</text>
+          <text x="726" y="91" {...detail}>n'en font qu'une</text>
 
-          <line x1="178" y1="442" x2="178" y2="460" stroke="var(--color-ink-400)" strokeWidth="1.3"
-            markerEnd="url(#fleche)" />
+          <line x1="814" y1="66" x2="856" y2="66" {...fleche} />
 
-          {/* 6 — ce qui est publié */}
-          <rect x="30" y="464" width="296" height="50" {...boite} />
-          <text x="178" y="483" {...titre} style={mono}>occurrences.json</text>
-          <text x="178" y="498" {...detail}>identifiants de vidéo, de terme, et secondes</text>
-          <text x="178" y="509" {...detail}>aucun mot du cours n'y figure</text>
+          {/* 5 — ce qui est publié */}
+          <rect x="860" y="30" width="168" height="72" {...boite} />
+          <text x="944" y="53" {...titre} style={mono}>occurrences</text>
+          <text x="944" y="70" {...detail}>identifiants et secondes</text>
+          <text x="944" y="83" {...detail}>aucun mot du cours</text>
+          <text x="944" y="95" {...detail}>n'y figure</text>
 
-          <line x1="178" y1="518" x2="178" y2="536" stroke="var(--color-ink-400)" strokeWidth="1.3"
-            markerEnd="url(#fleche)" />
+          <line x1="944" y1="106" x2="944" y2="150" {...fleche} />
 
-          {/* 7 — le site */}
-          <rect x="30" y="540" width="296" height="44" rx="10" fill="var(--color-ink-100)"
+          {/* 6 — le site */}
+          <rect x="860" y="154" width="168" height="52" rx="10" fill="var(--color-ink-100)"
             stroke="var(--color-ink-200)" strokeWidth="1.4" />
-          <text x="178" y="559" {...titre}>morphologie.commutator.io</text>
-          <text x="178" y="574" {...detail}>l'index, et les liens vers les séances</text>
+          <text x="944" y="176" {...titre}>le site</text>
+          <text x="944" y="192" {...detail}>l'index et ses liens</text>
+
+          {/* 7 — le défaut de la matière première, sous les sous-titres */}
+          <line x1="290" y1="106" x2="290" y2="150" stroke="var(--color-brand-300)" strokeWidth="1.3"
+            markerEnd="url(#flecheBrand)" />
+          <rect x="150" y="154" width="290" height="88" rx="10" fill="var(--color-brand-50)"
+            stroke="var(--color-brand-200)" strokeWidth="1.4" />
+          <text x="295" y="176" fontSize="12" fontWeight="600" fill="var(--color-brand-700)" textAnchor="middle">
+            Erreurs de transcription
+          </text>
+          <text x="295" y="193" fontSize="9.5" fill="var(--color-brand-700)" textAnchor="middle">
+            la reconnaissance vocale n'a aucun modèle d'anatomie
+          </text>
+          <text x="295" y="209" fontSize="9.5" fill="var(--color-brand-700)" textAnchor="middle">
+            « pete rock » pour épitrochlée · « grand public » pour
+          </text>
+          <text x="295" y="222" fontSize="9.5" fill="var(--color-brand-700)" textAnchor="middle">
+            grand oblique · « numerus » pour humérus
+          </text>
+          <text x="295" y="235" fontSize="9" fill="var(--color-brand-600)" textAnchor="middle">
+            relevées une par une, elles deviennent des variantes
+          </text>
+
+          <path d="M440,198 L466,198 L466,110" fill="none" stroke="var(--color-brand-300)"
+            strokeWidth="1.3" markerEnd="url(#flecheBrand)" />
 
           {/* 8 — l'oreille, qui n'est pas automatisable, et qui reboucle */}
-          <rect x="30" y="600" width="296" height="56" rx="10" fill="var(--color-craie-100)"
+          <rect x="530" y="256" width="330" height="62" rx="10" fill="var(--color-craie-100)"
             stroke="var(--color-craie-600)" strokeWidth="1.4" strokeDasharray="5 4" />
-          <text x="178" y="620" fontSize="12" fontWeight="600" fill="var(--color-craie-700)" textAnchor="middle">
+          <text x="695" y="277" fontSize="12" fontWeight="600" fill="var(--color-craie-700)" textAnchor="middle">
             Relecture à l'oreille
           </text>
-          <text x="178" y="635" fontSize="9.5" fill="var(--color-craie-700)" textAnchor="middle">
-            un passage douteux est écouté, et le verdict
+          <text x="695" y="293" fontSize="9.5" fill="var(--color-craie-700)" textAnchor="middle">
+            un passage douteux est écouté, et le verdict devient
           </text>
-          <text x="178" y="647" fontSize="9.5" fill="var(--color-craie-700)" textAnchor="middle">
-            devient une variante, un voisinage ou un veto
+          <text x="695" y="306" fontSize="9.5" fill="var(--color-craie-700)" textAnchor="middle">
+            une variante, un voisinage ou un veto
           </text>
 
-          {/* la boucle : de l'oreille vers le lexique, qu'on refait tourner */}
-          <path d="M30,628 L16,628 L16,296 L28,296" fill="none" stroke="var(--color-craie-600)"
-            strokeWidth="1.3" strokeDasharray="5 4" markerEnd="url(#flecheClaire)" />
+          <path d="M550,256 L550,110" fill="none" stroke="var(--color-craie-600)" strokeWidth="1.3"
+            strokeDasharray="5 4" markerEnd="url(#flecheCraie)" />
         </svg>
       </div>
 

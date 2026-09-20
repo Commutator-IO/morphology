@@ -105,10 +105,10 @@
    "vue": "face",
    "taches": [
     [
-     72,
-     22,
-     4,
-     5
+     74,
+     26,
+     3,
+     4
     ]
    ]
   }
@@ -170,10 +170,10 @@
    "vue": "face",
    "taches": [
     [
-     71,
-     30,
-     6,
-     3
+     74,
+     34,
+     5,
+     2.5
     ]
    ]
   }
@@ -215,10 +215,10 @@
    "vue": "face",
    "taches": [
     [
-     72,
-     45,
-     4,
-     4
+     74,
+     46,
+     3,
+     3
     ]
    ]
   }
@@ -247,16 +247,16 @@
    "vue": "face",
    "taches": [
     [
-     66,
-     17,
-     5,
-     4
+     68,
+     20,
+     4,
+     3
     ],
     [
-     77,
-     17,
-     5,
-     4
+     80,
+     20,
+     4,
+     3
     ]
    ]
   }
@@ -1328,13 +1328,13 @@
      4
     ],
     [
-     113,
+     117,
      112,
      4,
      4
     ],
     [
-     124,
+     128,
      112,
      4,
      4
@@ -1603,14 +1603,14 @@
    "vue": "face",
    "taches": [
     [
-     19,
-     153,
+     12,
+     152,
      2.5,
      2.5
     ],
     [
-     126.5,
-     153,
+     136,
+     152,
      2.5,
      2.5
     ]
@@ -1906,7 +1906,6 @@
    "droits de l abdomen",
    "rectus",
    "tablettes",
-   "ligne blanche",
    "abdomen",
    "abdominaux"
   ],
@@ -1918,6 +1917,52 @@
      131,
      10,
      27
+    ]
+   ]
+  }
+ },
+ {
+  "id": "ligne-blanche",
+  "terme": "Ligne blanche",
+  "categorie": "repere",
+  "region": "tronc",
+  "moderne": "Linea alba, linea semilunaris",
+  "aussi": [
+   "ligne blanche médiane",
+   "ligne blanche externe",
+   "ligne semi-lunaire"
+  ],
+  "definition": "Les coutures de la paroi du ventre, là où les aponévroses des muscles plats se rejoignent. La médiane descend du sternum au pubis et creuse le sillon du milieu ; les deux externes bordent le grand droit de chaque côté et le dessinent en gaine. Elles ne sont pas des muscles mais des limites : c'est sur elles que se lisent les crans du grand droit, et elles tiennent le ventre quand on le dessine.",
+  "variantes": [
+   "ligne blanche",
+   "lignes blanches",
+   "ligne blanche mediane",
+   "ligne blanche externe",
+   "lignes blanches externes",
+   "ligne semi lunaire",
+   "lignes semi lunaires",
+   "ligne blanche interne"
+  ],
+  "situation": {
+   "vue": "face",
+   "traits": [
+    [
+     74,
+     118,
+     74,
+     160
+    ],
+    [
+     68,
+     120,
+     68,
+     156
+    ],
+    [
+     80,
+     120,
+     80,
+     156
     ]
    ]
   }
@@ -2553,10 +2598,41 @@
      20
     ],
     [
-     89,
+     91,
      262,
      4,
      20
+    ]
+   ]
+  }
+ },
+ {
+  "id": "tabatiere",
+  "terme": "Tabatière anatomique",
+  "categorie": "repere",
+  "region": "main",
+  "moderne": "Fovea radialis",
+  "definition": "Le petit creux triangulaire à la racine du pouce, quand on l'écarte : deux tendons le bordent, celui du long extenseur d'un côté, ceux du court extenseur et du long abducteur de l'autre. Au fond, on touche le scaphoïde. C'est le seul endroit de la main où l'on atteigne l'os du carpe directement, et le creux le plus reconnaissable du dos de la main.",
+  "variantes": [
+   "tabatiere",
+   "tabatieres",
+   "tabatiere anatomique",
+   "fossette du pouce"
+  ],
+  "situation": {
+   "vue": "dos",
+   "taches": [
+    [
+     21,
+     156,
+     3.5,
+     4
+    ],
+    [
+     127,
+     156,
+     3.5,
+     4
     ]
    ]
   }
@@ -2575,7 +2651,9 @@
    "eminence du pouce",
    "eminence",
    "thenard",
-   "eminence thenard"
+   "eminence thenard",
+   "ligne de vie",
+   "lignes de vie"
   ],
   "situation": {
    "vue": "face",
@@ -3076,7 +3154,7 @@
      18
     ],
     [
-     92,
+     95,
      262,
      3,
      18
@@ -3380,7 +3458,7 @@
      4
     ],
     [
-     76,
+     88,
      186,
      12,
      4
@@ -3468,6 +3546,27 @@
   ]
  },
  {
+  "id": "contre-courbe",
+  "terme": "Courbe et contre-courbe",
+  "categorie": "morphologie",
+  "region": "general",
+  "aussi": [
+   "renvoi de courbure"
+  ],
+  "definition": "Une courbe n'en va jamais seule : elle appelle celle qui la reprend en sens inverse, plus haut ou de l'autre côté. C'est ce que Debord appelle le renvoi de courbure — le mollet qui répond à la cuisse, la crête iliaque qui répond au flanc. Un membre dessiné en courbes toutes de même sens est mort ; c'est l'alternance qui le fait tenir debout, et c'est par elle qu'on reconnaît une figure vue de loin.",
+  "variantes": [
+   "contre courbe",
+   "contre courbes",
+   "contres courbes",
+   "courbes et contre courbes",
+   "renvoi de courbure",
+   "renvois de courbure",
+   "renvoi de cours",
+   "renvoie la courbe",
+   "renvoi de courbes"
+  ]
+ },
+ {
   "id": "meplat",
   "terme": "Méplat",
   "categorie": "morphologie",
@@ -3478,7 +3577,10 @@
    "meplats",
    "aplati",
    "aplatie",
-   "facette"
+   "facette",
+   "arete",
+   "aretes",
+   "arete vive"
   ]
  },
  {
@@ -3529,7 +3631,10 @@
    "courbe",
    "courbure",
    "courbures",
-   "inflexion"
+   "inflexion",
+   "partage des eaux",
+   "ligne de partage des eaux",
+   "lignes de partage des eaux"
   ]
  },
  {
@@ -3627,7 +3732,9 @@
    "arche externe",
    "arche plantaire",
    "arche un terme",
-   "arches"
+   "arches",
+   "train d atterrissage",
+   "trains d atterrissage"
   ],
   "situation": {
    "vue": "face",
