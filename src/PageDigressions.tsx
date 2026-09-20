@@ -67,7 +67,10 @@ export function PageDigressions() {
             rattrape l'attention, une comparaison prise hors de l'art explique
             une forme mieux qu'une planche. {decrits} de ces moments sont décrits
             ici en deux ou trois phrases ; touchez l'horodatage pour aller les
-            entendre.
+            entendre. Les autres n'ont qu'un mot pour description : deux
+            tournures reviennent d'une séance à l'autre — l'adresse à la salle
+            et le mot cru pour nommer une forme — et ce sont sa signature plus
+            que des écarts.
           </span>
         </p>
 
