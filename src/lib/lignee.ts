@@ -72,16 +72,16 @@ export const FIGURES = brut as Figure[];
 
 export const SECTIONS: { role: Role; titre: string; propos: string }[] = [
   {
-    role: 'avant',
-    titre: 'Ses maîtres',
-    propos:
-      "Les traités sur lesquels l'enseignement français de la morphologie s'est bâti, et les hommes dont Debord fut l'assistant. Il s'appuie sur les premiers et les corrige d'après le vivant, souvent dans la même phrase.",
-  },
-  {
     role: 'sources',
     titre: 'Les livres sur sa table',
     propos:
       "Les auteurs qu'il ouvre en cours — ceux qui ont fait l'anatomie avant qu'elle ne devienne un enseignement de dessin. Il ne les commente pas : il s'en sert, et les corrige quand le vivant le contredit. Aucun d'eux n'est placé sur la frise, qui tient en deux générations ; on les retrouve en bas de page, dans le temps long.",
+  },
+  {
+    role: 'avant',
+    titre: 'Ses maîtres',
+    propos:
+      "Les traités sur lesquels l'enseignement français de la morphologie s'est bâti, et les hommes dont Debord fut l'assistant. Il s'appuie sur les premiers et les corrige d'après le vivant, souvent dans la même phrase.",
   },
   {
     role: 'lui',
