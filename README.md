@@ -66,9 +66,14 @@ commencent par un tiret, et sans lui ils sont lus comme des options.
 **La playlist ne suffit pas.** Elle compte 43 vidéos, alors que le catalogue
 Bibnum de PSL décrit 45 séances. Les deux manquantes — _Les deux membres
 inférieurs en vue latérale_ (`BZMmmc3HVto`) et _Le bras en vue postérieure_
-(`qWn9BntEhyU`) — sont publiées sur la même chaîne, hors playlist. Elles portent
-les rangs 44 et 45 et le drapeau `horsPlaylist`, parce que leur numéro ne
-prétend à aucune place dans l'ordre du cours.
+(`qWn9BntEhyU`) — sont publiées sur la même chaîne, hors playlist.
+
+**Son ordre ne vaut rien non plus.** Le catalogue date chaque séance, du 19
+novembre 2002 au 27 mai 2003 ; la playlist, elle, ouvre sur les vues d'ensemble
+d'avril et mai et ferme sur le pied, enseigné en premier. Le rang suit donc le
+catalogue, et `scripts/seances.mjs` porte la table des dates. Les deux derniers
+numéros sont réservés à l'introduction et à la notice biographique, filmées en
+2017 : ce ne sont pas des séances de l'année.
 
 `scripts/frequences.mjs` sert à la mise au point du lexique : il montre ce que la
 transcription écrit réellement, ce qui évite d'inventer des variantes qui

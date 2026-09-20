@@ -5,6 +5,16 @@ import { ecrireTaille, grilleDe, lireTaille, type TailleLecteur } from './lib/le
 import { GROUPES, GROUPE_PAR_ID } from './lib/couleurs';
 import { duree, lienYoutube, PARTIES, SEANCES, termesDe } from './lib/lexique';
 
+/** "19 novembre 2002" — the day is what a student reads, not an ISO string. */
+function dateSeance(iso: string): string {
+  const [a, m, j] = iso.split('-');
+  const mois = [
+    'janvier', 'février', 'mars', 'avril', 'mai', 'juin',
+    'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre',
+  ];
+  return `${Number(j)} ${mois[Number(m) - 1]} ${a}`;
+}
+
 /**
  * The 45 sessions, grouped by part.
  *
@@ -50,11 +60,10 @@ export function PageSeances() {
         </h1>
         <p className="mt-3 hidden text-[15px] leading-relaxed text-ink-700 sm:block">
           Environ {Math.round(total / 3600)} heures de cours filmées aux Beaux-Arts
-          de Paris. Les séances sont rangées ici dans l'ordre du raisonnement —
-          l'ensemble d'abord, la région ensuite, le muscle en dernier — et non dans
-          celui de la playlist, qui mêle les sujets. Le numéro rappelle le rang
-          d'origine. Deux séances sont publiées par PSL hors de la playlist et
-          portent les deux derniers numéros : elles sont signalées comme telles.
+          de Paris, du 19 novembre 2002 au 27 mai 2003. Le numéro et la date
+          suivent le catalogue de PSL, qui les donne dans l'ordre où le cours a
+          été fait — et non celui de la playlist YouTube, qui commence par la fin
+          de l'année. Les séances sont groupées ici par région du corps.
         </p>
 
         <p className="mt-2 hidden text-[13px] leading-relaxed text-ink-500 sm:block">
@@ -169,8 +178,8 @@ export function PageSeances() {
                               {s.titre}
                             </span>
                             <span className="tabular mt-1 block text-xs text-ink-400">
+                              {s.document ? 'document, 2017' : dateSeance(s.date)} ·{' '}
                               {duree(s.dureeS)} · voir sur YouTube ↗
-                              {s.horsPlaylist && ' · hors playlist'}
                             </span>
                           </span>
                         </a>

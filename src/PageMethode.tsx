@@ -11,7 +11,6 @@ import { REFERENCES, totalDeReference } from './lib/references';
  * harmless if expected, and misleading if the index is taken as exhaustive.
  */
 export function PageMethode() {
-  const muets = LEXIQUE.filter((t) => totalDe(t.id) === 0);
   const passages = LEXIQUE.reduce((s, t) => s + totalDe(t.id), 0);
   const mentions = REFERENCES.reduce((s, r) => s + totalDeReference(r.id), 0);
   const avecMusee = REFERENCES.filter((r) => r.musee).length;
@@ -207,10 +206,12 @@ export function PageMethode() {
           </p>
           <p>
             <b className="font-semibold text-ink-900">
-              Le découpage en parties est un choix.
+              L'ordre des séances est celui du catalogue de PSL.
             </b>{' '}
-            La playlist mêle les sujets ; le regroupement proposé suit la logique du
-            cours, mais il est de notre fait et non de celui de Debord.
+            Chaque notice y est datée, du 19 novembre 2002 au 27 mai 2003 : c'est
+            l'ordre où le cours a été fait. La playlist YouTube, elle, commence
+            par la fin de l'année. Le regroupement par région du corps, en
+            revanche, est de notre fait et non de celui de Debord.
           </p>
         </Section>
 
@@ -298,28 +299,6 @@ export function PageMethode() {
           </p>
         </Section>
 
-        {muets.length > 0 && (
-          <Section titre={`Les ${muets.length} termes sans aucun passage`}>
-            <p>
-              Ils figurent au lexique parce qu'ils appartiennent au vocabulaire de
-              leur région, mais la transcription ne les restitue jamais — soit
-              Debord emploie un autre mot, soit la reconnaissance vocale les
-              écorche au point d'être introuvables.
-            </p>
-            <ul className="flex flex-wrap gap-x-2 gap-y-1">
-              {muets.map((t) => (
-                <li key={t.id}>
-                  <a
-                    href={`/#${t.id}`}
-                    className="text-brand-700 underline underline-offset-2"
-                  >
-                    {t.terme}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </Section>
-        )}
 
         <Section titre="Refaire l'index">
           <p>

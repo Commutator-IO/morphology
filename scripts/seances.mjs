@@ -47,30 +47,137 @@ export const PARTIES = [
     propos: "Le crâne, les muscles peauciers, et le passage de la main au visage." },
 ];
 
-/** Session -> part. Key = rank in the list below (44 and 45 are off-playlist). */
+/** Session -> part, keyed by video id: the rank now comes from the catalogue's
+ *  chronology and no longer from this file's order. */
 const APPARTENANCE = {
-  introduction: [1, 2],
-  ensemble: [3, 7, 8, 9, 10, 11, 15],
-  tronc: [4, 5, 21, 22],
-  dos: [23, 24, 25, 26, 27, 28],
-  epaule: [6, 29, 30, 31],
-  bras: [32, 33, 34, 45],
-  'avantbras-main': [16, 35, 36, 37, 38, 39, 40],
-  'membre-inferieur': [12, 13, 14, 19, 20, 44],
-  pied: [17, 18],
-  tete: [41, 42, 43],
+  'introduction': ['S8fgBEKLUiM', 'qHKK0vp86-Q'],
+  'ensemble': ['Qh-CpCTQCJ4', 'bLQCuSOB8tA', 'IIjBn3C3d5g', 'FeAucP4aKS8', 'BySad1olbq4', 'Nha5ZI8PVo0', 'LHaB3iu4zIw'],
+  'tronc': ['vI5qC_JpkHs', 'Um8OTTlH5XQ', '2nGLn4TKsp0', 'SQyL88Fq76o'],
+  'dos': ['FuwzDJ5NU5M', 'E7VxdQNu9jo', 'IDr53Cr4fsU', 'lPiLzxL9qk4', 'N32pB-1QXS0', 'XbY3hwY4Rbk'],
+  'epaule': ['H2HqbPEaxk8', 'WMJZHTZ3LZY', 'xPRzam0rqDw', 'pA9J6JWr0CQ'],
+  'bras': ['oXJs2-3OAlA', 'uagciNFijmY', '17Doi4NAYY0', 'qWn9BntEhyU'],
+  'avantbras-main': ['68R-oaodzTg', 'qGdHRpt1qns', 'UUJWGz3BuY4', 'RYcT89bug4U', 'FHeKCC3ZiOU', '65d7NtvHAk0', '-Tss3qgdhW4'],
+  'membre-inferieur': ['-cDGU22RFqU', 'ycr4a1eAkn0', 'LxhM7KErZas', 'ndTYL4boSgE', '0IO_ymdbLPU', 'BZMmmc3HVto'],
+  'pied': ['T3rO2WO_y7s', '7wpyHczLt9Q'],
+  'tete': ['ZdgpRuXGY40', 'kc2e56cun8U', '4IIUE6NVqDU'],
 };
 
-/** Published on the PSL channel but missing from the playlist: their rank is a
- *  filing number, not a place in the course order. */
-const HORS_PLAYLIST = new Set(['BZMmmc3HVto', 'qWn9BntEhyU']);
+/**
+ * The date of each session, and the order the Bibnum catalogue lists them in.
+ *
+ * The playlist's order is not the course's: it opens on the whole-figure
+ * sessions of April and May 2003 and closes on the foot, which was taught first,
+ * in November 2002. PSL's catalogue dates every session, so the rank follows it.
+ *
+ * Two dates fall on 28 November 2002 and the catalogue lists them in an order
+ * its own sort does not explain; on a tie we keep the catalogue's order.
+ *
+ * The last two items are not sessions of that year but documents filmed in 2017,
+ * the introduction and the biographical notice. They close the list and carry
+ * `document`.
+ */
+const DATES = {
+  'S8fgBEKLUiM': '2017',
+  'qHKK0vp86-Q': '2017',
+  'Qh-CpCTQCJ4': '2003-03-25',
+  'vI5qC_JpkHs': '2003-03-27',
+  'Um8OTTlH5XQ': '2003-04-01',
+  'H2HqbPEaxk8': '2003-04-03',
+  'bLQCuSOB8tA': '2003-04-22',
+  'IIjBn3C3d5g': '2003-04-24',
+  'FeAucP4aKS8': '2003-04-29',
+  'BySad1olbq4': '2003-05-06',
+  'Nha5ZI8PVo0': '2003-05-13',
+  '-cDGU22RFqU': '2003-05-15',
+  'ycr4a1eAkn0': '2003-05-20',
+  'LxhM7KErZas': '2003-05-22',
+  'LHaB3iu4zIw': '2003-05-27',
+  '68R-oaodzTg': '2003-02-25',
+  'T3rO2WO_y7s': '2002-11-19',
+  '7wpyHczLt9Q': '2002-11-28',
+  'ndTYL4boSgE': '2002-11-28',
+  '0IO_ymdbLPU': '2002-12-02',
+  '2nGLn4TKsp0': '2002-12-10',
+  'SQyL88Fq76o': '2002-12-12',
+  'FuwzDJ5NU5M': '2002-12-17',
+  'E7VxdQNu9jo': '2002-12-19',
+  'IDr53Cr4fsU': '2003-01-07',
+  'lPiLzxL9qk4': '2003-01-14',
+  'N32pB-1QXS0': '2003-01-09',
+  'XbY3hwY4Rbk': '2003-01-16',
+  'WMJZHTZ3LZY': '2003-01-23',
+  'xPRzam0rqDw': '2003-01-28',
+  'pA9J6JWr0CQ': '2003-01-30',
+  'oXJs2-3OAlA': '2003-02-04',
+  'uagciNFijmY': '2003-02-06',
+  '17Doi4NAYY0': '2003-02-11',
+  'qGdHRpt1qns': '2003-02-13',
+  'UUJWGz3BuY4': '2003-02-18',
+  'RYcT89bug4U': '2003-02-20',
+  'FHeKCC3ZiOU': '2003-03-04',
+  '65d7NtvHAk0': '2003-03-06',
+  '-Tss3qgdhW4': '2003-03-11',
+  'ZdgpRuXGY40': '2003-03-13',
+  'kc2e56cun8U': '2003-03-18',
+  '4IIUE6NVqDU': '2003-03-20',
+  'BZMmmc3HVto': '2002-11-26',
+  'qWn9BntEhyU': '2003-01-21',
+};
+
+const ORDRE_CATALOGUE = [
+  'T3rO2WO_y7s',
+  '7wpyHczLt9Q',
+  'BZMmmc3HVto',
+  'ndTYL4boSgE',
+  '0IO_ymdbLPU',
+  '2nGLn4TKsp0',
+  'SQyL88Fq76o',
+  'FuwzDJ5NU5M',
+  'E7VxdQNu9jo',
+  'IDr53Cr4fsU',
+  'N32pB-1QXS0',
+  'lPiLzxL9qk4',
+  'XbY3hwY4Rbk',
+  'qWn9BntEhyU',
+  'WMJZHTZ3LZY',
+  'xPRzam0rqDw',
+  'pA9J6JWr0CQ',
+  'oXJs2-3OAlA',
+  'uagciNFijmY',
+  '17Doi4NAYY0',
+  'qGdHRpt1qns',
+  'UUJWGz3BuY4',
+  'RYcT89bug4U',
+  '68R-oaodzTg',
+  'FHeKCC3ZiOU',
+  '65d7NtvHAk0',
+  '-Tss3qgdhW4',
+  'ZdgpRuXGY40',
+  'kc2e56cun8U',
+  '4IIUE6NVqDU',
+  'Qh-CpCTQCJ4',
+  'vI5qC_JpkHs',
+  'Um8OTTlH5XQ',
+  'H2HqbPEaxk8',
+  'bLQCuSOB8tA',
+  'IIjBn3C3d5g',
+  'FeAucP4aKS8',
+  'BySad1olbq4',
+  'Nha5ZI8PVo0',
+  '-cDGU22RFqU',
+  'ycr4a1eAkn0',
+  'LxhM7KErZas',
+  'LHaB3iu4zIw',
+  'S8fgBEKLUiM',
+  'qHKK0vp86-Q',
+];
 
 // id|length|title, one per line, in playlist order.
 const BRUT = readFileSync(new URL('./seances.txt', import.meta.url), 'utf8');
 
 const partieDe = new Map();
-for (const [partie, rangs] of Object.entries(APPARTENANCE)) {
-  for (const r of rangs) partieDe.set(r, partie);
+for (const [partie, ids] of Object.entries(APPARTENANCE)) {
+  for (const id of ids) partieDe.set(id, partie);
 }
 
 /** Almost every title carries the "J.F. Debord :" prefix: repeating it in a
@@ -84,27 +191,34 @@ function titreCourt(t) {
     .trim();
 }
 
-const seances = BRUT.trim().split('\n').map((ligne, i) => {
-  const [id, duree, titre] = ligne.split('|');
-  const rang = i + 1;
-  const partie = partieDe.get(rang);
-  if (!partie) throw new Error(`séance ${rang} (${id}) n'est dans aucune partie`);
-  return {
-    rang,
-    id,
-    partie,
-    titre: titreCourt(titre),
-    titreYoutube: titre,
-    dureeS: Number(duree) || null,
-    ...(HORS_PLAYLIST.has(id) ? { horsPlaylist: true } : {}),
-  };
-});
+const seances = BRUT.trim()
+  .split('\n')
+  .map((ligne) => {
+    const [id, duree, titre] = ligne.split('|');
+    const partie = partieDe.get(id);
+    if (!partie) throw new Error(`séance ${id} n'est dans aucune partie`);
+    const date = DATES[id];
+    if (!date) throw new Error(`séance ${id} sans date au catalogue`);
+    return {
+      id,
+      partie,
+      titre: titreCourt(titre),
+      titreYoutube: titre,
+      dureeS: Number(duree) || null,
+      date,
+      ...(date === '2017' ? { document: true } : {}),
+    };
+  })
+  .sort((a, b) => {
+    if ((a.date === '2017') !== (b.date === '2017')) return a.date === '2017' ? 1 : -1;
+    return a.date.localeCompare(b.date) || ORDRE_CATALOGUE.indexOf(a.id) - ORDRE_CATALOGUE.indexOf(b.id);
+  })
+  .map((s, i) => ({ rang: i + 1, ...s }));
 
-const manquants = Object.values(APPARTENANCE).flat().filter((r) => r < 1 || r > seances.length);
-if (manquants.length) throw new Error(`rangs inexistants : ${manquants}`);
-
-const inconnues = [...HORS_PLAYLIST].filter((id) => !seances.some((s) => s.id === id));
-if (inconnues.length) throw new Error(`hors playlist mais absentes de la liste : ${inconnues}`);
+const inconnues = Object.values(APPARTENANCE)
+  .flat()
+  .filter((id) => !seances.some((s) => s.id === id));
+if (inconnues.length) throw new Error(`rangées dans une partie mais absentes de la liste : ${inconnues}`);
 
 writeFileSync(
   new URL('../src/data/seances.json', import.meta.url),

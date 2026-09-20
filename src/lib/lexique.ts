@@ -57,9 +57,12 @@ export type Seance = {
   titre: string;
   titreYoutube: string;
   dureeS: number | null;
-  /** Published on the PSL channel but missing from the playlist. Its rank is
-   *  then a filing number, not a place in publication order. */
-  horsPlaylist?: boolean;
+  /** The date the session was taught, from PSL's catalogue — "2002-11-19" — or
+   *  the year alone for the two documents filmed in 2017. */
+  date: string;
+  /** Not a session of the year: the introduction and the biographical notice,
+   *  filmed fourteen years later. They close the list. */
+  document?: boolean;
 };
 
 export type Partie = { id: string; titre: string; propos: string };
