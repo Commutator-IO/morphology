@@ -1,15 +1,9 @@
 import { useMemo, useState } from 'react';
 import { Entete, Pied } from './components/Cadre';
 import { Lecteur, type Lecture } from './components/Lecteur';
-import {
-  CATEGORIES,
-  grouperParSeance,
-  MOMENTS,
-  ORDRE,
-  type Categorie,
-} from './lib/anecdotes';
+import { CATEGORIES, MOMENTS, ORDRE, type Categorie } from './lib/anecdotes';
 import { grilleDe } from './lib/lecteur';
-import { duree, horodate, lienYoutube } from './lib/lexique';
+import { horodate, lienYoutube, SEANCE_PAR_ID } from './lib/lexique';
 
 /**
  * The moments where the course leaves its subject.
@@ -31,17 +25,26 @@ export function PageDigressions() {
   const [decritsSeuls, setDecritsSeuls] = useState(true);
   const [lecture, setLecture] = useState<Lecture | null>(null);
 
-  const groupes = useMemo(() => {
-    const filtres = MOMENTS.filter(
-      (m) =>
-        (!categorie || m.categorie === categorie) &&
-        (!comparaisons || m.comparaison) &&
-        (!decritsSeuls || m.note),
-    );
-    return grouperParSeance(filtres);
-  }, [categorie, comparaisons, decritsSeuls]);
+  // A flat list rather than sections by session. Each moment stands on its own
+  // — it is read for what Debord says there, not for the session it falls in —
+  // and grouping them left a column of headings carrying one line each. The
+  // session is still named on every row, small, for whoever wants to place it.
+  const liste = useMemo(
+    () =>
+      MOMENTS.filter(
+        (m) =>
+          (!categorie || m.categorie === categorie) &&
+          (!comparaisons || m.comparaison) &&
+          (!decritsSeuls || m.note),
+      )
+        .map((m) => ({ ...m, seance: SEANCE_PAR_ID.get(m.video)! }))
+        .filter((m) => m.seance)
+        .sort((a, b) => a.seance.rang - b.seance.rang || a.t - b.t),
+    [categorie, comparaisons, decritsSeuls],
+  );
 
-  const total = groupes.reduce((s, g) => s + g.moments.length, 0);
+  const total = liste.length;
+  const seances = new Set(liste.map((m) => m.video)).size;
   const decrits = MOMENTS.filter((m) => m.note).length;
 
   return (
@@ -152,62 +155,46 @@ export function PageDigressions() {
         )}
 
         <p className="tabular mt-3 text-xs text-ink-500">
-          {total} moment{total > 1 ? 's' : ''} · {groupes.length} séance
-          {groupes.length > 1 ? 's' : ''}
+          {total} moment{total > 1 ? 's' : ''} · {seances} séance
+          {seances > 1 ? 's' : ''}
           {!decritsSeuls && ' · les moments sans notice sont de simples repères'}
         </p>
 
         <div className={`mt-4 lg:grid lg:gap-8 ${grilleDe('petite')}`}>
-          <div className="space-y-4">
-            {groupes.map(({ seance, moments }) => (
-              <section key={seance.id} className="card px-4 py-3.5">
-                <h2 className="text-[13px] leading-snug text-ink-700">
-                  <span className="tabular text-ink-400">{seance.rang}.</span>{' '}
-                  <a
-                    href={lienYoutube(seance.id)}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="titre text-[15px] text-ink-900 underline decoration-ink-300 underline-offset-2"
-                  >
-                    {seance.titre}
-                  </a>{' '}
-                  <span className="text-ink-400">({duree(seance.dureeS)})</span>
-                </h2>
-
-                <ul className="mt-2.5 space-y-2.5">
-                  {moments.map((m) => (
-                    <li key={m.t} className="flex items-start gap-2.5">
-                      <a
-                        className="puce-temps mt-px shrink-0"
-                        href={lienYoutube(seance.id, m.t)}
-                        target="_blank"
-                        rel="noreferrer"
-                        onClick={(e) => {
-                          if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-                          e.preventDefault();
-                          setLecture({ videoId: seance.id, instant: m.t, titre: seance.titre });
-                        }}
-                      >
-                        {horodate(m.t)}
-                      </a>
-                      {m.note ? (
-                        <p className="text-[14px] leading-relaxed text-ink-800">
-                          {m.note}
-                          {m.comparaison && (
-                            <span className="ml-1.5 rounded border border-os-200 bg-os-50 px-1.5 py-0.5 align-middle text-[11px] text-os-700">
-                              hors art
-                            </span>
-                          )}
-                        </p>
-                      ) : (
-                        <p className="mt-2 text-[13px] text-ink-400">{m.mot}</p>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              </section>
+          <ul className="space-y-2">
+            {liste.map((m) => (
+              <li key={`${m.video}|${m.t}`} className="card flex items-start gap-3 px-3.5 py-3">
+                <a
+                  className="puce-temps mt-px shrink-0"
+                  href={lienYoutube(m.video, m.t)}
+                  target="_blank"
+                  rel="noreferrer"
+                  title={m.seance.titre}
+                  onClick={(e) => {
+                    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+                    e.preventDefault();
+                    setLecture({ videoId: m.video, instant: m.t, titre: m.seance.titre });
+                  }}
+                >
+                  <span className="tabular text-ink-400">S{m.seance.rang}</span>
+                  <span className="mx-1 text-ink-300">·</span>
+                  {horodate(m.t)}
+                </a>
+                {m.note ? (
+                  <p className="text-[14px] leading-relaxed text-ink-800">
+                    {m.note}
+                    {m.comparaison && (
+                      <span className="ml-1.5 rounded border border-os-200 bg-os-50 px-1.5 py-0.5 align-middle text-[11px] text-os-700">
+                        hors art
+                      </span>
+                    )}
+                  </p>
+                ) : (
+                  <p className="mt-1 text-[13px] text-ink-400">{m.mot}</p>
+                )}
+              </li>
             ))}
-          </div>
+          </ul>
 
           {/* Fixed small, with no setting offered: the notes are read in one
               column, and a wide player leaves nothing of the list. */}
