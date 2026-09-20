@@ -88,6 +88,11 @@ const ECARTES = new Set([
   'Qh-CpCTQCJ4|3497',  // "tout à sa merde", on contemporary painting
   'bLQCuSOB8tA|6433',  // "elles font pas chier"
   'LxhM7KErZas|1378',  // "coup de pied au cul"
+  // "quand j'étais" without a note: neither passage is a recollection. One is
+  // about the word "coronal" read years later in books, the other an aside on
+  // the 1914-18 war that Debord, born in 1938, cannot be remembering.
+  'oXJs2-3OAlA|2058',
+  'RYcT89bug4U|5087',
 ]);
 
 /** Hand-written notes, one per intelligible moment. */

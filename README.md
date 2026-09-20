@@ -16,7 +16,7 @@ reformule pas et ne l'héberge pas.
 | -------------- | ------------------------------------------------------------------------------- |
 | `/`            | 109 termes d'anatomie et de morphologie, chacun horodaté dans les séances       |
 | `/references/` | 73 références — peintres, sculpteurs, anatomistes, musées, œuvres               |
-| `/digressions/` | 126 moments où le cours sort de son sujet, dont 71 décrits                      |
+| `/digressions/` | 124 moments où le cours sort de son sujet, dont 71 décrits                      |
 | `/seances/`    | Les 45 séances rangées par région du corps                                      |
 | `/lignee/`     | 23 figures : les livres qu'il ouvre, la chaire avant lui, et ceux qu'il a formés |
 | `/methode/`    | Comment l'index est construit, et ce qu'il vaut                                 |
