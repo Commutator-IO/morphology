@@ -93,6 +93,49 @@ export function PageMethode() {
           </p>
         </Section>
 
+        <Chaine />
+
+        <Section titre="Les homophones, et comment ils sont tranchés">
+          <p>
+            Deux confusions différentes se ressemblent dans les sous-titres, et
+            elles ne se règlent pas de la même façon.
+          </p>
+          <p>
+            <b className="font-semibold text-ink-900">La première est un défaut d'oreille de la machine.</b>{' '}
+            La reconnaissance vocale n'a aucun modèle d'anatomie : elle écrit le mot
+            courant qui sonne comme le mot savant. « Grand public » est le grand
+            oblique, quatre-vingt-dix-neuf fois ; « numerus » l'humérus ;
+            « pete rock » l'épitrochlée. Ces formes-là ne se devinent pas d'après le
+            sujet de la séance mais d'après le son — « public » ressemble à
+            « oblique », jamais à « dorsal ». Une fois entendues, elles entrent au
+            lexique comme n'importe quelle autre graphie du terme.
+          </p>
+          <p>
+            <b className="font-semibold text-ink-900">La seconde tient au cours lui-même.</b>{' '}
+            Debord emploie réellement un même mot dans deux sens : « fléchisseur »
+            pour l'avant-bras comme pour la jambe, « trapèze » pour le muscle du dos
+            comme pour l'os du poignet, « oblique » pour le muscle du flanc comme
+            pour une direction, « méta » pour le métacarpien comme pour le
+            métatarsien. Là, c'est le passage qui décide, et le voisinage qu'on
+            compte autour de la mention.
+          </p>
+          <p>
+            Trois marques suffisent à tout dire, dans le lexique : un mot dont
+            l'accent seul fait le sens est cherché accentué — le modèle et le
+            modelé, la côte et le côté ; un mot partagé est mis en attente
+            d'arbitrage ; une tournure qui prouve que le mot n'est pas la notion
+            annule la mention pour tout le monde.
+          </p>
+          <p>
+            <b className="font-semibold text-ink-900">Rien de tout cela n'a été décidé sur plan.</b>{' '}
+            Chaque graphie a d'abord été comptée dans le corpus, puis écoutée dans
+            la séance : un passage douteux est ouvert à son horodatage, et ce qu'on
+            entend tranche. C'est ainsi qu'« un bout de trapèze » s'est révélé une
+            figure qu'on dessine, que « master i dit » était une mastoïdite, et
+            qu'un « modèle des États-Unis » était un motel.
+          </p>
+        </Section>
+
         <Section titre="Comment les horodatages sont trouvés">
           <ol className="list-decimal space-y-2 pl-5">
             <li>
@@ -293,6 +336,158 @@ export function PageMethode() {
 
       <Pied />
     </>
+  );
+}
+
+/**
+ * La chaîne, dessinée.
+ *
+ * La page dit déjà tout cela en prose, mais l'ordre est ce qu'un lecteur doit
+ * retenir : d'où vient chaque fichier, à quel moment le cours cesse d'être
+ * reproduit, et où une oreille humaine intervient. Le schéma descend au lieu
+ * d'aller de gauche à droite — sur un téléphone, une chaîne horizontale se lit
+ * en faisant glisser, c'est-à-dire mal.
+ *
+ * SVG en ligne, dans la palette du site, le texte étant du vrai texte : il se
+ * sélectionne et se lit à voix haute. Aucune bibliothèque : une dépendance pour
+ * tracer huit rectangles coûterait plus cher qu'elle ne rapporte.
+ */
+function Chaine() {
+  const boite = { fill: 'white', stroke: 'var(--color-ink-200)', strokeWidth: 1.4, rx: 10 };
+  const titre = { fontSize: 12.5, fontWeight: 600, fill: 'var(--color-ink-900)', textAnchor: 'middle' as const };
+  const detail = { fontSize: 9.5, fill: 'var(--color-ink-500)', textAnchor: 'middle' as const };
+  const mono = { fontFamily: 'ui-monospace, Menlo, monospace' };
+
+  return (
+    <Section titre="La chaîne, d'un bout à l'autre">
+      <p>
+        Rien de ce qui descend cette chaîne n'est du texte du cours : à partir du
+        lexique, on ne manipule plus que des identifiants et des secondes. La
+        dernière étape est la seule qu'aucun fichier ne peut garantir.
+      </p>
+
+      <div className="card mx-auto max-w-[34rem] px-3 py-4">
+        <svg
+          viewBox="0 0 340 664"
+          className="w-full"
+          role="img"
+          aria-label="La chaîne : les 45 séances filmées donnent, par yt-dlp, des sous-titres automatiques jamais publiés ; la reconnaissance vocale n'ayant aucun modèle d'anatomie, elle écrit « pete rock » pour épitrochlée et « grand public » pour grand oblique ; le lexique porte ces graphies fautives comme variantes, avec trois préfixes — accent strict, mot ambigu tranché par le voisinage, veto ; l'indexation produit un fichier d'identifiants et de secondes, d'où le site ; une relecture à l'oreille corrige le lexique et fait tout recommencer."
+          style={{ fontFamily: 'var(--font-sans)' }}
+        >
+          <defs>
+            <marker id="fleche" viewBox="0 0 10 10" refX="9" refY="5"
+              markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--color-ink-400)" strokeWidth="1.6" />
+            </marker>
+            <marker id="flecheClaire" viewBox="0 0 10 10" refX="9" refY="5"
+              markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M0,1 L9,5 L0,9" fill="none" stroke="var(--color-craie-600)" strokeWidth="1.6" />
+            </marker>
+          </defs>
+
+          {/* 1 — la source */}
+          <rect x="30" y="6" width="296" height="44" {...boite} />
+          <text x="178" y="25" {...titre}>45 séances filmées</text>
+          <text x="178" y="40" {...detail}>YouTube · Bibnum, Université PSL · 77 heures</text>
+
+          <line x1="178" y1="54" x2="178" y2="76" stroke="var(--color-ink-400)" strokeWidth="1.3"
+            markerEnd="url(#fleche)" />
+          <text x="186" y="69" fontSize="9" fill="var(--color-ink-400)" style={mono}>yt-dlp --write-auto-subs</text>
+
+          {/* 2 — les sous-titres, qui ne sortent pas d'ici */}
+          <rect x="30" y="80" width="296" height="50" {...boite} />
+          <text x="178" y="99" {...titre} style={mono}>transcripts/*.json3</text>
+          <text x="178" y="114" {...detail}>59 Mo · non versionnés · jamais publiés</text>
+          <text x="178" y="125" {...detail}>c'est ici que s'arrête le texte du cours</text>
+
+          <line x1="178" y1="134" x2="178" y2="152" stroke="var(--color-ink-400)" strokeWidth="1.3"
+            markerEnd="url(#fleche)" />
+
+          {/* 3 — le défaut de la matière première */}
+          <rect x="30" y="156" width="296" height="74" rx="10" fill="var(--color-brand-50)"
+            stroke="var(--color-brand-200)" strokeWidth="1.4" />
+          <text x="178" y="175" fontSize="12" fontWeight="600" fill="var(--color-brand-700)" textAnchor="middle">
+            La transcription ne connaît pas l'anatomie
+          </text>
+          <text x="178" y="191" fontSize="9.5" fill="var(--color-brand-700)" textAnchor="middle">
+            « pete rock » pour épitrochlée · « grand public » pour
+          </text>
+          <text x="178" y="203" fontSize="9.5" fill="var(--color-brand-700)" textAnchor="middle">
+            grand oblique · « janvier » pour jambier · « numerus »
+          </text>
+          <text x="178" y="215" fontSize="9.5" fill="var(--color-brand-700)" textAnchor="middle">
+            pour humérus · « solaire » pour soléaire
+          </text>
+
+          <line x1="178" y1="234" x2="178" y2="252" stroke="var(--color-ink-400)" strokeWidth="1.3"
+            markerEnd="url(#fleche)" />
+
+          {/* 4 — le lexique, où se rattrape le défaut */}
+          <rect x="30" y="256" width="296" height="80" {...boite} />
+          <text x="178" y="275" {...titre} style={mono}>lexique.json</text>
+          <text x="178" y="290" {...detail}>chaque terme porte ses variantes — le mot, ses</text>
+          <text x="178" y="302" {...detail}>flexions, et les graphies fautives relevées</text>
+          <text x="178" y="321" fontSize="9" fill="var(--color-ink-500)" textAnchor="middle">
+            <tspan style={mono} fill="var(--color-brand-600)">!</tspan> accent strict ·{' '}
+            <tspan style={mono} fill="var(--color-brand-600)">?</tspan> tranché par le voisinage ·{' '}
+            <tspan style={mono} fill="var(--color-brand-600)">−</tspan> veto
+          </text>
+
+          <line x1="178" y1="340" x2="178" y2="360" stroke="var(--color-ink-400)" strokeWidth="1.3"
+            markerEnd="url(#fleche)" />
+          <text x="186" y="353" fontSize="9" fill="var(--color-ink-400)" style={mono}>npm run indexer</text>
+
+          {/* 5 — l'indexation */}
+          <rect x="30" y="364" width="296" height="74" {...boite} />
+          <text x="178" y="383" {...titre}>Indexation</text>
+          <text x="178" y="398" {...detail}>recherche sur le texte continu d'une séance</text>
+          <text x="178" y="410" {...detail}>deux mentions à moins de 45 s n'en font qu'une</text>
+          <text x="178" y="422" {...detail}>un mot partagé se tranche sur ±600 caractères</text>
+          <text x="178" y="433" {...detail}>à égalité, la mention est abandonnée</text>
+
+          <line x1="178" y1="442" x2="178" y2="460" stroke="var(--color-ink-400)" strokeWidth="1.3"
+            markerEnd="url(#fleche)" />
+
+          {/* 6 — ce qui est publié */}
+          <rect x="30" y="464" width="296" height="50" {...boite} />
+          <text x="178" y="483" {...titre} style={mono}>occurrences.json</text>
+          <text x="178" y="498" {...detail}>identifiants de vidéo, de terme, et secondes</text>
+          <text x="178" y="509" {...detail}>aucun mot du cours n'y figure</text>
+
+          <line x1="178" y1="518" x2="178" y2="536" stroke="var(--color-ink-400)" strokeWidth="1.3"
+            markerEnd="url(#fleche)" />
+
+          {/* 7 — le site */}
+          <rect x="30" y="540" width="296" height="44" rx="10" fill="var(--color-ink-100)"
+            stroke="var(--color-ink-200)" strokeWidth="1.4" />
+          <text x="178" y="559" {...titre}>morphologie.commutator.io</text>
+          <text x="178" y="574" {...detail}>l'index, et les liens vers les séances</text>
+
+          {/* 8 — l'oreille, qui n'est pas automatisable, et qui reboucle */}
+          <rect x="30" y="600" width="296" height="56" rx="10" fill="var(--color-craie-100)"
+            stroke="var(--color-craie-600)" strokeWidth="1.4" strokeDasharray="5 4" />
+          <text x="178" y="620" fontSize="12" fontWeight="600" fill="var(--color-craie-700)" textAnchor="middle">
+            Relecture à l'oreille
+          </text>
+          <text x="178" y="635" fontSize="9.5" fill="var(--color-craie-700)" textAnchor="middle">
+            un passage douteux est écouté, et le verdict
+          </text>
+          <text x="178" y="647" fontSize="9.5" fill="var(--color-craie-700)" textAnchor="middle">
+            devient une variante, un voisinage ou un veto
+          </text>
+
+          {/* la boucle : de l'oreille vers le lexique, qu'on refait tourner */}
+          <path d="M30,628 L16,628 L16,296 L28,296" fill="none" stroke="var(--color-craie-600)"
+            strokeWidth="1.3" strokeDasharray="5 4" markerEnd="url(#flecheClaire)" />
+        </svg>
+      </div>
+
+      <p>
+        La boucle est l'essentiel : aucune règle n'a été posée a priori. Chaque
+        graphie fautive du lexique a d'abord été relevée dans le corpus, puis
+        écoutée dans la séance, et n'y est entrée qu'une fois entendue.
+      </p>
+    </Section>
   );
 }
 
