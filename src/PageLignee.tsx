@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Entete, Pied } from './components/Cadre';
 import { Lecteur, type Lecture } from './components/Lecteur';
 import { useAncre } from './lib/ancre';
-import { ecrireTaille, grilleDe, lireTaille, type TailleLecteur } from './lib/lecteur';
+import { grilleDe } from './lib/lecteur';
 import {
   CLASSIQUES,
   DATEES,
@@ -389,14 +389,8 @@ function BandeHistorique() {
 export function PageLignee() {
   const [actif, setActif] = useState<Figure>(DATEES[0]);
   const [lecture, setLecture] = useState<Lecture | null>(null);
-  const [taille, setTaille] = useState<TailleLecteur>(lireTaille);
   const fiches = useRef<(HTMLElement | null)[]>([]);
   useAncre();
-
-  function reglerTaille(t: TailleLecteur) {
-    setTaille(t);
-    ecrireTaille(t);
-  }
 
   /**
    * Opens a video in the panel rather than in a tab.
@@ -459,7 +453,7 @@ export function PageLignee() {
 
         <BandeHistorique />
 
-        <div className={`mt-6 lg:grid lg:gap-8 ${grilleDe(taille)}`}>
+        <div className={`mt-6 lg:grid lg:gap-8 ${grilleDe('petite')}`}>
           <div>
             <Regle actif={actif} />
 
@@ -635,12 +629,10 @@ export function PageLignee() {
             </div>
           </div>
 
-          <Lecteur
-            lecture={lecture}
-            onFermer={() => setLecture(null)}
-            taille={taille}
-            onTaille={reglerTaille}
-          />
+          {/* Fixed small, with no setting offered: the page is a timeline read
+              in one column, and a wide player would push the cards under the
+              ruler out of reach. */}
+          <Lecteur lecture={lecture} onFermer={() => setLecture(null)} />
         </div>
       </main>
 
