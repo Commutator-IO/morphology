@@ -578,9 +578,10 @@ export function PageLignee() {
                                 </ul>
                               )}
 
-                              {/* La source est affichée et non reléguée : une
-                            bibliographie sans provenance est une liste
-                            d'affirmations. */}
+                              {/* Provenance is kept on every card — a bibliography
+                            without it is a list of assertions — but folded:
+                            three or four lines of sourcing above the next card
+                            buried what one came to read. */}
                               {f.ecoutes && (
                                 <div className="mt-3">
                                   <p className="text-xs font-medium tracking-wide text-ink-500 uppercase">
@@ -615,9 +616,17 @@ export function PageLignee() {
                                 </div>
                               )}
 
-                              <p className="mt-3 border-t border-ink-100 pt-2.5 text-xs leading-relaxed text-ink-400">
-                                {f.source}
-                              </p>
+                              <details className="mt-3 border-t border-ink-100 pt-2">
+                                <summary className="inline-flex min-h-9 cursor-pointer list-none items-center text-xs text-ink-400 marker:content-none hover:text-ink-600">
+                                  Sources
+                                  <span aria-hidden="true" className="ml-1 text-[10px]">
+                                    ▸
+                                  </span>
+                                </summary>
+                                <p className="pb-1 text-xs leading-relaxed text-ink-400">
+                                  {f.source}
+                                </p>
+                              </details>
                             </div>
                           </article>
                         );

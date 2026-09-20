@@ -105,6 +105,16 @@
      36 px de haut au lieu de 44 : en deçà de la cible recommandée, mais le
      chiffre reste large et bien espacé, et c'est le prix de la discrétion
      demandée. */
+  /* The disclosure arrow turns when the block opens, and Safari's default
+     marker is removed on both sides — list-style and ::-webkit-details-marker. */
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  details[open] > summary span[aria-hidden] {
+    @apply inline-block rotate-90;
+  }
+
   .puce-temps {
     @apply inline-flex min-h-9 items-center rounded-md px-1.5 text-sm text-ink-500
       tabular transition active:scale-95;
