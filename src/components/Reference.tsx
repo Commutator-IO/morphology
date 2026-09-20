@@ -81,12 +81,10 @@ export function CarteReference({
                 <>
                   {reference.musee.date ? ` (${reference.musee.date})` : ''} —{' '}
                   {reference.musee.nom}
-                  {/* Dire que ce n'est pas la diapositive du cours : les
-                      sous-titres ne donnent pas les titres projetés, et laisser
-                      croire le contraire tromperait sur la source. */}
-                  <span className="text-ink-400">
-                    . Une œuvre en accès libre, pas celle projetée en cours.
-                  </span>
+                  {/* The slide shown in class is unknown, so the work is given
+                      as an example and said to be one — without labouring the
+                      point on a page students read for the artists. */}
+                  <span className="text-ink-400">. Une œuvre en accès libre, donnée en exemple.</span>
                 </>
               )}
             </p>

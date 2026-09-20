@@ -69,10 +69,8 @@ export function PageReferences() {
           relevées, {mentions} mentions en tout.
         </p>
         <p className="mt-2 hidden text-[13px] leading-relaxed text-ink-500 sm:block">
-          Chaque nom de cette liste a été vérifié passage par passage. La transcription
-          automatique confond volontiers un patronyme et un mot courant — « léger », «
-          carrière », « boucher », « durer » — et ces faux amis ont été écartés à la main :
-          voir la{' '}
+          Chaque nom a été vérifié dans son passage — comment, et ce que l'index
+          ne sait pas faire, est dit dans la{' '}
           <a href="/methode/" className="text-brand-700 underline underline-offset-2">
             méthode
           </a>

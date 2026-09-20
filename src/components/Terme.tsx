@@ -160,13 +160,13 @@ export function CarteTerme({
             </div>
           ) : (
             <p className="mt-4 text-[13px] leading-relaxed text-ink-500">
-              Aucun passage relevé. Le terme figure ici parce qu'il fait partie du
-              vocabulaire de la région, mais la transcription automatique ne le
-              restitue pas — voir la{' '}
+              Aucun passage relevé dans les séances. Le terme figure ici parce
+              qu'il fait partie du vocabulaire de la région ; une absence ne
+              prouve rien, et la{' '}
               <a href="/methode/" className="text-brand-700 underline underline-offset-2">
                 méthode
-              </a>
-              .
+              </a>{' '}
+              dit pourquoi.
             </p>
           )}
         </div>

@@ -1292,7 +1292,7 @@
    "tubérosité interne",
    "tubérosité externe"
   ],
-  "definition": "Les deux saillies qui terminent l'humérus de part et d'autre du coude, palpables sous la peau. En dedans l'épitrochlée, plus forte, d'où partent les fléchisseurs et la masse de l'avant-bras ; en dehors l'épicondyle, plus discret, d'où partent les extenseurs. Entre elles passe l'axe de flexion du coude, et leur écart donne au bras sa largeur au niveau du pli. La transcription automatique ne les écrit jamais : l'épitrochlée devient « pete rock » ou « épître aux clés », l'épicondyle « épicondylite ».",
+  "definition": "Les deux saillies qui terminent l'humérus de part et d'autre du coude, palpables sous la peau. En dedans l'épitrochlée, plus forte, d'où partent les fléchisseurs et la masse de l'avant-bras ; en dehors l'épicondyle, plus discret, d'où partent les extenseurs. Entre elles passe l'axe de flexion du coude, et leur écart donne au bras sa largeur au niveau du pli.",
   "variantes": [
    "epitrochlee",
    "epitrochleen",
@@ -1580,7 +1580,7 @@
   "aussi": [
    "petit pois"
   ],
-  "definition": "Le plus petit os du carpe, du côté du petit doigt, à la base de l'éminence hypothénar. Il n'appartient pas vraiment à la rangée : c'est un os sésamoïde pris dans le tendon du cubital antérieur, posé en avant du pyramidal. On le roule sous le doigt comme un pois, et c'est ce qui en fait un repère — le seul point fixe du bord interne du poignet, d'où partent la saillie de l'hypothénar et le pli de flexion. La transcription ne l'écrit jamais : « pizy forme », « lépidi forme », « pays forme », « plaisir forme ».",
+  "definition": "Le plus petit os du carpe, du côté du petit doigt, à la base de l'éminence hypothénar. Il n'appartient pas vraiment à la rangée : c'est un os sésamoïde pris dans le tendon du cubital antérieur, posé en avant du pyramidal. On le roule sous le doigt comme un pois, et c'est ce qui en fait un repère — le seul point fixe du bord interne du poignet, d'où partent la saillie de l'hypothénar et le pli de flexion.",
   "variantes": [
    "pisiforme",
    "pisiformes",
@@ -2154,7 +2154,7 @@
   "aussi": [
    "muscles de la mimique"
   ],
-  "definition": "Muscles minces insérés dans la peau même du visage et du cou, sans action sur le squelette. Ils ne font pas de volume mais plissent la surface : c'est par eux que passe toute l'expression. La transcription écrit « poussière » là où Debord dit peaucier. Il en compte aussi un dans la main, le palmaire cutané.",
+  "definition": "Muscles minces insérés dans la peau même du visage et du cou, sans action sur le squelette. Ils ne font pas de volume mais plissent la surface : c'est par eux que passe toute l'expression. Il en compte aussi un dans la main, le palmaire cutané.",
   "variantes": [
    "peaucier",
    "peauciers",
@@ -2195,7 +2195,7 @@
   "categorie": "muscle",
   "region": "tete",
   "moderne": "Musculus masseter",
-  "definition": "Muscle épais tendu de l'arcade zygomatique à l'angle de la mandibule. Il remplit le creux de la joue en arrière et se durcit visiblement à la mâchoire serrée. La transcription écrit « master ». Debord le présente avec le temporal comme l'un des deux muscles de la mastication.",
+  "definition": "Muscle épais tendu de l'arcade zygomatique à l'angle de la mandibule. Il remplit le creux de la joue en arrière et se durcit visiblement à la mâchoire serrée. Debord le présente avec le temporal comme l'un des deux muscles de la mastication.",
   "variantes": [
    "masseter",
    "masseters",
@@ -2386,7 +2386,7 @@
    "brachio-radial",
    "huméro-stylo-radial"
   ],
-  "definition": "Muscle qui monte du bord externe de l'humérus au poignet en formant la crête latérale de l'avant-bras. Sa saillie sépare la loge des fléchisseurs de celle des extenseurs, et sert d'arête directrice à toute la région. Debord ne dit jamais long supinateur : il l'appelle par son nom ancien, huméro-stylo-radial, que la transcription rend « numéro stylo radial ».",
+  "definition": "Muscle qui monte du bord externe de l'humérus au poignet en formant la crête latérale de l'avant-bras. Sa saillie sépare la loge des fléchisseurs de celle des extenseurs, et sert d'arête directrice à toute la région. Debord ne dit jamais long supinateur : il l'appelle par son nom ancien, huméro-stylo-radial.",
   "variantes": [
    "long supinateur",
    "supinateur",
@@ -3129,7 +3129,7 @@
   "categorie": "muscle",
   "region": "jambe",
   "moderne": "Musculus tibialis posterior",
-  "definition": "Le plus profond des muscles de la jambe, logé entre les deux fléchisseurs, contre le tibia et le péroné. Rien n'en paraît au mollet. Son tendon contourne la malléole interne et va au tubercule du scaphoïde, où il soutient l'arche interne du pied : c'est par lui qu'on tient l'arche, et par son tendon qu'on le voit, quand on le voit. Debord le nomme avec les fléchisseurs, et la transcription en fait un « janvier postérieur ».",
+  "definition": "Le plus profond des muscles de la jambe, logé entre les deux fléchisseurs, contre le tibia et le péroné. Rien n'en paraît au mollet. Son tendon contourne la malléole interne et va au tubercule du scaphoïde, où il soutient l'arche interne du pied : c'est par lui qu'on tient l'arche, et par son tendon qu'on le voit, quand on le voit. Debord le nomme avec les fléchisseurs.",
   "variantes": [
    "jambier posterieur",
    "jambiers posterieur",
@@ -3434,7 +3434,7 @@
    "ligament inguinal",
    "pli de l'aine"
   ],
-  "definition": "Le ligament tendu de l'épine iliaque antéro-supérieure au pubis, où s'arrête la paroi de l'abdomen et où commence la cuisse. On ne le voit pas, mais on voit son effet : c'est lui qui creuse le pli de l'aine, et qui donne au ventre sa limite basse en accent circonflexe. La transcription en fait une « arcade rurale » ou une « arcade chorale ».",
+  "definition": "Le ligament tendu de l'épine iliaque antéro-supérieure au pubis, où s'arrête la paroi de l'abdomen et où commence la cuisse. On ne le voit pas, mais on voit son effet : c'est lui qui creuse le pli de l'aine, et qui donne au ventre sa limite basse en accent circonflexe.",
   "variantes": [
    "arcade crurale",
    "arcades crurales",
@@ -3491,7 +3491,7 @@
    "poulie astragalienne",
    "poulie de réflexion"
   ],
-  "definition": "Surface articulaire en forme de poulie : une gorge centrale et deux lèvres, qui obligent l'os d'en face à ne bouger que dans un plan. Il y en a trois dans le cours — au coude la trochlée humérale, au genou celle où court la rotule, à la cheville la poulie astragalienne. La lèvre externe de la trochlée fémorale est la plus haute : c'est elle qui repousse la rotule en dedans, et qui décide de son aplomb. Le mot sert aussi pour un tendon qui change de direction sur un relief d'os — une poulie de réflexion. La transcription n'en écrit aucune : « troc les », « troclet », « truck les », « troquerait ».",
+  "definition": "Surface articulaire en forme de poulie : une gorge centrale et deux lèvres, qui obligent l'os d'en face à ne bouger que dans un plan. Il y en a trois dans le cours — au coude la trochlée humérale, au genou celle où court la rotule, à la cheville la poulie astragalienne. La lèvre externe de la trochlée fémorale est la plus haute : c'est elle qui repousse la rotule en dedans, et qui décide de son aplomb. Le mot sert aussi pour un tendon qui change de direction sur un relief d'os — une poulie de réflexion.",
   "variantes": [
    "trochlee",
    "trochlees",
