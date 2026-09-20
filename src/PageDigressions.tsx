@@ -161,11 +161,19 @@ export function PageDigressions() {
         </p>
 
         <div className={`mt-4 lg:grid lg:gap-8 ${grilleDe('petite')}`}>
+          {/* A fixed first column from sm up: the chips are not all the same
+              width — "S3 · 11:43" against "S43 · 1:43:24" — and left to
+              themselves they pushed every note to a different indent. On a
+              phone the chip sits above instead: seven rem out of a narrow
+              screen would cost the text more than the alignment is worth. */}
           <ul className="space-y-2">
             {liste.map((m) => (
-              <li key={`${m.video}|${m.t}`} className="card flex items-start gap-3 px-3.5 py-3">
+              <li
+                key={`${m.video}|${m.t}`}
+                className="card grid items-start gap-y-0.5 px-3.5 py-3 sm:grid-cols-[7rem_1fr] sm:gap-x-3 sm:gap-y-0"
+              >
                 <a
-                  className="puce-temps mt-px shrink-0"
+                  className="puce-temps mt-px justify-start"
                   href={lienYoutube(m.video, m.t)}
                   target="_blank"
                   rel="noreferrer"
