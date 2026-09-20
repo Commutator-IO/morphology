@@ -97,6 +97,9 @@ const ECARTES = new Set([
   // how the fibres twist, where the pectoral passes — and not a recollection.
   'lPiLzxL9qk4|2802',
   'XbY3hwY4Rbk|3637',
+  // "verge" without a note: he is placing the scrotum and the penis on a
+  // drawing, naming what he draws. No change of register, nothing to hear.
+  'ycr4a1eAkn0|6105',
 ]);
 
 /** Hand-written notes, one per intelligible moment. */
