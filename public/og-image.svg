@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 627" width="1200" height="627" role="img" aria-label="Morphologie — cours de Jean-François Debord">
+  <!-- Source of og-image.png, the card shown when a link is shared (LinkedIn
+       wants 1.91:1, a raster image, absolute address). The mark is the site's
+       own: an M drawn in sanguine on tinted paper, as in favicon.svg. Palatino
+       stands for the site's serif; Avenir Next for its sans. Render with
+       inkscape og-image.svg -o og-image.png -w 1200 -h 627 -->
+  <rect width="1200" height="627" fill="#faf9f7"/>
+  <rect y="603" width="1200" height="24" fill="#a2462a"/>
+
+  <!-- The mark, enlarged from the 32-unit favicon. -->
+  <g transform="translate(96 150) scale(10)">
+    <rect width="32" height="32" rx="7" fill="#f2f0ec" stroke="#e4e0d8" stroke-width="0.25"/>
+    <path d="M7 24V9l9 9 9-9v15" fill="none" stroke="#a2462a" stroke-width="3.4"
+          stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <g font-family="Palatino, 'Palatino Linotype', Georgia, serif">
+    <text x="470" y="262" font-size="96" font-weight="700" fill="#1b1813" letter-spacing="-2">Morphologie</text>
+    <text x="472" y="332" font-size="40" fill="#433d35">Le cours de Jean-François Debord</text>
+  </g>
+  <g font-family="'Avenir Next', Avenir, Helvetica, Arial, sans-serif">
+    <text x="472" y="398" font-size="29" fill="#6e6659">Beaux-Arts de Paris · 45 séances · 77 heures</text>
+    <text x="472" y="446" font-size="29" fill="#6e6659">Où, dans le cours, est-il question de ça ?</text>
+    <text x="472" y="545" font-size="30" font-weight="600" fill="#a2462a">morphologie.commutator.io</text>
+  </g>
+</svg>
