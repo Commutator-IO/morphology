@@ -1,0 +1,7 @@
+# Read by anchore/sbom-action (Syft) from the repository root, in deploy and
+# in sbom.yml. By default Syft leaves out the lockfile's dev dependencies; on
+# a static site those are the whole build chain (Vite or Astro, Tailwind,
+# PostCSS…), which runs on every deploy and produces what is served. Include
+# them, so the weekly scan watches the build as well as the runtime.
+javascript:
+  include-dev-dependencies: true
