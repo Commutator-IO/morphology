@@ -1,4 +1,5 @@
 import { Entete, Pied } from './components/Cadre';
+import { CONFERENCES, REPEREES, THEMES, TOTAL_PASSAGES } from './lib/conferences';
 import { FENETRE_S, INDEX_GENERE, LEXIQUE, SEANCES, totalDe } from './lib/lexique';
 import { REFERENCES, totalDeReference } from './lib/references';
 
@@ -300,13 +301,55 @@ export function PageMethode() {
         </Section>
 
 
+        <Section titre="Les conférences des Beaux-Arts">
+          <p>
+            L'onglet Conférences range les {CONFERENCES.length} enregistrements de
+            l'École des Beaux-Arts que PSL a numérisés. Le son n'est jamais copié :
+            le lecteur le lit depuis le catalogue de PSL, qui le sert par morceaux,
+            ce qui permet de se placer à un instant sans télécharger ce qui
+            précède. Chaque conférence renvoie à sa notice, où figurent les droits.
+          </p>
+          <p>
+            Contrairement au cours de Debord, ces enregistrements n'ont pas de
+            sous-titres : {REPEREES.size} ont été transcrits sur la machine qui
+            fabrique l'index, avec Whisper (modèle large-v3-turbo), à partir du
+            fichier sonore, supprimé ensuite. Les {CONFERENCES.length - REPEREES.size}{' '}
+            autres figurent dans la liste sans repères. Les transcriptions ne sont
+            pas publiées, comme celles du cours : l'index ne contient que des
+            identifiants et des instants.
+          </p>
+          <p>
+            Les {THEMES.length} thèmes ne viennent pas d'une liste posée d'avance.
+            On a mesuré, pour des candidats, dans combien de conférences chacun
+            revient, et gardé ceux qui reviennent au moins trois fois dans au moins quatorze d'entre elles. « Image »
+            et « espace » ont été écartés : ils reviennent partout, et un repère n'y
+            distingue plus rien. Cela donne {TOTAL_PASSAGES.toLocaleString('fr-FR')}{' '}
+            repères.
+          </p>
+          <p>
+            Ces repères cherchent des mots, pas des idées. Des tournures qui
+            détournaient le sens ont été écartées, d'abord après lecture des
+            contextes — « entrée en matière », « en la matière », « mettre en
+            lumière » —, puis à l'écoute. Les conférences données en anglais ne
+            sont repérées que par leurs mots français.
+          </p>
+          <p>
+            Contrairement à ceux du cours, ces repères n'ont pas été écoutés un à
+            un. Un échantillon de 39 passages, répartis sur les 23 thèmes, l'a été :
+            36 étaient justes, 3 étaient faux, et les tournures qui les causaient
+            ont été écartées.
+          </p>
+        </Section>
+
         <Section titre="Refaire l'index">
           <p>
             Le lexique est écrit à la main, l'index est calculé. Après avoir
             récupéré les sous-titres dans <code className="rounded bg-ink-100 px-1">transcripts/</code>{' '}
             — dossier non versionné —{' '}
             <code className="rounded bg-ink-100 px-1">npm run indexer</code> reconstruit
-            les deux index, celui du vocabulaire et celui des références, et les
+            les trois index, celui du vocabulaire, celui des références et celui des
+            conférences (les transcriptions de ces dernières sont dans{' '}
+            <code className="rounded bg-ink-100 px-1">transcripts/bibnum/</code>), et les
             tests vérifient que les comptes publiés correspondent bien à ce que
             l'indexeur a trouvé.
           </p>

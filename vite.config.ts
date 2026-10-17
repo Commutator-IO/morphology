@@ -14,6 +14,7 @@ const PAGES = {
   references: 'references/index.html',
   digressions: 'digressions/index.html',
   seances: 'seances/index.html',
+  conferences: 'conferences/index.html',
   lignee: 'lignee/index.html',
   methode: 'methode/index.html',
   mentions: 'mentions/index.html',

@@ -46,12 +46,12 @@ export function motif(s, avecAccents = false) {
   return (avecAccents ? accentuer(s) : plier(s)).replace(/\s+/g, ' ').trim();
 }
 
-export function lireCorpus() {
+export function lireCorpus(dossier = DOSSIER) {
   const out = [];
-  const fichiers = readdirSync(DOSSIER).filter((f) => f.endsWith('.fr-orig.json3')).sort();
+  const fichiers = readdirSync(dossier).filter((f) => f.endsWith('.fr-orig.json3')).sort();
   for (const f of fichiers) {
     const id = f.slice(0, f.indexOf('.fr-orig.json3'));
-    const d = JSON.parse(readFileSync(join(DOSSIER, f), 'utf8'));
+    const d = JSON.parse(readFileSync(join(dossier, f), 'utf8'));
     const segments = [];
     for (const e of d.events ?? []) {
       if (!e.segs) continue;

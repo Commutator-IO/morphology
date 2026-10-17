@@ -31,14 +31,26 @@ const AMORCE_S = 4;
  *  previous subject. */
 const CONTEXTE_C = 600;
 
-/** The two surveys to produce: where the list comes from, where it goes. */
+/** The surveys to produce: where the list comes from, where it goes. `dossier`
+ *  names a subfolder of `transcripts/`; without it, the course itself. */
 const RELEVES = [
   { nom: 'vocabulaire', lexique: 'lexique.json', sortie: 'occurrences.json' },
   { nom: 'références', lexique: 'references.json', sortie: 'occurrences-references.json' },
+  {
+    nom: 'conférences',
+    lexique: 'themes-conferences.json',
+    sortie: 'occurrences-conferences.json',
+    dossier: 'bibnum',
+  },
 ];
 
-// Read once for both surveys: it is 59 MB of subtitles.
-const corpus = lireCorpus();
+// Each folder is read once, however many surveys use it: the course alone is
+// 59 MB of subtitles.
+const lus = new Map();
+function corpusDe(dossier = '') {
+  if (!lus.has(dossier)) lus.set(dossier, lireCorpus(new URL(`../transcripts/${dossier ? `${dossier}/` : ''}`, import.meta.url).pathname));
+  return lus.get(dossier);
+}
 
 /**
  * A video's continuous text, plus the table turning a character offset back
@@ -169,7 +181,8 @@ function arbitrer(plie, litiges, tenues, motsDe) {
   return { gagnees, rendues, perdues };
 }
 
-function relever({ nom, lexique: fichier, sortie: fichierSortie }) {
+function relever({ nom, lexique: fichier, sortie: fichierSortie, dossier }) {
+  const corpus = corpusDe(dossier);
   const lexique = JSON.parse(readFileSync(new URL(`../src/data/${fichier}`, import.meta.url)));
 
   const index = {}; // id du terme -> { total, videos: { videoId: [instants] } }
@@ -263,4 +276,7 @@ function relever({ nom, lexique: fichier, sortie: fichierSortie }) {
 
 }
 
-for (const releve of RELEVES) relever(releve);
+// `node scripts/indexer.mjs conférences` runs one survey: the others rewrite
+// their files with a new date for no change in content.
+const seul = process.argv[2];
+for (const releve of RELEVES) if (!seul || releve.nom === seul) relever(releve);

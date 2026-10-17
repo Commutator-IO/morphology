@@ -1,15 +1,17 @@
 import { Entete, Pied } from './components/Cadre';
+import { CONFERENCES, REPEREES } from './lib/conferences';
 import { LEXIQUE, SEANCES } from './lib/lexique';
 import { REFERENCES } from './lib/references';
 
 /**
  * Legal notice, and the site's position on rights.
  *
- * It exists for a precise reason: the course is not openly licensed. Every
- * record in the Bibnum catalogue carries "Tous droits réservés" and names three
- * holders. So this site cannot present itself as working on free ground; it must
- * say exactly what it does, on what basis, and how to obtain a takedown. Saying
- * it oneself, clearly and first, beats explaining it afterwards.
+ * It exists for a precise reason: neither the course nor the lectures are openly
+ * licensed. Every record in the Bibnum catalogue — the 45 of the course and the
+ * 149 of the lectures — carries "Tous droits réservés" and names its holders. So
+ * this site cannot present itself as working on free ground; it must say exactly
+ * what it does, on what basis, and how to obtain a takedown. Saying it oneself,
+ * clearly and first, beats explaining it afterwards.
  *
  * Deliberately outside the tab bar: six tabs already scroll on a phone, and this
  * is looked for in the footer, where people look for it.
@@ -24,9 +26,9 @@ export function PageMentions() {
           Mentions légales
         </h1>
         <p className="mt-3 text-[15px] leading-relaxed text-ink-700">
-          Ce site est un index de travail. Il ne diffuse pas le cours de
-          Jean-François Debord : il indique où l'écouter, chez celui qui le
-          publie.
+          Ce site est un index de travail. Il ne diffuse ni le cours de
+          Jean-François Debord ni les conférences de l'École des Beaux-Arts :
+          il indique où les écouter, chez celui qui les publie.
         </p>
 
         <Section titre="Éditeur">
@@ -68,10 +70,19 @@ export function PageMentions() {
             YouTube, que l'Université PSL a laissé actif pour ces vidéos ; les
             liens horodatés pointent vers leur chaîne.
           </p>
+          <p>
+            Pour les conférences, il contient la liste des {CONFERENCES.length}{' '}
+            enregistrements du catalogue de PSL — le titre, la date et la durée de
+            chacun — et un index d'horodatages par thème pour {REPEREES.size}{' '}
+            d'entre eux. Il n'héberge aucun enregistrement sonore : le lecteur lit
+            le fichier directement depuis le serveur de l'Université PSL, sans le
+            copier ni le conserver ici.
+          </p>
           <p className="font-medium text-ink-900">
-            Les transcriptions automatiques ayant servi à fabriquer l'index ne
-            sont pas publiées et ne le seront pas. Elles restent hors du dépôt.
-            On ne peut pas lire le cours ici, seulement trouver où l'écouter.
+            Les transcriptions automatiques ayant servi à fabriquer les index,
+            ceux du cours comme ceux des conférences, ne sont pas publiées et ne
+            le seront pas. Elles restent hors du dépôt. On ne peut pas lire le
+            cours ni les conférences ici, seulement trouver où les écouter.
           </p>
         </Section>
 
@@ -95,6 +106,37 @@ export function PageMentions() {
           </p>
         </Section>
 
+        <Section titre="Droits sur les conférences">
+          <p>
+            Les {CONFERENCES.length} notices de la collection portent toutes la
+            mention «&nbsp;Tous droits réservés&nbsp;», sans licence ouverte. Chacune
+            nomme les personnes qui s'expriment dans l'enregistrement — 132
+            artistes et intervenants au total, deux par notice pour quatre d'entre
+            elles —, les Beaux-Arts de Paris, et l'Université PSL pour la
+            numérisation. Les détenteurs sont donc nombreux, et ce ne sont pas
+            seulement des institutions.
+          </p>
+          <p>
+            Ce site ne détient aucune copie des enregistrements : le lecteur
+            demande le fichier au serveur de l'Université PSL, qui le met en ligne,
+            et le fait lire au visiteur. Aucun fichier sonore ne figure dans le
+            dépôt. Il publie le titre, la date et la durée de chaque notice, qu'il
+            attribue à PSL, et des horodatages par thème, qui sont une donnée
+            dérivée et non la reprise d'une expression.
+          </p>
+          <p>
+            Ces horodatages ont été produits par une transcription automatique des
+            enregistrements, faite sur la machine qui fabrique l'index. Elle
+            s'appuie, comme pour le cours, sur l'exception de fouille de textes et
+            de données, les enregistrements ayant été consultés publiquement dans
+            le catalogue. Les transcriptions ne sont pas publiées.
+          </p>
+          <p>
+            Cette position est celle de l'éditeur, non un avis juridique. Tout
+            ayant droit peut demander le retrait, comme indiqué plus bas.
+          </p>
+        </Section>
+
         <Section titre="Le catalogue Bibnum">
           <p>
             L'Université PSL tient le{' '}
@@ -111,21 +153,40 @@ export function PageMentions() {
             autorité ; nous y renvoyons plutôt que de le refaire.
           </p>
           <p>
-            Bibnum est protégé contre la collecte automatisée. Ce site le cite et
-            y renvoie, ne le moissonne pas, et n'en reproduit pas les notices.
+            Bibnum est protégé contre la collecte automatisée. Pour le fonds
+            Debord, ce site cite le catalogue et y renvoie, ne le moissonne pas, et
+            n'en reproduit pas les notices.
+          </p>
+          <p>
+            Les conférences forment une autre collection du même catalogue, qui
+            compte {CONFERENCES.length} notices :{' '}
+            <a
+              href="https://bibnum.explore.psl.eu/s/psl/ark:/18469/2ngsc"
+              target="_blank"
+              rel="noreferrer"
+              className="lien"
+            >
+              Conférences de l'École des Beaux-Arts de Paris
+            </a>
+            . Ce site reprend de chaque notice son titre, sa date, sa durée et
+            l'adresse du fichier sonore, et rien d'autre, pour pouvoir proposer la
+            liste et le lecteur. Chaque conférence renvoie à sa notice, qui reste
+            la référence.
           </p>
         </Section>
 
         <Section titre="Retrait">
           <p>
-            Tout ayant droit — les héritiers de Jean-François Debord, les
-            Beaux-Arts de Paris, l'Université PSL — qui souhaiterait le retrait
+            Tout ayant droit — les héritiers de Jean-François Debord, les artistes
+            et intervenants des conférences ou leurs ayants droit, les Beaux-Arts de
+            Paris, l'Université PSL — qui souhaiterait le retrait
             de tout ou partie de ce site peut écrire à{' '}
             <a href="mailto:michel@commutator.io" className="lien">
               michel@commutator.io
             </a>
-            . La demande sera exécutée sous 48 heures, sans discussion préalable.
-            Il en va de même pour toute personne citée dans la page Lignée.
+            . La demande sera exécutée sous 48 heures, sans discussion préalable,
+            et peut ne viser qu'une conférence. Il en va de même pour toute
+            personne citée dans la page Lignée.
           </p>
         </Section>
 
@@ -134,6 +195,13 @@ export function PageMentions() {
             Ce site ne dépose aucun cookie, n'utilise aucun outil de mesure
             d'audience et ne collecte aucune donnée personnelle. Le lecteur vidéo
             passe par <code className="text-[13px]">youtube-nocookie.com</code>.
+          </p>
+          <p>
+            Le lecteur audio des conférences ne contacte le serveur de l'Université
+            PSL (<code className="text-[13px]">bibnum.explore.psl.eu</code>) qu'une
+            fois une conférence choisie. Ce serveur peut alors, comme tout site
+            qu'on visite, traiter l'adresse IP du visiteur et déposer ses propres
+            cookies : ce site n'y a pas accès.
           </p>
           <p>
             Deux préférences d'affichage — filtres dépliés ou non, taille du

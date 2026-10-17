@@ -1,0 +1,281 @@
+[
+ {
+  "id": "peinture",
+  "terme": "Peinture",
+  "groupe": "pratiques",
+  "variantes": [
+   "peinture",
+   "peintures",
+   "peintre",
+   "peintres",
+   "tableau",
+   "tableaux",
+   "peindre"
+  ]
+ },
+ {
+  "id": "dessin",
+  "terme": "Dessin",
+  "groupe": "pratiques",
+  "variantes": [
+   "dessin",
+   "dessins",
+   "dessiner",
+   "dessinateur",
+   "dessinatrice"
+  ]
+ },
+ {
+  "id": "sculpture",
+  "terme": "Sculpture",
+  "groupe": "pratiques",
+  "variantes": [
+   "sculpture",
+   "sculptures",
+   "sculpteur",
+   "sculpteurs"
+  ]
+ },
+ {
+  "id": "photographie",
+  "terme": "Photographie",
+  "groupe": "pratiques",
+  "variantes": [
+   "photographie",
+   "photographies",
+   "photographe",
+   "photographes",
+   "photo",
+   "photos"
+  ]
+ },
+ {
+  "id": "cinema",
+  "terme": "Cinéma",
+  "groupe": "pratiques",
+  "variantes": [
+   "cinema",
+   "cineaste",
+   "cineastes",
+   "film",
+   "films",
+   "cinematographique",
+   "tournage"
+  ]
+ },
+ {
+  "id": "video",
+  "terme": "Vidéo",
+  "groupe": "pratiques",
+  "variantes": [
+   "video",
+   "videos",
+   "art video",
+   "videaste",
+   "videastes"
+  ]
+ },
+ {
+  "id": "installation",
+  "terme": "Installation",
+  "groupe": "pratiques",
+  "variantes": [
+   "installation",
+   "installations",
+   "-installation du pouvoir"
+  ]
+ },
+ {
+  "id": "performance",
+  "terme": "Performance",
+  "groupe": "pratiques",
+  "variantes": [
+   "performance",
+   "performances",
+   "happening"
+  ]
+ },
+ {
+  "id": "musique",
+  "terme": "Musique et son",
+  "groupe": "pratiques",
+  "variantes": [
+   "musique",
+   "musicien",
+   "musiciens",
+   "compositeur",
+   "compositeurs",
+   "sonore"
+  ]
+ },
+ {
+  "id": "theatre",
+  "terme": "Théâtre et danse",
+  "groupe": "pratiques",
+  "variantes": [
+   "theatre",
+   "danse",
+   "choregraphe",
+   "metteur en scene",
+   "acteur",
+   "acteurs",
+   "comedien",
+   "comediens"
+  ]
+ },
+ {
+  "id": "ecriture",
+  "terme": "Écriture",
+  "groupe": "pratiques",
+  "variantes": [
+   "ecriture",
+   "ecrivain",
+   "ecrivains",
+   "poesie",
+   "poeme",
+   "roman",
+   "litterature"
+  ]
+ },
+ {
+  "id": "architecture",
+  "terme": "Architecture",
+  "groupe": "pratiques",
+  "variantes": [
+   "architecture",
+   "architecte",
+   "architectes",
+   "urbanisme"
+  ]
+ },
+ {
+  "id": "couleur",
+  "terme": "Couleur",
+  "groupe": "notions",
+  "variantes": [
+   "couleur",
+   "couleurs",
+   "chromatique",
+   "coloriste",
+   "monochrome"
+  ]
+ },
+ {
+  "id": "lumiere",
+  "terme": "Lumière",
+  "groupe": "notions",
+  "variantes": [
+   "lumiere",
+   "lumineux",
+   "-mettre en lumiere",
+   "-mis en lumiere",
+   "-met en lumiere",
+   "-mise en lumiere"
+  ]
+ },
+ {
+  "id": "matiere",
+  "terme": "Matière",
+  "groupe": "notions",
+  "variantes": [
+   "matiere",
+   "matieres",
+   "materiau",
+   "materiaux",
+   "-entree en matiere",
+   "-en la matiere",
+   "-en matiere de"
+  ]
+ },
+ {
+  "id": "corps",
+  "terme": "Corps",
+  "groupe": "notions",
+  "variantes": [
+   "corps",
+   "-a corps perdu",
+   "-completement a corps"
+  ]
+ },
+ {
+  "id": "paysage",
+  "terme": "Paysage et jardin",
+  "groupe": "notions",
+  "variantes": [
+   "paysage",
+   "paysages",
+   "jardin",
+   "jardins"
+  ]
+ },
+ {
+  "id": "portrait",
+  "terme": "Portrait",
+  "groupe": "notions",
+  "variantes": [
+   "portrait",
+   "portraits",
+   "autoportrait",
+   "autoportraits"
+  ]
+ },
+ {
+  "id": "memoire",
+  "terme": "Mémoire et archive",
+  "groupe": "notions",
+  "variantes": [
+   "memoire",
+   "archive",
+   "archives",
+   "-pour memoire"
+  ]
+ },
+ {
+  "id": "exposition",
+  "terme": "Exposition",
+  "groupe": "circuit",
+  "variantes": [
+   "exposition",
+   "expositions",
+   "commissaire",
+   "commissaires"
+  ]
+ },
+ {
+  "id": "musee",
+  "terme": "Musée",
+  "groupe": "circuit",
+  "variantes": [
+   "musee",
+   "musees",
+   "conservateur",
+   "conservateurs",
+   "-n est pas un musee comme son nom"
+  ]
+ },
+ {
+  "id": "galerie",
+  "terme": "Galerie et marché de l'art",
+  "groupe": "circuit",
+  "variantes": [
+   "galerie",
+   "galeries",
+   "galeriste",
+   "galeristes",
+   "marche de l art",
+   "collectionneur",
+   "collectionneurs"
+  ]
+ },
+ {
+  "id": "politique",
+  "terme": "Politique",
+  "groupe": "circuit",
+  "variantes": [
+   "politique",
+   "politiques",
+   "democratie",
+   "guerre"
+  ]
+ }
+]

@@ -38,6 +38,7 @@ const VUES: { chemin: string; libelle: string }[] = [
   { chemin: '/references/', libelle: 'Références' },
   { chemin: '/digressions/', libelle: 'Digressions' },
   { chemin: '/seances/', libelle: 'Séances' },
+  { chemin: '/conferences/', libelle: 'Conférences' },
   { chemin: '/lignee/', libelle: 'Lignée' },
   { chemin: '/methode/', libelle: 'Méthode' },
 ];

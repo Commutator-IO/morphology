@@ -18,6 +18,7 @@ reformule pas et ne l'héberge pas.
 | `/references/` | 73 références — peintres, sculpteurs, anatomistes, musées, œuvres               |
 | `/digressions/` | 111 moments où le cours sort de son sujet, dont 71 décrits                      |
 | `/seances/`    | Les 45 séances rangées par région du corps                                      |
+| `/conferences/` | 149 conférences des Beaux-Arts, lues depuis Bibnum, avec un index par thème     |
 | `/lignee/`     | 23 figures : les livres qu'il ouvre, la chaire avant lui, et ceux qu'il a formés |
 | `/methode/`    | Comment l'index est construit, et ce qu'il vaut                                 |
 | `/mentions/`   | Éditeur, droits sur le cours, procédure de retrait                              |
@@ -25,6 +26,12 @@ reformule pas et ne l'héberge pas.
 12 160 horodatages en tout. Sur téléphone, un horodatage ouvre la séance dans
 YouTube. Sur grand écran, il la place dans un lecteur à droite de la liste, sans
 quitter l'index.
+
+L'onglet `/conferences/` sort du cours : il range les 149 enregistrements de
+l'École des Beaux-Arts numérisés par PSL. Le son n'est jamais copié, le lecteur
+le lit depuis Bibnum. Les conférences transcrites (`transcripts/bibnum/`, avec le
+skill `transcrire-mp3`) ont un index par thème, produit par
+`npm run indexer -- conférences` ; l'audio, lui, ne passe pas par le dépôt.
 
 L'onglet `/digressions/` ne recueille pas un florilège
 de bons mots : Debord enseigne de vive voix, deux heures sans notes, et ces
