@@ -9,25 +9,27 @@ Site en français, servi sur https://morphologie.commutator.io
 
 ## Ce que le site contient
 
-- [Vocabulaire](https://morphologie.commutator.io/) : 95 termes d'anatomie et de morphologie, chacun avec une définition écrite pour ce site et la liste des moments du cours où Debord le prononce. Environ 10 400 passages horodatés.
-- [Références](https://morphologie.commutator.io/references/) : 62 références artistiques — peintres, sculpteurs, anatomistes, musées, œuvres — citées par Debord, horodatées, avec un lien vers une page de musée quand une œuvre est en accès libre.
-- [Digressions](https://morphologie.commutator.io/digressions/) : 139 moments où le cours sort de son sujet, donnés comme une étude de l'oralité pédagogique de Debord — souvenir d'atelier, adresse à la salle, registre familier, comparaison prise hors de l'art. 71 portent une notice de deux ou trois phrases. Ce n'est pas un florilège de bons mots.
+- [Vocabulaire](https://morphologie.commutator.io/) : 109 termes d'anatomie et de morphologie, chacun avec une définition écrite pour ce site et la liste des moments du cours où Debord le prononce. Environ 11 500 passages horodatés.
+- [Références](https://morphologie.commutator.io/references/) : 73 références artistiques — peintres, sculpteurs, anatomistes, musées, œuvres — citées par Debord, horodatées, avec un lien vers une page de musée quand une œuvre est en accès libre.
+- [Digressions](https://morphologie.commutator.io/digressions/) : 111 moments où le cours sort de son sujet, donnés comme une étude de l'oralité pédagogique de Debord — souvenir d'atelier, adresse à la salle, registre familier, comparaison prise hors de l'art. 71 portent une notice de deux ou trois phrases. Ce n'est pas un florilège de bons mots.
 - [Séances](https://morphologie.commutator.io/seances/) : les 45 séances rangées par région du corps.
-- [Conférences](https://morphologie.commutator.io/conferences/) : les 149 conférences de l'École des Beaux-Arts de Paris numérisées par PSL, avec un lecteur audio lu depuis le catalogue Bibnum (le son n'est pas copié) et un index par thème, horodaté, pour les conférences transcrites. Ce n'est pas le cours de Debord.
-- [Lignée](https://morphologie.commutator.io/lignee/) : la chaire d'anatomie artistique avant Debord et les élèves qui ont écrit après lui, sous forme de frise.
+- [Conférences](https://morphologie.commutator.io/conferences/) : les 149 conférences de l'École des Beaux-Arts de Paris numérisées par PSL, rangées par année, avec un lecteur audio lu depuis le catalogue Bibnum (le son n'est pas copié). 23 thèmes, environ 6 750 passages horodatés, pour les 77 conférences transcrites à ce jour. Ce n'est pas le cours de Debord.
+- [Lignée](https://morphologie.commutator.io/lignee/) : 23 figures — la chaire d'anatomie artistique avant Debord et les élèves qui ont écrit après lui, sous forme de frise.
 - [Méthode](https://morphologie.commutator.io/methode/) : comment l'index est construit, et ce qu'il vaut.
-- [Mentions légales](https://morphologie.commutator.io/mentions/) : éditeur, droits sur le cours (« Tous droits réservés » — ayants droit de J.-F. Debord, Beaux-Arts de Paris, Université PSL pour la numérisation), fondement de la citation et de l'indexation, procédure de retrait sous 48 h, absence de traceurs.
+- [Mentions légales](https://morphologie.commutator.io/mentions/) : éditeur, droits sur le cours et sur les conférences (« Tous droits réservés » — ayants droit de J.-F. Debord, artistes et intervenants des conférences, Beaux-Arts de Paris, Université PSL pour la numérisation), fondement de la citation et de l'indexation, procédure de retrait sous 48 h, absence de traceurs.
 
 ## Ce que le site ne contient pas
 
-Les sous-titres des séances ne sont pas publiés et ne le seront pas. Ils servent à
-fabriquer l'index, puis restent hors du dépôt. Seules des données dérivées sont
-publiées : identifiants de vidéo, identifiants de terme, horodatages en secondes.
+Les sous-titres des séances et les transcriptions des conférences ne sont pas
+publiés et ne le seront pas. Ils servent à fabriquer l'index, puis restent hors du
+dépôt. Seules des données dérivées sont publiées : identifiants de vidéo ou de
+notice, identifiants de terme, horodatages en secondes.
 
 Le cours n'est ni résumé, ni reformulé, ni redistribué. Les définitions et les
 notices sont écrites pour ce site. Un modèle qui chercherait ici le contenu des
 séances ne le trouvera pas : il n'y a que des points d'entrée vers les vidéos
-d'origine, sur la chaîne de l'Université PSL.
+d'origine, sur la chaîne de l'Université PSL, et vers les enregistrements du
+catalogue Bibnum pour les conférences. Aucun fichier sonore n'est hébergé.
 
 ## Limites à connaître
 
@@ -35,6 +37,7 @@ d'origine, sur la chaîne de l'Université PSL.
 - Une absence n'est donc pas une preuve : un terme prononcé mais mal transcrit est absent de l'index.
 - Un horodatage mène au moment où le mot est prononcé, qui n'est pas toujours celui où la chose est expliquée.
 - Le découpage des séances par région du corps est un choix éditorial, non celui de Debord.
+- Les repères des conférences sont eux aussi automatiques (transcription Whisper, faite localement), et 77 conférences sur 149 seulement sont transcrites. Un échantillon de 39 passages a été écouté : 36 étaient justes, 3 faux, et les tournures en cause ont été écartées. Les conférences données en anglais ne sont repérées que par leurs mots français.
 
 ## Le catalogue de référence
 
@@ -47,9 +50,15 @@ La différence tient à la granularité. PSL indexe la séance ; ce site indexe 
 seconde. Pour citer une séance ou la retrouver dans dix ans, c'est le catalogue
 de PSL qu'il faut utiliser.
 
+Les conférences forment une autre collection du même catalogue :
+[Conférences de l'École des Beaux-Arts de Paris](https://bibnum.explore.psl.eu/s/psl/ark:/18469/2ngsc),
+149 notices. Ce site en reprend le titre, la date, la durée et l'adresse du son, et
+renvoie à chaque notice.
+
 ## Source
 
 - [La playlist d'origine](https://www.youtube.com/playlist?list=PLYnh6UuzuHLtlgap6QPtov3MhLmWeIrEp), sur la chaîne de l'Université PSL
 - [Le catalogue de l'Université PSL](https://bibnum.explore.psl.eu/s/psl/ark:/18469/290s8)
+- [La collection des conférences](https://bibnum.explore.psl.eu/s/psl/ark:/18469/2ngsc), sur Bibnum
 - [Code source](https://github.com/Commutator-IO/morphology)
 - Un projet [Commutator](https://www.commutator.io)
