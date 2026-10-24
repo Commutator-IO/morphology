@@ -343,7 +343,7 @@ export function PageVocabulaire() {
 
             {groupe && (
               <p className="mt-3 text-[13px] leading-relaxed text-ink-600">
-                Les termes valables partout — aplomb, méplat, relief — sont sous{' '}
+                Les termes valables partout (aplomb, méplat, relief) sont sous{' '}
                 <button
                   type="button"
                   onClick={() => setGroupe(null)}

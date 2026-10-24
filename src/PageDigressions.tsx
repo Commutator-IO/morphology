@@ -68,8 +68,8 @@ export function PageDigressions() {
             une forme mieux qu'une planche. {decrits} de ces moments sont décrits
             ici en deux ou trois phrases ; touchez l'horodatage pour aller les
             entendre. Les autres n'ont qu'un mot pour description : deux
-            tournures reviennent d'une séance à l'autre — l'adresse à la salle
-            et le mot cru pour nommer une forme — et ce sont sa signature plus
+            tournures reviennent d'une séance à l'autre (l'adresse à la salle
+            et le mot cru pour nommer une forme), et ce sont sa signature plus
             que des écarts.
           </span>
         </p>
@@ -144,7 +144,7 @@ export function PageDigressions() {
 
         {comparaisons ? (
           <p className="mt-3 text-[13px] leading-relaxed text-ink-600">
-            Debord y explique une forme par un domaine étranger à l'art — le
+            Debord y explique une forme par un domaine étranger à l'art : le
             volley-ball, la planche à voile, le cheval, le chat, un marteau mal
             tenu. Ce sont souvent les passages où l'anatomie devient la plus
             claire.

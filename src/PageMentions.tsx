@@ -72,8 +72,8 @@ export function PageMentions() {
           </p>
           <p>
             Pour les conférences, il contient la liste des {CONFERENCES.length}{' '}
-            enregistrements du catalogue de PSL — le titre, la date et la durée de
-            chacun — et un index d'horodatages par thème pour {REPEREES.size}{' '}
+            enregistrements du catalogue de PSL (le titre, la date et la durée de
+            chacun) et un index d'horodatages par thème pour {REPEREES.size}{' '}
             d'entre eux. Il n'héberge aucun enregistrement sonore : le lecteur lit
             le fichier directement depuis le serveur de l'Université PSL, sans le
             copier ni le conserver ici.
@@ -93,13 +93,13 @@ export function PageMentions() {
             réservés&nbsp;» et nomme trois détenteurs : Jean-François Debord et
             ses ayants droit, les Beaux-Arts de Paris, et l'Université PSL pour
             la numérisation. Les séances ont été réalisées par Cyril de
-            Turckheim — que le catalogue Bibnum crédite comme réalisateur sans
+            Turckheim, que le catalogue Bibnum crédite comme réalisateur sans
             le compter parmi les détenteurs.
           </p>
           <p>
             Ce site invoque, pour ce qu'il publie, l'exception de courte citation
             à des fins pédagogiques, avec indication du nom de l'auteur et de la
-            source. L'index lui-même — un mot, un horodatage — est une donnée
+            source. L'index lui-même (un mot, un horodatage) est une donnée
             dérivée et non la reprise d'une expression. Sa fabrication relève de
             l'exception de fouille de textes et de données, l'accès aux séances
             ayant été licite et public.
@@ -110,9 +110,9 @@ export function PageMentions() {
           <p>
             Les {CONFERENCES.length} notices de la collection portent toutes la
             mention «&nbsp;Tous droits réservés&nbsp;», sans licence ouverte. Chacune
-            nomme les personnes qui s'expriment dans l'enregistrement — 132
+            nomme les personnes qui s'expriment dans l'enregistrement (132
             artistes et intervenants au total, deux par notice pour quatre d'entre
-            elles —, les Beaux-Arts de Paris, et l'Université PSL pour la
+            elles), les Beaux-Arts de Paris, et l'Université PSL pour la
             numérisation. Les détenteurs sont donc nombreux, et ce ne sont pas
             seulement des institutions.
           </p>
@@ -177,9 +177,9 @@ export function PageMentions() {
 
         <Section titre="Retrait">
           <p>
-            Tout ayant droit — les héritiers de Jean-François Debord, les artistes
+            Tout ayant droit (les héritiers de Jean-François Debord, les artistes
             et intervenants des conférences ou leurs ayants droit, les Beaux-Arts de
-            Paris, l'Université PSL — qui souhaiterait le retrait
+            Paris, l'Université PSL) qui souhaiterait le retrait
             de tout ou partie de ce site peut écrire à{' '}
             <a href="mailto:michel@commutator.io" className="lien">
               michel@commutator.io
@@ -204,8 +204,8 @@ export function PageMentions() {
             cookies : ce site n'y a pas accès.
           </p>
           <p>
-            Deux préférences d'affichage — filtres dépliés ou non, taille du
-            lecteur — sont conservées dans le navigateur, sur l'appareil, et ne
+            Deux préférences d'affichage (filtres dépliés ou non, taille du
+            lecteur) sont conservées dans le navigateur, sur l'appareil, et ne
             sont transmises nulle part.
           </p>
         </Section>

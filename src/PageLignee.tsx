@@ -375,11 +375,11 @@ function BandeHistorique() {
       </div>
       <p className="mt-2 text-[12px] leading-relaxed text-ink-500">
         Sept siècles de peintres, de sculpteurs et d'
-        <span className="font-medium text-os-700">anatomistes</span> — ces derniers en
-        couleur d'os — contre deux générations d'enseignement, la zone claire. Ils sont ici
+        <span className="font-medium text-os-700">anatomistes</span> (ces derniers en
+        couleur d'os) contre deux générations d'enseignement, la zone claire. Ils sont ici
         et non dans la frise du haut parce qu'ils sont les sources du cours et non la lignée
         : Vésale ou Bourgery n'ont rien transmis à Debord qu'un livre. Les deux qui figurent
-        aussi plus haut, Duval et Richer, y sont à un autre titre — ils ont occupé sa
+        aussi plus haut, Duval et Richer, y sont à un autre titre : ils ont occupé sa
         chaire. Cliquez une barre pour les passages où il en parle.
       </p>
     </figure>

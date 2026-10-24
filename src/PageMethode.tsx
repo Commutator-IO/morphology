@@ -33,7 +33,7 @@ export function PageMethode() {
           <p>
             La liste des {SEANCES.length} séances avec un lien vers YouTube, un
             lexique de {LEXIQUE.length} termes et {REFERENCES.length} références
-            artistiques — définitions et notices écrites pour ce site — et{' '}
+            artistiques (définitions et notices écrites pour ce site) et{' '}
             {(passages + mentions).toLocaleString('fr-FR')} horodatages.
           </p>
           <p>
@@ -57,7 +57,7 @@ export function PageMethode() {
               La morphologie aux Beaux-Arts de Paris
             </a>{' '}
             : 45 documents décrits un à un, avec un identifiant pérenne, et une
-            indexation par sujet — dessin et morphologie sur l'ensemble, puis le
+            indexation par sujet : dessin et morphologie sur l'ensemble, puis le
             bassin, l'épaule, la cage thoracique, le bras, le crâne, la colonne
             vertébrale, et ainsi de suite.
           </p>
@@ -159,8 +159,8 @@ export function PageMethode() {
               minutes produirait quarante liens vers le même développement.
             </li>
             <li>
-              Un mot que deux termes se partagent — « fléchisseur » se dit de
-              l'avant-bras comme de la jambe — n'est attribué qu'au vu du
+              Un mot que deux termes se partagent (« fléchisseur » se dit de
+              l'avant-bras comme de la jambe) n'est attribué qu'au vu du
               voisinage : on compte, autour de la mention, les mots propres à
               chaque région, et le plus fourni l'emporte. À égalité, la mention
               n'est rangée nulle part : mieux vaut la perdre que la ranger à tort.
@@ -229,7 +229,7 @@ export function PageMethode() {
           <p>
             Chaque candidat a donc été ouvert et lu dans son passage avant d'être
             gardé ou écarté. Les {REFERENCES.length} références de la liste sont
-            celles qui ont passé ce contrôle — elles ont toutes au moins une
+            celles qui ont passé ce contrôle : elles ont toutes au moins une
             mention, et un test échoue si l'une d'elles n'en a plus. C'est une
             liste sûre mais close : un nom cité une seule fois et mal transcrit
             n'y figure pas.
@@ -243,7 +243,7 @@ export function PageMethode() {
             viennent des API ouvertes de l'Art Institute of Chicago et du
             Metropolitan Museum, qui rendent l'adresse officielle de l'objet, son
             auteur et son statut de domaine public. La précaution n'est pas
-            théorique — une adresse du Louvre qui semblait être celle de la Vénus
+            théorique : une adresse du Louvre qui semblait être celle de la Vénus
             de Milo désignait en réalité un cippe.
           </p>
           <p>
@@ -329,8 +329,8 @@ export function PageMethode() {
           <p>
             Ces repères cherchent des mots, pas des idées. Des tournures qui
             détournaient le sens ont été écartées, d'abord après lecture des
-            contextes — « entrée en matière », « en la matière », « mettre en
-            lumière » —, puis à l'écoute. Les conférences données en anglais ne
+            contextes (« entrée en matière », « en la matière », « mettre en
+            lumière »), puis à l'écoute. Les conférences données en anglais ne
             sont repérées que par leurs mots français.
           </p>
           <p>
@@ -345,7 +345,7 @@ export function PageMethode() {
           <p>
             Le lexique est écrit à la main, l'index est calculé. Après avoir
             récupéré les sous-titres dans <code className="rounded bg-ink-100 px-1">transcripts/</code>{' '}
-            — dossier non versionné —{' '}
+            (dossier non versionné),{' '}
             <code className="rounded bg-ink-100 px-1">npm run indexer</code> reconstruit
             les trois index, celui du vocabulaire, celui des références et celui des
             conférences (les transcriptions de ces dernières sont dans{' '}
